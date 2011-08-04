@@ -1,0 +1,6 @@
+Toasty!
+a Marmalade SDK game framework
+
+Autor: Leandro 'The Phantom Lord' / 'Grün' Ostera
+
+Notes: Project started on 07.12.2011 as I've seen that the current Marmalade game framework lacked the ease of use needed for RAD and prototyping. It actually started as just a sprite class and then, as I was developing a game, decided that some base classes and utilities would be helpful to speed up development. As it is said, the lone developer must work not hard, but smart.

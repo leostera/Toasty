@@ -1,0 +1,17 @@
+files
+{
+	(.)
+	SingletonTest.cpp
+	MainTest.cpp
+		
+	(../include)
+	TySingleton.h
+}
+
+subprojects
+{
+	iwutil
+}	
+
+includepath ../include
+includepath ../include/tut

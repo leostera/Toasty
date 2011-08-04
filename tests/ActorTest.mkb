@@ -1,0 +1,26 @@
+files
+{
+	(.)
+	ActorTest.cpp
+	MainTest.cpp
+		
+	(../include)
+	TyActor.h
+	[Toasty]
+	TySprite.h
+
+	(../src)
+	TyActor.cpp
+	[Toasty]
+	TySprite.cpp
+}
+
+subprojects
+{
+	iwutil
+	iw2d
+	iwresmanager
+}	
+
+includepath ../include
+includepath ../include/tut

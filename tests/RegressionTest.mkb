@@ -1,0 +1,22 @@
+files
+{
+	(.)
+	MainTest.cpp
+	[Tests]
+	SpriteTest.cpp
+	ActorTest.cpp
+	SceneTest.cpp
+	SceneManagerTest.cpp
+	SingletonTest.cpp
+	InputTest.cpp
+}
+
+subprojects
+{
+	iw2d
+	iwutil
+	iwresmanager
+}
+
+includepath ../include
+includepath ../include/tut

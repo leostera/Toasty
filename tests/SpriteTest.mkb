@@ -1,0 +1,22 @@
+files
+{
+	(.)
+	SpriteTest.cpp
+	MainTest.cpp
+		
+	(../include)
+	TySprite.h
+
+	(../src)
+	TySprite.cpp
+}
+
+subprojects
+{
+	iwutil
+	iw2d
+	iwresmanager
+}	
+
+includepath ../include
+includepath ../include/tut

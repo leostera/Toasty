@@ -1,0 +1,5 @@
+8.4.2011
++ Added Flip, Rotate and Center functionality to the TySprite class. Works as hell!
+
+8.2.2011
++ Added test files (.cpp, .mkb) 

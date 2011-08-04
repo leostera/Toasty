@@ -1,0 +1,20 @@
+files
+{
+	(.)
+	InputTest.cpp
+	MainTest.cpp
+		
+	(../include)
+	TyInput.h
+
+	(../src)
+	TyInput.cpp
+}
+
+subprojects
+{
+	iwutil
+}	
+
+includepath ../include
+includepath ../include/tut
