@@ -1,0 +1,715 @@
+\hypertarget{class_c_ty_sprite}{
+\section{CTySprite Class Reference}
+\label{class_c_ty_sprite}\index{CTySprite@{CTySprite}}
+}
+
+
+Animated sprite class.  
+
+
+
+
+{\ttfamily \#include $<$TySprite.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_ty_sprite_ab99453044949be7ea6b910335a801726}{CTySprite} (CIwResGroup $\ast$pGroup, std::string pName, bool pLoop=true)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_c_ty_sprite_a700ba01fd9611001e814c4fcfeeaf255}{$\sim$CTySprite} ()
+\begin{DoxyCompactList}\small\item\em Cleans up the object. \end{DoxyCompactList}\item 
+\hyperlink{class_c_ty_sprite_a4ac0e41dc88b9e608dd34dffa5f7ebf9}{CTySprite} (\hyperlink{class_c_ty_sprite}{CTySprite} const \&pSprite)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_c_ty_sprite}{CTySprite} \& \hyperlink{class_c_ty_sprite_a59079b5e51e01fbf7b24288d3a630ffb}{operator=} (\hyperlink{class_c_ty_sprite}{CTySprite} const \&pSprite)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_ty_sprite_a53b65f437642ac9a209148792d03d4e1}{operator==} (\hyperlink{class_c_ty_sprite}{CTySprite} const \&pSprite) const 
+\begin{DoxyCompactList}\small\item\em Comparison operator. \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_ty_sprite_ac32af738070627e8df2f0de208dbab6a}{Step} ()
+\begin{DoxyCompactList}\small\item\em Updated the sprite. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_ty_sprite_ad57edffe6f3e932b24d48457facd73a0}{Loop} (bool pLoop)
+\begin{DoxyCompactList}\small\item\em Loop's or not? \end{DoxyCompactList}\item 
+void \hyperlink{class_c_ty_sprite_aec150e6cab1c604745b33425034e9333}{toggleLoop} ()
+\begin{DoxyCompactList}\small\item\em Toggles looping. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_ty_sprite_aa4f43fb5f8b112598af616e9675f5936}{Stop} ()
+\begin{DoxyCompactList}\small\item\em Stops the animation. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_ty_sprite_a9fc014571f6e81ccbfbd7d9d6c30aa24}{Play} ()
+\begin{DoxyCompactList}\small\item\em Starts the animation. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_ty_sprite_a16e171457c700e7a3f6080759f5be354}{Resume} ()
+\begin{DoxyCompactList}\small\item\em Resumes the animation from were it was. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_ty_sprite_a387bd6b832dfff1a75ab6c6b04e5a5e1}{Pause} ()
+\begin{DoxyCompactList}\small\item\em Pauses the animation. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_ty_sprite_a627f6a648a2061d43608a84f423c805f}{GoToFrame} (CIwSVec2 pFrame=CIwSVec2::g\_\-Zero)
+\begin{DoxyCompactList}\small\item\em Goes to the specified frame. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_ty_sprite_aee105391eb1fe58a9811202ecdc6f842}{Restart} ()
+\begin{DoxyCompactList}\small\item\em Restarts the animation. \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_ty_sprite_a7fa1acf3af5445c249d3adb6f8dc4842}{IsPaused} () const 
+\begin{DoxyCompactList}\small\item\em Has the animation paused? \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_ty_sprite_ad92a279af844a5ffaaa361dfe7ed3e23}{IsStopped} () const 
+\begin{DoxyCompactList}\small\item\em Has the animation stopped? \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_ty_sprite_af02c13028b55b6d74c3462b0a281f478}{IsLooping} () const 
+\begin{DoxyCompactList}\small\item\em Is the animation looping? \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_ty_sprite_a9ff2cf53bb8905fc5f8e24e913e24ce0}{IsPlaying} () const 
+\begin{DoxyCompactList}\small\item\em Is the animation being played? \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_ty_sprite_a15c3c0cb64a13a18e24c0ae5f1fdaa12}{IsBuilt} () const 
+\begin{DoxyCompactList}\small\item\em Is the object built? \end{DoxyCompactList}\item 
+CIwSVec2 \hyperlink{class_c_ty_sprite_a19185855d525be5efcd832fdf7e8933b}{IsFlipped} () const 
+\begin{DoxyCompactList}\small\item\em Is the object flipped? \end{DoxyCompactList}\item 
+int16 \hyperlink{class_c_ty_sprite_a41d4c27208778c8fe866f1d62fc7e2f1}{GetWidth} () const 
+\begin{DoxyCompactList}\small\item\em Spritesheet width. \end{DoxyCompactList}\item 
+int16 \hyperlink{class_c_ty_sprite_aadd1909ace834f91455b0736c9f7a77f}{GetHeigth} () const 
+\begin{DoxyCompactList}\small\item\em Spritesheet height. \end{DoxyCompactList}\item 
+int16 \hyperlink{class_c_ty_sprite_aab9a2d33ca126dfcecb9c227ba341b35}{GetMaxFrames} () const 
+\begin{DoxyCompactList}\small\item\em Get the maximum useful frame. \end{DoxyCompactList}\item 
+int16 \hyperlink{class_c_ty_sprite_a2dbf197c643f0b10d00cfb603412c541}{GetEndFrame} () const 
+\begin{DoxyCompactList}\small\item\em Get the final frame. \end{DoxyCompactList}\item 
+CIwSVec2 \hyperlink{class_c_ty_sprite_a88db8e1f73aac6d4dd9b808854c4ded9}{GetCurrentFrame} () const 
+\begin{DoxyCompactList}\small\item\em Get the current frame vector. \end{DoxyCompactList}\item 
+CIwSVec2 \hyperlink{class_c_ty_sprite_a08e983e98709a53553f67845ca186f87}{GetFrameSize} () const 
+\begin{DoxyCompactList}\small\item\em Get the frame size vector. \end{DoxyCompactList}\item 
+CIwSVec2 \hyperlink{class_c_ty_sprite_aa5aee4e95d225591fada060e6822e943}{GetFrameOffset} () const 
+\begin{DoxyCompactList}\small\item\em Get the frame offset vector. \end{DoxyCompactList}\item 
+std::string \hyperlink{class_c_ty_sprite_a7a7f52cdeded57d25aa6517cde03e804}{GetResourceName} () const 
+\begin{DoxyCompactList}\small\item\em Get the resource name string. \end{DoxyCompactList}\item 
+CIwResGroup $\ast$ \hyperlink{class_c_ty_sprite_a4577bd62cc7580972c01f2c67e9934a0}{GetResourceGroup} () const 
+\begin{DoxyCompactList}\small\item\em Get the resources group pointer. \end{DoxyCompactList}\item 
+const \hyperlink{class_c_ty_sprite}{CTySprite} $\ast$ \hyperlink{class_c_ty_sprite_ad43a63fdfd4d60c2b5c78bcfe5f7fced}{GetCopy} () const 
+\begin{DoxyCompactList}\small\item\em Pointer to const this. \end{DoxyCompactList}\item 
+iwangle \hyperlink{class_c_ty_sprite_af4e75e0923094162c46023184e2bc5d5}{GetAngle} () const 
+\begin{DoxyCompactList}\small\item\em Animation rotation. \end{DoxyCompactList}\item 
+CIwSVec2 \hyperlink{class_c_ty_sprite_a49e66d883dd0529d4943bf1fddcfd823}{GetCenter} () const 
+\begin{DoxyCompactList}\small\item\em Animation rotation Center. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_ty_sprite_ab015a500d951d37225a5bbb64c7a567c}{Rotate} (iwangle pRads)
+\begin{DoxyCompactList}\small\item\em Rotates the animation. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_ty_sprite_aadeb6c6624411648967e2fcc7494b4be}{Center} (CIwSVec2 pCenter=CIwSVec2::g\_\-Zero)
+\begin{DoxyCompactList}\small\item\em Center the animation for rotation. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_ty_sprite_a288e9a75afb2177c7fad580802c2a3af}{Flip} (CIwSVec2 pFlip=CIwSVec2::g\_\-Zero)
+\begin{DoxyCompactList}\small\item\em Flips the animation. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_ty_sprite_aa86cd094757ca9c8b52a32f090618eb3}{Render} (CIwSVec2 pPosition=CIwSVec2::g\_\-Zero)
+\begin{DoxyCompactList}\small\item\em Render the animation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Animated sprite class. 
+
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$
+
+\begin{DoxyDate}{Date}
+11/07/2011 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Leandro Ostera
+\end{DoxyAuthor}
+Animation class that features non-\/complete squared sprite sheets support. Includes basics functionality as stopping, pausing, go to frame, etc. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_ty_sprite_ab99453044949be7ea6b910335a801726}{
+\index{CTySprite@{CTySprite}!CTySprite@{CTySprite}}
+\index{CTySprite@{CTySprite}!CTySprite@{CTySprite}}
+\subsubsection[{CTySprite}]{\setlength{\rightskip}{0pt plus 5cm}CTySprite::CTySprite (
+\begin{DoxyParamCaption}
+\item[{CIwResGroup $\ast$}]{pGroup, }
+\item[{std::string}]{pName, }
+\item[{bool}]{pLoop = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_sprite_ab99453044949be7ea6b910335a801726}
+
+
+Parameterized constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pGroup} & the resource group inwhere to look for the resource \\
+\hline
+{\em pName} & the name of the resource to look up in the group \\
+\hline
+{\em pLoop} & whether the animation sohuld loop (true) or not (false\\
+\hline
+\end{DoxyParams}
+This is the main constructor. It initializes the following properties: \begin{DoxyItemize}
+\item {\ttfamily m\_\-Built}, false \item {\ttfamily m\_\-Offset}, CIwSVec2::g\_\-Zero (zero vector) \item {\ttfamily m\_\-CurrentFrame}, CIwSVec2::g\_\-Zero (zero vector) \item {\ttfamily m\_\-FrameCounter}, 0 (ZERO, integer value) \item {\ttfamily m\_\-DrawRect}, CIwSVec2::g\_\-Zero (zero vector) \item {\ttfamily m\_\-Pause}, false \item {\ttfamily m\_\-Stop}, false \item {\ttfamily m\_\-Loop}, pLoop \end{DoxyItemize}
+\hypertarget{class_c_ty_sprite_a700ba01fd9611001e814c4fcfeeaf255}{
+\index{CTySprite@{CTySprite}!$\sim$CTySprite@{$\sim$CTySprite}}
+\index{$\sim$CTySprite@{$\sim$CTySprite}!CTySprite@{CTySprite}}
+\subsubsection[{$\sim$CTySprite}]{\setlength{\rightskip}{0pt plus 5cm}CTySprite::$\sim$CTySprite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_sprite_a700ba01fd9611001e814c4fcfeeaf255}
+
+
+Cleans up the object. 
+
+Performs clean up of the asigned memory blocks. If the class has been succesfully built before, delete the sprite pointer as it is no longer needed. \hypertarget{class_c_ty_sprite_a4ac0e41dc88b9e608dd34dffa5f7ebf9}{
+\index{CTySprite@{CTySprite}!CTySprite@{CTySprite}}
+\index{CTySprite@{CTySprite}!CTySprite@{CTySprite}}
+\subsubsection[{CTySprite}]{\setlength{\rightskip}{0pt plus 5cm}CTySprite::CTySprite (
+\begin{DoxyParamCaption}
+\item[{{\bf CTySprite} const \&}]{pSprite}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_sprite_a4ac0e41dc88b9e608dd34dffa5f7ebf9}
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pSprite} & The sprite object to be copied\\
+\hline
+\end{DoxyParams}
+Copies the propierties of the parameter object into the object that is being constructed. It uses the overloaded operator = to such ends. Current object flag m\_\-Built will be set along with flag m\_\-Copy. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_ty_sprite_aadeb6c6624411648967e2fcc7494b4be}{
+\index{CTySprite@{CTySprite}!Center@{Center}}
+\index{Center@{Center}!CTySprite@{CTySprite}}
+\subsubsection[{Center}]{\setlength{\rightskip}{0pt plus 5cm}m\_\-Center rotation CTySprite::Center (
+\begin{DoxyParamCaption}
+\item[{CIwSVec2}]{pCenter = {\ttfamily CIwSVec2::g\_\-Zero}}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_sprite_aadeb6c6624411648967e2fcc7494b4be}
+
+
+Center the animation for rotation. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pCenter} & integer vector for animation center.\\
+\hline
+\end{DoxyParams}
+Centers the animation at the given coordinates for rotation. \hypertarget{class_c_ty_sprite_a288e9a75afb2177c7fad580802c2a3af}{
+\index{CTySprite@{CTySprite}!Flip@{Flip}}
+\index{Flip@{Flip}!CTySprite@{CTySprite}}
+\subsubsection[{Flip}]{\setlength{\rightskip}{0pt plus 5cm}void CTySprite::Flip (
+\begin{DoxyParamCaption}
+\item[{CIwSVec2}]{pFlip = {\ttfamily CIwSVec2::g\_\-Zero}}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_sprite_a288e9a75afb2177c7fad580802c2a3af}
+
+
+Flips the animation. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pFlip} & CIwSVec2 vector for flipping on X and/or Y axis.\\
+\hline
+\end{DoxyParams}
+Flips the animation according the the pFlip vector. If the current Flip vector equals the passed Flip vector, animation is unflipped. \hypertarget{class_c_ty_sprite_af4e75e0923094162c46023184e2bc5d5}{
+\index{CTySprite@{CTySprite}!GetAngle@{GetAngle}}
+\index{GetAngle@{GetAngle}!CTySprite@{CTySprite}}
+\subsubsection[{GetAngle}]{\setlength{\rightskip}{0pt plus 5cm}iwangle CTySprite::GetAngle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_af4e75e0923094162c46023184e2bc5d5}
+
+
+Animation rotation. 
+
+\begin{DoxyReturn}{Returns}
+Returns the current angle in radians. 
+\end{DoxyReturn}
+\hypertarget{class_c_ty_sprite_a49e66d883dd0529d4943bf1fddcfd823}{
+\index{CTySprite@{CTySprite}!GetCenter@{GetCenter}}
+\index{GetCenter@{GetCenter}!CTySprite@{CTySprite}}
+\subsubsection[{GetCenter}]{\setlength{\rightskip}{0pt plus 5cm}CIwSVec2 CTySprite::GetCenter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_a49e66d883dd0529d4943bf1fddcfd823}
+
+
+Animation rotation Center. 
+
+\begin{DoxyReturn}{Returns}
+Returns the current Center as a vector. 
+\end{DoxyReturn}
+\hypertarget{class_c_ty_sprite_ad43a63fdfd4d60c2b5c78bcfe5f7fced}{
+\index{CTySprite@{CTySprite}!GetCopy@{GetCopy}}
+\index{GetCopy@{GetCopy}!CTySprite@{CTySprite}}
+\subsubsection[{GetCopy}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CTySprite}$\ast$ CTySprite::GetCopy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_ad43a63fdfd4d60c2b5c78bcfe5f7fced}
+
+
+Pointer to const this. 
+
+\begin{DoxyReturn}{Returns}
+const CTySprite$\ast$
+\end{DoxyReturn}
+Returns a pointer to a const \hyperlink{class_c_ty_sprite}{CTySprite} (which is this). \hypertarget{class_c_ty_sprite_a88db8e1f73aac6d4dd9b808854c4ded9}{
+\index{CTySprite@{CTySprite}!GetCurrentFrame@{GetCurrentFrame}}
+\index{GetCurrentFrame@{GetCurrentFrame}!CTySprite@{CTySprite}}
+\subsubsection[{GetCurrentFrame}]{\setlength{\rightskip}{0pt plus 5cm}CIwSVec2 CTySprite::GetCurrentFrame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_a88db8e1f73aac6d4dd9b808854c4ded9}
+
+
+Get the current frame vector. 
+
+\begin{DoxyReturn}{Returns}
+CIwSVec2
+\end{DoxyReturn}
+Returns current frame row and column as a 2D integer vector. \hypertarget{class_c_ty_sprite_a2dbf197c643f0b10d00cfb603412c541}{
+\index{CTySprite@{CTySprite}!GetEndFrame@{GetEndFrame}}
+\index{GetEndFrame@{GetEndFrame}!CTySprite@{CTySprite}}
+\subsubsection[{GetEndFrame}]{\setlength{\rightskip}{0pt plus 5cm}int16 CTySprite::GetEndFrame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_a2dbf197c643f0b10d00cfb603412c541}
+
+
+Get the final frame. 
+
+\begin{DoxyReturn}{Returns}
+int16
+\end{DoxyReturn}
+Returns the last frame number as integer. \hypertarget{class_c_ty_sprite_aa5aee4e95d225591fada060e6822e943}{
+\index{CTySprite@{CTySprite}!GetFrameOffset@{GetFrameOffset}}
+\index{GetFrameOffset@{GetFrameOffset}!CTySprite@{CTySprite}}
+\subsubsection[{GetFrameOffset}]{\setlength{\rightskip}{0pt plus 5cm}CIwSVec2 CTySprite::GetFrameOffset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_aa5aee4e95d225591fada060e6822e943}
+
+
+Get the frame offset vector. 
+
+\begin{DoxyReturn}{Returns}
+CIwSVec2
+\end{DoxyReturn}
+Returns x and y offset of each frame as 2D integer vector. \hypertarget{class_c_ty_sprite_a08e983e98709a53553f67845ca186f87}{
+\index{CTySprite@{CTySprite}!GetFrameSize@{GetFrameSize}}
+\index{GetFrameSize@{GetFrameSize}!CTySprite@{CTySprite}}
+\subsubsection[{GetFrameSize}]{\setlength{\rightskip}{0pt plus 5cm}CIwSVec2 CTySprite::GetFrameSize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_a08e983e98709a53553f67845ca186f87}
+
+
+Get the frame size vector. 
+
+\begin{DoxyReturn}{Returns}
+CIwSVec2
+\end{DoxyReturn}
+Returns frame size as 2D integer vector. \hypertarget{class_c_ty_sprite_aadd1909ace834f91455b0736c9f7a77f}{
+\index{CTySprite@{CTySprite}!GetHeigth@{GetHeigth}}
+\index{GetHeigth@{GetHeigth}!CTySprite@{CTySprite}}
+\subsubsection[{GetHeigth}]{\setlength{\rightskip}{0pt plus 5cm}int16 CTySprite::GetHeigth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_aadd1909ace834f91455b0736c9f7a77f}
+
+
+Spritesheet height. 
+
+\begin{DoxyReturn}{Returns}
+int16
+\end{DoxyReturn}
+Returns current spritesheet height as integer. \hypertarget{class_c_ty_sprite_aab9a2d33ca126dfcecb9c227ba341b35}{
+\index{CTySprite@{CTySprite}!GetMaxFrames@{GetMaxFrames}}
+\index{GetMaxFrames@{GetMaxFrames}!CTySprite@{CTySprite}}
+\subsubsection[{GetMaxFrames}]{\setlength{\rightskip}{0pt plus 5cm}int16 CTySprite::GetMaxFrames (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_aab9a2d33ca126dfcecb9c227ba341b35}
+
+
+Get the maximum useful frame. 
+
+\begin{DoxyReturn}{Returns}
+int16
+\end{DoxyReturn}
+Returns the maximum amount of useful frames in the spritesheet that is, ignoring blank frames at the end of the sheet, as integer. \hypertarget{class_c_ty_sprite_a4577bd62cc7580972c01f2c67e9934a0}{
+\index{CTySprite@{CTySprite}!GetResourceGroup@{GetResourceGroup}}
+\index{GetResourceGroup@{GetResourceGroup}!CTySprite@{CTySprite}}
+\subsubsection[{GetResourceGroup}]{\setlength{\rightskip}{0pt plus 5cm}CIwResGroup$\ast$ CTySprite::GetResourceGroup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_a4577bd62cc7580972c01f2c67e9934a0}
+
+
+Get the resources group pointer. 
+
+\begin{DoxyReturn}{Returns}
+CIwResGroup$\ast$
+\end{DoxyReturn}
+Returns a pointer to the current resource group. \hypertarget{class_c_ty_sprite_a7a7f52cdeded57d25aa6517cde03e804}{
+\index{CTySprite@{CTySprite}!GetResourceName@{GetResourceName}}
+\index{GetResourceName@{GetResourceName}!CTySprite@{CTySprite}}
+\subsubsection[{GetResourceName}]{\setlength{\rightskip}{0pt plus 5cm}std::string CTySprite::GetResourceName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_a7a7f52cdeded57d25aa6517cde03e804}
+
+
+Get the resource name string. 
+
+\begin{DoxyReturn}{Returns}
+std::string
+\end{DoxyReturn}
+Returns a copy of the resource name as a std::string. \hypertarget{class_c_ty_sprite_a41d4c27208778c8fe866f1d62fc7e2f1}{
+\index{CTySprite@{CTySprite}!GetWidth@{GetWidth}}
+\index{GetWidth@{GetWidth}!CTySprite@{CTySprite}}
+\subsubsection[{GetWidth}]{\setlength{\rightskip}{0pt plus 5cm}int16 CTySprite::GetWidth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_a41d4c27208778c8fe866f1d62fc7e2f1}
+
+
+Spritesheet width. 
+
+\begin{DoxyReturn}{Returns}
+int16
+\end{DoxyReturn}
+Returns current spritesheet width as integer. \hypertarget{class_c_ty_sprite_a627f6a648a2061d43608a84f423c805f}{
+\index{CTySprite@{CTySprite}!GoToFrame@{GoToFrame}}
+\index{GoToFrame@{GoToFrame}!CTySprite@{CTySprite}}
+\subsubsection[{GoToFrame}]{\setlength{\rightskip}{0pt plus 5cm}void CTySprite::GoToFrame (
+\begin{DoxyParamCaption}
+\item[{CIwSVec2}]{pFrame = {\ttfamily CIwSVec2::g\_\-Zero}}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_sprite_a627f6a648a2061d43608a84f423c805f}
+
+
+Goes to the specified frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pFrame} & CIwSVec2 2D integer vector indicating row and column of the frame to set as current\\
+\hline
+\end{DoxyParams}
+Ff not specified a vector, returns to first frame, otherwise sets f as current frame. \hypertarget{class_c_ty_sprite_a15c3c0cb64a13a18e24c0ae5f1fdaa12}{
+\index{CTySprite@{CTySprite}!IsBuilt@{IsBuilt}}
+\index{IsBuilt@{IsBuilt}!CTySprite@{CTySprite}}
+\subsubsection[{IsBuilt}]{\setlength{\rightskip}{0pt plus 5cm}bool CTySprite::IsBuilt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_a15c3c0cb64a13a18e24c0ae5f1fdaa12}
+
+
+Is the object built? 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+True if the sprite has been built, false otherwise. \hypertarget{class_c_ty_sprite_a19185855d525be5efcd832fdf7e8933b}{
+\index{CTySprite@{CTySprite}!IsFlipped@{IsFlipped}}
+\index{IsFlipped@{IsFlipped}!CTySprite@{CTySprite}}
+\subsubsection[{IsFlipped}]{\setlength{\rightskip}{0pt plus 5cm}CIwSVec2 CTySprite::IsFlipped (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_a19185855d525be5efcd832fdf7e8933b}
+
+
+Is the object flipped? 
+
+\begin{DoxyReturn}{Returns}
+CIwSVec2
+\end{DoxyReturn}
+CIwSVec2 boolean vector with (1,0) for flipped on X, (0,1) for flipped on Y, (1,1) for flipped on both, and (0,0) for not flipped at all. \hypertarget{class_c_ty_sprite_af02c13028b55b6d74c3462b0a281f478}{
+\index{CTySprite@{CTySprite}!IsLooping@{IsLooping}}
+\index{IsLooping@{IsLooping}!CTySprite@{CTySprite}}
+\subsubsection[{IsLooping}]{\setlength{\rightskip}{0pt plus 5cm}bool CTySprite::IsLooping (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_af02c13028b55b6d74c3462b0a281f478}
+
+
+Is the animation looping? 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+True if it is looping, false otherwise. \hypertarget{class_c_ty_sprite_a7fa1acf3af5445c249d3adb6f8dc4842}{
+\index{CTySprite@{CTySprite}!IsPaused@{IsPaused}}
+\index{IsPaused@{IsPaused}!CTySprite@{CTySprite}}
+\subsubsection[{IsPaused}]{\setlength{\rightskip}{0pt plus 5cm}bool CTySprite::IsPaused (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_a7fa1acf3af5445c249d3adb6f8dc4842}
+
+
+Has the animation paused? 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+True if it is paused, false otherwise. \hypertarget{class_c_ty_sprite_a9ff2cf53bb8905fc5f8e24e913e24ce0}{
+\index{CTySprite@{CTySprite}!IsPlaying@{IsPlaying}}
+\index{IsPlaying@{IsPlaying}!CTySprite@{CTySprite}}
+\subsubsection[{IsPlaying}]{\setlength{\rightskip}{0pt plus 5cm}bool CTySprite::IsPlaying (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_a9ff2cf53bb8905fc5f8e24e913e24ce0}
+
+
+Is the animation being played? 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+True if it is not paused and not stopped, false otherwise. \hypertarget{class_c_ty_sprite_ad92a279af844a5ffaaa361dfe7ed3e23}{
+\index{CTySprite@{CTySprite}!IsStopped@{IsStopped}}
+\index{IsStopped@{IsStopped}!CTySprite@{CTySprite}}
+\subsubsection[{IsStopped}]{\setlength{\rightskip}{0pt plus 5cm}bool CTySprite::IsStopped (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_ad92a279af844a5ffaaa361dfe7ed3e23}
+
+
+Has the animation stopped? 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+True if it is stopped, false otherwise. \hypertarget{class_c_ty_sprite_ad57edffe6f3e932b24d48457facd73a0}{
+\index{CTySprite@{CTySprite}!Loop@{Loop}}
+\index{Loop@{Loop}!CTySprite@{CTySprite}}
+\subsubsection[{Loop}]{\setlength{\rightskip}{0pt plus 5cm}void CTySprite::Loop (
+\begin{DoxyParamCaption}
+\item[{bool}]{pLoop}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_ad57edffe6f3e932b24d48457facd73a0}
+
+
+Loop's or not? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pLoop} & true for looping, false otherwise\\
+\hline
+\end{DoxyParams}
+Set loop on or off \hypertarget{class_c_ty_sprite_a59079b5e51e01fbf7b24288d3a630ffb}{
+\index{CTySprite@{CTySprite}!operator=@{operator=}}
+\index{operator=@{operator=}!CTySprite@{CTySprite}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CTySprite}\& CTySprite::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf CTySprite} const \&}]{pSprite}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_sprite_a59079b5e51e01fbf7b24288d3a630ffb}
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pSprite} & The sprite object to be assigned (copied)\\
+\hline
+\end{DoxyParams}
+Copies all data from the sprite parameter object, incluiding the pointer to the spritesheet. \hypertarget{class_c_ty_sprite_a53b65f437642ac9a209148792d03d4e1}{
+\index{CTySprite@{CTySprite}!operator==@{operator==}}
+\index{operator==@{operator==}!CTySprite@{CTySprite}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool CTySprite::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf CTySprite} const \&}]{pSprite}
+\end{DoxyParamCaption}
+) const}}
+\label{class_c_ty_sprite_a53b65f437642ac9a209148792d03d4e1}
+
+
+Comparison operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pSprite1} & A sprite object to compare against pSprite2 \\
+\hline
+{\em pSprite21} & A sprite object to compare against pSprite1\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+Compares both sprites and returns true if are equal, or false if not. \hypertarget{class_c_ty_sprite_a387bd6b832dfff1a75ab6c6b04e5a5e1}{
+\index{CTySprite@{CTySprite}!Pause@{Pause}}
+\index{Pause@{Pause}!CTySprite@{CTySprite}}
+\subsubsection[{Pause}]{\setlength{\rightskip}{0pt plus 5cm}void CTySprite::Pause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_sprite_a387bd6b832dfff1a75ab6c6b04e5a5e1}
+
+
+Pauses the animation. 
+
+Pauses the animation at the current frame. \hypertarget{class_c_ty_sprite_a9fc014571f6e81ccbfbd7d9d6c30aa24}{
+\index{CTySprite@{CTySprite}!Play@{Play}}
+\index{Play@{Play}!CTySprite@{CTySprite}}
+\subsubsection[{Play}]{\setlength{\rightskip}{0pt plus 5cm}void CTySprite::Play (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_sprite_a9fc014571f6e81ccbfbd7d9d6c30aa24}
+
+
+Starts the animation. 
+
+Starts the animation from the current frame. \hypertarget{class_c_ty_sprite_aa86cd094757ca9c8b52a32f090618eb3}{
+\index{CTySprite@{CTySprite}!Render@{Render}}
+\index{Render@{Render}!CTySprite@{CTySprite}}
+\subsubsection[{Render}]{\setlength{\rightskip}{0pt plus 5cm}void CTySprite::Render (
+\begin{DoxyParamCaption}
+\item[{CIwSVec2}]{pPosition = {\ttfamily CIwSVec2::g\_\-Zero}}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_sprite_aa86cd094757ca9c8b52a32f090618eb3}
+
+
+Render the animation. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pPosition} & (x,y) 2D integer vector\\
+\hline
+\end{DoxyParams}
+Draws a region of the image starting at m\_\-DrawRect and finishing at m\_\-DrawRect+m\_\-FrameSize, at the coordinates passed by pPosition. \hypertarget{class_c_ty_sprite_aee105391eb1fe58a9811202ecdc6f842}{
+\index{CTySprite@{CTySprite}!Restart@{Restart}}
+\index{Restart@{Restart}!CTySprite@{CTySprite}}
+\subsubsection[{Restart}]{\setlength{\rightskip}{0pt plus 5cm}void CTySprite::Restart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_aee105391eb1fe58a9811202ecdc6f842}
+
+
+Restarts the animation. 
+
+Restarts the animation by returning to the first frame. \hypertarget{class_c_ty_sprite_a16e171457c700e7a3f6080759f5be354}{
+\index{CTySprite@{CTySprite}!Resume@{Resume}}
+\index{Resume@{Resume}!CTySprite@{CTySprite}}
+\subsubsection[{Resume}]{\setlength{\rightskip}{0pt plus 5cm}void CTySprite::Resume (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_sprite_a16e171457c700e7a3f6080759f5be354}
+
+
+Resumes the animation from were it was. 
+
+If animation was paused, it resumes playing from the current frame. \hypertarget{class_c_ty_sprite_ab015a500d951d37225a5bbb64c7a567c}{
+\index{CTySprite@{CTySprite}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!CTySprite@{CTySprite}}
+\subsubsection[{Rotate}]{\setlength{\rightskip}{0pt plus 5cm}void CTySprite::Rotate (
+\begin{DoxyParamCaption}
+\item[{iwangle}]{pRads}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_sprite_ab015a500d951d37225a5bbb64c7a567c}
+
+
+Rotates the animation. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pRads} & Angle in radians (32-\/bits integer)\\
+\hline
+\end{DoxyParams}
+Rotates the animation by pRads radians counterclockwise. \hypertarget{class_c_ty_sprite_ac32af738070627e8df2f0de208dbab6a}{
+\index{CTySprite@{CTySprite}!Step@{Step}}
+\index{Step@{Step}!CTySprite@{CTySprite}}
+\subsubsection[{Step}]{\setlength{\rightskip}{0pt plus 5cm}bool CTySprite::Step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_sprite_ac32af738070627e8df2f0de208dbab6a}
+
+
+Updated the sprite. 
+
+\begin{DoxyReturn}{Returns}
+bool True if animation is within range, false if animation is about to restart/finish depending on looping
+\end{DoxyReturn}
+Iterates through the sprite sheet as if it was a matrix by incrementing m\_\-CurrentFrame.x (if not paused nor stopped) untill it is equal or greater than (note that it will never be greater -\/or at least shouldn't!) then it goes back to zero and m\_\-CurrentFrame.y is incremented. m\_\-CurrentFrame(x,y) works as indexes for the sprites in the sheet: x is for the column, y for the rows. Additionally, in case that the sprites has / uses less than x$\ast$y frames in the sheet, there is max frames number and a frame counter used to check for it. Later, the drawing rect is updated. \hypertarget{class_c_ty_sprite_aa4f43fb5f8b112598af616e9675f5936}{
+\index{CTySprite@{CTySprite}!Stop@{Stop}}
+\index{Stop@{Stop}!CTySprite@{CTySprite}}
+\subsubsection[{Stop}]{\setlength{\rightskip}{0pt plus 5cm}void CTySprite::Stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_sprite_aa4f43fb5f8b112598af616e9675f5936}
+
+
+Stops the animation. 
+
+Stops the animation and returns to first frame. \hypertarget{class_c_ty_sprite_aec150e6cab1c604745b33425034e9333}{
+\index{CTySprite@{CTySprite}!toggleLoop@{toggleLoop}}
+\index{toggleLoop@{toggleLoop}!CTySprite@{CTySprite}}
+\subsubsection[{toggleLoop}]{\setlength{\rightskip}{0pt plus 5cm}void CTySprite::toggleLoop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_c_ty_sprite_aec150e6cab1c604745b33425034e9333}
+
+
+Toggles looping. 
+
+Switches looping state on if off and off if on. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+include/TySprite.h\end{DoxyCompactItemize}
