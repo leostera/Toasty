@@ -20,9 +20,11 @@ class IwClock
 {
 private:
 	/*
-	 *	method		Standard constructor
+	 *	\brief	Standard constructor
 	 *
-	 *	description			initializes the class properties to s3eTimerGetMs();
+	 *
+	 *
+	 *	Initializes the class properties to s3eTimerGetMs();
 	 */
 	IwClock() : m_TotalTicks(s3eTimerGetMs()),m_ThisTicks(s3eTimerGetMs()),m_LastTicks(s3eTimerGetMs()),m_Cap(0)
 	{ ; }

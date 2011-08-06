@@ -3,6 +3,7 @@ files
 	(.)
 	ActorTest.cpp
 	MainTest.cpp
+	InheritedActor.h
 		
 	(../include)
 	TyActor.h
@@ -10,6 +11,7 @@ files
 	TySprite.h
 
 	(../src)
+	[]
 	TyActor.cpp
 	[Toasty]
 	TySprite.cpp
@@ -20,7 +22,8 @@ subprojects
 	iwutil
 	iw2d
 	iwresmanager
+	TUT
 }	
 
+includepath .
 includepath ../include
-includepath ../include/tut

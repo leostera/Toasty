@@ -1,6 +1,6 @@
 #pragma once
 
-class CCTyScene{
+class CTyScene{
 
 	private:
 		static int64	m_ID;
@@ -20,10 +20,10 @@ class CCTyScene{
 		//also Load and Unload 		
 		
 	public:
-		CCTyScene();
-		~CCTyScene();
-		CCTyScene(CCTyScene const& pScene);
-		CCTyScene& operator = (CCTyScene const& pScene);
+		CTyScene();
+		~CTyScene();
+		CTyScene(CTyScene const& pScene);
+		CTyScene& operator = (CTyScene const& pScene);
 
 		/*
 		 * RESOURCE RELATED FUNCTIONS

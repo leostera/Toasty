@@ -14,7 +14,7 @@ files
 subprojects
 {
 	iwutil
+	TUT
 }	
 
 includepath ../include
-includepath ../include/tut

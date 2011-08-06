@@ -11,6 +11,7 @@ files
 	TyActor.h
 
 	(../src)
+	[]
 	TySceneManager.cpp
 	[Toasty]
 	TyScene.cpp
@@ -22,7 +23,7 @@ subprojects
 	iwutil
 	iw2d
 	iwresmanager
+	TUT
 }	
 
 includepath ../include
-includepath ../include/tut

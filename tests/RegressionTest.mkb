@@ -16,7 +16,7 @@ subprojects
 	iw2d
 	iwutil
 	iwresmanager
+	TUT
 }
 
 includepath ../include
-includepath ../include/tut

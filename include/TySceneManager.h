@@ -21,8 +21,7 @@ public:
 	SetCurrentScene(CTyScene*);
 
 	Push(CTyScene*);
-
 	Pop(CTyScene*);
 
-	
+	Play();	
 }

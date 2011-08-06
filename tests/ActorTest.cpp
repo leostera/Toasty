@@ -1,20 +1,24 @@
 #include <tut.hpp> 
 
-#include <TyActor.h>
+#include <InheritedActor.h>
+#include <TySprite.h>
 
 namespace tut 
 { 
 	struct data //
 	{ 
-		CTyActor * a;
+		ITyActor * a;
+		CIwResGroup* grp;
+		CTySprite*	spr,*spr2;
+
 		data()
 		{
-			a = new CTyActor();
+			a = new InheritedActor();			
 		}
 
 		~data()
 		{
-			delete a;
+			delete a;			
 		}
 	};
 	
@@ -25,9 +29,74 @@ namespace tut
 	
 	template<> 
 	template<> 
-	void testobject::test<1>() 
+	void testobject::test<10>() 
 	{ 
 		set_test_name("Building the actor");
 		ensure_equals("Is built",a->IsBuilt(),true);
-	}	
+	}
+
+	template<>
+	template<>
+	void testobject::test<11>()
+	{
+		set_test_name("Push States");
+		IwGetResManager()->LoadGroup("sprites.group");
+		grp = IwGetResManager()->GetGroupNamed("sprites");
+		
+		spr = new CTySprite(grp,"1");
+
+		ensure_equals("Pushed!",a->PushState(spr,TOASTY_ACTOR_ATTACKING),true);
+		ensure_equals("Pushed!",a->PushState(spr,TOASTY_ACTOR_ATTACKING),false);
+
+		delete spr;
+
+		IwGetResManager()->DestroyGroup("sprites");
+	}
+
+	template<>
+	template<>
+	void testobject::test<12>()
+	{
+		set_test_name("Pop States");
+
+		IwGetResManager()->LoadGroup("sprites.group");
+		grp = IwGetResManager()->GetGroupNamed("sprites");
+		
+		spr = new CTySprite(grp,"1");
+
+		ensure_equals("Pushed!",a->PushState(spr,TOASTY_ACTOR_ATTACKING),true);
+		ensure_equals("Poped!",a->PopState(TOASTY_ACTOR_ATTACKING),true);
+		ensure_equals("Poped!",a->PopState(TOASTY_ACTOR_ATTACKING),false);
+
+		delete spr;
+
+		IwGetResManager()->DestroyGroup("sprites");
+		
+	}
+
+	template<>
+	template<>
+	void testobject::test<13>()
+	{
+		set_test_name("Set Current State");
+		IwGetResManager()->LoadGroup("sprites.group");
+		grp = IwGetResManager()->GetGroupNamed("sprites");
+		
+		spr = new CTySprite(grp,"1");
+		spr2 = new CTySprite(grp,"2");
+
+		ensure_equals("Pushed!",a->PushState(spr,TOASTY_ACTOR_ATTACKING),true);
+		ensure_equals("Set!",a->SetCurrentState(TOASTY_ACTOR_ATTACKING),true);
+		ensure_equals("State is",a->GetCurrentState(),TOASTY_ACTOR_ATTACKING);
+
+		ensure_equals("Pushed!",a->PushState(spr2,TOASTY_ACTOR_IDLE),true);
+		ensure_equals("Popped!",a->PopState(TOASTY_ACTOR_ATTACKING),true);
+		ensure_equals("Set!",a->SetCurrentState(TOASTY_ACTOR_ATTACKING),false);
+		ensure_equals("Set!",a->SetCurrentState(TOASTY_ACTOR_IDLE),true);
+		ensure_equals("State is",a->GetCurrentState(),TOASTY_ACTOR_IDLE);
+		
+		delete spr,spr2;
+
+		IwGetResManager()->DestroyGroup("sprites");
+	}
 }; 

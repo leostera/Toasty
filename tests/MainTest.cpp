@@ -16,16 +16,19 @@ namespace tut
 
 int main()
 {
+	int result;
+	 
 	Iw2DInit();
 	IwResManagerInit();		
 
     tut::reporter reporter;
     tut::runner.get().set_callback(&reporter);
-
     tut::runner.get().run_tests();
+
+	result = !reporter.all_ok();
 
 	IwResManagerTerminate();
 	Iw2DTerminate();
 
-    return !reporter.all_ok();
+    return result;
 }
