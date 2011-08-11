@@ -1,3 +1,4 @@
+#pragma once
 #include <TyActor.h>
 
 class InheritedActor : public ITyActor

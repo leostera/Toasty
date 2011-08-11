@@ -1,5 +1,7 @@
 #pragma once
 
+#include <TySingleton.h>
+
 class TyInput : public TySingleton
 {
 private:
@@ -22,10 +24,10 @@ private:
 	std::vector<TyTouchs>	m_Touchs;
 
 public:	
-	~TyInput;
+	~TyInput();
 
-	TyKeys operator () (s3eKey pKey, int64 pTime = 0, bool pDown = true);
-	TyKeys operator () (CIwSVec2 pPos, int64 pTime = 0, bool pDown = true);
+	TyKeys		GetKeys();
+	TyTouchs	GetTouchs();
 
 	void	Refresh();
 }

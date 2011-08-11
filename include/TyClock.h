@@ -1,14 +1,14 @@
 /***********************************************************************************
 
-	class			IwClock
-	description		The almighty clock. returns time in ms from loop to loop and
+	\class			IwClock
+	\brief			The almighty clock. returns time in ms from loop to loop and
 					is capable of frame rate capping.
 
-	date			07/13/2011
-	version			1.5
-	notes			now a singleton with cool Marmalade like functions!
+	\date			07/13/2011
+	\version		1.5
+	\notes			now a singleton with cool Marmalade like functions!
 
-	author			Leandro 'The Phantom Lord' / 'Grün' Ostera
+	\author			Leandro 'The Phantom Lord' / 'Grün' Ostera
 					leostera at gmail dot com
 
 ************************************************************************************/
@@ -21,9 +21,6 @@ class IwClock
 private:
 	/*
 	 *	\brief	Standard constructor
-	 *
-	 *
-	 *
 	 *	Initializes the class properties to s3eTimerGetMs();
 	 */
 	IwClock() : m_TotalTicks(s3eTimerGetMs()),m_ThisTicks(s3eTimerGetMs()),m_LastTicks(s3eTimerGetMs()),m_Cap(0)
@@ -59,52 +56,52 @@ private:
 	 */
 
 	/*
-	 *	method		IwGetClock
+	 *	\brief		Gets you a clock.
 	 *
-	 *	returns		IwClock*	pointer to the singleton class.
+	 *	\returns	IwClock*	pointer to the singleton class.
 	 *
-	 *	description		Serves as a public method for getting a pointer to the singleton.
+	 *	Serves as a public method for getting a pointer to the singleton.
 	 */
 	friend IwClock*	IwGetClock();
 
 	/*
-	 *	method		IwClockInit
+	 *	\brief		Starts the clock.
 	 *
-	 *	returns		void
+	 *	\returns	void
 	 *
-	 *	description			Initializes the class by creating the singleton. 
-	 *						Note: not strictly necessary since IwGetClock also calls it just in case!
+	 *	Initializes the class by creating the singleton. Note: not strictly necessary since IwGetClock also calls it just in case!
 	 */
 	friend void		IwClockInit();
 
 	/*
-	 *	method		IwClockTerminate
+	 *	\brief		Terminates the clock.
 	 *
-	 *	returns		void
+	 *	\returns	void
 	 *
-	 *	description			Kills the singleton. This one IS necessary, otherwise leaks will be reported.
+	 *	Kills the singleton. This one IS necessary, otherwise leaks will be reported.
 	 */
 	friend void		IwClockTerminate();
 
 
 public:
 	/*
-	 *	method		getTicks
+	 *	\brief	Gets you ticks.
 	 *
-	 *	returns		int64	The amount of ticks since last call to Step()
+	 *	\returns	int64	The amount of ticks since last call to Step()
 	 *
-	 *	description			Returns the amount of ticks since the last call to Step()
+	 *	Returns the amount of ticks since the last call to Step().
 	 */
-	inline int64 getTicks(){
+	inline int64 GetTicks(){
 		return (m_ThisTicks - m_LastTicks);
 	}
 	
 	/*
-	 *	method		Step
+	 *	\brief	Updates the clock. 
 	 *
-	 *	returns		int64	Also the amount of ticks since last call to Step()
+	 *	\returns	int64	Also the amount of ticks since last call to Step()
 	 *
-	 *	description			Accumulates ticks in m_TotalTicks and a lil' algebra to get each tick into it's place.
+	 *	Accumulates ticks in m_TotalTicks and a lil' algebra to get each tick into it's place.
+	 *	Should be called just once at the end of the program loop.
 	 */
 	inline int64 Step(){
 		m_LastTicks = m_ThisTicks;
@@ -114,13 +111,13 @@ public:
 	}
 
 	/*
-	 *	method		setCap
+	 *	\brief	Sets the cap rate.
 	 *
-	 *	parameters	pCap	The amount of frames per second, or a non positive value if frame capping is to be disabled.
+	 *	\param	pCap	The amount of frames per second, or a non positive value if frame capping is to be disabled.
 	 *
-	 *	returns		void
+	 *	\returns	void
 	 *
-	 *	description			Sets current frames per second cap to pCap if it is positive, otherwise to ZERO.
+	 *	Sets current frames per second cap to pCap if it is positive, otherwise to ZERO.
 	 */
 	inline void	SetCap(int32 pCap){
 		if(pCap > 0)
@@ -130,11 +127,11 @@ public:
 	}
 
 	/*
-	 *	method		Cap
+	 *	\brief	Caps.
 	 *
-	 *	returns		int32	current amount of frames per second or ZERO if frame capping is disabled.
+	 *	\returns	int32	current amount of frames per second or ZERO if frame capping is disabled.
 	 *
-	 *	description			If frame capping is enabled (m_Cap > 0) we will wait long enough to let only m_Cap frames be displayed every second.
+	 *	If frame capping is enabled (m_Cap > 0) we will wait long enough to let only m_Cap frames be displayed every second.
 	 */
 	inline int32	Cap() {
 		if(m_Cap > 0)

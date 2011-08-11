@@ -3,16 +3,14 @@ files
 	(.)
 	SceneTest.cpp
 	MainTest.cpp
+	InheritedActor.h
 		
 	(../include)
 	TyScene.h
-	[Toasty]
-	TyActor
 
 	(../src)
+	[]
 	TyScene.cpp
-	[Toasty]
-	TyActor.cpp
 }
 
 subprojects

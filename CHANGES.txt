@@ -1,3 +1,6 @@
+8.10.2011
++ 5 days go by and Actors, Scene and SceneManager are working nice. Still, Scene needs a bit of a tweak and addition in the Play() method. Will go back to it soon. Documentation soon!
+
 8.5.2011
 + Actors working smooth and nice! Also, TyActor is now documentated (a bit at least).
 

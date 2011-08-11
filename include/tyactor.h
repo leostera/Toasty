@@ -232,18 +232,18 @@ class ITyActor {
 		 *	\returns bool	True if set succesfully, false such state is not in the State Vector.
 		 */
 		bool	SetCurrentState(TOASTY_ACTOR_STATE pState);
+		
+/*!
+		 *	\brief	Will be called once the actor is added to a scene.
+		 *	\returns bool
+		 */
+		virtual bool	OnCreate()											{ return true; }
 
 		/*!
-		 *	\brief	Will be called on Scene loading.
-		 *	\returns void
+		 *	\brief	Will be called once the actor is removed from a scene.
+		 *	\returns bool
 		 */
-		virtual void	OnLoad()											{ ; }
-
-		/*!
-		 *	\brief	Will be called on Scene unloading.
-		 *	\returns void
-		 */
-		virtual void	OnUnload()											{ ; }
+		virtual bool	OnDestroy()											{ return true; }
 
 		/*!
 		 *	\brief	Will be called on Keyboard Press event.
@@ -322,19 +322,6 @@ class ITyActor {
 		 *	\returns void
 		 */
 		virtual void	OnCollision(ITyActor const& pActor)					{ ; }
-
-		/*!
-		 *	\brief	Will be called everytime current state assoaciated Sprite animation starts, if Active and Visible.
-		 *	\returns void
-		 */
-		virtual void	OnAnimationStart()									{ ; }
-
-		/*!
-		 *	\brief	Will be called everytime current state assoaciated Sprite animation ends, if Active and Visible.
-		 *	\returns void
-		 */
-		virtual void	OnAnimationEnd()									{ ; }
-
 
 		/*!
 		 *	\brief	Accessor for the Actors ID.

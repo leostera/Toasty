@@ -1,12 +1,20 @@
 #pragma once
 
+#include <vector>
+
+class CTyScene
+{
+	public: 
+		CTyScene() { ; }
+		bool yeah() const { return true; }
+}; //dummy, to remove!
+
 class CTySceneManager //: public TySingleton
 {
 private:
-	CTyScene*				m_ActiveScene;
+	CTyScene*				m_CurrentScene;
 	CTyScene*				m_PreviousScene;
-	CTyScene*				m_NextScene;
-	std::queue<CTyScene*>	m_Scenes;
+	std::vector<CTyScene*>	m_Scenes;
 
 protected:
 
@@ -15,13 +23,11 @@ public:
 	CTySceneManager(CTySceneManager const& pSceneManager);
 	~CTySceneManager();
 
-	AddScene(CTyScene*);
-	DeleteScene(CTyScene*);
+	CTyScene*	AddScene();
+	bool		DeleteScene(CTyScene* pScene);	
 
-	SetCurrentScene(CTyScene*);
+	bool		HasScene(CTyScene* pScene);
+	bool		IsCurrentScene(CTyScene* pScene);
 
-	Push(CTyScene*);
-	Pop(CTyScene*);
-
-	Play();	
-}
+	bool		SetCurrentScene(CTyScene* pScene);
+};

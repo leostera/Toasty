@@ -14,6 +14,7 @@
 template<typename T> class ITySingleton
 	{
 	private:
+
 		static T*	m_Instance;
 
 	public:
