@@ -6,7 +6,7 @@
 	\version		0.1					
 	\author			Leandro Ostera
 
-	Actor class to be used within a Scene class that works with states (CTyState)
+	Actor class to be used within a Scene class that works with states (TyState)
 	and is meant to be an interface with some virtual methods to be overloaded.
 
 ************************************************************************************/
@@ -25,6 +25,7 @@
  */
 #include <string>
 #include <vector>
+#include <iostream>
 
 /*!
  * \enum	TOASTY_ACTOR_STATE
@@ -87,15 +88,15 @@ class ITyActor {
 		bool					m_Solid;
 
 		/*!
-		 *	\class	CTyState
+		 *	\class	TyState
 		 *	\brief	Inner class used to relate a Actor State with a Sprite.
 		 */
-		class CTyState {
+		class TyState {
 		public:
 			/*!
 			 * \property	sprite	TySprite representing the actors state.
 			 */
-			CTySprite*			sprite;
+			TySprite*			sprite;
 
 			/*!
 			* \property		state	TOASTY_ACTOR_STATE value.
@@ -109,7 +110,7 @@ class ITyActor {
 			 *
 			 *	Simply inits internal values.
 			 */
-			CTyState( CTySprite* pSprite = 0, TOASTY_ACTOR_STATE pState = TOASTY_ACTOR_IDLE): sprite(pSprite), state(pState)
+			TyState( TySprite* pSprite = 0, TOASTY_ACTOR_STATE pState = TOASTY_ACTOR_IDLE): sprite(pSprite), state(pState)
 			{
 				;
 			}
@@ -118,17 +119,17 @@ class ITyActor {
 		/*!
 		 * \property	m_States	std::vector of TyStates used to contain all the states of the actor
 		 */
-		std::vector<CTyState>	m_States;
+		std::vector<TyState>	m_States;
 
 		/*!
 		 * \property	m_CurrentState	Pointer to the current state.
 		 */
-		CTyState*				m_CurrentState;
+		TyState*				m_CurrentState;
 
 		/*!
 		 * \property	m_LastState	Pointer to the last state.
 		 */
-		CTyState*				m_LastState;
+		TyState*				m_LastState;
 
 		/*!
 		 * \property	m_Mask	IwRect representing actors collision mask
@@ -140,7 +141,7 @@ class ITyActor {
 		 */
 		CIwSVec2				m_Position;
 
-		friend class CTyScene;
+		friend class TyScene;
 
 	public:
 		/*!
@@ -170,13 +171,10 @@ class ITyActor {
 
 		/*!
 		 *	\brief	Destructor
-		 *	It actually does nothing.
+		 *	It actually does nothing but deleting the states.
 		 */
-		virtual ~ITyActor()
-		{
-			;
-		}
-	
+		virtual ~ITyActor(){ ; }
+
 		/*!
 		 *	\brief	Is the actor built?
 		 *	\returns bool	True if built, false otherwise.
@@ -209,9 +207,9 @@ class ITyActor {
 		 *
 		 *	\returns bool	True if added succesfully, false if pState is already associated to a Sprite.
 		 *
-		 *	It instantiates a new CTyState object and pushes it back in the m_State vector if pState is not yet associated to a pSprite in the vector.
+		 *	It instantiates a new TyState object and pushes it back in the m_State vector if pState is not yet associated to a pSprite in the vector.
 		 */
-		bool	AddState(CTySprite* pSprite, TOASTY_ACTOR_STATE pState);
+		bool	AddState(TySprite* pSprite, TOASTY_ACTOR_STATE pState);
 
 		/*!
 		 *	\brief	Deletes a state from the State Vector.
@@ -419,3 +417,15 @@ class ITyActor {
 		 */
 		void	SetPosition(CIwSVec2 pPosition)				{	m_Position = pPosition;		}
 };
+
+/*!
+	\brief	Compares two actors by Depth
+	\param	pActor1	An ITyActor derived actor.
+	\param	pActor2	Another ITyActor derived actor.
+	\returns	bool	
+	True if first actor has lesser depth than the second one. False otherwise.
+*/
+inline bool TyActorCompare(ITyActor* pActor1 ,ITyActor* pActor2)
+{
+	return (pActor1->GetDepth() < pActor2->GetDepth() ) ? true : false;
+}

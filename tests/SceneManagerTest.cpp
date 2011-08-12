@@ -1,22 +1,23 @@
 #include <tut.hpp> 
 
 #include <TySceneManager.h>
+#include <InheritedActor.h>
 
 namespace tut 
 { 
 	struct data //
 	{ 
-		CTySceneManager * scnmgr;
-		CTyScene*	a;
+		TySceneManager * scnmgr;
+		TyScene*	a;
 
 		data()
 		{
-			scnmgr = new CTySceneManager();
+			scnmgr = TySceneManager::Get();
 		}
 
 		~data()
 		{
-			delete scnmgr;
+			scnmgr->Erase();
 		}
 	};
 	
@@ -46,7 +47,7 @@ namespace tut
 
 	template<> 
 	template<> 
-	void testobject::test<32>() 
+	void testobject::test<33>() 
 	{
 		set_test_name("Set Active");
 		ensure_equals("Set Current Scene (No Scenes): ",scnmgr->SetCurrentScene(a),false);
@@ -54,5 +55,19 @@ namespace tut
 		a = scnmgr->AddScene();
 		ensure_equals("Set Current Scene: ",scnmgr->SetCurrentScene(a),true);
 		ensure_equals("Is Current Scene: ",scnmgr->IsCurrentScene(a),true);
+	}
+
+	template<> 
+	template<> 
+	void testobject::test<32>() 
+	{
+		set_test_name("Play Current Scene");
+		ensure_equals("Play Current Scene (No Scenes): ",scnmgr->Play(),false);
+		a = scnmgr->AddScene();
+		a->SetName("Escena de prueba");
+		a->AddActor( new InheritedActor() );
+		ensure_equals("Set Current Scene: ",scnmgr->SetCurrentScene(a),true);
+		ensure_equals("Is Current Scene: ",scnmgr->IsCurrentScene(a),true);
+		ensure_equals("Play Current Scene (One Scene): ",scnmgr->Play(),true);
 	}
 };

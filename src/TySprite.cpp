@@ -1,7 +1,7 @@
 #include "TySprite.h"
 #include <s3eConfig.h>
 
-bool	CTySprite::operator== (CTySprite const& pSprite) const
+bool	TySprite::operator== (TySprite const& pSprite) const
 {
 	bool value = false;
 	if(this->GetResourceName().compare(pSprite.GetResourceName())
@@ -10,7 +10,7 @@ bool	CTySprite::operator== (CTySprite const& pSprite) const
 	return value;		
 }
 
-CTySprite&	CTySprite::operator = (CTySprite const& pSprite)
+TySprite&	TySprite::operator = (TySprite const& pSprite)
 {
 	if(this != &pSprite)
 	{
@@ -33,20 +33,20 @@ CTySprite&	CTySprite::operator = (CTySprite const& pSprite)
 	return (*this);
 }
 
-CTySprite::CTySprite(CIwResGroup* pGroup, std::string pName, bool pLoop)
+TySprite::TySprite(CIwResGroup* pGroup, std::string pName, bool pLoop)
 	: m_Built(false), m_Offset(CIwSVec2::g_Zero), m_CurrentFrame(CIwSVec2::g_Zero), m_FrameCounter(0), m_DrawRect(CIwSVec2::g_Zero),m_Pause(false),m_Stop(false),m_Loop(pLoop)
 {
 	LoadFromResource(pGroup,pName);
 }
 
-CTySprite::~CTySprite()
+TySprite::~TySprite()
 {
 	if(m_Built)
 		delete m_SpriteSheet;
 	m_Built = false;
 }
 
-CTySprite::CTySprite(CTySprite const& pSprite)
+TySprite::TySprite(TySprite const& pSprite)
 : m_Built(false), m_Offset(CIwSVec2::g_Zero), m_CurrentFrame(CIwSVec2::g_Zero), m_FrameCounter(0), m_DrawRect(CIwSVec2::g_Zero),m_Pause(false),m_Stop(false),m_MaxFrames(pSprite.GetMaxFrames()), m_FrameSize(pSprite.GetFrameSize()),m_Loop(pSprite.IsLooping())
 {
 	if(pSprite.IsBuilt())
@@ -57,7 +57,7 @@ CTySprite::CTySprite(CTySprite const& pSprite)
 	}			
 }
 
-bool CTySprite::LoadFromResource(CIwResGroup* pGroup, std::string pName, bool pDataFromFile)
+bool TySprite::LoadFromResource(CIwResGroup* pGroup, std::string pName, bool pDataFromFile)
 {
 	bool sameName = ( pName.compare(m_ResourceName) > 0 ) ? true : false;
 	bool emptyName = m_ResourceName.empty();
@@ -102,7 +102,7 @@ bool CTySprite::LoadFromResource(CIwResGroup* pGroup, std::string pName, bool pD
 	return m_Built;
 }
 
-void CTySprite::Render(CIwSVec2 pPosition)
+void TySprite::Render(CIwSVec2 pPosition)
 {
 	if(m_Angle > 0 || m_Angle < 0)
 	{
@@ -130,23 +130,23 @@ void CTySprite::Render(CIwSVec2 pPosition)
 		Iw2DSetImageTransform(IW_2D_IMAGE_TRANSFORM_NONE);
 }
 
-void CTySprite::Rotate(iwangle pRads)
+void TySprite::Rotate(iwangle pRads)
 {
 	m_Angle = pRads;
 }
 
-void CTySprite::Center(CIwSVec2 pCenter)
+void TySprite::Center(CIwSVec2 pCenter)
 {
 	m_Center = pCenter;
 }
 
-void CTySprite::Flip(CIwSVec2 pFlip)
+void TySprite::Flip(CIwSVec2 pFlip)
 {
 	m_Flip.x = pFlip.x;
 	m_Flip.y = pFlip.y;
 }
 
-bool CTySprite::Step()
+bool TySprite::Step()
 {
 	if(!m_Pause && !m_Stop)
 	{	
@@ -176,25 +176,25 @@ bool CTySprite::Step()
 	return !m_Stop;
 }
 
-void CTySprite::Play(){
+void TySprite::Play(){
 	m_Pause = m_Stop = false;
 }
 
-void CTySprite::Resume(){
+void TySprite::Resume(){
 	if(m_Pause)
 		m_Pause = false;
 }
 
-void CTySprite::Pause(){
+void TySprite::Pause(){
 		m_Pause = true;
 }
 
-void CTySprite::Stop(){
+void TySprite::Stop(){
 	m_Stop = true;
 	m_CurrentFrame = CIwSVec2::g_Zero;
 }
 
-void CTySprite::GoToFrame(CIwSVec2 pFrame){
+void TySprite::GoToFrame(CIwSVec2 pFrame){
 	if(pFrame.x >= 0 && pFrame.x <= m_Frames.x)
 		if(pFrame.y >= 0 && pFrame.y <= m_Frames.y)
 			m_CurrentFrame = pFrame;

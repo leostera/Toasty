@@ -1,0 +1,265 @@
+\hypertarget{class_c_ty_input}{
+\section{CTyInput Class Reference}
+\label{class_c_ty_input}\index{CTyInput@{CTyInput}}
+}
+
+
+{\ttfamily \#include $<$TyInput.h$>$}
+
+Inheritance diagram for CTyInput:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_ty_input}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries TyKeys}
+\item 
+struct {\bfseries TyTouchs}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_ty_input_a15735035f972a1c75aaac87854c88689}{$\sim$CTyInput} ()
+\item 
+TyKeys \hyperlink{class_c_ty_input_af950c117d9af1c390a292d7f09c01c39}{GetKeys} ()
+\item 
+TyKeys \hyperlink{class_c_ty_input_aca57b482037aac8796f43877eb32e123}{GetLastKeyPressed} ()
+\item 
+TyKeys \hyperlink{class_c_ty_input_a586e588f6ff24b784d794f4af8ad82c8}{GetLastKeyReleased} ()
+\item 
+TyKeys \hyperlink{class_c_ty_input_a97c344e1a814a6b0589de0454e66b523}{GetLastKeySustained} ()
+\item 
+TyTouchs \hyperlink{class_c_ty_input_aa380ea7d7533d60afc9f61a905385f82}{GetTouchs} ()
+\item 
+TyTouchs \hyperlink{class_c_ty_input_a6ca3b5e9d6630fa6c2f3220486345698}{GetLastTouchPressed} ()
+\item 
+TyTouchs \hyperlink{class_c_ty_input_ac8d7e98a38975ec86e44af0a521ad2e5}{GetLastTouchReleased} ()
+\item 
+TyTouchs \hyperlink{class_c_ty_input_a0f30e16b11cc0987ea6728dcc8d64eb2}{GetLastTouchSustained} ()
+\item 
+TyTouchs \hyperlink{class_c_ty_input_adac34bd09df0ad0a9d3706c1f2800b2f}{GetLastTouchDragged} ()
+\item 
+bool \hyperlink{class_c_ty_input_a448eeaef68ed0e01c84181a0fd94a551}{IsKeyPressed} (s3eKeys pKey=s3eKeyFirst)
+\item 
+bool \hyperlink{class_c_ty_input_adfc3a59e297e24638404c800f37a45f4}{IsKeyReleased} (s3eKeys pKey=s3eKeyFirst)
+\item 
+bool \hyperlink{class_c_ty_input_a314e25f86baa086808b154b8cc32acd3}{IsKeySustained} (s3eKeys pKey=s3eKeyFirst, int64 pTime=0)
+\item 
+bool \hyperlink{class_c_ty_input_a62a31340f001663c6361776337caf93d}{IsTouchPressed} (IwSVec2 pPosition=IwSVec2(-\/1,-\/1))
+\item 
+bool \hyperlink{class_c_ty_input_a5e4a84bccc649b7e79114e225a20ff45}{IsTouchReleased} (IwSVec2 pPosition=IwSVec2(-\/1,-\/1))
+\item 
+bool \hyperlink{class_c_ty_input_ae7b135f64f4f07e063b80e4e37b77c05}{IsTouchSustained} (IwSVec2 pPosition=IwSVec2(-\/1,-\/1), int64 pTime=0)
+\item 
+bool \hyperlink{class_c_ty_input_af895caadf8517ae4056949d2a81298a2}{IsTouchDragged} (IwSVec2 pPosition=IwSVec2(-\/1,-\/1), IwSVec2 pRelative=IwSVec2(-\/1,-\/1))
+\item 
+bool \hyperlink{class_c_ty_input_a3d3dc1b1b3e2e84d068ce065e9cfa801}{RefreshTouch} ()
+\item 
+bool \hyperlink{class_c_ty_input_acbce0ad39bcc9ff2abfa90954780ca34}{RefreshKeys} ()
+\item 
+bool \hyperlink{class_c_ty_input_a2c427ccc4d23b6569a61401ac0c26cfb}{Refresh} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file TyInput.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_ty_input_a15735035f972a1c75aaac87854c88689}{
+\index{CTyInput@{CTyInput}!$\sim$CTyInput@{$\sim$CTyInput}}
+\index{$\sim$CTyInput@{$\sim$CTyInput}!CTyInput@{CTyInput}}
+\subsubsection[{$\sim$CTyInput}]{\setlength{\rightskip}{0pt plus 5cm}CTyInput::$\sim$CTyInput (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_a15735035f972a1c75aaac87854c88689}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_ty_input_af950c117d9af1c390a292d7f09c01c39}{
+\index{CTyInput@{CTyInput}!GetKeys@{GetKeys}}
+\index{GetKeys@{GetKeys}!CTyInput@{CTyInput}}
+\subsubsection[{GetKeys}]{\setlength{\rightskip}{0pt plus 5cm}TyKeys CTyInput::GetKeys (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_af950c117d9af1c390a292d7f09c01c39}
+\hypertarget{class_c_ty_input_aca57b482037aac8796f43877eb32e123}{
+\index{CTyInput@{CTyInput}!GetLastKeyPressed@{GetLastKeyPressed}}
+\index{GetLastKeyPressed@{GetLastKeyPressed}!CTyInput@{CTyInput}}
+\subsubsection[{GetLastKeyPressed}]{\setlength{\rightskip}{0pt plus 5cm}TyKeys CTyInput::GetLastKeyPressed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_aca57b482037aac8796f43877eb32e123}
+\hypertarget{class_c_ty_input_a586e588f6ff24b784d794f4af8ad82c8}{
+\index{CTyInput@{CTyInput}!GetLastKeyReleased@{GetLastKeyReleased}}
+\index{GetLastKeyReleased@{GetLastKeyReleased}!CTyInput@{CTyInput}}
+\subsubsection[{GetLastKeyReleased}]{\setlength{\rightskip}{0pt plus 5cm}TyKeys CTyInput::GetLastKeyReleased (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_a586e588f6ff24b784d794f4af8ad82c8}
+\hypertarget{class_c_ty_input_a97c344e1a814a6b0589de0454e66b523}{
+\index{CTyInput@{CTyInput}!GetLastKeySustained@{GetLastKeySustained}}
+\index{GetLastKeySustained@{GetLastKeySustained}!CTyInput@{CTyInput}}
+\subsubsection[{GetLastKeySustained}]{\setlength{\rightskip}{0pt plus 5cm}TyKeys CTyInput::GetLastKeySustained (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_a97c344e1a814a6b0589de0454e66b523}
+\hypertarget{class_c_ty_input_adac34bd09df0ad0a9d3706c1f2800b2f}{
+\index{CTyInput@{CTyInput}!GetLastTouchDragged@{GetLastTouchDragged}}
+\index{GetLastTouchDragged@{GetLastTouchDragged}!CTyInput@{CTyInput}}
+\subsubsection[{GetLastTouchDragged}]{\setlength{\rightskip}{0pt plus 5cm}TyTouchs CTyInput::GetLastTouchDragged (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_adac34bd09df0ad0a9d3706c1f2800b2f}
+\hypertarget{class_c_ty_input_a6ca3b5e9d6630fa6c2f3220486345698}{
+\index{CTyInput@{CTyInput}!GetLastTouchPressed@{GetLastTouchPressed}}
+\index{GetLastTouchPressed@{GetLastTouchPressed}!CTyInput@{CTyInput}}
+\subsubsection[{GetLastTouchPressed}]{\setlength{\rightskip}{0pt plus 5cm}TyTouchs CTyInput::GetLastTouchPressed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_a6ca3b5e9d6630fa6c2f3220486345698}
+\hypertarget{class_c_ty_input_ac8d7e98a38975ec86e44af0a521ad2e5}{
+\index{CTyInput@{CTyInput}!GetLastTouchReleased@{GetLastTouchReleased}}
+\index{GetLastTouchReleased@{GetLastTouchReleased}!CTyInput@{CTyInput}}
+\subsubsection[{GetLastTouchReleased}]{\setlength{\rightskip}{0pt plus 5cm}TyTouchs CTyInput::GetLastTouchReleased (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_ac8d7e98a38975ec86e44af0a521ad2e5}
+\hypertarget{class_c_ty_input_a0f30e16b11cc0987ea6728dcc8d64eb2}{
+\index{CTyInput@{CTyInput}!GetLastTouchSustained@{GetLastTouchSustained}}
+\index{GetLastTouchSustained@{GetLastTouchSustained}!CTyInput@{CTyInput}}
+\subsubsection[{GetLastTouchSustained}]{\setlength{\rightskip}{0pt plus 5cm}TyTouchs CTyInput::GetLastTouchSustained (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_a0f30e16b11cc0987ea6728dcc8d64eb2}
+\hypertarget{class_c_ty_input_aa380ea7d7533d60afc9f61a905385f82}{
+\index{CTyInput@{CTyInput}!GetTouchs@{GetTouchs}}
+\index{GetTouchs@{GetTouchs}!CTyInput@{CTyInput}}
+\subsubsection[{GetTouchs}]{\setlength{\rightskip}{0pt plus 5cm}TyTouchs CTyInput::GetTouchs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_aa380ea7d7533d60afc9f61a905385f82}
+\hypertarget{class_c_ty_input_a448eeaef68ed0e01c84181a0fd94a551}{
+\index{CTyInput@{CTyInput}!IsKeyPressed@{IsKeyPressed}}
+\index{IsKeyPressed@{IsKeyPressed}!CTyInput@{CTyInput}}
+\subsubsection[{IsKeyPressed}]{\setlength{\rightskip}{0pt plus 5cm}bool CTyInput::IsKeyPressed (
+\begin{DoxyParamCaption}
+\item[{s3eKeys}]{pKey = {\ttfamily s3eKeyFirst}}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_a448eeaef68ed0e01c84181a0fd94a551}
+\hypertarget{class_c_ty_input_adfc3a59e297e24638404c800f37a45f4}{
+\index{CTyInput@{CTyInput}!IsKeyReleased@{IsKeyReleased}}
+\index{IsKeyReleased@{IsKeyReleased}!CTyInput@{CTyInput}}
+\subsubsection[{IsKeyReleased}]{\setlength{\rightskip}{0pt plus 5cm}bool CTyInput::IsKeyReleased (
+\begin{DoxyParamCaption}
+\item[{s3eKeys}]{pKey = {\ttfamily s3eKeyFirst}}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_adfc3a59e297e24638404c800f37a45f4}
+\hypertarget{class_c_ty_input_a314e25f86baa086808b154b8cc32acd3}{
+\index{CTyInput@{CTyInput}!IsKeySustained@{IsKeySustained}}
+\index{IsKeySustained@{IsKeySustained}!CTyInput@{CTyInput}}
+\subsubsection[{IsKeySustained}]{\setlength{\rightskip}{0pt plus 5cm}bool CTyInput::IsKeySustained (
+\begin{DoxyParamCaption}
+\item[{s3eKeys}]{pKey = {\ttfamily s3eKeyFirst}, }
+\item[{int64}]{pTime = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_a314e25f86baa086808b154b8cc32acd3}
+\hypertarget{class_c_ty_input_af895caadf8517ae4056949d2a81298a2}{
+\index{CTyInput@{CTyInput}!IsTouchDragged@{IsTouchDragged}}
+\index{IsTouchDragged@{IsTouchDragged}!CTyInput@{CTyInput}}
+\subsubsection[{IsTouchDragged}]{\setlength{\rightskip}{0pt plus 5cm}bool CTyInput::IsTouchDragged (
+\begin{DoxyParamCaption}
+\item[{IwSVec2}]{pPosition = {\ttfamily IwSVec2(-\/1,-\/1)}, }
+\item[{IwSVec2}]{pRelative = {\ttfamily IwSVec2(-\/1,-\/1)}}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_af895caadf8517ae4056949d2a81298a2}
+\hypertarget{class_c_ty_input_a62a31340f001663c6361776337caf93d}{
+\index{CTyInput@{CTyInput}!IsTouchPressed@{IsTouchPressed}}
+\index{IsTouchPressed@{IsTouchPressed}!CTyInput@{CTyInput}}
+\subsubsection[{IsTouchPressed}]{\setlength{\rightskip}{0pt plus 5cm}bool CTyInput::IsTouchPressed (
+\begin{DoxyParamCaption}
+\item[{IwSVec2}]{pPosition = {\ttfamily IwSVec2(-\/1,-\/1)}}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_a62a31340f001663c6361776337caf93d}
+\hypertarget{class_c_ty_input_a5e4a84bccc649b7e79114e225a20ff45}{
+\index{CTyInput@{CTyInput}!IsTouchReleased@{IsTouchReleased}}
+\index{IsTouchReleased@{IsTouchReleased}!CTyInput@{CTyInput}}
+\subsubsection[{IsTouchReleased}]{\setlength{\rightskip}{0pt plus 5cm}bool CTyInput::IsTouchReleased (
+\begin{DoxyParamCaption}
+\item[{IwSVec2}]{pPosition = {\ttfamily IwSVec2(-\/1,-\/1)}}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_a5e4a84bccc649b7e79114e225a20ff45}
+\hypertarget{class_c_ty_input_ae7b135f64f4f07e063b80e4e37b77c05}{
+\index{CTyInput@{CTyInput}!IsTouchSustained@{IsTouchSustained}}
+\index{IsTouchSustained@{IsTouchSustained}!CTyInput@{CTyInput}}
+\subsubsection[{IsTouchSustained}]{\setlength{\rightskip}{0pt plus 5cm}bool CTyInput::IsTouchSustained (
+\begin{DoxyParamCaption}
+\item[{IwSVec2}]{pPosition = {\ttfamily IwSVec2(-\/1,-\/1)}, }
+\item[{int64}]{pTime = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_ae7b135f64f4f07e063b80e4e37b77c05}
+\hypertarget{class_c_ty_input_a2c427ccc4d23b6569a61401ac0c26cfb}{
+\index{CTyInput@{CTyInput}!Refresh@{Refresh}}
+\index{Refresh@{Refresh}!CTyInput@{CTyInput}}
+\subsubsection[{Refresh}]{\setlength{\rightskip}{0pt plus 5cm}bool CTyInput::Refresh (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_a2c427ccc4d23b6569a61401ac0c26cfb}
+\hypertarget{class_c_ty_input_acbce0ad39bcc9ff2abfa90954780ca34}{
+\index{CTyInput@{CTyInput}!RefreshKeys@{RefreshKeys}}
+\index{RefreshKeys@{RefreshKeys}!CTyInput@{CTyInput}}
+\subsubsection[{RefreshKeys}]{\setlength{\rightskip}{0pt plus 5cm}bool CTyInput::RefreshKeys (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_acbce0ad39bcc9ff2abfa90954780ca34}
+\hypertarget{class_c_ty_input_a3d3dc1b1b3e2e84d068ce065e9cfa801}{
+\index{CTyInput@{CTyInput}!RefreshTouch@{RefreshTouch}}
+\index{RefreshTouch@{RefreshTouch}!CTyInput@{CTyInput}}
+\subsubsection[{RefreshTouch}]{\setlength{\rightskip}{0pt plus 5cm}bool CTyInput::RefreshTouch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_input_a3d3dc1b1b3e2e84d068ce065e9cfa801}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+D:/development/cpp/toasty/include/\hyperlink{_ty_input_8h}{TyInput.h}\end{DoxyCompactItemize}

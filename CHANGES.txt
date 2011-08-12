@@ -1,3 +1,6 @@
+8.11.2011
++ Finally, I've started the Input class singleton (although it's not implemented as so) I'll start doing better CHANGES LOG UPDATES as soon as I can.
+
 8.10.2011
 + 5 days go by and Actors, Scene and SceneManager are working nice. Still, Scene needs a bit of a tweak and addition in the Play() method. Will go back to it soon. Documentation soon!
 

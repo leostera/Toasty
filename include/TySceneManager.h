@@ -1,33 +1,29 @@
 #pragma once
 
+#include <TyScene.h>
+#include <TySingleton.h>
+
 #include <vector>
 
-class CTyScene
-{
-	public: 
-		CTyScene() { ; }
-		bool yeah() const { return true; }
-}; //dummy, to remove!
-
-class CTySceneManager //: public TySingleton
+class TySceneManager : public ITySingleton<TySceneManager>
 {
 private:
-	CTyScene*				m_CurrentScene;
-	CTyScene*				m_PreviousScene;
-	std::vector<CTyScene*>	m_Scenes;
-
-protected:
+	TyScene*				m_CurrentScene;
+	TyScene*				m_PreviousScene;
+	std::vector<TyScene*>	m_Scenes;
 
 public:
-	CTySceneManager();
-	CTySceneManager(CTySceneManager const& pSceneManager);
-	~CTySceneManager();
+	TySceneManager();	
+	~TySceneManager();
+	
 
-	CTyScene*	AddScene();
-	bool		DeleteScene(CTyScene* pScene);	
+	TyScene*	AddScene();
+	bool		DeleteScene(TyScene* pScene);	
 
-	bool		HasScene(CTyScene* pScene);
-	bool		IsCurrentScene(CTyScene* pScene);
+	bool		HasScene(TyScene* pScene);
+	bool		IsCurrentScene(TyScene* pScene);
 
-	bool		SetCurrentScene(CTyScene* pScene);
+	bool		SetCurrentScene(TyScene* pScene);
+
+	bool		Play();
 };

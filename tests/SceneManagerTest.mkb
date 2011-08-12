@@ -2,14 +2,21 @@ files
 {
 	(.)
 	SceneManagerTest.cpp
+	InheritedActor.h
 	MainTest.cpp
 		
 	(../include)
 	TySceneManager.h
+	[Toasty]
+	TyScene.h
+	TyActor.h
 
 	(../src)
 	[]
 	TySceneManager.cpp
+	[Toasty]
+	TyScene.cpp
+	TyActor.cpp
 }
 
 subprojects

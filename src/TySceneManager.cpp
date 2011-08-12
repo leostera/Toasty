@@ -1,13 +1,13 @@
 #include <TySceneManager.h>
 
-CTySceneManager::CTySceneManager()
+TySceneManager::TySceneManager() : m_CurrentScene(0), m_PreviousScene(0)
 {
 
 }
 
-CTySceneManager::~CTySceneManager()
+TySceneManager::~TySceneManager()
 {
-	std::vector<CTyScene*>::iterator it = m_Scenes.begin();
+	std::vector<TyScene*>::iterator it = m_Scenes.begin();
 	while(it != m_Scenes.end())
 	{
 			delete (*it);
@@ -16,16 +16,16 @@ CTySceneManager::~CTySceneManager()
 	m_Scenes.clear();
 }
 
-CTyScene*	CTySceneManager::AddScene() 
+TyScene*	TySceneManager::AddScene() 
 {
-	m_Scenes.push_back(new CTyScene());
+	m_Scenes.push_back(new TyScene());
 	return m_Scenes.back();
 }
 
-bool		CTySceneManager::DeleteScene(CTyScene* pScene)
+bool		TySceneManager::DeleteScene(TyScene* pScene)
 {
 	bool deleted = false;
-	std::vector<CTyScene*>::iterator it;
+	std::vector<TyScene*>::iterator it;
 	for(it = m_Scenes.begin(); it != m_Scenes.end(); ++it)
 	{
 		if( (*it) == pScene )
@@ -39,10 +39,10 @@ bool		CTySceneManager::DeleteScene(CTyScene* pScene)
 	return deleted;
 }
 
-bool		CTySceneManager::HasScene(CTyScene* pScene)
+bool		TySceneManager::HasScene(TyScene* pScene)
 {
 	bool has = false;
-	std::vector<CTyScene*>::iterator it;
+	std::vector<TyScene*>::iterator it;
 	for(it = m_Scenes.begin(); it != m_Scenes.end(); ++it)
 	{
 		if( (*it) == pScene )
@@ -54,7 +54,7 @@ bool		CTySceneManager::HasScene(CTyScene* pScene)
 	return has;
 }
 
-bool		CTySceneManager::IsCurrentScene(CTyScene * pScene)
+bool		TySceneManager::IsCurrentScene(TyScene * pScene)
 {
 	bool current = false;
 	if( HasScene(pScene) )
@@ -65,10 +65,10 @@ bool		CTySceneManager::IsCurrentScene(CTyScene * pScene)
 	return current;
 }
 
-bool		CTySceneManager::SetCurrentScene(CTyScene *	pScene)
+bool		TySceneManager::SetCurrentScene(TyScene *	pScene)
 {	
 	bool current = false;
-	std::vector<CTyScene*>::iterator it;
+	std::vector<TyScene*>::iterator it;
 	for(it = m_Scenes.begin(); it != m_Scenes.end(); ++it)
 	{
 		if( (*it) == pScene )
@@ -80,4 +80,18 @@ bool		CTySceneManager::SetCurrentScene(CTyScene *	pScene)
 		}
 	}
 	return current;
+}
+
+bool		TySceneManager::Play()
+{
+	bool howdiditgo = false;
+	if ( m_CurrentScene != 0 )
+	{
+		if(m_CurrentScene->Create())
+		{
+			howdiditgo = m_CurrentScene->Play();
+			m_CurrentScene->Destroy();
+		}
+	}
+	return howdiditgo;
 }

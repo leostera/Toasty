@@ -9,7 +9,7 @@ namespace tut
 	{ 
 		ITyActor * a;
 		CIwResGroup* grp;
-		CTySprite*	spr,*spr2;
+		TySprite*	spr,*spr2;
 
 		data()
 		{
@@ -43,7 +43,7 @@ namespace tut
 		IwGetResManager()->LoadGroup("sprites.group");
 		grp = IwGetResManager()->GetGroupNamed("sprites");
 		
-		spr = new CTySprite(grp,"1");
+		spr = new TySprite(grp,"1");
 
 		ensure_equals("Added!",a->AddState(spr,TOASTY_ACTOR_ATTACKING),true);
 		ensure_equals("Added!",a->AddState(spr,TOASTY_ACTOR_ATTACKING),false);
@@ -62,7 +62,7 @@ namespace tut
 		IwGetResManager()->LoadGroup("sprites.group");
 		grp = IwGetResManager()->GetGroupNamed("sprites");
 		
-		spr = new CTySprite(grp,"1");
+		spr = new TySprite(grp,"1");
 
 		ensure_equals("Added!",a->AddState(spr,TOASTY_ACTOR_ATTACKING),true);
 		ensure_equals("Deleteed!",a->DeleteState(TOASTY_ACTOR_ATTACKING),true);
@@ -82,8 +82,8 @@ namespace tut
 		IwGetResManager()->LoadGroup("sprites.group");
 		grp = IwGetResManager()->GetGroupNamed("sprites");
 		
-		spr = new CTySprite(grp,"1");
-		spr2 = new CTySprite(grp,"2");
+		spr = new TySprite(grp,"1");
+		spr2 = new TySprite(grp,"2");
 
 		ensure_equals("Added!",a->AddState(spr,TOASTY_ACTOR_ATTACKING),true);
 		ensure_equals("Set!",a->SetCurrentState(TOASTY_ACTOR_ATTACKING),true);
@@ -98,5 +98,17 @@ namespace tut
 		delete spr,spr2;
 
 		IwGetResManager()->DestroyGroup("sprites");
+	}
+
+	template<>
+	template<>
+	void testobject::test<14> ()
+	{
+		set_test_name("Actor depth test");
+		a->SetDepth(1);
+		InheritedActor* b = new InheritedActor();
+		b->SetDepth(12);
+		ensure_equals("Actor depth check", (a<b) ,true);
+		delete b;
 	}
 }; 

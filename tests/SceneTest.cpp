@@ -10,11 +10,11 @@ namespace tut
 	struct data //
 	{ 
 		ITyActor* a;
-		CTyScene*	scn;
+		TyScene*	scn;
 
 		data()
 		{
-			scn = new CTyScene("Test Scene", "A scene for testing!");			
+			scn = new TyScene("Test Scene", "A scene for testing!","",0,true);			
 		}
 
 		~data()
@@ -78,5 +78,25 @@ namespace tut
 		ensure_equals("Create", scn->Create(), true);
 
 		ensure_equals("Play",scn->Play(),true);
+	}
+
+	template<>
+	template<>
+	void testobject::test<25>()
+	{
+		set_test_name("ZOrdering Actors");
+		a = new InheritedActor();	
+		a->SetDepth(1);
+		a->SetName("Cachito");
+		InheritedActor * b = new InheritedActor();
+		b->SetDepth(-1);		
+		b->SetName("Mengano");
+
+		ensure_equals("Add Actor",scn->AddActor(a),true);
+		ensure_equals("Add Actor",scn->AddActor(b),true);
+		
+		ensure_equals("Create", scn->Create(), true);
+		ensure_equals("Play",scn->Play(),true);
+		ensure_equals("Destroy", scn->Destroy(), true);
 	}
 }; 

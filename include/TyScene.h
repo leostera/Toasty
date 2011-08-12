@@ -2,10 +2,11 @@
 
 #include <IwResManager.h>
 #include <TyActor.h>
-#include <string>
-#include <vector>
 
-class CTyScene{
+#include <string>
+#include <list>
+
+class TyScene{
 
 	private:
 		const	int64	m_ID;
@@ -17,7 +18,7 @@ class CTyScene{
 		std::string				m_Name;
 		std::string				m_Caption;
 
-		std::vector<ITyActor*>	m_Actors;
+		std::list<ITyActor*>	m_Actors;
 		bool					m_ZOrdered;
 		bool					m_Created;
 		//CIw2DImage*				m_Background;
@@ -29,8 +30,8 @@ class CTyScene{
 		//also Load and Unload 		
 		
 	public:
-		CTyScene(std::string pName, std::string pCaption, std::string pResGroup = std::string(""), int64 pID = 0, bool pZOrdered = false);
-		~CTyScene();
+		TyScene(std::string pName = std::string(""), std::string pCaption = std::string(""), std::string pResGroup = std::string(""), int64 pID = 0, bool pZOrdered = false);
+		~TyScene();
 
 		bool	AddActor(ITyActor* pActor);
 		bool	DeleteActor(ITyActor* pActor);
@@ -54,6 +55,10 @@ class CTyScene{
 		std::string	GetCaption()		const { return	m_Caption;		}
 		CIwRect		GetBoundaries()		const { return  m_Boundaries;	}
 		bool		IsZOrdered()		const { return	m_ZOrdered;		}
+
+		void		SetName(std::string pName)		 { m_Name = pName;			}
+		void		SetCaption(std::string pCaption) { m_Caption = pCaption;	}
+
 
 		void		SetBoundaries(CIwRect pBoundaries = CIwRect(0,0,0,0))	{	m_Boundaries = pBoundaries; }
 		

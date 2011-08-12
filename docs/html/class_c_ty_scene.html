@@ -25,6 +25,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="toastylogosmall.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Toasty!&#160;<span id="projectnumber">0.1</span></div>
    <div id="projectbrief">A game framework for the Marmalade SDK.</div>
@@ -60,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -86,50 +88,482 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="CTyScene" -->
+<p><code>#include &lt;<a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>&gt;</code></p>
+
 <p><a href="class_c_ty_scene-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e1d43a151e571a35af8b1fe141b2107"></a><!-- doxytag: member="CTyScene::CTyScene" ref="a1e1d43a151e571a35af8b1fe141b2107" args="(CTyScene const &amp;pScene)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>CTyScene</b> (<a class="el" href="class_c_ty_scene.html">CTyScene</a> const &amp;pScene)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c8f9430dfe84184a2df808a8756421f"></a><!-- doxytag: member="CTyScene::operator=" ref="a7c8f9430dfe84184a2df808a8756421f" args="(CTyScene const &amp;pScene)" -->
-<a class="el" href="class_c_ty_scene.html">CTyScene</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="class_c_ty_scene.html">CTyScene</a> const &amp;pScene)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a57748a3c188acc13f4c80b33eca95b76"></a><!-- doxytag: member="CTyScene::Load" ref="a57748a3c188acc13f4c80b33eca95b76" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa30fef255f74bbf9b9412303e58385ba"></a><!-- doxytag: member="CTyScene::Unload" ref="aa30fef255f74bbf9b9412303e58385ba" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Unload</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0622e307b831fe46fc69f60382b94f31"></a><!-- doxytag: member="CTyScene::Start" ref="a0622e307b831fe46fc69f60382b94f31" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Start</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e1e4b46d3f0203e5b60697fb8d52278"></a><!-- doxytag: member="CTyScene::Finish" ref="a2e1e4b46d3f0203e5b60697fb8d52278" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Finish</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a637569a7bedb42fdb0b412b908453931"></a><!-- doxytag: member="CTyScene::BeginScene" ref="a637569a7bedb42fdb0b412b908453931" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginScene</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af53da56827165b1f380a1f25c961d8be"></a><!-- doxytag: member="CTyScene::EndScene" ref="af53da56827165b1f380a1f25c961d8be" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndScene</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#ac3ffa8af3df717e521b41f714e8bdfeb">CTyScene</a> (std::string pName=std::string(&quot;&quot;), std::string pCaption=std::string(&quot;&quot;), std::string pResGroup=std::string(&quot;&quot;), int64 pID=0, bool pZOrdered=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#a18020d4f345af48e4c321edc38495149">~CTyScene</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#a9687222ea13378c58e055f97b4037e00">AddActor</a> (<a class="el" href="class_i_ty_actor.html">ITyActor</a> *pActor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#a85d44ded276f4209bade96297590c435">DeleteActor</a> (<a class="el" href="class_i_ty_actor.html">ITyActor</a> *pActor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#af9f4043d72a92cbd4ecb51dc9c13d3fa">Create</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#ad93f23349d95555895d404d5c23430bb">Destroy</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#aeb00a9b2f06dda4e1320bcc425f64f41">Play</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#a7bcb97321dd9146f0943b9e6f6812557">GetID</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#a693e6a9c375ad62952d7c0d522699a06">GetResGroupName</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#a101d35e3d07a8491761dcb25dc07d5dd">GetName</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#ac4efdea36741e607325740ffeb3b059d">GetCaption</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CIwRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#aa8640d7a7e4b8a5719bd028c5de8b608">GetBoundaries</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#a7493b6326072830c8dad9c40f6e5573f">IsZOrdered</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#a2475029f0e2944660057388ef9321d33">SetName</a> (std::string pName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#aa8e00f437e9dbcb87cb90f3a5fcb6138">SetCaption</a> (std::string pCaption)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#a109099231d27f9f28aa4b73b328397cb">SetBoundaries</a> (CIwRect pBoundaries=CIwRect(0, 0, 0, 0))</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5468743fb3c74b70874aa62d949b918b"></a><!-- doxytag: member="CTyScene::m_ResourceGroup" ref="a5468743fb3c74b70874aa62d949b918b" args="" -->
-CIwResGroup *&#160;</td><td class="memItemRight" valign="bottom"><b>m_ResourceGroup</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad81b920909340266c2aba88805f7812a"></a><!-- doxytag: member="CTyScene::m_Name" ref="ad81b920909340266c2aba88805f7812a" args="" -->
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_Name</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ebea53f2e91d94f3f6ba6aef7a40f5b"></a><!-- doxytag: member="CTyScene::m_Caption" ref="a7ebea53f2e91d94f3f6ba6aef7a40f5b" args="" -->
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_Caption</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb2c43a206900ddc526aed3ec18178f7"></a><!-- doxytag: member="CTyScene::m_Actors" ref="aeb2c43a206900ddc526aed3ec18178f7" args="" -->
-std::vector&lt; CTyActor * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_Actors</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aef04104af22b290a7207b45852be15c1"></a><!-- doxytag: member="CTyScene::m_ZOrdered" ref="aef04104af22b290a7207b45852be15c1" args="" -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_ZOrdered</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d1206474a891c102b0940e55342757a"></a><!-- doxytag: member="CTyScene::m_Background" ref="a7d1206474a891c102b0940e55342757a" args="" -->
-CIw2DImage *&#160;</td><td class="memItemRight" valign="bottom"><b>m_Background</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#a6ea9f4376051cf9f0f7191e0bf5afad5">m_ResGroupName</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CIwResGroup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#a6630f437b2907d89c8deb4a536483c00">m_ResGroup</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#ad81b920909340266c2aba88805f7812a">m_Name</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#a7ebea53f2e91d94f3f6ba6aef7a40f5b">m_Caption</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="class_i_ty_actor.html">ITyActor</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#ac7780d185e2a7cbd5eeca02fe445fd96">m_Actors</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#aef04104af22b290a7207b45852be15c1">m_ZOrdered</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#a165009b2d0b79de7bcd4c0594931ec70">m_Created</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CIwRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_ty_scene.html#a5cbe320d312e3909c6ad4c32c99ed275">m_Boundaries</a></td></tr>
 </table>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00009">9</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ac3ffa8af3df717e521b41f714e8bdfeb"></a><!-- doxytag: member="CTyScene::CTyScene" ref="ac3ffa8af3df717e521b41f714e8bdfeb" args="(std::string pName=std::string(&quot;&quot;), std::string pCaption=std::string(&quot;&quot;), std::string pResGroup=std::string(&quot;&quot;), int64 pID=0, bool pZOrdered=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CTyScene::CTyScene </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>pName</em> = <code>std::string(&quot;&quot;)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>pCaption</em> = <code>std::string(&quot;&quot;)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>pResGroup</em> = <code>std::string(&quot;&quot;)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64&#160;</td>
+          <td class="paramname"><em>pID</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pZOrdered</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a18020d4f345af48e4c321edc38495149"></a><!-- doxytag: member="CTyScene::~CTyScene" ref="a18020d4f345af48e4c321edc38495149" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CTyScene::~CTyScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a9687222ea13378c58e055f97b4037e00"></a><!-- doxytag: member="CTyScene::AddActor" ref="a9687222ea13378c58e055f97b4037e00" args="(ITyActor *pActor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CTyScene::AddActor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_i_ty_actor.html">ITyActor</a> *&#160;</td>
+          <td class="paramname"><em>pActor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af9f4043d72a92cbd4ecb51dc9c13d3fa"></a><!-- doxytag: member="CTyScene::Create" ref="af9f4043d72a92cbd4ecb51dc9c13d3fa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CTyScene::Create </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a85d44ded276f4209bade96297590c435"></a><!-- doxytag: member="CTyScene::DeleteActor" ref="a85d44ded276f4209bade96297590c435" args="(ITyActor *pActor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CTyScene::DeleteActor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_i_ty_actor.html">ITyActor</a> *&#160;</td>
+          <td class="paramname"><em>pActor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad93f23349d95555895d404d5c23430bb"></a><!-- doxytag: member="CTyScene::Destroy" ref="ad93f23349d95555895d404d5c23430bb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CTyScene::Destroy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa8640d7a7e4b8a5719bd028c5de8b608"></a><!-- doxytag: member="CTyScene::GetBoundaries" ref="aa8640d7a7e4b8a5719bd028c5de8b608" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CIwRect CTyScene::GetBoundaries </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00056">56</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac4efdea36741e607325740ffeb3b059d"></a><!-- doxytag: member="CTyScene::GetCaption" ref="ac4efdea36741e607325740ffeb3b059d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string CTyScene::GetCaption </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00055">55</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7bcb97321dd9146f0943b9e6f6812557"></a><!-- doxytag: member="CTyScene::GetID" ref="a7bcb97321dd9146f0943b9e6f6812557" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64 CTyScene::GetID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00052">52</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a101d35e3d07a8491761dcb25dc07d5dd"></a><!-- doxytag: member="CTyScene::GetName" ref="a101d35e3d07a8491761dcb25dc07d5dd" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string CTyScene::GetName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00054">54</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a693e6a9c375ad62952d7c0d522699a06"></a><!-- doxytag: member="CTyScene::GetResGroupName" ref="a693e6a9c375ad62952d7c0d522699a06" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string CTyScene::GetResGroupName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00053">53</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7493b6326072830c8dad9c40f6e5573f"></a><!-- doxytag: member="CTyScene::IsZOrdered" ref="a7493b6326072830c8dad9c40f6e5573f" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CTyScene::IsZOrdered </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00057">57</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb00a9b2f06dda4e1320bcc425f64f41"></a><!-- doxytag: member="CTyScene::Play" ref="aeb00a9b2f06dda4e1320bcc425f64f41" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CTyScene::Play </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a109099231d27f9f28aa4b73b328397cb"></a><!-- doxytag: member="CTyScene::SetBoundaries" ref="a109099231d27f9f28aa4b73b328397cb" args="(CIwRect pBoundaries=CIwRect(0, 0, 0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTyScene::SetBoundaries </td>
+          <td>(</td>
+          <td class="paramtype">CIwRect&#160;</td>
+          <td class="paramname"><em>pBoundaries</em> = <code>CIwRect(0,0,0,0)</code></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00063">63</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa8e00f437e9dbcb87cb90f3a5fcb6138"></a><!-- doxytag: member="CTyScene::SetCaption" ref="aa8e00f437e9dbcb87cb90f3a5fcb6138" args="(std::string pCaption)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTyScene::SetCaption </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>pCaption</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00060">60</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2475029f0e2944660057388ef9321d33"></a><!-- doxytag: member="CTyScene::SetName" ref="a2475029f0e2944660057388ef9321d33" args="(std::string pName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTyScene::SetName </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>pName</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00059">59</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="ac7780d185e2a7cbd5eeca02fe445fd96"></a><!-- doxytag: member="CTyScene::m_Actors" ref="ac7780d185e2a7cbd5eeca02fe445fd96" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt;<a class="el" href="class_i_ty_actor.html">ITyActor</a>*&gt; <a class="el" href="class_c_ty_scene.html#ac7780d185e2a7cbd5eeca02fe445fd96">CTyScene::m_Actors</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00021">21</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5cbe320d312e3909c6ad4c32c99ed275"></a><!-- doxytag: member="CTyScene::m_Boundaries" ref="a5cbe320d312e3909c6ad4c32c99ed275" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CIwRect <a class="el" href="class_c_ty_scene.html#a5cbe320d312e3909c6ad4c32c99ed275">CTyScene::m_Boundaries</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00025">25</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7ebea53f2e91d94f3f6ba6aef7a40f5b"></a><!-- doxytag: member="CTyScene::m_Caption" ref="a7ebea53f2e91d94f3f6ba6aef7a40f5b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="class_c_ty_scene.html#a7ebea53f2e91d94f3f6ba6aef7a40f5b">CTyScene::m_Caption</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00019">19</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a165009b2d0b79de7bcd4c0594931ec70"></a><!-- doxytag: member="CTyScene::m_Created" ref="a165009b2d0b79de7bcd4c0594931ec70" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_c_ty_scene.html#a165009b2d0b79de7bcd4c0594931ec70">CTyScene::m_Created</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00023">23</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad81b920909340266c2aba88805f7812a"></a><!-- doxytag: member="CTyScene::m_Name" ref="ad81b920909340266c2aba88805f7812a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="class_c_ty_scene.html#ad81b920909340266c2aba88805f7812a">CTyScene::m_Name</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00018">18</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6630f437b2907d89c8deb4a536483c00"></a><!-- doxytag: member="CTyScene::m_ResGroup" ref="a6630f437b2907d89c8deb4a536483c00" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CIwResGroup* <a class="el" href="class_c_ty_scene.html#a6630f437b2907d89c8deb4a536483c00">CTyScene::m_ResGroup</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00016">16</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ea9f4376051cf9f0f7191e0bf5afad5"></a><!-- doxytag: member="CTyScene::m_ResGroupName" ref="a6ea9f4376051cf9f0f7191e0bf5afad5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="class_c_ty_scene.html#a6ea9f4376051cf9f0f7191e0bf5afad5">CTyScene::m_ResGroupName</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00015">15</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aef04104af22b290a7207b45852be15c1"></a><!-- doxytag: member="CTyScene::m_ZOrdered" ref="aef04104af22b290a7207b45852be15c1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_c_ty_scene.html#aef04104af22b290a7207b45852be15c1">CTyScene::m_ZOrdered</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_scene_8h_source.html#l00022">22</a> of file <a class="el" href="_ty_scene_8h_source.html">TyScene.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/<a class="el" href="_ty_scene_8h_source.html">TyScene.h</a></li>
+<li>D:/development/cpp/toasty/include/<a class="el" href="_ty_scene_8h_source.html">TyScene.h</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_c_ty_scene.html">CTyScene</a>      </li>
-      <li class="footer">Generated on Fri Aug 5 2011 18:41:33 for Toasty! by&#160;
+      <li class="footer">Generated on Fri Aug 12 2011 00:58:42 for Toasty! by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -139,7 +573,7 @@ CIw2DImage *&#160;</td><td class="memItemRight" valign="bottom"><b>m_Background<
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

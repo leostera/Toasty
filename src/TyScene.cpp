@@ -1,6 +1,6 @@
 #include <TyScene.h>
 
-CTyScene::CTyScene(std::string pName, std::string pCaption, std::string pResGroup, int64 pID, bool pZOrdered)
+TyScene::TyScene(std::string pName, std::string pCaption, std::string pResGroup, int64 pID, bool pZOrdered)
 	:	m_Name(pName), m_Caption(pCaption), m_ID(pID), m_ZOrdered(pZOrdered), m_Created(false)
 {
 	if(! pResGroup.empty())
@@ -10,9 +10,9 @@ CTyScene::CTyScene(std::string pName, std::string pCaption, std::string pResGrou
 	}
 }
 
-CTyScene::~CTyScene()
+TyScene::~TyScene()
 {
-	std::vector<ITyActor*>::iterator it = m_Actors.begin();
+	std::list<ITyActor*>::iterator it = m_Actors.begin();
 	while(it != m_Actors.end())
 	{
 		delete (*it);
@@ -21,13 +21,13 @@ CTyScene::~CTyScene()
 	m_Actors.clear();
 }
 
-bool	CTyScene::AddActor(ITyActor* pActor) //adds an actor
+bool	TyScene::AddActor(ITyActor* pActor) //adds an actor
 {
 	bool toadd = false;
 	if( pActor )
 	{
 		toadd = true;
-		std::vector<ITyActor*>::iterator it;
+		std::list<ITyActor*>::iterator it;
 		for(it = m_Actors.begin(); it != m_Actors.end(); ++it)
 		{
 			if( (*it) == pActor )
@@ -39,17 +39,20 @@ bool	CTyScene::AddActor(ITyActor* pActor) //adds an actor
 	}
 
 	if( toadd )
+	{
 		m_Actors.push_back(pActor);
+		m_Actors.sort(TyActorCompare);
+	}
 
 	return toadd;
 }
 
-bool	CTyScene::DeleteActor(ITyActor* pActor) //adds an actor
+bool	TyScene::DeleteActor(ITyActor* pActor) //adds an actor
 {
 	bool todelete = false;
 	if( pActor )
 	{		
-		std::vector<ITyActor*>::iterator it;
+		std::list<ITyActor*>::iterator it;
 		for(it = m_Actors.begin(); it != m_Actors.end(); ++it)
 		{
 			if( (*it) == pActor )
@@ -64,10 +67,10 @@ bool	CTyScene::DeleteActor(ITyActor* pActor) //adds an actor
 	return todelete;
 }
 
-bool		CTyScene::Create()
+bool		TyScene::Create()
 {
 	m_Created = false;
-	std::vector<ITyActor*>::iterator it;
+	std::list<ITyActor*>::iterator it;
 	for(it = m_Actors.begin(); it != m_Actors.end(); ++it)
 	{
 		m_Created = (*it)->OnCreate();
@@ -76,10 +79,10 @@ bool		CTyScene::Create()
 	return m_Created;
 }
 
-bool		CTyScene::Destroy()
+bool		TyScene::Destroy()
 {
 	bool Destroyed = false;
-	std::vector<ITyActor*>::iterator it;
+	std::list<ITyActor*>::iterator it;
 	for(it = m_Actors.begin(); it != m_Actors.end(); ++it)
 	{
 		Destroyed = (*it)->OnDestroy();		
@@ -88,14 +91,14 @@ bool		CTyScene::Destroy()
 	return Destroyed;
 }
 
-bool		CTyScene::Play()
+bool		TyScene::Play()
 {
 	bool playing = false;
 	if( m_Created && m_Actors.size()>0 )
 	{
 		playing = true;
 
-		std::vector<ITyActor*>::iterator it;
+		std::list<ITyActor*>::iterator it;
 
 		for( it = m_Actors.begin(); it != m_Actors.end(); ++it )
 		{
@@ -125,11 +128,11 @@ bool		CTyScene::Play()
 
 		for( it = m_Actors.begin(); it != m_Actors.end(); ++it )
 		{
-/*			if( (*it)->IsActive() )
-				(*it)->OnIntersectBoundaries();
-*/
+			if( (*it)->IsActive() )
+				(*it)->OnIntersectBoundaries(m_Boundaries);
+
 			if( (*it)->IsSolid() )
-				for( std::vector<ITyActor*>::iterator it2 = m_Actors.begin(); it2 != m_Actors.end(); ++it2 )
+				for( std::list<ITyActor*>::iterator it2 = m_Actors.begin(); it2 != m_Actors.end(); ++it2 )
 					(*it)->OnCollision( *(*it2) );
 		}
 

@@ -2,26 +2,41 @@ var NAVTREE =
 [
   [ "Toasty!", "index.html", [
     [ "Class List", "annotated.html", [
+      [ "CTyInput", "class_c_ty_input.html", null ],
       [ "CTyScene", "class_c_ty_scene.html", null ],
       [ "CTySceneManager", "class_c_ty_scene_manager.html", null ],
       [ "CTySprite", "class_c_ty_sprite.html", null ],
       [ "ITyActor::CTyState", "class_i_ty_actor_1_1_c_ty_state.html", null ],
       [ "ITyActor", "class_i_ty_actor.html", null ],
       [ "ITySingleton< T >", "class_i_ty_singleton.html", null ],
-      [ "IwClock", "class_iw_clock.html", null ],
-      [ "TyInput", "class_ty_input.html", null ]
+      [ "IwClock", "class_iw_clock.html", null ]
     ] ],
     [ "Class Index", "classes.html", null ],
+    [ "Class Hierarchy", "hierarchy.html", [
+      [ "CTyScene", "class_c_ty_scene.html", null ],
+      [ "CTySprite", "class_c_ty_sprite.html", null ],
+      [ "ITyActor::CTyState", "class_i_ty_actor_1_1_c_ty_state.html", null ],
+      [ "ITyActor", "class_i_ty_actor.html", null ],
+      [ "ITySingleton< T >", "class_i_ty_singleton.html", null ],
+      [ "ITySingleton< CTyInput >", "class_i_ty_singleton.html", [
+        [ "CTyInput", "class_c_ty_input.html", null ]
+      ] ],
+      [ "ITySingleton< CTySceneManager >", "class_i_ty_singleton.html", [
+        [ "CTySceneManager", "class_c_ty_scene_manager.html", null ]
+      ] ],
+      [ "IwClock", "class_iw_clock.html", null ]
+    ] ],
     [ "Class Members", "functions.html", null ],
     [ "File List", "files.html", [
-      [ "include/TyActor.h", null, null ],
-      [ "include/TyClock.h", null, null ],
-      [ "include/TyInput.h", null, null ],
-      [ "include/TyScene.h", null, null ],
-      [ "include/TySceneManager.h", null, null ],
-      [ "include/TySingleton.h", null, null ],
-      [ "include/TySprite.h", null, null ]
-    ] ]
+      [ "D:/development/cpp/toasty/include/TyActor.h", "_ty_actor_8h.html", null ],
+      [ "D:/development/cpp/toasty/include/TyClock.h", "_ty_clock_8h.html", null ],
+      [ "D:/development/cpp/toasty/include/TyInput.h", "_ty_input_8h.html", null ],
+      [ "D:/development/cpp/toasty/include/TyScene.h", "_ty_scene_8h.html", null ],
+      [ "D:/development/cpp/toasty/include/TySceneManager.h", "_ty_scene_manager_8h.html", null ],
+      [ "D:/development/cpp/toasty/include/TySingleton.h", "_ty_singleton_8h.html", null ],
+      [ "D:/development/cpp/toasty/include/TySprite.h", "_ty_sprite_8h.html", null ]
+    ] ],
+    [ "File Members", "globals.html", null ]
   ] ]
 ];
 

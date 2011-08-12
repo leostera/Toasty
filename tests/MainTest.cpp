@@ -18,8 +18,8 @@ int main()
 {
 	int result;
 
-//	Iw2DInit();
-//	IwResManagerInit();		
+	Iw2DInit();
+	IwResManagerInit();		
 
     tut::reporter reporter;
     tut::runner.get().set_callback(&reporter);
@@ -27,8 +27,8 @@ int main()
 
 	result = !reporter.all_ok();
 	
-	//IwResManagerTerminate();
-//	Iw2DTerminate();
+	IwResManagerTerminate();
+	Iw2DTerminate();
 
     return result;
 }

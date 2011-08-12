@@ -1,9 +1,9 @@
 #include <TyActor.h>
 
-bool ITyActor::AddState(CTySprite* pSprite, TOASTY_ACTOR_STATE pState)
+bool ITyActor::AddState(TySprite* pSprite, TOASTY_ACTOR_STATE pState)
 {
 	bool toadd = true;
-	std::vector<CTyState>::iterator it;
+	std::vector<TyState>::iterator it;
 
 	for(it = m_States.begin(); it != m_States.end(); ++it)
 	{
@@ -15,7 +15,7 @@ bool ITyActor::AddState(CTySprite* pSprite, TOASTY_ACTOR_STATE pState)
 	}
 
 	if( toadd ) 
-		m_States.push_back( CTyState(pSprite, pState) );
+		m_States.push_back( TyState(pSprite, pState) );
 
 	return toadd;
 }
@@ -24,7 +24,7 @@ bool ITyActor::AddState(CTySprite* pSprite, TOASTY_ACTOR_STATE pState)
 bool ITyActor::DeleteState(TOASTY_ACTOR_STATE pState)
 {
 	bool todel = false;
-	std::vector<CTyState>::iterator it;
+	std::vector<TyState>::iterator it;
 	for(it = m_States.begin(); it != m_States.end(); ++it)
 	{
 		if( (*it).state == pState  &&  m_CurrentState != it )
@@ -40,7 +40,7 @@ bool ITyActor::DeleteState(TOASTY_ACTOR_STATE pState)
 bool ITyActor::SetCurrentState(TOASTY_ACTOR_STATE pState)
 {
 	bool toset = false;
-	std::vector<CTyState>::iterator it;
+	std::vector<TyState>::iterator it;
 	for(it = m_States.begin(); it != m_States.end(); ++it)
 	{
 		if( (*it).state == pState )

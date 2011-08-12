@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Toasty!: include/TyActor.h Source File</title>
+<title>Toasty!: D:/development/cpp/toasty/include/TyActor.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -25,6 +25,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="toastylogosmall.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Toasty!&#160;<span id="projectnumber">0.1</span></div>
    <div id="projectbrief">A game framework for the Marmalade SDK.</div>
@@ -59,6 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -77,10 +79,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">include/TyActor.h</div>  </div>
+<div class="title">D:/development/cpp/toasty/include/TyActor.h</div>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*!**********************************************************************************</span>
+<a href="_ty_actor_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*!**********************************************************************************</span>
 <a name="l00002"></a>00002 <span class="comment"></span>
 <a name="l00003"></a>00003 <span class="comment">        \class                  ITyActor</span>
 <a name="l00004"></a>00004 <span class="comment">        \brief                  Actor class to be used within a scene.</span>
@@ -98,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00016"></a>00016 <span class="comment">/*</span>
 <a name="l00017"></a>00017 <span class="comment"> * Marmalade SDK Header file includes</span>
 <a name="l00018"></a>00018 <span class="comment"> */</span>
-<a name="l00019"></a>00019 <span class="preprocessor">#include &lt;TySprite.h&gt;</span>
+<a name="l00019"></a>00019 <span class="preprocessor">#include &lt;<a class="code" href="_ty_sprite_8h.html">TySprite.h</a>&gt;</span>
 <a name="l00020"></a>00020 <span class="preprocessor">#include &lt;Iw2D.h&gt;</span>
 <a name="l00021"></a>00021 <span class="preprocessor">#include &lt;IwGxTypes.h&gt;</span>
 <a name="l00022"></a>00022 
@@ -107,161 +109,164 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00025"></a>00025 <span class="comment"> */</span>
 <a name="l00026"></a>00026 <span class="preprocessor">#include &lt;string&gt;</span>
 <a name="l00027"></a>00027 <span class="preprocessor">#include &lt;vector&gt;</span>
-<a name="l00028"></a>00028 
-<a name="l00034"></a>00034 <span class="keyword">enum</span> TOASTY_ACTOR_STATE {
-<a name="l00035"></a>00035                 TOASTY_ACTOR_WALKING=0, 
-<a name="l00036"></a>00036                 TOASTY_ACTOR_ATTACKING, 
-<a name="l00037"></a>00037                 TOASTY_ACTOR_DEFENDING, 
-<a name="l00038"></a>00038                 TOASTY_ACTOR_STANDING,  
-<a name="l00039"></a>00039                 TOASTY_ACTOR_APPEARING, 
-<a name="l00040"></a>00040                 TOASTY_ACTOR_DYING,             
-<a name="l00041"></a>00041                 TOASTY_ACTOR_DEAD,              
-<a name="l00042"></a>00042                 TOASTY_ACTOR_IDLE               
-<a name="l00043"></a>00043         };
-<a name="l00044"></a>00044 
-<a name="l00045"></a><a class="code" href="class_i_ty_actor.html">00045</a> <span class="keyword">class </span><a class="code" href="class_i_ty_actor.html" title="Actor class to be used within a scene.">ITyActor</a> {
-<a name="l00046"></a>00046         
-<a name="l00047"></a>00047         <span class="keyword">private</span>:
-<a name="l00051"></a>00051                 <span class="keyword">const</span> int64                             m_ID;
-<a name="l00052"></a>00052 
-<a name="l00056"></a>00056                 <span class="keywordtype">bool</span>                                    m_Built;
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058         <span class="keyword">protected</span>:
-<a name="l00062"></a>00062                 std::string                             m_Name;
-<a name="l00063"></a>00063 
-<a name="l00067"></a>00067                 std::string                             m_Role;
-<a name="l00068"></a>00068                 
-<a name="l00072"></a>00072                 <span class="keywordtype">int</span>                                             m_Depth;
-<a name="l00073"></a>00073 
-<a name="l00077"></a>00077                 <span class="keywordtype">bool</span>                                    m_Active;
-<a name="l00078"></a>00078 
-<a name="l00082"></a>00082                 <span class="keywordtype">bool</span>                                    m_Visible;
-<a name="l00083"></a>00083 
-<a name="l00087"></a>00087                 <span class="keywordtype">bool</span>                                    m_Solid;
-<a name="l00088"></a>00088 
-<a name="l00093"></a><a class="code" href="class_i_ty_actor_1_1_c_ty_state.html">00093</a>                 <span class="keyword">class </span><a class="code" href="class_i_ty_actor_1_1_c_ty_state.html" title="Inner class used to relate a Actor State with a Sprite.">CTyState</a> {
-<a name="l00094"></a>00094                 <span class="keyword">public</span>:
-<a name="l00098"></a>00098                         <a class="code" href="class_c_ty_sprite.html" title="Animated sprite class.">CTySprite</a>*                      sprite;
-<a name="l00099"></a>00099 
-<a name="l00103"></a>00103                         TOASTY_ACTOR_STATE      state;
-<a name="l00104"></a>00104 
-<a name="l00112"></a><a class="code" href="class_i_ty_actor_1_1_c_ty_state.html#a1df8c1e0a888f227fccc4713262b8f29">00112</a>                         <a class="code" href="class_i_ty_actor_1_1_c_ty_state.html#a1df8c1e0a888f227fccc4713262b8f29" title="Constructor.">CTyState</a>( <a class="code" href="class_c_ty_sprite.html" title="Animated sprite class.">CTySprite</a>* pSprite = 0, TOASTY_ACTOR_STATE pState = TOASTY_ACTOR_IDLE): sprite(pSprite), state(pState)
-<a name="l00113"></a>00113                         {
-<a name="l00114"></a>00114                                 ;
-<a name="l00115"></a>00115                         }
-<a name="l00116"></a>00116                 };
-<a name="l00117"></a>00117 
-<a name="l00121"></a>00121                 std::vector&lt;CTyState&gt;   m_States;
-<a name="l00122"></a>00122 
-<a name="l00126"></a>00126                 CTyState*                               m_CurrentState;
-<a name="l00127"></a>00127 
-<a name="l00131"></a>00131                 CTyState*                               m_LastState;
-<a name="l00132"></a>00132 
-<a name="l00136"></a>00136                 CIwRect                                 m_Mask;
-<a name="l00137"></a>00137 
-<a name="l00141"></a>00141                 CIwSVec2                                m_Position;
-<a name="l00142"></a>00142 
-<a name="l00143"></a>00143                 <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_c_ty_scene.html">CTyScene</a>;
-<a name="l00144"></a>00144 
-<a name="l00145"></a>00145         <span class="keyword">public</span>:
-<a name="l00165"></a><a class="code" href="class_i_ty_actor.html#afb266117deb0b8be81325ce76ef7c95b">00165</a>                 <a class="code" href="class_i_ty_actor.html#afb266117deb0b8be81325ce76ef7c95b" title="Constructor.">ITyActor</a>(int64 pID, <span class="keywordtype">bool</span> pActive = <span class="keyword">true</span>, <span class="keywordtype">bool</span> pVisible = <span class="keyword">true</span>, <span class="keywordtype">bool</span> pSolid = <span class="keyword">true</span>, CIwRect pMask = CIwRect(0,0,0,0), CIwSVec2 pPosition = CIwSVec2::g_Zero)
-<a name="l00166"></a>00166                         : m_ID(pID), m_Built(true), m_Depth(0), m_Active(pActive), m_Visible(pVisible), m_Solid(pSolid), m_Mask(pMask), m_Position(pPosition)
-<a name="l00167"></a>00167                 { 
-<a name="l00168"></a>00168                         ;
-<a name="l00169"></a>00169                 }
-<a name="l00170"></a>00170 
-<a name="l00175"></a><a class="code" href="class_i_ty_actor.html#afc1f27393487c6422303523195c3922c">00175</a>                 <span class="keyword">virtual</span> <a class="code" href="class_i_ty_actor.html#afc1f27393487c6422303523195c3922c" title="Destructor It actually does nothing.">~ITyActor</a>()
-<a name="l00176"></a>00176                 {
-<a name="l00177"></a>00177                         ;
-<a name="l00178"></a>00178                 }
-<a name="l00179"></a>00179         
-<a name="l00184"></a><a class="code" href="class_i_ty_actor.html#af3670099e1c1e77d620c43125dac6e61">00184</a>                 <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#af3670099e1c1e77d620c43125dac6e61" title="Is the actor built?">IsBuilt</a>()<span class="keyword">       const   </span>{       <span class="keywordflow">return</span> m_Built;         }
-<a name="l00185"></a>00185 
-<a name="l00190"></a><a class="code" href="class_i_ty_actor.html#abe293544e0a3823400aaf490b24ae81d">00190</a>                 <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#abe293544e0a3823400aaf490b24ae81d" title="Is the actor active?">IsActive</a>()<span class="keyword">      const   </span>{       <span class="keywordflow">return</span> m_Active;        }
-<a name="l00191"></a>00191                 
-<a name="l00196"></a><a class="code" href="class_i_ty_actor.html#a5e3d6f0fd5ab67afb6d56488b7a55595">00196</a>                 <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#a5e3d6f0fd5ab67afb6d56488b7a55595" title="Is the actor visible?">IsVisible</a>()<span class="keyword"> const       </span>{       <span class="keywordflow">return</span> m_Visible;       }
-<a name="l00197"></a>00197                 
-<a name="l00202"></a><a class="code" href="class_i_ty_actor.html#a5c1f9e77b0e5903c1f63ac5e2b2c42ad">00202</a>                 <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#a5c1f9e77b0e5903c1f63ac5e2b2c42ad" title="Is the actor solid?">IsSolid</a>()<span class="keyword">       const   </span>{       <span class="keywordflow">return</span> m_Solid;         }
-<a name="l00203"></a>00203 
-<a name="l00214"></a>00214                 <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#aad869e863d1dc2283d7b33bd2aa02e4b" title="Adds a new state to the State Vector.">AddState</a>(<a class="code" href="class_c_ty_sprite.html" title="Animated sprite class.">CTySprite</a>* pSprite, TOASTY_ACTOR_STATE pState);
-<a name="l00215"></a>00215 
-<a name="l00225"></a>00225                 <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#a64f9104dbcf4bccbc17121d81b40c9cb" title="Deletes a state from the State Vector.">DeleteState</a>(TOASTY_ACTOR_STATE pState);
-<a name="l00226"></a>00226 
-<a name="l00234"></a>00234                 <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#ab7a324bf10f138f537fe2b869d3aeea5" title="Sets a state from the State Vector as current state.">SetCurrentState</a>(TOASTY_ACTOR_STATE pState);
-<a name="l00235"></a>00235 
-<a name="l00240"></a><a class="code" href="class_i_ty_actor.html#a05d286129fce86d004a9a35dd8e4791f">00240</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a05d286129fce86d004a9a35dd8e4791f" title="Will be called on Scene loading.">OnLoad</a>()                                                                                        { ; }
-<a name="l00241"></a>00241 
-<a name="l00246"></a><a class="code" href="class_i_ty_actor.html#a7aaa8b17ac1742d2cc6457e79d9dbe4f">00246</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a7aaa8b17ac1742d2cc6457e79d9dbe4f" title="Will be called on Scene unloading.">OnUnload</a>()                                                                                      { ; }
-<a name="l00247"></a>00247 
-<a name="l00252"></a><a class="code" href="class_i_ty_actor.html#a3a3295eba0fc092e44a9b690d2d242ab">00252</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a3a3295eba0fc092e44a9b690d2d242ab" title="Will be called on Keyboard Press event.">OnKeyPress</a>(s3eKey pKey)                                                         { ; }
-<a name="l00253"></a>00253 
-<a name="l00258"></a><a class="code" href="class_i_ty_actor.html#ae0402203392a84e769fad4a989d07b3c">00258</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#ae0402203392a84e769fad4a989d07b3c" title="Will be called on Keyboard Release event.">OnKeyRelease</a>(s3eKey pKey)                                                       { ; }
-<a name="l00259"></a>00259 
-<a name="l00264"></a><a class="code" href="class_i_ty_actor.html#aa6008d50671f63f7ca482b54179b7725">00264</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#aa6008d50671f63f7ca482b54179b7725" title="Will be called if a Key is hold.">OnKeySustain</a>(s3eKey pKey, int64 pMS)                            { ; }
-<a name="l00265"></a>00265 
-<a name="l00270"></a><a class="code" href="class_i_ty_actor.html#ae828745012aac359147920ccb42801b9">00270</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#ae828745012aac359147920ccb42801b9" title="Will be called if the Screen is touched.">OnTouchPress</a>(<span class="keywordtype">int</span> pX, <span class="keywordtype">int</span> pY )                                           { ; }
-<a name="l00271"></a>00271 
-<a name="l00276"></a><a class="code" href="class_i_ty_actor.html#adb1cde3971b3d75407a8fbb590f7088a">00276</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#adb1cde3971b3d75407a8fbb590f7088a" title="Will be called if the Screen is hold.">OnTouchSustain</a>(<span class="keywordtype">int</span> pX, <span class="keywordtype">int</span> pY, int64 pMS)                       { ; }
-<a name="l00277"></a>00277 
-<a name="l00282"></a><a class="code" href="class_i_ty_actor.html#a240c68f34a3b90af8bbef1729a74114a">00282</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a240c68f34a3b90af8bbef1729a74114a" title="Will be called if a Screentouch is released.">OnTouchRelease</a>(<span class="keywordtype">int</span> pX, <span class="keywordtype">int</span> pY)                                          { ; }
-<a name="l00283"></a>00283 
-<a name="l00288"></a><a class="code" href="class_i_ty_actor.html#ad07610fc8cd2e0ade09d777979102a22">00288</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#ad07610fc8cd2e0ade09d777979102a22" title="Will be called if the screen is touch and then dragged.">OnTouchDrag</a>(<span class="keywordtype">int</span> pX, <span class="keywordtype">int</span> pY, <span class="keywordtype">int</span> pRelX, <span class="keywordtype">int</span> pRelY)       { ; }
-<a name="l00289"></a>00289 
-<a name="l00294"></a><a class="code" href="class_i_ty_actor.html#a9da03663a14f091ce23a5adae98e2302">00294</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a9da03663a14f091ce23a5adae98e2302" title="Will be called if Actor is about to collide with Scene boundaries.">OnIntersectBoundaries</a>(CIwRect pBoundaries)                      { ; }
-<a name="l00295"></a>00295 
-<a name="l00300"></a><a class="code" href="class_i_ty_actor.html#aeed7b53859c91f8be589ff441f36852d">00300</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#aeed7b53859c91f8be589ff441f36852d" title="Will be called First in each step, if Active.">OnStepStart</a>()                                                                           { ; }   <span class="comment">//first         called method</span>
-<a name="l00301"></a>00301 
-<a name="l00306"></a><a class="code" href="class_i_ty_actor.html#a78ac709f1fdbd9fba59180337be44a7a">00306</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a78ac709f1fdbd9fba59180337be44a7a" title="Will be called Second in each step, if Active.">OnStep</a>()                                                                                        { ; }   <span class="comment">//second        </span>
-<a name="l00307"></a>00307 
-<a name="l00312"></a><a class="code" href="class_i_ty_actor.html#aa539311a3f8cf47dd325f6cb6e7413a6">00312</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#aa539311a3f8cf47dd325f6cb6e7413a6" title="Will be called after Rendering in each step, if Active.">OnStepEnd</a>()                                                                                     { ; }   <span class="comment">//this one is called after OnRender so if you need to update anything between rendering and OnStepStart, do it here</span>
-<a name="l00313"></a>00313 
-<a name="l00318"></a><a class="code" href="class_i_ty_actor.html#ac5a0f1ef9aca4cf49893171c130abb9c">00318</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#ac5a0f1ef9aca4cf49893171c130abb9c" title="Will be called before StepEnd, but at the end of each step, if Visible.">OnRender</a>()                                                                                      { ; }   <span class="comment">//this is called before OnStepEnd and after OnStep</span>
-<a name="l00319"></a>00319 
-<a name="l00324"></a><a class="code" href="class_i_ty_actor.html#a88b1d350c4649d2df9e358f15fbca9b2">00324</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a88b1d350c4649d2df9e358f15fbca9b2" title="Will be called when two actors collide, if Solid.">OnCollision</a>(<a class="code" href="class_i_ty_actor.html" title="Actor class to be used within a scene.">ITyActor</a> <span class="keyword">const</span>&amp; pActor)                                     { ; }
-<a name="l00325"></a>00325 
-<a name="l00330"></a><a class="code" href="class_i_ty_actor.html#ace0a008487e45e3f5fd6ac6301ef6acb">00330</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#ace0a008487e45e3f5fd6ac6301ef6acb" title="Will be called everytime current state assoaciated Sprite animation starts, if Active and Visible...">OnAnimationStart</a>()                                                                      { ; }
-<a name="l00331"></a>00331 
-<a name="l00336"></a><a class="code" href="class_i_ty_actor.html#aa1eda801c41618d6025249e0dbc3cc49">00336</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#aa1eda801c41618d6025249e0dbc3cc49" title="Will be called everytime current state assoaciated Sprite animation ends, if Active and Visible...">OnAnimationEnd</a>()                                                                        { ; }
-<a name="l00337"></a>00337 
-<a name="l00338"></a>00338 
-<a name="l00343"></a><a class="code" href="class_i_ty_actor.html#a56e1581ea21a61d56ee13065b1bb237d">00343</a>                 int64                           <a class="code" href="class_i_ty_actor.html#a56e1581ea21a61d56ee13065b1bb237d" title="Accessor for the Actors ID.">GetID</a>()<span class="keyword">                         const           </span>{       <span class="keywordflow">return</span> m_ID;                                    }
-<a name="l00344"></a>00344 
-<a name="l00349"></a><a class="code" href="class_i_ty_actor.html#ad96e4d0568d002ec80b3f3511d34bac4">00349</a>                 std::string                     <a class="code" href="class_i_ty_actor.html#ad96e4d0568d002ec80b3f3511d34bac4" title="Accessor for the Actors Name.">GetName</a>()<span class="keyword">                       const           </span>{       <span class="keywordflow">return</span> m_Name;                                  }
-<a name="l00350"></a>00350 
-<a name="l00355"></a><a class="code" href="class_i_ty_actor.html#acb6782b902f1d23196ee5d4459a7f4c6">00355</a>                 std::string                     <a class="code" href="class_i_ty_actor.html#acb6782b902f1d23196ee5d4459a7f4c6" title="Accessor for the Actors Role.">GetRole</a>()<span class="keyword">                       const           </span>{       <span class="keywordflow">return</span> m_Role;                                  }
-<a name="l00356"></a>00356 
-<a name="l00361"></a><a class="code" href="class_i_ty_actor.html#a3a317a12d0872943894aef2ab1395c7c">00361</a>                 <span class="keywordtype">int</span>                                     <a class="code" href="class_i_ty_actor.html#a3a317a12d0872943894aef2ab1395c7c" title="Accessor for the Actors Depth.">GetDepth</a>()<span class="keyword">                      const           </span>{       <span class="keywordflow">return</span> m_Depth;                                 }
-<a name="l00362"></a>00362 
-<a name="l00367"></a><a class="code" href="class_i_ty_actor.html#adc9729b29f07da02bbfa26d423901b45">00367</a>                 TOASTY_ACTOR_STATE      <a class="code" href="class_i_ty_actor.html#adc9729b29f07da02bbfa26d423901b45" title="Accessor for the Actors Current State.">GetCurrentState</a>()<span class="keyword">       const           </span>{       <span class="keywordflow">return</span> m_CurrentState-&gt;state;   }
-<a name="l00368"></a>00368 
-<a name="l00373"></a><a class="code" href="class_i_ty_actor.html#ab1c7d4089d543bf258e02854c00969f0">00373</a>                 TOASTY_ACTOR_STATE      <a class="code" href="class_i_ty_actor.html#ab1c7d4089d543bf258e02854c00969f0" title="Accessor for the Actor Last State.">GetLastState</a>()<span class="keyword">          const           </span>{       <span class="keywordflow">return</span> m_LastState-&gt;state;              }
-<a name="l00374"></a>00374 
-<a name="l00379"></a><a class="code" href="class_i_ty_actor.html#a029053700af64bae8290b5dcfa04ceec">00379</a>                 CIwRect                         <a class="code" href="class_i_ty_actor.html#a029053700af64bae8290b5dcfa04ceec" title="Accessor for the Actors Mask.">GetMask</a>()<span class="keyword">                       const           </span>{       <span class="keywordflow">return</span> m_Mask;                                  }
-<a name="l00380"></a>00380 
-<a name="l00385"></a><a class="code" href="class_i_ty_actor.html#a545fb58ad751ccbc8a33729ede2b7415">00385</a>                 CIwSVec2                        <a class="code" href="class_i_ty_actor.html#a545fb58ad751ccbc8a33729ede2b7415" title="Accessor for the Actors Position.">GetPosition</a>()<span class="keyword">           const           </span>{       <span class="keywordflow">return</span> m_Position;                              }
-<a name="l00386"></a>00386 
-<a name="l00391"></a><a class="code" href="class_i_ty_actor.html#a3ecdf0c6c1502c4b5a4a7227811ad0e3">00391</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a3ecdf0c6c1502c4b5a4a7227811ad0e3" title="Mutator for the Actors Name.">SetName</a>(std::string pName)                                      {       m_Name     = pName;                     }
-<a name="l00392"></a>00392 
-<a name="l00397"></a><a class="code" href="class_i_ty_actor.html#abbf80ab3261ea1ffa4a83e8958f486bd">00397</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#abbf80ab3261ea1ffa4a83e8958f486bd" title="Mutator for the Actors Role.">SetRole</a>(std::string pRole)                                      {       m_Role     = pRole;                     }
-<a name="l00398"></a>00398                 
-<a name="l00403"></a><a class="code" href="class_i_ty_actor.html#a23072345bc259b4a18c702238e3f9249">00403</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a23072345bc259b4a18c702238e3f9249" title="Mutator for the Actors Depth.">SetDepth</a>(<span class="keywordtype">int</span> pDepth)                                            {       m_Depth    = pDepth;            }
-<a name="l00404"></a>00404                 
-<a name="l00409"></a><a class="code" href="class_i_ty_actor.html#ad2a1db314df31d4c1114132154644e2d">00409</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#ad2a1db314df31d4c1114132154644e2d" title="Mutator for the Actors Active flag.">SetActive</a>(<span class="keywordtype">bool</span> pActive)                                         {       m_Active   = pActive;           }
-<a name="l00410"></a>00410                 
-<a name="l00415"></a><a class="code" href="class_i_ty_actor.html#af1f3341d3cb568b2420cfce2a570e507">00415</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#af1f3341d3cb568b2420cfce2a570e507" title="Mutator for the Actors Visible flag.">SetVisible</a>(<span class="keywordtype">bool</span> pVisible)                                       {       m_Visible  = pVisible;          }
-<a name="l00416"></a>00416                 
-<a name="l00421"></a><a class="code" href="class_i_ty_actor.html#acc5fe8fe823f7a8f95a6bbe505ebe95a">00421</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#acc5fe8fe823f7a8f95a6bbe505ebe95a" title="Mutator for the Actors Solid flag.">SetSolid</a>(<span class="keywordtype">bool</span> pSolid)                                           {       m_Solid    = pSolid;            }               
-<a name="l00422"></a>00422                 
-<a name="l00427"></a><a class="code" href="class_i_ty_actor.html#aa119f79b398074a9b9d6281e7b463fee">00427</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#aa119f79b398074a9b9d6281e7b463fee" title="Mutator for the Actors Collision Mask.">SetMask</a>(CIwRect pMask)                                          {       m_Mask     = pMask;                     }
-<a name="l00428"></a>00428                 
-<a name="l00433"></a><a class="code" href="class_i_ty_actor.html#a9b37537093a7b6c412d6f1379b4eabb9">00433</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a9b37537093a7b6c412d6f1379b4eabb9" title="Mutator for the Actors Position.">SetPosition</a>(CIwSVec2 pPosition)                         {       m_Position = pPosition;         }
-<a name="l00434"></a>00434 };
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00035"></a><a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51">00035</a> <span class="keyword">enum</span> <a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51" title="Actor State enumeration You might provide your own set of states but these (so far) are useful enough...">TOASTY_ACTOR_STATE</a> {
+<a name="l00036"></a><a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51a838543c05a64b8e7ed1941be18d97eac">00036</a>                 <a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51a838543c05a64b8e7ed1941be18d97eac">TOASTY_ACTOR_WALKING</a>=0, 
+<a name="l00037"></a><a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51a612b17e3726cee3c90caa98789335c78">00037</a>                 <a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51a612b17e3726cee3c90caa98789335c78">TOASTY_ACTOR_ATTACKING</a>, 
+<a name="l00038"></a><a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51a66e2cb2759873cc8a740767d69807bd4">00038</a>                 <a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51a66e2cb2759873cc8a740767d69807bd4">TOASTY_ACTOR_DEFENDING</a>, 
+<a name="l00039"></a><a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51a4f54ca708f788cc8a63abcd54161f900">00039</a>                 <a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51a4f54ca708f788cc8a63abcd54161f900">TOASTY_ACTOR_STANDING</a>,  
+<a name="l00040"></a><a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51a2457087c657586beea1c907be07d5474">00040</a>                 <a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51a2457087c657586beea1c907be07d5474">TOASTY_ACTOR_APPEARING</a>, 
+<a name="l00041"></a><a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51acd5a84b6eb0b4ed7e1bc6be151271f4d">00041</a>                 <a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51acd5a84b6eb0b4ed7e1bc6be151271f4d">TOASTY_ACTOR_DYING</a>,             
+<a name="l00042"></a><a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51a6da225555227f8e35b7b94f274612f40">00042</a>                 <a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51a6da225555227f8e35b7b94f274612f40">TOASTY_ACTOR_DEAD</a>,              
+<a name="l00043"></a><a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51a87f1c4504f93280c40d25e96a8fc95c4">00043</a>                 <a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51a87f1c4504f93280c40d25e96a8fc95c4">TOASTY_ACTOR_IDLE</a>               
+<a name="l00044"></a>00044         };
+<a name="l00045"></a>00045 
+<a name="l00046"></a><a class="code" href="class_i_ty_actor.html">00046</a> <span class="keyword">class </span><a class="code" href="class_i_ty_actor.html" title="Actor class to be used within a scene.">ITyActor</a> {
+<a name="l00047"></a>00047         
+<a name="l00048"></a>00048         <span class="keyword">private</span>:
+<a name="l00052"></a>00052                 <span class="keyword">const</span> int64                             m_ID;
+<a name="l00053"></a>00053 
+<a name="l00057"></a>00057                 <span class="keywordtype">bool</span>                                    m_Built;
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059         <span class="keyword">protected</span>:
+<a name="l00063"></a><a class="code" href="class_i_ty_actor.html#afdfb0e1ed5a47085f52f95f276010bb6">00063</a>                 std::string                             <a class="code" href="class_i_ty_actor.html#afdfb0e1ed5a47085f52f95f276010bb6">m_Name</a>;
+<a name="l00064"></a>00064 
+<a name="l00068"></a><a class="code" href="class_i_ty_actor.html#a92de9e18b7a31fc93b8bb775922078d4">00068</a>                 std::string                             <a class="code" href="class_i_ty_actor.html#a92de9e18b7a31fc93b8bb775922078d4">m_Role</a>;
+<a name="l00069"></a>00069                 
+<a name="l00073"></a><a class="code" href="class_i_ty_actor.html#ac075325d62fdcda89c2a91f2c1298376">00073</a>                 <span class="keywordtype">int</span>                                             <a class="code" href="class_i_ty_actor.html#ac075325d62fdcda89c2a91f2c1298376">m_Depth</a>;
+<a name="l00074"></a>00074 
+<a name="l00078"></a><a class="code" href="class_i_ty_actor.html#ae460cd48bef240e11cfa5df7a505cbe9">00078</a>                 <span class="keywordtype">bool</span>                                    <a class="code" href="class_i_ty_actor.html#ae460cd48bef240e11cfa5df7a505cbe9">m_Active</a>;
+<a name="l00079"></a>00079 
+<a name="l00083"></a><a class="code" href="class_i_ty_actor.html#a1019d46cd7502694e5f69c7c4c7be23e">00083</a>                 <span class="keywordtype">bool</span>                                    <a class="code" href="class_i_ty_actor.html#a1019d46cd7502694e5f69c7c4c7be23e">m_Visible</a>;
+<a name="l00084"></a>00084 
+<a name="l00088"></a><a class="code" href="class_i_ty_actor.html#a0365728019201a011e657ab56e36d06a">00088</a>                 <span class="keywordtype">bool</span>                                    <a class="code" href="class_i_ty_actor.html#a0365728019201a011e657ab56e36d06a">m_Solid</a>;
+<a name="l00089"></a>00089 
+<a name="l00094"></a><a class="code" href="class_i_ty_actor_1_1_c_ty_state.html">00094</a>                 <span class="keyword">class </span><a class="code" href="class_i_ty_actor_1_1_c_ty_state.html" title="Inner class used to relate a Actor State with a Sprite.">CTyState</a> {
+<a name="l00095"></a>00095                 <span class="keyword">public</span>:
+<a name="l00099"></a><a class="code" href="class_i_ty_actor_1_1_c_ty_state.html#ac323a9bfa3ec7cca1b95c3be92de5da1">00099</a>                         <a class="code" href="class_c_ty_sprite.html" title="Animated sprite class.">CTySprite</a>*                      <a class="code" href="class_i_ty_actor_1_1_c_ty_state.html#ac323a9bfa3ec7cca1b95c3be92de5da1">sprite</a>;
+<a name="l00100"></a>00100 
+<a name="l00104"></a><a class="code" href="class_i_ty_actor_1_1_c_ty_state.html#ad744ea8266eddb703ed954daa1c3194b">00104</a>                         <a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51" title="Actor State enumeration You might provide your own set of states but these (so far) are useful enough...">TOASTY_ACTOR_STATE</a>      <a class="code" href="class_i_ty_actor_1_1_c_ty_state.html#ad744ea8266eddb703ed954daa1c3194b">state</a>;
+<a name="l00105"></a>00105 
+<a name="l00113"></a><a class="code" href="class_i_ty_actor_1_1_c_ty_state.html#a1df8c1e0a888f227fccc4713262b8f29">00113</a>                         <a class="code" href="class_i_ty_actor_1_1_c_ty_state.html#a1df8c1e0a888f227fccc4713262b8f29" title="Constructor.">CTyState</a>( <a class="code" href="class_c_ty_sprite.html" title="Animated sprite class.">CTySprite</a>* pSprite = 0, <a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51" title="Actor State enumeration You might provide your own set of states but these (so far) are useful enough...">TOASTY_ACTOR_STATE</a> pState = <a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51a87f1c4504f93280c40d25e96a8fc95c4">TOASTY_ACTOR_IDLE</a>): <a class="code" href="class_i_ty_actor_1_1_c_ty_state.html#ac323a9bfa3ec7cca1b95c3be92de5da1">sprite</a>(pSprite), <a class="code" href="class_i_ty_actor_1_1_c_ty_state.html#ad744ea8266eddb703ed954daa1c3194b">state</a>(pState)
+<a name="l00114"></a>00114                         {
+<a name="l00115"></a>00115                                 ;
+<a name="l00116"></a>00116                         }
+<a name="l00117"></a>00117                 };
+<a name="l00118"></a>00118 
+<a name="l00122"></a><a class="code" href="class_i_ty_actor.html#aa90c7ebf0af50802126ca951906fb225">00122</a>                 std::vector&lt;CTyState&gt;   <a class="code" href="class_i_ty_actor.html#aa90c7ebf0af50802126ca951906fb225">m_States</a>;
+<a name="l00123"></a>00123 
+<a name="l00127"></a><a class="code" href="class_i_ty_actor.html#afcdb5a06ae0e2b6d9872fa6f17222487">00127</a>                 <a class="code" href="class_i_ty_actor_1_1_c_ty_state.html" title="Inner class used to relate a Actor State with a Sprite.">CTyState</a>*                               <a class="code" href="class_i_ty_actor.html#afcdb5a06ae0e2b6d9872fa6f17222487">m_CurrentState</a>;
+<a name="l00128"></a>00128 
+<a name="l00132"></a><a class="code" href="class_i_ty_actor.html#ab637fbe1df811cbde3ad2b780f1ea643">00132</a>                 <a class="code" href="class_i_ty_actor_1_1_c_ty_state.html" title="Inner class used to relate a Actor State with a Sprite.">CTyState</a>*                               <a class="code" href="class_i_ty_actor.html#ab637fbe1df811cbde3ad2b780f1ea643">m_LastState</a>;
+<a name="l00133"></a>00133 
+<a name="l00137"></a><a class="code" href="class_i_ty_actor.html#abd0ddacb8e677d2d36ead794883dee4c">00137</a>                 CIwRect                                 <a class="code" href="class_i_ty_actor.html#abd0ddacb8e677d2d36ead794883dee4c">m_Mask</a>;
+<a name="l00138"></a>00138 
+<a name="l00142"></a><a class="code" href="class_i_ty_actor.html#a296ffe4ccf5fad06daf002837b9ec128">00142</a>                 CIwSVec2                                <a class="code" href="class_i_ty_actor.html#a296ffe4ccf5fad06daf002837b9ec128">m_Position</a>;
+<a name="l00143"></a>00143 
+<a name="l00144"></a><a class="code" href="class_i_ty_actor.html#ac9e603148a462b197c336bd2dedd9f87">00144</a>                 <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_c_ty_scene.html">CTyScene</a>;
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146         <span class="keyword">public</span>:
+<a name="l00166"></a><a class="code" href="class_i_ty_actor.html#afb266117deb0b8be81325ce76ef7c95b">00166</a>                 <a class="code" href="class_i_ty_actor.html#afb266117deb0b8be81325ce76ef7c95b" title="Constructor.">ITyActor</a>(int64 pID, <span class="keywordtype">bool</span> pActive = <span class="keyword">true</span>, <span class="keywordtype">bool</span> pVisible = <span class="keyword">true</span>, <span class="keywordtype">bool</span> pSolid = <span class="keyword">true</span>, CIwRect pMask = CIwRect(0,0,0,0), CIwSVec2 pPosition = CIwSVec2::g_Zero)
+<a name="l00167"></a>00167                         : m_ID(pID), m_Built(true), <a class="code" href="class_i_ty_actor.html#ac075325d62fdcda89c2a91f2c1298376">m_Depth</a>(0), <a class="code" href="class_i_ty_actor.html#ae460cd48bef240e11cfa5df7a505cbe9">m_Active</a>(pActive), <a class="code" href="class_i_ty_actor.html#a1019d46cd7502694e5f69c7c4c7be23e">m_Visible</a>(pVisible), <a class="code" href="class_i_ty_actor.html#a0365728019201a011e657ab56e36d06a">m_Solid</a>(pSolid), <a class="code" href="class_i_ty_actor.html#abd0ddacb8e677d2d36ead794883dee4c">m_Mask</a>(pMask), <a class="code" href="class_i_ty_actor.html#a296ffe4ccf5fad06daf002837b9ec128">m_Position</a>(pPosition)
+<a name="l00168"></a>00168                 { 
+<a name="l00169"></a>00169                         ;
+<a name="l00170"></a>00170                 }
+<a name="l00171"></a>00171 
+<a name="l00176"></a><a class="code" href="class_i_ty_actor.html#afc1f27393487c6422303523195c3922c">00176</a>                 <span class="keyword">virtual</span> <a class="code" href="class_i_ty_actor.html#afc1f27393487c6422303523195c3922c" title="Destructor It actually does nothing but deleting the states.">~ITyActor</a>(){ ; }
+<a name="l00177"></a>00177 
+<a name="l00178"></a><a class="code" href="class_i_ty_actor.html#aa988ea01f7b61556918f02ba184b60b3">00178</a>                 <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#aa988ea01f7b61556918f02ba184b60b3">operator&lt;	</a>(<a class="code" href="class_i_ty_actor.html" title="Actor class to be used within a scene.">ITyActor</a> <span class="keyword">const</span>&amp; pActor)
+<a name="l00179"></a>00179                 {
+<a name="l00180"></a>00180                         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00181"></a>00181                 }
+<a name="l00182"></a>00182         
+<a name="l00187"></a><a class="code" href="class_i_ty_actor.html#af3670099e1c1e77d620c43125dac6e61">00187</a>                 <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#af3670099e1c1e77d620c43125dac6e61" title="Is the actor built?">IsBuilt</a>()<span class="keyword">       const   </span>{       <span class="keywordflow">return</span> m_Built;         }
+<a name="l00188"></a>00188 
+<a name="l00193"></a><a class="code" href="class_i_ty_actor.html#abe293544e0a3823400aaf490b24ae81d">00193</a>                 <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#abe293544e0a3823400aaf490b24ae81d" title="Is the actor active?">IsActive</a>()<span class="keyword">      const   </span>{       <span class="keywordflow">return</span> <a class="code" href="class_i_ty_actor.html#ae460cd48bef240e11cfa5df7a505cbe9">m_Active</a>;        }
+<a name="l00194"></a>00194                 
+<a name="l00199"></a><a class="code" href="class_i_ty_actor.html#a5e3d6f0fd5ab67afb6d56488b7a55595">00199</a>                 <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#a5e3d6f0fd5ab67afb6d56488b7a55595" title="Is the actor visible?">IsVisible</a>()<span class="keyword"> const       </span>{       <span class="keywordflow">return</span> <a class="code" href="class_i_ty_actor.html#a1019d46cd7502694e5f69c7c4c7be23e">m_Visible</a>;       }
+<a name="l00200"></a>00200                 
+<a name="l00205"></a><a class="code" href="class_i_ty_actor.html#a5c1f9e77b0e5903c1f63ac5e2b2c42ad">00205</a>                 <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#a5c1f9e77b0e5903c1f63ac5e2b2c42ad" title="Is the actor solid?">IsSolid</a>()<span class="keyword">       const   </span>{       <span class="keywordflow">return</span> <a class="code" href="class_i_ty_actor.html#a0365728019201a011e657ab56e36d06a">m_Solid</a>;         }
+<a name="l00206"></a>00206 
+<a name="l00217"></a>00217                 <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#aad869e863d1dc2283d7b33bd2aa02e4b" title="Adds a new state to the State Vector.">AddState</a>(<a class="code" href="class_c_ty_sprite.html" title="Animated sprite class.">CTySprite</a>* pSprite, <a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51" title="Actor State enumeration You might provide your own set of states but these (so far) are useful enough...">TOASTY_ACTOR_STATE</a> pState);
+<a name="l00218"></a>00218 
+<a name="l00228"></a>00228                 <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#a64f9104dbcf4bccbc17121d81b40c9cb" title="Deletes a state from the State Vector.">DeleteState</a>(<a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51" title="Actor State enumeration You might provide your own set of states but these (so far) are useful enough...">TOASTY_ACTOR_STATE</a> pState);
+<a name="l00229"></a>00229 
+<a name="l00237"></a>00237                 <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#ab7a324bf10f138f537fe2b869d3aeea5" title="Sets a state from the State Vector as current state.">SetCurrentState</a>(<a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51" title="Actor State enumeration You might provide your own set of states but these (so far) are useful enough...">TOASTY_ACTOR_STATE</a> pState);
+<a name="l00238"></a>00238                 
+<a name="l00243"></a><a class="code" href="class_i_ty_actor.html#aeff5d073d59e661d58e9bdc72370769c">00243</a>                 <span class="keyword">virtual</span> <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#aeff5d073d59e661d58e9bdc72370769c" title="Will be called once the actor is added to a scene.">OnCreate</a>()                                                                                      { <span class="keywordflow">return</span> <span class="keyword">true</span>; }
+<a name="l00244"></a>00244 
+<a name="l00249"></a><a class="code" href="class_i_ty_actor.html#a1ceb6a35987a22acb85bdaf9fd23f349">00249</a>                 <span class="keyword">virtual</span> <span class="keywordtype">bool</span>    <a class="code" href="class_i_ty_actor.html#a1ceb6a35987a22acb85bdaf9fd23f349" title="Will be called once the actor is removed from a scene.">OnDestroy</a>()                                                                                     { <span class="keywordflow">return</span> <span class="keyword">true</span>; }
+<a name="l00250"></a>00250 
+<a name="l00255"></a><a class="code" href="class_i_ty_actor.html#a3a3295eba0fc092e44a9b690d2d242ab">00255</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a3a3295eba0fc092e44a9b690d2d242ab" title="Will be called on Keyboard Press event.">OnKeyPress</a>(s3eKey pKey)                                                         { ; }
+<a name="l00256"></a>00256 
+<a name="l00261"></a><a class="code" href="class_i_ty_actor.html#ae0402203392a84e769fad4a989d07b3c">00261</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#ae0402203392a84e769fad4a989d07b3c" title="Will be called on Keyboard Release event.">OnKeyRelease</a>(s3eKey pKey)                                                       { ; }
+<a name="l00262"></a>00262 
+<a name="l00267"></a><a class="code" href="class_i_ty_actor.html#aa6008d50671f63f7ca482b54179b7725">00267</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#aa6008d50671f63f7ca482b54179b7725" title="Will be called if a Key is hold.">OnKeySustain</a>(s3eKey pKey, int64 pMS)                            { ; }
+<a name="l00268"></a>00268 
+<a name="l00273"></a><a class="code" href="class_i_ty_actor.html#ae828745012aac359147920ccb42801b9">00273</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#ae828745012aac359147920ccb42801b9" title="Will be called if the Screen is touched.">OnTouchPress</a>(<span class="keywordtype">int</span> pX, <span class="keywordtype">int</span> pY )                                           { ; }
+<a name="l00274"></a>00274 
+<a name="l00279"></a><a class="code" href="class_i_ty_actor.html#adb1cde3971b3d75407a8fbb590f7088a">00279</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#adb1cde3971b3d75407a8fbb590f7088a" title="Will be called if the Screen is hold.">OnTouchSustain</a>(<span class="keywordtype">int</span> pX, <span class="keywordtype">int</span> pY, int64 pMS)                       { ; }
+<a name="l00280"></a>00280 
+<a name="l00285"></a><a class="code" href="class_i_ty_actor.html#a240c68f34a3b90af8bbef1729a74114a">00285</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a240c68f34a3b90af8bbef1729a74114a" title="Will be called if a Screentouch is released.">OnTouchRelease</a>(<span class="keywordtype">int</span> pX, <span class="keywordtype">int</span> pY)                                          { ; }
+<a name="l00286"></a>00286 
+<a name="l00291"></a><a class="code" href="class_i_ty_actor.html#ad07610fc8cd2e0ade09d777979102a22">00291</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#ad07610fc8cd2e0ade09d777979102a22" title="Will be called if the screen is touch and then dragged.">OnTouchDrag</a>(<span class="keywordtype">int</span> pX, <span class="keywordtype">int</span> pY, <span class="keywordtype">int</span> pRelX, <span class="keywordtype">int</span> pRelY)       { ; }
+<a name="l00292"></a>00292 
+<a name="l00297"></a><a class="code" href="class_i_ty_actor.html#a9da03663a14f091ce23a5adae98e2302">00297</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a9da03663a14f091ce23a5adae98e2302" title="Will be called if Actor is about to collide with Scene boundaries.">OnIntersectBoundaries</a>(CIwRect pBoundaries)                      { ; }
+<a name="l00298"></a>00298 
+<a name="l00303"></a><a class="code" href="class_i_ty_actor.html#aeed7b53859c91f8be589ff441f36852d">00303</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#aeed7b53859c91f8be589ff441f36852d" title="Will be called First in each step, if Active.">OnStepStart</a>()                                                                           { ; }   <span class="comment">//first         called method</span>
+<a name="l00304"></a>00304 
+<a name="l00309"></a><a class="code" href="class_i_ty_actor.html#a78ac709f1fdbd9fba59180337be44a7a">00309</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a78ac709f1fdbd9fba59180337be44a7a" title="Will be called Second in each step, if Active.">OnStep</a>()                                                                                        { ; }   <span class="comment">//second        </span>
+<a name="l00310"></a>00310 
+<a name="l00315"></a><a class="code" href="class_i_ty_actor.html#aa539311a3f8cf47dd325f6cb6e7413a6">00315</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#aa539311a3f8cf47dd325f6cb6e7413a6" title="Will be called after Rendering in each step, if Active.">OnStepEnd</a>()                                                                                     { ; }   <span class="comment">//this one is called after OnRender so if you need to update anything between rendering and OnStepStart, do it here</span>
+<a name="l00316"></a>00316 
+<a name="l00321"></a><a class="code" href="class_i_ty_actor.html#ac5a0f1ef9aca4cf49893171c130abb9c">00321</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#ac5a0f1ef9aca4cf49893171c130abb9c" title="Will be called before StepEnd, but at the end of each step, if Visible.">OnRender</a>()                                                                                      { ; }   <span class="comment">//this is called before OnStepEnd and after OnStep</span>
+<a name="l00322"></a>00322 
+<a name="l00327"></a><a class="code" href="class_i_ty_actor.html#a88b1d350c4649d2df9e358f15fbca9b2">00327</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a88b1d350c4649d2df9e358f15fbca9b2" title="Will be called when two actors collide, if Solid.">OnCollision</a>(<a class="code" href="class_i_ty_actor.html" title="Actor class to be used within a scene.">ITyActor</a> <span class="keyword">const</span>&amp; pActor)                                     { ; }
+<a name="l00328"></a>00328 
+<a name="l00333"></a><a class="code" href="class_i_ty_actor.html#a56e1581ea21a61d56ee13065b1bb237d">00333</a>                 int64                           <a class="code" href="class_i_ty_actor.html#a56e1581ea21a61d56ee13065b1bb237d" title="Accessor for the Actors ID.">GetID</a>()<span class="keyword">                         const           </span>{       <span class="keywordflow">return</span> m_ID;                                    }
+<a name="l00334"></a>00334 
+<a name="l00339"></a><a class="code" href="class_i_ty_actor.html#ad96e4d0568d002ec80b3f3511d34bac4">00339</a>                 std::string                     <a class="code" href="class_i_ty_actor.html#ad96e4d0568d002ec80b3f3511d34bac4" title="Accessor for the Actors Name.">GetName</a>()<span class="keyword">                       const           </span>{       <span class="keywordflow">return</span> <a class="code" href="class_i_ty_actor.html#afdfb0e1ed5a47085f52f95f276010bb6">m_Name</a>;                                  }
+<a name="l00340"></a>00340 
+<a name="l00345"></a><a class="code" href="class_i_ty_actor.html#acb6782b902f1d23196ee5d4459a7f4c6">00345</a>                 std::string                     <a class="code" href="class_i_ty_actor.html#acb6782b902f1d23196ee5d4459a7f4c6" title="Accessor for the Actors Role.">GetRole</a>()<span class="keyword">                       const           </span>{       <span class="keywordflow">return</span> <a class="code" href="class_i_ty_actor.html#a92de9e18b7a31fc93b8bb775922078d4">m_Role</a>;                                  }
+<a name="l00346"></a>00346 
+<a name="l00351"></a><a class="code" href="class_i_ty_actor.html#a3a317a12d0872943894aef2ab1395c7c">00351</a>                 <span class="keywordtype">int</span>                                     <a class="code" href="class_i_ty_actor.html#a3a317a12d0872943894aef2ab1395c7c" title="Accessor for the Actors Depth.">GetDepth</a>()<span class="keyword">                      const           </span>{       <span class="keywordflow">return</span> <a class="code" href="class_i_ty_actor.html#ac075325d62fdcda89c2a91f2c1298376">m_Depth</a>;                                 }
+<a name="l00352"></a>00352 
+<a name="l00357"></a><a class="code" href="class_i_ty_actor.html#adc9729b29f07da02bbfa26d423901b45">00357</a>                 <a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51" title="Actor State enumeration You might provide your own set of states but these (so far) are useful enough...">TOASTY_ACTOR_STATE</a>      <a class="code" href="class_i_ty_actor.html#adc9729b29f07da02bbfa26d423901b45" title="Accessor for the Actors Current State.">GetCurrentState</a>()<span class="keyword">       const           </span>{       <span class="keywordflow">return</span> <a class="code" href="class_i_ty_actor.html#afcdb5a06ae0e2b6d9872fa6f17222487">m_CurrentState</a>-&gt;<a class="code" href="class_i_ty_actor_1_1_c_ty_state.html#ad744ea8266eddb703ed954daa1c3194b">state</a>;   }
+<a name="l00358"></a>00358 
+<a name="l00363"></a><a class="code" href="class_i_ty_actor.html#ab1c7d4089d543bf258e02854c00969f0">00363</a>                 <a class="code" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51" title="Actor State enumeration You might provide your own set of states but these (so far) are useful enough...">TOASTY_ACTOR_STATE</a>      <a class="code" href="class_i_ty_actor.html#ab1c7d4089d543bf258e02854c00969f0" title="Accessor for the Actor Last State.">GetLastState</a>()<span class="keyword">          const           </span>{       <span class="keywordflow">return</span> <a class="code" href="class_i_ty_actor.html#ab637fbe1df811cbde3ad2b780f1ea643">m_LastState</a>-&gt;<a class="code" href="class_i_ty_actor_1_1_c_ty_state.html#ad744ea8266eddb703ed954daa1c3194b">state</a>;              }
+<a name="l00364"></a>00364 
+<a name="l00369"></a><a class="code" href="class_i_ty_actor.html#a029053700af64bae8290b5dcfa04ceec">00369</a>                 CIwRect                         <a class="code" href="class_i_ty_actor.html#a029053700af64bae8290b5dcfa04ceec" title="Accessor for the Actors Mask.">GetMask</a>()<span class="keyword">                       const           </span>{       <span class="keywordflow">return</span> <a class="code" href="class_i_ty_actor.html#abd0ddacb8e677d2d36ead794883dee4c">m_Mask</a>;                                  }
+<a name="l00370"></a>00370 
+<a name="l00375"></a><a class="code" href="class_i_ty_actor.html#a545fb58ad751ccbc8a33729ede2b7415">00375</a>                 CIwSVec2                        <a class="code" href="class_i_ty_actor.html#a545fb58ad751ccbc8a33729ede2b7415" title="Accessor for the Actors Position.">GetPosition</a>()<span class="keyword">           const           </span>{       <span class="keywordflow">return</span> <a class="code" href="class_i_ty_actor.html#a296ffe4ccf5fad06daf002837b9ec128">m_Position</a>;                              }
+<a name="l00376"></a>00376 
+<a name="l00381"></a><a class="code" href="class_i_ty_actor.html#a3ecdf0c6c1502c4b5a4a7227811ad0e3">00381</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a3ecdf0c6c1502c4b5a4a7227811ad0e3" title="Mutator for the Actors Name.">SetName</a>(std::string pName)                                      {       <a class="code" href="class_i_ty_actor.html#afdfb0e1ed5a47085f52f95f276010bb6">m_Name</a>     = pName;                     }
+<a name="l00382"></a>00382 
+<a name="l00387"></a><a class="code" href="class_i_ty_actor.html#abbf80ab3261ea1ffa4a83e8958f486bd">00387</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#abbf80ab3261ea1ffa4a83e8958f486bd" title="Mutator for the Actors Role.">SetRole</a>(std::string pRole)                                      {       <a class="code" href="class_i_ty_actor.html#a92de9e18b7a31fc93b8bb775922078d4">m_Role</a>     = pRole;                     }
+<a name="l00388"></a>00388                 
+<a name="l00393"></a><a class="code" href="class_i_ty_actor.html#a23072345bc259b4a18c702238e3f9249">00393</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a23072345bc259b4a18c702238e3f9249" title="Mutator for the Actors Depth.">SetDepth</a>(<span class="keywordtype">int</span> pDepth)                                            {       <a class="code" href="class_i_ty_actor.html#ac075325d62fdcda89c2a91f2c1298376">m_Depth</a>    = pDepth;            }
+<a name="l00394"></a>00394                 
+<a name="l00399"></a><a class="code" href="class_i_ty_actor.html#ad2a1db314df31d4c1114132154644e2d">00399</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#ad2a1db314df31d4c1114132154644e2d" title="Mutator for the Actors Active flag.">SetActive</a>(<span class="keywordtype">bool</span> pActive)                                         {       <a class="code" href="class_i_ty_actor.html#ae460cd48bef240e11cfa5df7a505cbe9">m_Active</a>   = pActive;           }
+<a name="l00400"></a>00400                 
+<a name="l00405"></a><a class="code" href="class_i_ty_actor.html#af1f3341d3cb568b2420cfce2a570e507">00405</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#af1f3341d3cb568b2420cfce2a570e507" title="Mutator for the Actors Visible flag.">SetVisible</a>(<span class="keywordtype">bool</span> pVisible)                                       {       <a class="code" href="class_i_ty_actor.html#a1019d46cd7502694e5f69c7c4c7be23e">m_Visible</a>  = pVisible;          }
+<a name="l00406"></a>00406                 
+<a name="l00411"></a><a class="code" href="class_i_ty_actor.html#acc5fe8fe823f7a8f95a6bbe505ebe95a">00411</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#acc5fe8fe823f7a8f95a6bbe505ebe95a" title="Mutator for the Actors Solid flag.">SetSolid</a>(<span class="keywordtype">bool</span> pSolid)                                           {       <a class="code" href="class_i_ty_actor.html#a0365728019201a011e657ab56e36d06a">m_Solid</a>    = pSolid;            }               
+<a name="l00412"></a>00412                 
+<a name="l00417"></a><a class="code" href="class_i_ty_actor.html#aa119f79b398074a9b9d6281e7b463fee">00417</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#aa119f79b398074a9b9d6281e7b463fee" title="Mutator for the Actors Collision Mask.">SetMask</a>(CIwRect pMask)                                          {       <a class="code" href="class_i_ty_actor.html#abd0ddacb8e677d2d36ead794883dee4c">m_Mask</a>     = pMask;                     }
+<a name="l00418"></a>00418                 
+<a name="l00423"></a><a class="code" href="class_i_ty_actor.html#a9b37537093a7b6c412d6f1379b4eabb9">00423</a>                 <span class="keywordtype">void</span>    <a class="code" href="class_i_ty_actor.html#a9b37537093a7b6c412d6f1379b4eabb9" title="Mutator for the Actors Position.">SetPosition</a>(CIwSVec2 pPosition)                         {       <a class="code" href="class_i_ty_actor.html#a296ffe4ccf5fad06daf002837b9ec128">m_Position</a> = pPosition;         }
+<a name="l00424"></a>00424 };
+<a name="l00425"></a>00425 
+<a name="l00433"></a><a class="code" href="_ty_actor_8h.html#aa4bbf4090c020ff57549861b5774a77d">00433</a> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="_ty_actor_8h.html#aa4bbf4090c020ff57549861b5774a77d" title="Compares two actors by Depth.">TyActorCompare</a>(<a class="code" href="class_i_ty_actor.html" title="Actor class to be used within a scene.">ITyActor</a>* pActor1 ,<a class="code" href="class_i_ty_actor.html" title="Actor class to be used within a scene.">ITyActor</a>* pActor2)
+<a name="l00434"></a>00434 {
+<a name="l00435"></a>00435         <span class="keywordflow">return</span> (pActor1-&gt;<a class="code" href="class_i_ty_actor.html#a3a317a12d0872943894aef2ab1395c7c" title="Accessor for the Actors Depth.">GetDepth</a>() &lt; pActor2-&gt;<a class="code" href="class_i_ty_actor.html#a3a317a12d0872943894aef2ab1395c7c" title="Accessor for the Actors Depth.">GetDepth</a>() ) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00436"></a>00436 }
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><b>TyActor.h</b>      </li>
-      <li class="footer">Generated on Fri Aug 5 2011 18:41:32 for Toasty! by&#160;
+      <li class="navelem"><a class="el" href="_ty_actor_8h.html">TyActor.h</a>      </li>
+      <li class="footer">Generated on Fri Aug 12 2011 00:58:42 for Toasty! by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -271,7 +276,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

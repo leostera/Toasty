@@ -1,6 +1,6 @@
 /***********************************************************************************
 
-	\class			IwClock
+	\class			TyClock
 	\brief			The almighty clock. returns time in ms from loop to loop and
 					is capable of frame rate capping.
 
@@ -16,20 +16,20 @@
 
 #include <s3eTimer.h>
 
-class IwClock
+class TyClock
 {
 private:
 	/*
 	 *	\brief	Standard constructor
 	 *	Initializes the class properties to s3eTimerGetMs();
 	 */
-	IwClock() : m_TotalTicks(s3eTimerGetMs()),m_ThisTicks(s3eTimerGetMs()),m_LastTicks(s3eTimerGetMs()),m_Cap(0)
+	TyClock() : m_TotalTicks(s3eTimerGetMs()),m_ThisTicks(s3eTimerGetMs()),m_LastTicks(s3eTimerGetMs()),m_Cap(0)
 	{ ; }
 
 	/*
 	 *	m_Clock		static self-pointer used for the singleton pattern.
 	 */
-	static IwClock*	m_Clock;
+	static TyClock*	m_Clock;
 
 	/*
 	 *	m_TotalTicks	the total amount of ticks
@@ -58,11 +58,11 @@ private:
 	/*
 	 *	\brief		Gets you a clock.
 	 *
-	 *	\returns	IwClock*	pointer to the singleton class.
+	 *	\returns	TyClock*	pointer to the singleton class.
 	 *
 	 *	Serves as a public method for getting a pointer to the singleton.
 	 */
-	friend IwClock*	IwGetClock();
+	friend TyClock*	IwGetClock();
 
 	/*
 	 *	\brief		Starts the clock.
@@ -71,7 +71,7 @@ private:
 	 *
 	 *	Initializes the class by creating the singleton. Note: not strictly necessary since IwGetClock also calls it just in case!
 	 */
-	friend void		IwClockInit();
+	friend void		TyClockInit();
 
 	/*
 	 *	\brief		Terminates the clock.
@@ -80,7 +80,7 @@ private:
 	 *
 	 *	Kills the singleton. This one IS necessary, otherwise leaks will be reported.
 	 */
-	friend void		IwClockTerminate();
+	friend void		TyClockTerminate();
 
 
 public:
@@ -153,20 +153,20 @@ public:
  *	FRIEND CLASSES IMPLEMENTATIONS
  */
 
-void IwClockInit()
+void TyClockInit()
 {
-	if(!IwClock::m_Clock)
-		IwClock::m_Clock = new IwClock();
+	if(!TyClock::m_Clock)
+		TyClock::m_Clock = new TyClock();
 }
 
-void IwClockTerminate()
+void TyClockTerminate()
 {
-	if(IwClock::m_Clock)
-		delete IwClock::m_Clock;
+	if(TyClock::m_Clock)
+		delete TyClock::m_Clock;
 }
 
-IwClock* IwGetClock() 
+TyClock* TyGetClock() 
 {
-	IwClockInit();
-	return IwClock::m_Clock;
+	TyClockInit();
+	return TyClock::m_Clock;
 }

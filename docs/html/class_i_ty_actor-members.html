@@ -25,6 +25,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="toastylogosmall.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Toasty!&#160;<span id="projectnumber">0.1</span></div>
    <div id="projectbrief">A game framework for the Marmalade SDK.</div>
@@ -60,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -84,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 This is the complete list of members for <a class="el" href="class_i_ty_actor.html">ITyActor</a>, including all inherited members.<table>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#aad869e863d1dc2283d7b33bd2aa02e4b">AddState</a>(CTySprite *pSprite, TOASTY_ACTOR_STATE pState)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>CTyScene</b> (defined in <a class="el" href="class_i_ty_actor.html">ITyActor</a>)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [friend]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#ac9e603148a462b197c336bd2dedd9f87">CTyScene</a> class</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [friend]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a64f9104dbcf4bccbc17121d81b40c9cb">DeleteState</a>(TOASTY_ACTOR_STATE pState)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#adc9729b29f07da02bbfa26d423901b45">GetCurrentState</a>() const </td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a3a317a12d0872943894aef2ab1395c7c">GetDepth</a>() const </td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline]</code></td></tr>
@@ -99,25 +101,24 @@ This is the complete list of members for <a class="el" href="class_i_ty_actor.ht
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a5c1f9e77b0e5903c1f63ac5e2b2c42ad">IsSolid</a>() const </td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a5e3d6f0fd5ab67afb6d56488b7a55595">IsVisible</a>() const </td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#afb266117deb0b8be81325ce76ef7c95b">ITyActor</a>(int64 pID, bool pActive=true, bool pVisible=true, bool pSolid=true, CIwRect pMask=CIwRect(0, 0, 0, 0), CIwSVec2 pPosition=CIwSVec2::g_Zero)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>m_Active</b> (defined in <a class="el" href="class_i_ty_actor.html">ITyActor</a>)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>m_CurrentState</b> (defined in <a class="el" href="class_i_ty_actor.html">ITyActor</a>)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>m_Depth</b> (defined in <a class="el" href="class_i_ty_actor.html">ITyActor</a>)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>m_LastState</b> (defined in <a class="el" href="class_i_ty_actor.html">ITyActor</a>)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>m_Mask</b> (defined in <a class="el" href="class_i_ty_actor.html">ITyActor</a>)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>m_Name</b> (defined in <a class="el" href="class_i_ty_actor.html">ITyActor</a>)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>m_Position</b> (defined in <a class="el" href="class_i_ty_actor.html">ITyActor</a>)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>m_Role</b> (defined in <a class="el" href="class_i_ty_actor.html">ITyActor</a>)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>m_Solid</b> (defined in <a class="el" href="class_i_ty_actor.html">ITyActor</a>)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>m_States</b> (defined in <a class="el" href="class_i_ty_actor.html">ITyActor</a>)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>m_Visible</b> (defined in <a class="el" href="class_i_ty_actor.html">ITyActor</a>)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#aa1eda801c41618d6025249e0dbc3cc49">OnAnimationEnd</a>()</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#ace0a008487e45e3f5fd6ac6301ef6acb">OnAnimationStart</a>()</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#ae460cd48bef240e11cfa5df7a505cbe9">m_Active</a></td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#afcdb5a06ae0e2b6d9872fa6f17222487">m_CurrentState</a></td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#ac075325d62fdcda89c2a91f2c1298376">m_Depth</a></td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#ab637fbe1df811cbde3ad2b780f1ea643">m_LastState</a></td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#abd0ddacb8e677d2d36ead794883dee4c">m_Mask</a></td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#afdfb0e1ed5a47085f52f95f276010bb6">m_Name</a></td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a296ffe4ccf5fad06daf002837b9ec128">m_Position</a></td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a92de9e18b7a31fc93b8bb775922078d4">m_Role</a></td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a0365728019201a011e657ab56e36d06a">m_Solid</a></td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#aa90c7ebf0af50802126ca951906fb225">m_States</a></td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a1019d46cd7502694e5f69c7c4c7be23e">m_Visible</a></td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a88b1d350c4649d2df9e358f15fbca9b2">OnCollision</a>(ITyActor const &amp;pActor)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#aeff5d073d59e661d58e9bdc72370769c">OnCreate</a>()</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a1ceb6a35987a22acb85bdaf9fd23f349">OnDestroy</a>()</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a9da03663a14f091ce23a5adae98e2302">OnIntersectBoundaries</a>(CIwRect pBoundaries)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a3a3295eba0fc092e44a9b690d2d242ab">OnKeyPress</a>(s3eKey pKey)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#ae0402203392a84e769fad4a989d07b3c">OnKeyRelease</a>(s3eKey pKey)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#aa6008d50671f63f7ca482b54179b7725">OnKeySustain</a>(s3eKey pKey, int64 pMS)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a05d286129fce86d004a9a35dd8e4791f">OnLoad</a>()</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#ac5a0f1ef9aca4cf49893171c130abb9c">OnRender</a>()</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a78ac709f1fdbd9fba59180337be44a7a">OnStep</a>()</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#aa539311a3f8cf47dd325f6cb6e7413a6">OnStepEnd</a>()</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
@@ -126,7 +127,7 @@ This is the complete list of members for <a class="el" href="class_i_ty_actor.ht
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#ae828745012aac359147920ccb42801b9">OnTouchPress</a>(int pX, int pY)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a240c68f34a3b90af8bbef1729a74114a">OnTouchRelease</a>(int pX, int pY)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#adb1cde3971b3d75407a8fbb590f7088a">OnTouchSustain</a>(int pX, int pY, int64 pMS)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a7aaa8b17ac1742d2cc6457e79d9dbe4f">OnUnload</a>()</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#aa988ea01f7b61556918f02ba184b60b3">operator&lt;</a>(ITyActor const &amp;pActor)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#ad2a1db314df31d4c1114132154644e2d">SetActive</a>(bool pActive)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#ab7a324bf10f138f537fe2b869d3aeea5">SetCurrentState</a>(TOASTY_ACTOR_STATE pState)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_i_ty_actor.html#a23072345bc259b4a18c702238e3f9249">SetDepth</a>(int pDepth)</td><td><a class="el" href="class_i_ty_actor.html">ITyActor</a></td><td><code> [inline]</code></td></tr>
@@ -141,7 +142,7 @@ This is the complete list of members for <a class="el" href="class_i_ty_actor.ht
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="footer">Generated on Fri Aug 5 2011 18:41:33 for Toasty! by&#160;
+      <li class="footer">Generated on Fri Aug 12 2011 00:58:42 for Toasty! by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -151,7 +152,7 @@ This is the complete list of members for <a class="el" href="class_i_ty_actor.ht
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

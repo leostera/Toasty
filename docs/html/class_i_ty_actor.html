@@ -25,6 +25,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="toastylogosmall.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Toasty!&#160;<span id="projectnumber">0.1</span></div>
    <div id="projectbrief">A game framework for the Marmalade SDK.</div>
@@ -60,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -103,9 +105,9 @@ Classes</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#afb266117deb0b8be81325ce76ef7c95b">ITyActor</a> (int64 pID, bool pActive=true, bool pVisible=true, bool pSolid=true, CIwRect pMask=CIwRect(0, 0, 0, 0), CIwSVec2 pPosition=CIwSVec2::g_Zero)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#afb266117deb0b8be81325ce76ef7c95b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc1f27393487c6422303523195c3922c"></a><!-- doxytag: member="ITyActor::~ITyActor" ref="afc1f27393487c6422303523195c3922c" args="()" -->
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#afc1f27393487c6422303523195c3922c">~ITyActor</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor It actually does nothing. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#afc1f27393487c6422303523195c3922c">~ITyActor</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor It actually does nothing but deleting the states.  <a href="#afc1f27393487c6422303523195c3922c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#aa988ea01f7b61556918f02ba184b60b3">operator&lt;</a> (<a class="el" href="class_i_ty_actor.html">ITyActor</a> const &amp;pActor)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#af3670099e1c1e77d620c43125dac6e61">IsBuilt</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the actor built?  <a href="#af3670099e1c1e77d620c43125dac6e61"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#abe293544e0a3823400aaf490b24ae81d">IsActive</a> () const </td></tr>
@@ -114,16 +116,16 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the actor visible?  <a href="#a5e3d6f0fd5ab67afb6d56488b7a55595"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#a5c1f9e77b0e5903c1f63ac5e2b2c42ad">IsSolid</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the actor solid?  <a href="#a5c1f9e77b0e5903c1f63ac5e2b2c42ad"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#aad869e863d1dc2283d7b33bd2aa02e4b">AddState</a> (<a class="el" href="class_c_ty_sprite.html">CTySprite</a> *pSprite, TOASTY_ACTOR_STATE pState)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#aad869e863d1dc2283d7b33bd2aa02e4b">AddState</a> (<a class="el" href="class_c_ty_sprite.html">CTySprite</a> *pSprite, <a class="el" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51">TOASTY_ACTOR_STATE</a> pState)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new state to the State Vector.  <a href="#aad869e863d1dc2283d7b33bd2aa02e4b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#a64f9104dbcf4bccbc17121d81b40c9cb">DeleteState</a> (TOASTY_ACTOR_STATE pState)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#a64f9104dbcf4bccbc17121d81b40c9cb">DeleteState</a> (<a class="el" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51">TOASTY_ACTOR_STATE</a> pState)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a state from the State Vector.  <a href="#a64f9104dbcf4bccbc17121d81b40c9cb"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#ab7a324bf10f138f537fe2b869d3aeea5">SetCurrentState</a> (TOASTY_ACTOR_STATE pState)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#ab7a324bf10f138f537fe2b869d3aeea5">SetCurrentState</a> (<a class="el" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51">TOASTY_ACTOR_STATE</a> pState)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a state from the State Vector as current state.  <a href="#ab7a324bf10f138f537fe2b869d3aeea5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#a05d286129fce86d004a9a35dd8e4791f">OnLoad</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Will be called on Scene loading.  <a href="#a05d286129fce86d004a9a35dd8e4791f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#a7aaa8b17ac1742d2cc6457e79d9dbe4f">OnUnload</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Will be called on Scene unloading.  <a href="#a7aaa8b17ac1742d2cc6457e79d9dbe4f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#aeff5d073d59e661d58e9bdc72370769c">OnCreate</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Will be called once the actor is added to a scene.  <a href="#aeff5d073d59e661d58e9bdc72370769c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#a1ceb6a35987a22acb85bdaf9fd23f349">OnDestroy</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Will be called once the actor is removed from a scene.  <a href="#a1ceb6a35987a22acb85bdaf9fd23f349"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#a3a3295eba0fc092e44a9b690d2d242ab">OnKeyPress</a> (s3eKey pKey)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Will be called on Keyboard Press event.  <a href="#a3a3295eba0fc092e44a9b690d2d242ab"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#ae0402203392a84e769fad4a989d07b3c">OnKeyRelease</a> (s3eKey pKey)</td></tr>
@@ -150,10 +152,6 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Will be called before StepEnd, but at the end of each step, if Visible.  <a href="#ac5a0f1ef9aca4cf49893171c130abb9c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#a88b1d350c4649d2df9e358f15fbca9b2">OnCollision</a> (<a class="el" href="class_i_ty_actor.html">ITyActor</a> const &amp;pActor)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Will be called when two actors collide, if Solid.  <a href="#a88b1d350c4649d2df9e358f15fbca9b2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#ace0a008487e45e3f5fd6ac6301ef6acb">OnAnimationStart</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Will be called everytime current state assoaciated Sprite animation starts, if Active and Visible.  <a href="#ace0a008487e45e3f5fd6ac6301ef6acb"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#aa1eda801c41618d6025249e0dbc3cc49">OnAnimationEnd</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Will be called everytime current state assoaciated Sprite animation ends, if Active and Visible.  <a href="#aa1eda801c41618d6025249e0dbc3cc49"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#a56e1581ea21a61d56ee13065b1bb237d">GetID</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for the Actors ID.  <a href="#a56e1581ea21a61d56ee13065b1bb237d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#ad96e4d0568d002ec80b3f3511d34bac4">GetName</a> () const </td></tr>
@@ -162,9 +160,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for the Actors Role.  <a href="#acb6782b902f1d23196ee5d4459a7f4c6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#a3a317a12d0872943894aef2ab1395c7c">GetDepth</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for the Actors Depth.  <a href="#a3a317a12d0872943894aef2ab1395c7c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">TOASTY_ACTOR_STATE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#adc9729b29f07da02bbfa26d423901b45">GetCurrentState</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51">TOASTY_ACTOR_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#adc9729b29f07da02bbfa26d423901b45">GetCurrentState</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for the Actors Current State.  <a href="#adc9729b29f07da02bbfa26d423901b45"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">TOASTY_ACTOR_STATE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#ab1c7d4089d543bf258e02854c00969f0">GetLastState</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51">TOASTY_ACTOR_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#ab1c7d4089d543bf258e02854c00969f0">GetLastState</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for the Actor Last State.  <a href="#ab1c7d4089d543bf258e02854c00969f0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">CIwRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#a029053700af64bae8290b5dcfa04ceec">GetMask</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for the Actors Mask.  <a href="#a029053700af64bae8290b5dcfa04ceec"></a><br/></td></tr>
@@ -188,32 +186,20 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutator for the Actors Position.  <a href="#a9b37537093a7b6c412d6f1379b4eabb9"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afdfb0e1ed5a47085f52f95f276010bb6"></a><!-- doxytag: member="ITyActor::m_Name" ref="afdfb0e1ed5a47085f52f95f276010bb6" args="" -->
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_Name</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a92de9e18b7a31fc93b8bb775922078d4"></a><!-- doxytag: member="ITyActor::m_Role" ref="a92de9e18b7a31fc93b8bb775922078d4" args="" -->
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_Role</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac075325d62fdcda89c2a91f2c1298376"></a><!-- doxytag: member="ITyActor::m_Depth" ref="ac075325d62fdcda89c2a91f2c1298376" args="" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>m_Depth</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae460cd48bef240e11cfa5df7a505cbe9"></a><!-- doxytag: member="ITyActor::m_Active" ref="ae460cd48bef240e11cfa5df7a505cbe9" args="" -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_Active</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1019d46cd7502694e5f69c7c4c7be23e"></a><!-- doxytag: member="ITyActor::m_Visible" ref="a1019d46cd7502694e5f69c7c4c7be23e" args="" -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_Visible</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0365728019201a011e657ab56e36d06a"></a><!-- doxytag: member="ITyActor::m_Solid" ref="a0365728019201a011e657ab56e36d06a" args="" -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_Solid</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa90c7ebf0af50802126ca951906fb225"></a><!-- doxytag: member="ITyActor::m_States" ref="aa90c7ebf0af50802126ca951906fb225" args="" -->
-std::vector&lt; <a class="el" href="class_i_ty_actor_1_1_c_ty_state.html">CTyState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_States</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afcdb5a06ae0e2b6d9872fa6f17222487"></a><!-- doxytag: member="ITyActor::m_CurrentState" ref="afcdb5a06ae0e2b6d9872fa6f17222487" args="" -->
-<a class="el" href="class_i_ty_actor_1_1_c_ty_state.html">CTyState</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_CurrentState</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab637fbe1df811cbde3ad2b780f1ea643"></a><!-- doxytag: member="ITyActor::m_LastState" ref="ab637fbe1df811cbde3ad2b780f1ea643" args="" -->
-<a class="el" href="class_i_ty_actor_1_1_c_ty_state.html">CTyState</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_LastState</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd0ddacb8e677d2d36ead794883dee4c"></a><!-- doxytag: member="ITyActor::m_Mask" ref="abd0ddacb8e677d2d36ead794883dee4c" args="" -->
-CIwRect&#160;</td><td class="memItemRight" valign="bottom"><b>m_Mask</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a296ffe4ccf5fad06daf002837b9ec128"></a><!-- doxytag: member="ITyActor::m_Position" ref="a296ffe4ccf5fad06daf002837b9ec128" args="" -->
-CIwSVec2&#160;</td><td class="memItemRight" valign="bottom"><b>m_Position</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#afdfb0e1ed5a47085f52f95f276010bb6">m_Name</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#a92de9e18b7a31fc93b8bb775922078d4">m_Role</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#ac075325d62fdcda89c2a91f2c1298376">m_Depth</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#ae460cd48bef240e11cfa5df7a505cbe9">m_Active</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#a1019d46cd7502694e5f69c7c4c7be23e">m_Visible</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#a0365728019201a011e657ab56e36d06a">m_Solid</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_i_ty_actor_1_1_c_ty_state.html">CTyState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#aa90c7ebf0af50802126ca951906fb225">m_States</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_ty_actor_1_1_c_ty_state.html">CTyState</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#afcdb5a06ae0e2b6d9872fa6f17222487">m_CurrentState</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_ty_actor_1_1_c_ty_state.html">CTyState</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#ab637fbe1df811cbde3ad2b780f1ea643">m_LastState</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CIwRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#abd0ddacb8e677d2d36ead794883dee4c">m_Mask</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CIwSVec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#a296ffe4ccf5fad06daf002837b9ec128">m_Position</a></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9e603148a462b197c336bd2dedd9f87"></a><!-- doxytag: member="ITyActor::CTyScene" ref="ac9e603148a462b197c336bd2dedd9f87" args="" -->
-class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#ac9e603148a462b197c336bd2dedd9f87">CTyScene</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_ty_actor.html#ac9e603148a462b197c336bd2dedd9f87">CTyScene</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Actor class to be used within a scene. </p>
@@ -222,6 +208,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <dl class="version"><dt><b>Version:</b></dt><dd>0.1 </dd></dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>Leandro Ostera</dd></dl>
 <p>Actor class to be used within a Scene class that works with states (<a class="el" href="class_i_ty_actor_1_1_c_ty_state.html" title="Inner class used to relate a Actor State with a Sprite.">CTyState</a>) and is meant to be an interface with some virtual methods to be overloaded. </p>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00046">46</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="afb266117deb0b8be81325ce76ef7c95b"></a><!-- doxytag: member="ITyActor::ITyActor" ref="afb266117deb0b8be81325ce76ef7c95b" args="(int64 pID, bool pActive=true, bool pVisible=true, bool pSolid=true, CIwRect pMask=CIwRect(0, 0, 0, 0), CIwSVec2 pPosition=CIwSVec2::g_Zero)" -->
 <div class="memitem">
@@ -296,6 +284,28 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <li><code>m_Position</code> , CIwSVec2(0,0) </li>
 </ul>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00166">166</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afc1f27393487c6422303523195c3922c"></a><!-- doxytag: member="ITyActor::~ITyActor" ref="afc1f27393487c6422303523195c3922c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ITyActor::~ITyActor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor It actually does nothing but deleting the states. </p>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00176">176</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -312,7 +322,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">TOASTY_ACTOR_STATE&#160;</td>
+          <td class="paramtype"><a class="el" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51">TOASTY_ACTOR_STATE</a>&#160;</td>
           <td class="paramname"><em>pState</em>&#160;</td>
         </tr>
         <tr>
@@ -344,7 +354,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
         <tr>
           <td class="memname">bool ITyActor::DeleteState </td>
           <td>(</td>
-          <td class="paramtype">TOASTY_ACTOR_STATE&#160;</td>
+          <td class="paramtype"><a class="el" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51">TOASTY_ACTOR_STATE</a>&#160;</td>
           <td class="paramname"><em>pState</em></td><td>)</td>
           <td></td>
         </tr>
@@ -369,7 +379,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TOASTY_ACTOR_STATE ITyActor::GetCurrentState </td>
+          <td class="memname"><a class="el" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51">TOASTY_ACTOR_STATE</a> ITyActor::GetCurrentState </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const<code> [inline]</code></td>
@@ -380,6 +390,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 
 <p>Accessor for the Actors Current State. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>TOASTY_ACTOR_STATE The actors Current State as TOASTY_ACTOR_STATE. </dd></dl>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00357">357</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -400,6 +412,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Accessor for the Actors Depth. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>int The actors Depth. </dd></dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00351">351</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a56e1581ea21a61d56ee13065b1bb237d"></a><!-- doxytag: member="ITyActor::GetID" ref="a56e1581ea21a61d56ee13065b1bb237d" args="() const " -->
@@ -419,6 +433,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Accessor for the Actors ID. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>int64 The actors ID. </dd></dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00333">333</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab1c7d4089d543bf258e02854c00969f0"></a><!-- doxytag: member="ITyActor::GetLastState" ref="ab1c7d4089d543bf258e02854c00969f0" args="() const " -->
@@ -426,7 +442,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TOASTY_ACTOR_STATE ITyActor::GetLastState </td>
+          <td class="memname"><a class="el" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51">TOASTY_ACTOR_STATE</a> ITyActor::GetLastState </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const<code> [inline]</code></td>
@@ -437,6 +453,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 
 <p>Accessor for the Actor Last State. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>TOASTY_ACTOR_STATE The actors Last State as TOASTY_ACTOR_STATE. </dd></dl>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00363">363</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -457,6 +475,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Accessor for the Actors Mask. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>CIwRect The actors mask as CIwRect. </dd></dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00369">369</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad96e4d0568d002ec80b3f3511d34bac4"></a><!-- doxytag: member="ITyActor::GetName" ref="ad96e4d0568d002ec80b3f3511d34bac4" args="() const " -->
@@ -475,6 +495,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 
 <p>Accessor for the Actors Name. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string The actors Name. </dd></dl>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00339">339</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -495,6 +517,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Accessor for the Actors Position. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>CIwSVec2 The actors position as CIwSVec2. </dd></dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00375">375</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="acb6782b902f1d23196ee5d4459a7f4c6"></a><!-- doxytag: member="ITyActor::GetRole" ref="acb6782b902f1d23196ee5d4459a7f4c6" args="() const " -->
@@ -513,6 +537,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 
 <p>Accessor for the Actors Role. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string The actors Role. </dd></dl>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00345">345</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -533,6 +559,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Is the actor active? </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if active, false otherwise. </dd></dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00193">193</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af3670099e1c1e77d620c43125dac6e61"></a><!-- doxytag: member="ITyActor::IsBuilt" ref="af3670099e1c1e77d620c43125dac6e61" args="() const " -->
@@ -551,6 +579,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 
 <p>Is the actor built? </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if built, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00187">187</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -571,6 +601,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Is the actor solid? </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if solid, false otherwise. </dd></dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00205">205</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5e3d6f0fd5ab67afb6d56488b7a55595"></a><!-- doxytag: member="ITyActor::IsVisible" ref="a5e3d6f0fd5ab67afb6d56488b7a55595" args="() const " -->
@@ -590,43 +622,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Is the actor visible? </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if visible, false otherwise. </dd></dl>
 
-</div>
-</div>
-<a class="anchor" id="aa1eda801c41618d6025249e0dbc3cc49"></a><!-- doxytag: member="ITyActor::OnAnimationEnd" ref="aa1eda801c41618d6025249e0dbc3cc49" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void ITyActor::OnAnimationEnd </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Will be called everytime current state assoaciated Sprite animation ends, if Active and Visible. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ace0a008487e45e3f5fd6ac6301ef6acb"></a><!-- doxytag: member="ITyActor::OnAnimationStart" ref="ace0a008487e45e3f5fd6ac6301ef6acb" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void ITyActor::OnAnimationStart </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Will be called everytime current state assoaciated Sprite animation starts, if Active and Visible. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00199">199</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -648,6 +644,50 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Will be called when two actors collide, if Solid. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00327">327</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeff5d073d59e661d58e9bdc72370769c"></a><!-- doxytag: member="ITyActor::OnCreate" ref="aeff5d073d59e661d58e9bdc72370769c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ITyActor::OnCreate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Will be called once the actor is added to a scene. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>bool </dd></dl>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00243">243</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1ceb6a35987a22acb85bdaf9fd23f349"></a><!-- doxytag: member="ITyActor::OnDestroy" ref="a1ceb6a35987a22acb85bdaf9fd23f349" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ITyActor::OnDestroy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Will be called once the actor is removed from a scene. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>bool </dd></dl>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00249">249</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9da03663a14f091ce23a5adae98e2302"></a><!-- doxytag: member="ITyActor::OnIntersectBoundaries" ref="a9da03663a14f091ce23a5adae98e2302" args="(CIwRect pBoundaries)" -->
@@ -667,6 +707,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 
 <p>Will be called if Actor is about to collide with Scene boundaries. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00297">297</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -688,6 +730,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Will be called on Keyboard Press event. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00255">255</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae0402203392a84e769fad4a989d07b3c"></a><!-- doxytag: member="ITyActor::OnKeyRelease" ref="ae0402203392a84e769fad4a989d07b3c" args="(s3eKey pKey)" -->
@@ -707,6 +751,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 
 <p>Will be called on Keyboard Release event. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00261">261</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -738,24 +784,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Will be called if a Key is hold. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
-</div>
-</div>
-<a class="anchor" id="a05d286129fce86d004a9a35dd8e4791f"></a><!-- doxytag: member="ITyActor::OnLoad" ref="a05d286129fce86d004a9a35dd8e4791f" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void ITyActor::OnLoad </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Will be called on Scene loading. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00267">267</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -776,6 +805,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Will be called before StepEnd, but at the end of each step, if Visible. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00321">321</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a78ac709f1fdbd9fba59180337be44a7a"></a><!-- doxytag: member="ITyActor::OnStep" ref="a78ac709f1fdbd9fba59180337be44a7a" args="()" -->
@@ -794,6 +825,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 
 <p>Will be called Second in each step, if Active. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00309">309</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -814,6 +847,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Will be called after Rendering in each step, if Active. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00315">315</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aeed7b53859c91f8be589ff441f36852d"></a><!-- doxytag: member="ITyActor::OnStepStart" ref="aeed7b53859c91f8be589ff441f36852d" args="()" -->
@@ -832,6 +867,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 
 <p>Will be called First in each step, if Active. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00303">303</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -875,6 +912,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Will be called if the screen is touch and then dragged. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00291">291</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae828745012aac359147920ccb42801b9"></a><!-- doxytag: member="ITyActor::OnTouchPress" ref="ae828745012aac359147920ccb42801b9" args="(int pX, int pY)" -->
@@ -905,6 +944,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Will be called if the Screen is touched. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00273">273</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a240c68f34a3b90af8bbef1729a74114a"></a><!-- doxytag: member="ITyActor::OnTouchRelease" ref="a240c68f34a3b90af8bbef1729a74114a" args="(int pX, int pY)" -->
@@ -934,6 +975,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 
 <p>Will be called if a Screentouch is released. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00285">285</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -971,24 +1014,26 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Will be called if the Screen is hold. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00279">279</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a7aaa8b17ac1742d2cc6457e79d9dbe4f"></a><!-- doxytag: member="ITyActor::OnUnload" ref="a7aaa8b17ac1742d2cc6457e79d9dbe4f" args="()" -->
+<a class="anchor" id="aa988ea01f7b61556918f02ba184b60b3"></a><!-- doxytag: member="ITyActor::operator&lt;" ref="aa988ea01f7b61556918f02ba184b60b3" args="(ITyActor const &amp;pActor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void ITyActor::OnUnload </td>
+          <td class="memname">bool ITyActor::operator&lt; </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline, virtual]</code></td>
+          <td class="paramtype"><a class="el" href="class_i_ty_actor.html">ITyActor</a> const &amp;&#160;</td>
+          <td class="paramname"><em>pActor</em></td><td>)</td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Will be called on Scene unloading. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00178">178</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -1015,6 +1060,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00399">399</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab7a324bf10f138f537fe2b869d3aeea5"></a><!-- doxytag: member="ITyActor::SetCurrentState" ref="ab7a324bf10f138f537fe2b869d3aeea5" args="(TOASTY_ACTOR_STATE pState)" -->
@@ -1024,7 +1071,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
         <tr>
           <td class="memname">bool ITyActor::SetCurrentState </td>
           <td>(</td>
-          <td class="paramtype">TOASTY_ACTOR_STATE&#160;</td>
+          <td class="paramtype"><a class="el" href="_ty_actor_8h.html#aceba83227db82b051b04ff8e90d63a51">TOASTY_ACTOR_STATE</a>&#160;</td>
           <td class="paramname"><em>pState</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1066,6 +1113,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00393">393</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa119f79b398074a9b9d6281e7b463fee"></a><!-- doxytag: member="ITyActor::SetMask" ref="aa119f79b398074a9b9d6281e7b463fee" args="(CIwRect pMask)" -->
@@ -1090,6 +1139,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00417">417</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -1116,6 +1167,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00381">381</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9b37537093a7b6c412d6f1379b4eabb9"></a><!-- doxytag: member="ITyActor::SetPosition" ref="a9b37537093a7b6c412d6f1379b4eabb9" args="(CIwSVec2 pPosition)" -->
@@ -1140,6 +1193,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00423">423</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -1166,6 +1221,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00387">387</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="acc5fe8fe823f7a8f95a6bbe505ebe95a"></a><!-- doxytag: member="ITyActor::SetSolid" ref="acc5fe8fe823f7a8f95a6bbe505ebe95a" args="(bool pSolid)" -->
@@ -1190,6 +1247,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00411">411</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
 
 </div>
 </div>
@@ -1216,17 +1275,201 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00405">405</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="ac9e603148a462b197c336bd2dedd9f87"></a><!-- doxytag: member="ITyActor::CTyScene" ref="ac9e603148a462b197c336bd2dedd9f87" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_c_ty_scene.html">CTyScene</a><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00144">144</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="ae460cd48bef240e11cfa5df7a505cbe9"></a><!-- doxytag: member="ITyActor::m_Active" ref="ae460cd48bef240e11cfa5df7a505cbe9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_i_ty_actor.html#ae460cd48bef240e11cfa5df7a505cbe9">ITyActor::m_Active</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00078">78</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afcdb5a06ae0e2b6d9872fa6f17222487"></a><!-- doxytag: member="ITyActor::m_CurrentState" ref="afcdb5a06ae0e2b6d9872fa6f17222487" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_ty_actor_1_1_c_ty_state.html">CTyState</a>* <a class="el" href="class_i_ty_actor.html#afcdb5a06ae0e2b6d9872fa6f17222487">ITyActor::m_CurrentState</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00127">127</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac075325d62fdcda89c2a91f2c1298376"></a><!-- doxytag: member="ITyActor::m_Depth" ref="ac075325d62fdcda89c2a91f2c1298376" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_i_ty_actor.html#ac075325d62fdcda89c2a91f2c1298376">ITyActor::m_Depth</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00073">73</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab637fbe1df811cbde3ad2b780f1ea643"></a><!-- doxytag: member="ITyActor::m_LastState" ref="ab637fbe1df811cbde3ad2b780f1ea643" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_ty_actor_1_1_c_ty_state.html">CTyState</a>* <a class="el" href="class_i_ty_actor.html#ab637fbe1df811cbde3ad2b780f1ea643">ITyActor::m_LastState</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00132">132</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd0ddacb8e677d2d36ead794883dee4c"></a><!-- doxytag: member="ITyActor::m_Mask" ref="abd0ddacb8e677d2d36ead794883dee4c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CIwRect <a class="el" href="class_i_ty_actor.html#abd0ddacb8e677d2d36ead794883dee4c">ITyActor::m_Mask</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00137">137</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afdfb0e1ed5a47085f52f95f276010bb6"></a><!-- doxytag: member="ITyActor::m_Name" ref="afdfb0e1ed5a47085f52f95f276010bb6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="class_i_ty_actor.html#afdfb0e1ed5a47085f52f95f276010bb6">ITyActor::m_Name</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00063">63</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a296ffe4ccf5fad06daf002837b9ec128"></a><!-- doxytag: member="ITyActor::m_Position" ref="a296ffe4ccf5fad06daf002837b9ec128" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CIwSVec2 <a class="el" href="class_i_ty_actor.html#a296ffe4ccf5fad06daf002837b9ec128">ITyActor::m_Position</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00142">142</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a92de9e18b7a31fc93b8bb775922078d4"></a><!-- doxytag: member="ITyActor::m_Role" ref="a92de9e18b7a31fc93b8bb775922078d4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="class_i_ty_actor.html#a92de9e18b7a31fc93b8bb775922078d4">ITyActor::m_Role</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00068">68</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0365728019201a011e657ab56e36d06a"></a><!-- doxytag: member="ITyActor::m_Solid" ref="a0365728019201a011e657ab56e36d06a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_i_ty_actor.html#a0365728019201a011e657ab56e36d06a">ITyActor::m_Solid</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00088">88</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa90c7ebf0af50802126ca951906fb225"></a><!-- doxytag: member="ITyActor::m_States" ref="aa90c7ebf0af50802126ca951906fb225" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_i_ty_actor_1_1_c_ty_state.html">CTyState</a>&gt; <a class="el" href="class_i_ty_actor.html#aa90c7ebf0af50802126ca951906fb225">ITyActor::m_States</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00122">122</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1019d46cd7502694e5f69c7c4c7be23e"></a><!-- doxytag: member="ITyActor::m_Visible" ref="a1019d46cd7502694e5f69c7c4c7be23e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_i_ty_actor.html#a1019d46cd7502694e5f69c7c4c7be23e">ITyActor::m_Visible</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ty_actor_8h_source.html#l00083">83</a> of file <a class="el" href="_ty_actor_8h_source.html">TyActor.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/<a class="el" href="_ty_actor_8h_source.html">TyActor.h</a></li>
+<li>D:/development/cpp/toasty/include/<a class="el" href="_ty_actor_8h_source.html">TyActor.h</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_i_ty_actor.html">ITyActor</a>      </li>
-      <li class="footer">Generated on Fri Aug 5 2011 18:41:33 for Toasty! by&#160;
+      <li class="footer">Generated on Fri Aug 12 2011 00:58:42 for Toasty! by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -1236,7 +1479,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

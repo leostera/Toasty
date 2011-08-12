@@ -8,14 +8,14 @@ namespace tut
 { 
 	struct data //
 	{ 
-		CTySprite* s, *s1, *s2;
+		TySprite* s, *s1, *s2;
 		CIwResGroup* g;
 
 		data()
 		{
 			IwGetResManager()->LoadGroup("sprites.group");
 			g = IwGetResManager()->GetGroupNamed("sprites");
-			s = new CTySprite(g,"1");
+			s = new TySprite(g,"1");
 		}
 
 		~data()
@@ -80,7 +80,7 @@ namespace tut
 	{ 
 		set_test_name("Copy the Sprite");
 
-		s1 = new CTySprite(g,"2");
+		s1 = new TySprite(g,"2");
 	
 		ensure_equals("Both sprites are built", (s1->IsBuilt() && s->IsBuilt()), true);
 		
@@ -92,7 +92,7 @@ namespace tut
 		Iw2DSurfaceShow();
 		s3eDeviceYield(1000);
 	//Create a new one with the copy constructor
-		s2 = new CTySprite((*s1));
+		s2 = new TySprite((*s1));
 	//test for self-assignment
 		*s1 = *s1;
 		ensure_equals("S1 equals S1",s1==s1,true);

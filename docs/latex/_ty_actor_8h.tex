@@ -1,0 +1,124 @@
+\hypertarget{_ty_actor_8h}{
+\section{D:/development/cpp/toasty/include/TyActor.h File Reference}
+\label{_ty_actor_8h}\index{D:/development/cpp/toasty/include/TyActor.h@{D:/development/cpp/toasty/include/TyActor.h}}
+}
+{\ttfamily \#include $<$TySprite.h$>$}\par
+{\ttfamily \#include $<$Iw2D.h$>$}\par
+{\ttfamily \#include $<$IwGxTypes.h$>$}\par
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_i_ty_actor}{ITyActor}
+\begin{DoxyCompactList}\small\item\em Actor class to be used within a scene. \end{DoxyCompactList}\item 
+class \hyperlink{class_i_ty_actor_1_1_c_ty_state}{ITyActor::CTyState}
+\begin{DoxyCompactList}\small\item\em Inner class used to relate a Actor State with a Sprite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51}{TOASTY\_\-ACTOR\_\-STATE} \{ \par
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a838543c05a64b8e7ed1941be18d97eac}{TOASTY\_\-ACTOR\_\-WALKING} = 0, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a612b17e3726cee3c90caa98789335c78}{TOASTY\_\-ACTOR\_\-ATTACKING}, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a66e2cb2759873cc8a740767d69807bd4}{TOASTY\_\-ACTOR\_\-DEFENDING}, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a4f54ca708f788cc8a63abcd54161f900}{TOASTY\_\-ACTOR\_\-STANDING}, 
+\par
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a2457087c657586beea1c907be07d5474}{TOASTY\_\-ACTOR\_\-APPEARING}, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51acd5a84b6eb0b4ed7e1bc6be151271f4d}{TOASTY\_\-ACTOR\_\-DYING}, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a6da225555227f8e35b7b94f274612f40}{TOASTY\_\-ACTOR\_\-DEAD}, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a87f1c4504f93280c40d25e96a8fc95c4}{TOASTY\_\-ACTOR\_\-IDLE}
+ \}
+\begin{DoxyCompactList}\small\item\em Actor State enumeration You might provide your own set of states but these (so far) are useful enough. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{_ty_actor_8h_aa4bbf4090c020ff57549861b5774a77d}{TyActorCompare} (\hyperlink{class_i_ty_actor}{ITyActor} $\ast$pActor1, \hyperlink{class_i_ty_actor}{ITyActor} $\ast$pActor2)
+\begin{DoxyCompactList}\small\item\em Compares two actors by Depth. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51}{
+\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STATE@{TOASTY\_\-ACTOR\_\-STATE}}
+\index{TOASTY\_\-ACTOR\_\-STATE@{TOASTY\_\-ACTOR\_\-STATE}!TyActor.h@{TyActor.h}}
+\subsubsection[{TOASTY\_\-ACTOR\_\-STATE}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf TOASTY\_\-ACTOR\_\-STATE}}}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51}
+
+
+Actor State enumeration You might provide your own set of states but these (so far) are useful enough. 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{TOASTY\_\-ACTOR\_\-WALKING@{TOASTY\_\-ACTOR\_\-WALKING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-WALKING@{TOASTY\_\-ACTOR\_\-WALKING}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a838543c05a64b8e7ed1941be18d97eac}{
+TOASTY\_\-ACTOR\_\-WALKING}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a838543c05a64b8e7ed1941be18d97eac}
+}]\index{TOASTY\_\-ACTOR\_\-ATTACKING@{TOASTY\_\-ACTOR\_\-ATTACKING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-ATTACKING@{TOASTY\_\-ACTOR\_\-ATTACKING}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a612b17e3726cee3c90caa98789335c78}{
+TOASTY\_\-ACTOR\_\-ATTACKING}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a612b17e3726cee3c90caa98789335c78}
+}]Actor is moving \index{TOASTY\_\-ACTOR\_\-DEFENDING@{TOASTY\_\-ACTOR\_\-DEFENDING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-DEFENDING@{TOASTY\_\-ACTOR\_\-DEFENDING}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a66e2cb2759873cc8a740767d69807bd4}{
+TOASTY\_\-ACTOR\_\-DEFENDING}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a66e2cb2759873cc8a740767d69807bd4}
+}]Actor is attacking \index{TOASTY\_\-ACTOR\_\-STANDING@{TOASTY\_\-ACTOR\_\-STANDING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STANDING@{TOASTY\_\-ACTOR\_\-STANDING}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a4f54ca708f788cc8a63abcd54161f900}{
+TOASTY\_\-ACTOR\_\-STANDING}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a4f54ca708f788cc8a63abcd54161f900}
+}]Actor is defending \index{TOASTY\_\-ACTOR\_\-APPEARING@{TOASTY\_\-ACTOR\_\-APPEARING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-APPEARING@{TOASTY\_\-ACTOR\_\-APPEARING}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a2457087c657586beea1c907be07d5474}{
+TOASTY\_\-ACTOR\_\-APPEARING}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a2457087c657586beea1c907be07d5474}
+}]Actor is holding position \index{TOASTY\_\-ACTOR\_\-DYING@{TOASTY\_\-ACTOR\_\-DYING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-DYING@{TOASTY\_\-ACTOR\_\-DYING}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51acd5a84b6eb0b4ed7e1bc6be151271f4d}{
+TOASTY\_\-ACTOR\_\-DYING}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51acd5a84b6eb0b4ed7e1bc6be151271f4d}
+}]Actor is appearing \index{TOASTY\_\-ACTOR\_\-DEAD@{TOASTY\_\-ACTOR\_\-DEAD}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-DEAD@{TOASTY\_\-ACTOR\_\-DEAD}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a6da225555227f8e35b7b94f274612f40}{
+TOASTY\_\-ACTOR\_\-DEAD}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a6da225555227f8e35b7b94f274612f40}
+}]Actor is dying \index{TOASTY\_\-ACTOR\_\-IDLE@{TOASTY\_\-ACTOR\_\-IDLE}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-IDLE@{TOASTY\_\-ACTOR\_\-IDLE}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a87f1c4504f93280c40d25e96a8fc95c4}{
+TOASTY\_\-ACTOR\_\-IDLE}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a87f1c4504f93280c40d25e96a8fc95c4}
+}]Actor is dead
+
+Actor is idle \end{description}
+\end{Desc}
+
+
+
+Definition at line 35 of file TyActor.h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_ty_actor_8h_aa4bbf4090c020ff57549861b5774a77d}{
+\index{TyActor.h@{TyActor.h}!TyActorCompare@{TyActorCompare}}
+\index{TyActorCompare@{TyActorCompare}!TyActor.h@{TyActor.h}}
+\subsubsection[{TyActorCompare}]{\setlength{\rightskip}{0pt plus 5cm}bool TyActorCompare (
+\begin{DoxyParamCaption}
+\item[{{\bf ITyActor} $\ast$}]{pActor1, }
+\item[{{\bf ITyActor} $\ast$}]{pActor2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{_ty_actor_8h_aa4bbf4090c020ff57549861b5774a77d}
+
+
+Compares two actors by Depth. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pActor1} & An \hyperlink{class_i_ty_actor}{ITyActor} derived actor. \\
+\hline
+{\em pActor2} & Another \hyperlink{class_i_ty_actor}{ITyActor} derived actor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if first actor has lesser depth than the second one. False otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 433 of file TyActor.h.
+

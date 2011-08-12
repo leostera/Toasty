@@ -2,46 +2,122 @@
 \section{CTySceneManager Class Reference}
 \label{class_c_ty_scene_manager}\index{CTySceneManager@{CTySceneManager}}
 }
+
+
+{\ttfamily \#include $<$TySceneManager.h$>$}
+
+Inheritance diagram for CTySceneManager:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_ty_scene_manager}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_c_ty_scene_manager_aff1fdcdb85ee67ad8a2fe620414ee680}{
-{\bfseries CTySceneManager} (\hyperlink{class_c_ty_scene_manager}{CTySceneManager} const \&pSceneManager)}
-\label{class_c_ty_scene_manager_aff1fdcdb85ee67ad8a2fe620414ee680}
-
+\hyperlink{class_c_ty_scene_manager_ae33a8e4522ee48f583de3c8c77677a86}{CTySceneManager} ()
 \item 
-\hypertarget{class_c_ty_scene_manager_a8fb45de8768bb2ba9f9d4487e20b9362}{
-{\bfseries AddScene} (\hyperlink{class_c_ty_scene}{CTyScene} $\ast$)}
-\label{class_c_ty_scene_manager_a8fb45de8768bb2ba9f9d4487e20b9362}
-
+\hyperlink{class_c_ty_scene_manager_aac52fbc8d089652d045d48e39611c265}{$\sim$CTySceneManager} ()
 \item 
-\hypertarget{class_c_ty_scene_manager_a32fef21b8dc7e14544c76e5a24c1b1c4}{
-{\bfseries DeleteScene} (\hyperlink{class_c_ty_scene}{CTyScene} $\ast$)}
-\label{class_c_ty_scene_manager_a32fef21b8dc7e14544c76e5a24c1b1c4}
-
+\hyperlink{class_c_ty_scene}{CTyScene} $\ast$ \hyperlink{class_c_ty_scene_manager_af405b87fe6274a705b157d3642ffe60c}{AddScene} ()
 \item 
-\hypertarget{class_c_ty_scene_manager_a7ad0e06bc2d93703f4ce7a015f9a96d5}{
-{\bfseries SetCurrentScene} (\hyperlink{class_c_ty_scene}{CTyScene} $\ast$)}
-\label{class_c_ty_scene_manager_a7ad0e06bc2d93703f4ce7a015f9a96d5}
-
+bool \hyperlink{class_c_ty_scene_manager_af7bd89a145e9c374572b53fe4c3f2399}{DeleteScene} (\hyperlink{class_c_ty_scene}{CTyScene} $\ast$pScene)
 \item 
-\hypertarget{class_c_ty_scene_manager_a4a567901bbf0869275cc78faf3ceb4ab}{
-{\bfseries Push} (\hyperlink{class_c_ty_scene}{CTyScene} $\ast$)}
-\label{class_c_ty_scene_manager_a4a567901bbf0869275cc78faf3ceb4ab}
-
+bool \hyperlink{class_c_ty_scene_manager_ac4906cf4d9211c23f57819a4bc718772}{HasScene} (\hyperlink{class_c_ty_scene}{CTyScene} $\ast$pScene)
 \item 
-\hypertarget{class_c_ty_scene_manager_ad79d3fd3aeff76bcc3ef62c82e5bd0c9}{
-{\bfseries Pop} (\hyperlink{class_c_ty_scene}{CTyScene} $\ast$)}
-\label{class_c_ty_scene_manager_ad79d3fd3aeff76bcc3ef62c82e5bd0c9}
-
+bool \hyperlink{class_c_ty_scene_manager_aba2686282098fca870c3411cb759ab5c}{IsCurrentScene} (\hyperlink{class_c_ty_scene}{CTyScene} $\ast$pScene)
 \item 
-\hypertarget{class_c_ty_scene_manager_ac91d52d9fa985296ec97142c3c7fe416}{
-{\bfseries Play} ()}
-\label{class_c_ty_scene_manager_ac91d52d9fa985296ec97142c3c7fe416}
-
+bool \hyperlink{class_c_ty_scene_manager_a9c627181dd23de9e2a8441c63a67d236}{SetCurrentScene} (\hyperlink{class_c_ty_scene}{CTyScene} $\ast$pScene)
+\item 
+bool \hyperlink{class_c_ty_scene_manager_ac6ac387c844a7149f0763c39dd7b409b}{Play} ()
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file TySceneManager.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_ty_scene_manager_ae33a8e4522ee48f583de3c8c77677a86}{
+\index{CTySceneManager@{CTySceneManager}!CTySceneManager@{CTySceneManager}}
+\index{CTySceneManager@{CTySceneManager}!CTySceneManager@{CTySceneManager}}
+\subsubsection[{CTySceneManager}]{\setlength{\rightskip}{0pt plus 5cm}CTySceneManager::CTySceneManager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_scene_manager_ae33a8e4522ee48f583de3c8c77677a86}
+\hypertarget{class_c_ty_scene_manager_aac52fbc8d089652d045d48e39611c265}{
+\index{CTySceneManager@{CTySceneManager}!$\sim$CTySceneManager@{$\sim$CTySceneManager}}
+\index{$\sim$CTySceneManager@{$\sim$CTySceneManager}!CTySceneManager@{CTySceneManager}}
+\subsubsection[{$\sim$CTySceneManager}]{\setlength{\rightskip}{0pt plus 5cm}CTySceneManager::$\sim$CTySceneManager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_scene_manager_aac52fbc8d089652d045d48e39611c265}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_ty_scene_manager_af405b87fe6274a705b157d3642ffe60c}{
+\index{CTySceneManager@{CTySceneManager}!AddScene@{AddScene}}
+\index{AddScene@{AddScene}!CTySceneManager@{CTySceneManager}}
+\subsubsection[{AddScene}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CTyScene}$\ast$ CTySceneManager::AddScene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_scene_manager_af405b87fe6274a705b157d3642ffe60c}
+\hypertarget{class_c_ty_scene_manager_af7bd89a145e9c374572b53fe4c3f2399}{
+\index{CTySceneManager@{CTySceneManager}!DeleteScene@{DeleteScene}}
+\index{DeleteScene@{DeleteScene}!CTySceneManager@{CTySceneManager}}
+\subsubsection[{DeleteScene}]{\setlength{\rightskip}{0pt plus 5cm}bool CTySceneManager::DeleteScene (
+\begin{DoxyParamCaption}
+\item[{{\bf CTyScene} $\ast$}]{pScene}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_scene_manager_af7bd89a145e9c374572b53fe4c3f2399}
+\hypertarget{class_c_ty_scene_manager_ac4906cf4d9211c23f57819a4bc718772}{
+\index{CTySceneManager@{CTySceneManager}!HasScene@{HasScene}}
+\index{HasScene@{HasScene}!CTySceneManager@{CTySceneManager}}
+\subsubsection[{HasScene}]{\setlength{\rightskip}{0pt plus 5cm}bool CTySceneManager::HasScene (
+\begin{DoxyParamCaption}
+\item[{{\bf CTyScene} $\ast$}]{pScene}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_scene_manager_ac4906cf4d9211c23f57819a4bc718772}
+\hypertarget{class_c_ty_scene_manager_aba2686282098fca870c3411cb759ab5c}{
+\index{CTySceneManager@{CTySceneManager}!IsCurrentScene@{IsCurrentScene}}
+\index{IsCurrentScene@{IsCurrentScene}!CTySceneManager@{CTySceneManager}}
+\subsubsection[{IsCurrentScene}]{\setlength{\rightskip}{0pt plus 5cm}bool CTySceneManager::IsCurrentScene (
+\begin{DoxyParamCaption}
+\item[{{\bf CTyScene} $\ast$}]{pScene}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_scene_manager_aba2686282098fca870c3411cb759ab5c}
+\hypertarget{class_c_ty_scene_manager_ac6ac387c844a7149f0763c39dd7b409b}{
+\index{CTySceneManager@{CTySceneManager}!Play@{Play}}
+\index{Play@{Play}!CTySceneManager@{CTySceneManager}}
+\subsubsection[{Play}]{\setlength{\rightskip}{0pt plus 5cm}bool CTySceneManager::Play (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_scene_manager_ac6ac387c844a7149f0763c39dd7b409b}
+\hypertarget{class_c_ty_scene_manager_a9c627181dd23de9e2a8441c63a67d236}{
+\index{CTySceneManager@{CTySceneManager}!SetCurrentScene@{SetCurrentScene}}
+\index{SetCurrentScene@{SetCurrentScene}!CTySceneManager@{CTySceneManager}}
+\subsubsection[{SetCurrentScene}]{\setlength{\rightskip}{0pt plus 5cm}bool CTySceneManager::SetCurrentScene (
+\begin{DoxyParamCaption}
+\item[{{\bf CTyScene} $\ast$}]{pScene}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_ty_scene_manager_a9c627181dd23de9e2a8441c63a67d236}
 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
-include/TySceneManager.h\end{DoxyCompactItemize}
+D:/development/cpp/toasty/include/\hyperlink{_ty_scene_manager_8h}{TySceneManager.h}\end{DoxyCompactItemize}

@@ -21,11 +21,10 @@ class \hyperlink{class_i_ty_actor_1_1_c_ty_state}{CTyState}
 \item 
 \hyperlink{class_i_ty_actor_afb266117deb0b8be81325ce76ef7c95b}{ITyActor} (int64 pID, bool pActive=true, bool pVisible=true, bool pSolid=true, CIwRect pMask=CIwRect(0, 0, 0, 0), CIwSVec2 pPosition=CIwSVec2::g\_\-Zero)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\hypertarget{class_i_ty_actor_afc1f27393487c6422303523195c3922c}{
-virtual \hyperlink{class_i_ty_actor_afc1f27393487c6422303523195c3922c}{$\sim$ITyActor} ()}
-\label{class_i_ty_actor_afc1f27393487c6422303523195c3922c}
-
-\begin{DoxyCompactList}\small\item\em Destructor It actually does nothing. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_i_ty_actor_afc1f27393487c6422303523195c3922c}{$\sim$ITyActor} ()
+\begin{DoxyCompactList}\small\item\em Destructor It actually does nothing but deleting the states. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_ty_actor_aa988ea01f7b61556918f02ba184b60b3}{operator$<$} (\hyperlink{class_i_ty_actor}{ITyActor} const \&pActor)
+\item 
 bool \hyperlink{class_i_ty_actor_af3670099e1c1e77d620c43125dac6e61}{IsBuilt} () const 
 \begin{DoxyCompactList}\small\item\em Is the actor built? \end{DoxyCompactList}\item 
 bool \hyperlink{class_i_ty_actor_abe293544e0a3823400aaf490b24ae81d}{IsActive} () const 
@@ -34,16 +33,16 @@ bool \hyperlink{class_i_ty_actor_a5e3d6f0fd5ab67afb6d56488b7a55595}{IsVisible} (
 \begin{DoxyCompactList}\small\item\em Is the actor visible? \end{DoxyCompactList}\item 
 bool \hyperlink{class_i_ty_actor_a5c1f9e77b0e5903c1f63ac5e2b2c42ad}{IsSolid} () const 
 \begin{DoxyCompactList}\small\item\em Is the actor solid? \end{DoxyCompactList}\item 
-bool \hyperlink{class_i_ty_actor_aad869e863d1dc2283d7b33bd2aa02e4b}{AddState} (\hyperlink{class_c_ty_sprite}{CTySprite} $\ast$pSprite, TOASTY\_\-ACTOR\_\-STATE pState)
+bool \hyperlink{class_i_ty_actor_aad869e863d1dc2283d7b33bd2aa02e4b}{AddState} (\hyperlink{class_c_ty_sprite}{CTySprite} $\ast$pSprite, \hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51}{TOASTY\_\-ACTOR\_\-STATE} pState)
 \begin{DoxyCompactList}\small\item\em Adds a new state to the State Vector. \end{DoxyCompactList}\item 
-bool \hyperlink{class_i_ty_actor_a64f9104dbcf4bccbc17121d81b40c9cb}{DeleteState} (TOASTY\_\-ACTOR\_\-STATE pState)
+bool \hyperlink{class_i_ty_actor_a64f9104dbcf4bccbc17121d81b40c9cb}{DeleteState} (\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51}{TOASTY\_\-ACTOR\_\-STATE} pState)
 \begin{DoxyCompactList}\small\item\em Deletes a state from the State Vector. \end{DoxyCompactList}\item 
-bool \hyperlink{class_i_ty_actor_ab7a324bf10f138f537fe2b869d3aeea5}{SetCurrentState} (TOASTY\_\-ACTOR\_\-STATE pState)
+bool \hyperlink{class_i_ty_actor_ab7a324bf10f138f537fe2b869d3aeea5}{SetCurrentState} (\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51}{TOASTY\_\-ACTOR\_\-STATE} pState)
 \begin{DoxyCompactList}\small\item\em Sets a state from the State Vector as current state. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_i_ty_actor_a05d286129fce86d004a9a35dd8e4791f}{OnLoad} ()
-\begin{DoxyCompactList}\small\item\em Will be called on Scene loading. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_i_ty_actor_a7aaa8b17ac1742d2cc6457e79d9dbe4f}{OnUnload} ()
-\begin{DoxyCompactList}\small\item\em Will be called on Scene unloading. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_i_ty_actor_aeff5d073d59e661d58e9bdc72370769c}{OnCreate} ()
+\begin{DoxyCompactList}\small\item\em Will be called once the actor is added to a scene. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_i_ty_actor_a1ceb6a35987a22acb85bdaf9fd23f349}{OnDestroy} ()
+\begin{DoxyCompactList}\small\item\em Will be called once the actor is removed from a scene. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_i_ty_actor_a3a3295eba0fc092e44a9b690d2d242ab}{OnKeyPress} (s3eKey pKey)
 \begin{DoxyCompactList}\small\item\em Will be called on Keyboard Press event. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_i_ty_actor_ae0402203392a84e769fad4a989d07b3c}{OnKeyRelease} (s3eKey pKey)
@@ -70,10 +69,6 @@ virtual void \hyperlink{class_i_ty_actor_ac5a0f1ef9aca4cf49893171c130abb9c}{OnRe
 \begin{DoxyCompactList}\small\item\em Will be called before StepEnd, but at the end of each step, if Visible. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_i_ty_actor_a88b1d350c4649d2df9e358f15fbca9b2}{OnCollision} (\hyperlink{class_i_ty_actor}{ITyActor} const \&pActor)
 \begin{DoxyCompactList}\small\item\em Will be called when two actors collide, if Solid. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_i_ty_actor_ace0a008487e45e3f5fd6ac6301ef6acb}{OnAnimationStart} ()
-\begin{DoxyCompactList}\small\item\em Will be called everytime current state assoaciated Sprite animation starts, if Active and Visible. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_i_ty_actor_aa1eda801c41618d6025249e0dbc3cc49}{OnAnimationEnd} ()
-\begin{DoxyCompactList}\small\item\em Will be called everytime current state assoaciated Sprite animation ends, if Active and Visible. \end{DoxyCompactList}\item 
 int64 \hyperlink{class_i_ty_actor_a56e1581ea21a61d56ee13065b1bb237d}{GetID} () const 
 \begin{DoxyCompactList}\small\item\em Accessor for the Actors ID. \end{DoxyCompactList}\item 
 std::string \hyperlink{class_i_ty_actor_ad96e4d0568d002ec80b3f3511d34bac4}{GetName} () const 
@@ -82,9 +77,9 @@ std::string \hyperlink{class_i_ty_actor_acb6782b902f1d23196ee5d4459a7f4c6}{GetRo
 \begin{DoxyCompactList}\small\item\em Accessor for the Actors Role. \end{DoxyCompactList}\item 
 int \hyperlink{class_i_ty_actor_a3a317a12d0872943894aef2ab1395c7c}{GetDepth} () const 
 \begin{DoxyCompactList}\small\item\em Accessor for the Actors Depth. \end{DoxyCompactList}\item 
-TOASTY\_\-ACTOR\_\-STATE \hyperlink{class_i_ty_actor_adc9729b29f07da02bbfa26d423901b45}{GetCurrentState} () const 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51}{TOASTY\_\-ACTOR\_\-STATE} \hyperlink{class_i_ty_actor_adc9729b29f07da02bbfa26d423901b45}{GetCurrentState} () const 
 \begin{DoxyCompactList}\small\item\em Accessor for the Actors Current State. \end{DoxyCompactList}\item 
-TOASTY\_\-ACTOR\_\-STATE \hyperlink{class_i_ty_actor_ab1c7d4089d543bf258e02854c00969f0}{GetLastState} () const 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51}{TOASTY\_\-ACTOR\_\-STATE} \hyperlink{class_i_ty_actor_ab1c7d4089d543bf258e02854c00969f0}{GetLastState} () const 
 \begin{DoxyCompactList}\small\item\em Accessor for the Actor Last State. \end{DoxyCompactList}\item 
 CIwRect \hyperlink{class_i_ty_actor_a029053700af64bae8290b5dcfa04ceec}{GetMask} () const 
 \begin{DoxyCompactList}\small\item\em Accessor for the Actors Mask. \end{DoxyCompactList}\item 
@@ -109,68 +104,32 @@ void \hyperlink{class_i_ty_actor_a9b37537093a7b6c412d6f1379b4eabb9}{SetPosition}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_i_ty_actor_afdfb0e1ed5a47085f52f95f276010bb6}{
-std::string {\bfseries m\_\-Name}}
-\label{class_i_ty_actor_afdfb0e1ed5a47085f52f95f276010bb6}
-
+std::string \hyperlink{class_i_ty_actor_afdfb0e1ed5a47085f52f95f276010bb6}{m\_\-Name}
 \item 
-\hypertarget{class_i_ty_actor_a92de9e18b7a31fc93b8bb775922078d4}{
-std::string {\bfseries m\_\-Role}}
-\label{class_i_ty_actor_a92de9e18b7a31fc93b8bb775922078d4}
-
+std::string \hyperlink{class_i_ty_actor_a92de9e18b7a31fc93b8bb775922078d4}{m\_\-Role}
 \item 
-\hypertarget{class_i_ty_actor_ac075325d62fdcda89c2a91f2c1298376}{
-int {\bfseries m\_\-Depth}}
-\label{class_i_ty_actor_ac075325d62fdcda89c2a91f2c1298376}
-
+int \hyperlink{class_i_ty_actor_ac075325d62fdcda89c2a91f2c1298376}{m\_\-Depth}
 \item 
-\hypertarget{class_i_ty_actor_ae460cd48bef240e11cfa5df7a505cbe9}{
-bool {\bfseries m\_\-Active}}
-\label{class_i_ty_actor_ae460cd48bef240e11cfa5df7a505cbe9}
-
+bool \hyperlink{class_i_ty_actor_ae460cd48bef240e11cfa5df7a505cbe9}{m\_\-Active}
 \item 
-\hypertarget{class_i_ty_actor_a1019d46cd7502694e5f69c7c4c7be23e}{
-bool {\bfseries m\_\-Visible}}
-\label{class_i_ty_actor_a1019d46cd7502694e5f69c7c4c7be23e}
-
+bool \hyperlink{class_i_ty_actor_a1019d46cd7502694e5f69c7c4c7be23e}{m\_\-Visible}
 \item 
-\hypertarget{class_i_ty_actor_a0365728019201a011e657ab56e36d06a}{
-bool {\bfseries m\_\-Solid}}
-\label{class_i_ty_actor_a0365728019201a011e657ab56e36d06a}
-
+bool \hyperlink{class_i_ty_actor_a0365728019201a011e657ab56e36d06a}{m\_\-Solid}
 \item 
-\hypertarget{class_i_ty_actor_aa90c7ebf0af50802126ca951906fb225}{
-std::vector$<$ \hyperlink{class_i_ty_actor_1_1_c_ty_state}{CTyState} $>$ {\bfseries m\_\-States}}
-\label{class_i_ty_actor_aa90c7ebf0af50802126ca951906fb225}
-
+std::vector$<$ \hyperlink{class_i_ty_actor_1_1_c_ty_state}{CTyState} $>$ \hyperlink{class_i_ty_actor_aa90c7ebf0af50802126ca951906fb225}{m\_\-States}
 \item 
-\hypertarget{class_i_ty_actor_afcdb5a06ae0e2b6d9872fa6f17222487}{
-\hyperlink{class_i_ty_actor_1_1_c_ty_state}{CTyState} $\ast$ {\bfseries m\_\-CurrentState}}
-\label{class_i_ty_actor_afcdb5a06ae0e2b6d9872fa6f17222487}
-
+\hyperlink{class_i_ty_actor_1_1_c_ty_state}{CTyState} $\ast$ \hyperlink{class_i_ty_actor_afcdb5a06ae0e2b6d9872fa6f17222487}{m\_\-CurrentState}
 \item 
-\hypertarget{class_i_ty_actor_ab637fbe1df811cbde3ad2b780f1ea643}{
-\hyperlink{class_i_ty_actor_1_1_c_ty_state}{CTyState} $\ast$ {\bfseries m\_\-LastState}}
-\label{class_i_ty_actor_ab637fbe1df811cbde3ad2b780f1ea643}
-
+\hyperlink{class_i_ty_actor_1_1_c_ty_state}{CTyState} $\ast$ \hyperlink{class_i_ty_actor_ab637fbe1df811cbde3ad2b780f1ea643}{m\_\-LastState}
 \item 
-\hypertarget{class_i_ty_actor_abd0ddacb8e677d2d36ead794883dee4c}{
-CIwRect {\bfseries m\_\-Mask}}
-\label{class_i_ty_actor_abd0ddacb8e677d2d36ead794883dee4c}
-
+CIwRect \hyperlink{class_i_ty_actor_abd0ddacb8e677d2d36ead794883dee4c}{m\_\-Mask}
 \item 
-\hypertarget{class_i_ty_actor_a296ffe4ccf5fad06daf002837b9ec128}{
-CIwSVec2 {\bfseries m\_\-Position}}
-\label{class_i_ty_actor_a296ffe4ccf5fad06daf002837b9ec128}
-
+CIwSVec2 \hyperlink{class_i_ty_actor_a296ffe4ccf5fad06daf002837b9ec128}{m\_\-Position}
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_i_ty_actor_ac9e603148a462b197c336bd2dedd9f87}{
-class \hyperlink{class_i_ty_actor_ac9e603148a462b197c336bd2dedd9f87}{CTyScene}}
-\label{class_i_ty_actor_ac9e603148a462b197c336bd2dedd9f87}
-
+class \hyperlink{class_i_ty_actor_ac9e603148a462b197c336bd2dedd9f87}{CTyScene}
 \end{DoxyCompactItemize}
 
 
@@ -189,6 +148,10 @@ $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\
 Leandro Ostera
 \end{DoxyAuthor}
 Actor class to be used within a Scene class that works with states (\hyperlink{class_i_ty_actor_1_1_c_ty_state}{CTyState}) and is meant to be an interface with some virtual methods to be overloaded. 
+
+Definition at line 46 of file TyActor.h.
+
+
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_i_ty_actor_afb266117deb0b8be81325ce76ef7c95b}{
@@ -228,6 +191,27 @@ This is the main constructor. It initializes the following m\_\-rom\_\-erties: \
 \item {\ttfamily m\_\-ID} , pID. Remember this is a constant! \item {\ttfamily m\_\-Built} , true \item {\ttfamily m\_\-Depth} , 0 \item {\ttfamily m\_\-Active} , true \item {\ttfamily m\_\-Visible} , true \item {\ttfamily m\_\-Solid} , true \item {\ttfamily m\_\-Mask} , CIwRect(0,0,0,0) \item {\ttfamily m\_\-Position} , CIwSVec2(0,0) \end{DoxyItemize}
 
 
+Definition at line 166 of file TyActor.h.
+
+\hypertarget{class_i_ty_actor_afc1f27393487c6422303523195c3922c}{
+\index{ITyActor@{ITyActor}!$\sim$ITyActor@{$\sim$ITyActor}}
+\index{$\sim$ITyActor@{$\sim$ITyActor}!ITyActor@{ITyActor}}
+\subsubsection[{$\sim$ITyActor}]{\setlength{\rightskip}{0pt plus 5cm}virtual ITyActor::$\sim$ITyActor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_i_ty_actor_afc1f27393487c6422303523195c3922c}
+
+
+Destructor It actually does nothing but deleting the states. 
+
+
+
+Definition at line 176 of file TyActor.h.
+
+
+
 \subsection{Member Function Documentation}
 \hypertarget{class_i_ty_actor_aad869e863d1dc2283d7b33bd2aa02e4b}{
 \index{ITyActor@{ITyActor}!AddState@{AddState}}
@@ -235,7 +219,7 @@ This is the main constructor. It initializes the following m\_\-rom\_\-erties: \
 \subsubsection[{AddState}]{\setlength{\rightskip}{0pt plus 5cm}bool ITyActor::AddState (
 \begin{DoxyParamCaption}
 \item[{{\bf CTySprite} $\ast$}]{pSprite, }
-\item[{TOASTY\_\-ACTOR\_\-STATE}]{pState}
+\item[{{\bf TOASTY\_\-ACTOR\_\-STATE}}]{pState}
 \end{DoxyParamCaption}
 )}}
 \label{class_i_ty_actor_aad869e863d1dc2283d7b33bd2aa02e4b}
@@ -258,7 +242,7 @@ It instantiates a new \hyperlink{class_i_ty_actor_1_1_c_ty_state}{CTyState} obje
 \index{DeleteState@{DeleteState}!ITyActor@{ITyActor}}
 \subsubsection[{DeleteState}]{\setlength{\rightskip}{0pt plus 5cm}bool ITyActor::DeleteState (
 \begin{DoxyParamCaption}
-\item[{TOASTY\_\-ACTOR\_\-STATE}]{pState}
+\item[{{\bf TOASTY\_\-ACTOR\_\-STATE}}]{pState}
 \end{DoxyParamCaption}
 )}}
 \label{class_i_ty_actor_a64f9104dbcf4bccbc17121d81b40c9cb}
@@ -277,7 +261,7 @@ bool True if deleted succesfully, false if pState is not in the vector.
 Deletes the state pState from m\_\-State if it is there and if it is not the current state. \hypertarget{class_i_ty_actor_adc9729b29f07da02bbfa26d423901b45}{
 \index{ITyActor@{ITyActor}!GetCurrentState@{GetCurrentState}}
 \index{GetCurrentState@{GetCurrentState}!ITyActor@{ITyActor}}
-\subsubsection[{GetCurrentState}]{\setlength{\rightskip}{0pt plus 5cm}TOASTY\_\-ACTOR\_\-STATE ITyActor::GetCurrentState (
+\subsubsection[{GetCurrentState}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TOASTY\_\-ACTOR\_\-STATE} ITyActor::GetCurrentState (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -290,6 +274,10 @@ Accessor for the Actors Current State.
 \begin{DoxyReturn}{Returns}
 TOASTY\_\-ACTOR\_\-STATE The actors Current State as TOASTY\_\-ACTOR\_\-STATE. 
 \end{DoxyReturn}
+
+
+Definition at line 357 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_a3a317a12d0872943894aef2ab1395c7c}{
 \index{ITyActor@{ITyActor}!GetDepth@{GetDepth}}
 \index{GetDepth@{GetDepth}!ITyActor@{ITyActor}}
@@ -306,6 +294,10 @@ Accessor for the Actors Depth.
 \begin{DoxyReturn}{Returns}
 int The actors Depth. 
 \end{DoxyReturn}
+
+
+Definition at line 351 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_a56e1581ea21a61d56ee13065b1bb237d}{
 \index{ITyActor@{ITyActor}!GetID@{GetID}}
 \index{GetID@{GetID}!ITyActor@{ITyActor}}
@@ -322,10 +314,14 @@ Accessor for the Actors ID.
 \begin{DoxyReturn}{Returns}
 int64 The actors ID. 
 \end{DoxyReturn}
+
+
+Definition at line 333 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_ab1c7d4089d543bf258e02854c00969f0}{
 \index{ITyActor@{ITyActor}!GetLastState@{GetLastState}}
 \index{GetLastState@{GetLastState}!ITyActor@{ITyActor}}
-\subsubsection[{GetLastState}]{\setlength{\rightskip}{0pt plus 5cm}TOASTY\_\-ACTOR\_\-STATE ITyActor::GetLastState (
+\subsubsection[{GetLastState}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TOASTY\_\-ACTOR\_\-STATE} ITyActor::GetLastState (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -338,6 +334,10 @@ Accessor for the Actor Last State.
 \begin{DoxyReturn}{Returns}
 TOASTY\_\-ACTOR\_\-STATE The actors Last State as TOASTY\_\-ACTOR\_\-STATE. 
 \end{DoxyReturn}
+
+
+Definition at line 363 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_a029053700af64bae8290b5dcfa04ceec}{
 \index{ITyActor@{ITyActor}!GetMask@{GetMask}}
 \index{GetMask@{GetMask}!ITyActor@{ITyActor}}
@@ -354,6 +354,10 @@ Accessor for the Actors Mask.
 \begin{DoxyReturn}{Returns}
 CIwRect The actors mask as CIwRect. 
 \end{DoxyReturn}
+
+
+Definition at line 369 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_ad96e4d0568d002ec80b3f3511d34bac4}{
 \index{ITyActor@{ITyActor}!GetName@{GetName}}
 \index{GetName@{GetName}!ITyActor@{ITyActor}}
@@ -370,6 +374,10 @@ Accessor for the Actors Name.
 \begin{DoxyReturn}{Returns}
 std::string The actors Name. 
 \end{DoxyReturn}
+
+
+Definition at line 339 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_a545fb58ad751ccbc8a33729ede2b7415}{
 \index{ITyActor@{ITyActor}!GetPosition@{GetPosition}}
 \index{GetPosition@{GetPosition}!ITyActor@{ITyActor}}
@@ -386,6 +394,10 @@ Accessor for the Actors Position.
 \begin{DoxyReturn}{Returns}
 CIwSVec2 The actors position as CIwSVec2. 
 \end{DoxyReturn}
+
+
+Definition at line 375 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_acb6782b902f1d23196ee5d4459a7f4c6}{
 \index{ITyActor@{ITyActor}!GetRole@{GetRole}}
 \index{GetRole@{GetRole}!ITyActor@{ITyActor}}
@@ -402,6 +414,10 @@ Accessor for the Actors Role.
 \begin{DoxyReturn}{Returns}
 std::string The actors Role. 
 \end{DoxyReturn}
+
+
+Definition at line 345 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_abe293544e0a3823400aaf490b24ae81d}{
 \index{ITyActor@{ITyActor}!IsActive@{IsActive}}
 \index{IsActive@{IsActive}!ITyActor@{ITyActor}}
@@ -418,6 +434,10 @@ Is the actor active?
 \begin{DoxyReturn}{Returns}
 bool True if active, false otherwise. 
 \end{DoxyReturn}
+
+
+Definition at line 193 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_af3670099e1c1e77d620c43125dac6e61}{
 \index{ITyActor@{ITyActor}!IsBuilt@{IsBuilt}}
 \index{IsBuilt@{IsBuilt}!ITyActor@{ITyActor}}
@@ -434,6 +454,10 @@ Is the actor built?
 \begin{DoxyReturn}{Returns}
 bool True if built, false otherwise. 
 \end{DoxyReturn}
+
+
+Definition at line 187 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_a5c1f9e77b0e5903c1f63ac5e2b2c42ad}{
 \index{ITyActor@{ITyActor}!IsSolid@{IsSolid}}
 \index{IsSolid@{IsSolid}!ITyActor@{ITyActor}}
@@ -450,6 +474,10 @@ Is the actor solid?
 \begin{DoxyReturn}{Returns}
 bool True if solid, false otherwise. 
 \end{DoxyReturn}
+
+
+Definition at line 205 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_a5e3d6f0fd5ab67afb6d56488b7a55595}{
 \index{ITyActor@{ITyActor}!IsVisible@{IsVisible}}
 \index{IsVisible@{IsVisible}!ITyActor@{ITyActor}}
@@ -466,38 +494,10 @@ Is the actor visible?
 \begin{DoxyReturn}{Returns}
 bool True if visible, false otherwise. 
 \end{DoxyReturn}
-\hypertarget{class_i_ty_actor_aa1eda801c41618d6025249e0dbc3cc49}{
-\index{ITyActor@{ITyActor}!OnAnimationEnd@{OnAnimationEnd}}
-\index{OnAnimationEnd@{OnAnimationEnd}!ITyActor@{ITyActor}}
-\subsubsection[{OnAnimationEnd}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ITyActor::OnAnimationEnd (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
-\label{class_i_ty_actor_aa1eda801c41618d6025249e0dbc3cc49}
 
 
-Will be called everytime current state assoaciated Sprite animation ends, if Active and Visible. 
+Definition at line 199 of file TyActor.h.
 
-\begin{DoxyReturn}{Returns}
-void 
-\end{DoxyReturn}
-\hypertarget{class_i_ty_actor_ace0a008487e45e3f5fd6ac6301ef6acb}{
-\index{ITyActor@{ITyActor}!OnAnimationStart@{OnAnimationStart}}
-\index{OnAnimationStart@{OnAnimationStart}!ITyActor@{ITyActor}}
-\subsubsection[{OnAnimationStart}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ITyActor::OnAnimationStart (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
-\label{class_i_ty_actor_ace0a008487e45e3f5fd6ac6301ef6acb}
-
-
-Will be called everytime current state assoaciated Sprite animation starts, if Active and Visible. 
-
-\begin{DoxyReturn}{Returns}
-void 
-\end{DoxyReturn}
 \hypertarget{class_i_ty_actor_a88b1d350c4649d2df9e358f15fbca9b2}{
 \index{ITyActor@{ITyActor}!OnCollision@{OnCollision}}
 \index{OnCollision@{OnCollision}!ITyActor@{ITyActor}}
@@ -514,6 +514,50 @@ Will be called when two actors collide, if Solid.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+
+
+Definition at line 327 of file TyActor.h.
+
+\hypertarget{class_i_ty_actor_aeff5d073d59e661d58e9bdc72370769c}{
+\index{ITyActor@{ITyActor}!OnCreate@{OnCreate}}
+\index{OnCreate@{OnCreate}!ITyActor@{ITyActor}}
+\subsubsection[{OnCreate}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ITyActor::OnCreate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_i_ty_actor_aeff5d073d59e661d58e9bdc72370769c}
+
+
+Will be called once the actor is added to a scene. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 243 of file TyActor.h.
+
+\hypertarget{class_i_ty_actor_a1ceb6a35987a22acb85bdaf9fd23f349}{
+\index{ITyActor@{ITyActor}!OnDestroy@{OnDestroy}}
+\index{OnDestroy@{OnDestroy}!ITyActor@{ITyActor}}
+\subsubsection[{OnDestroy}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ITyActor::OnDestroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_i_ty_actor_a1ceb6a35987a22acb85bdaf9fd23f349}
+
+
+Will be called once the actor is removed from a scene. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 249 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_a9da03663a14f091ce23a5adae98e2302}{
 \index{ITyActor@{ITyActor}!OnIntersectBoundaries@{OnIntersectBoundaries}}
 \index{OnIntersectBoundaries@{OnIntersectBoundaries}!ITyActor@{ITyActor}}
@@ -530,6 +574,10 @@ Will be called if Actor is about to collide with Scene boundaries.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+
+
+Definition at line 297 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_a3a3295eba0fc092e44a9b690d2d242ab}{
 \index{ITyActor@{ITyActor}!OnKeyPress@{OnKeyPress}}
 \index{OnKeyPress@{OnKeyPress}!ITyActor@{ITyActor}}
@@ -546,6 +594,10 @@ Will be called on Keyboard Press event.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+
+
+Definition at line 255 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_ae0402203392a84e769fad4a989d07b3c}{
 \index{ITyActor@{ITyActor}!OnKeyRelease@{OnKeyRelease}}
 \index{OnKeyRelease@{OnKeyRelease}!ITyActor@{ITyActor}}
@@ -562,6 +614,10 @@ Will be called on Keyboard Release event.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+
+
+Definition at line 261 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_aa6008d50671f63f7ca482b54179b7725}{
 \index{ITyActor@{ITyActor}!OnKeySustain@{OnKeySustain}}
 \index{OnKeySustain@{OnKeySustain}!ITyActor@{ITyActor}}
@@ -579,22 +635,10 @@ Will be called if a Key is hold.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-\hypertarget{class_i_ty_actor_a05d286129fce86d004a9a35dd8e4791f}{
-\index{ITyActor@{ITyActor}!OnLoad@{OnLoad}}
-\index{OnLoad@{OnLoad}!ITyActor@{ITyActor}}
-\subsubsection[{OnLoad}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ITyActor::OnLoad (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
-\label{class_i_ty_actor_a05d286129fce86d004a9a35dd8e4791f}
 
 
-Will be called on Scene loading. 
+Definition at line 267 of file TyActor.h.
 
-\begin{DoxyReturn}{Returns}
-void 
-\end{DoxyReturn}
 \hypertarget{class_i_ty_actor_ac5a0f1ef9aca4cf49893171c130abb9c}{
 \index{ITyActor@{ITyActor}!OnRender@{OnRender}}
 \index{OnRender@{OnRender}!ITyActor@{ITyActor}}
@@ -611,6 +655,10 @@ Will be called before StepEnd, but at the end of each step, if Visible.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+
+
+Definition at line 321 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_a78ac709f1fdbd9fba59180337be44a7a}{
 \index{ITyActor@{ITyActor}!OnStep@{OnStep}}
 \index{OnStep@{OnStep}!ITyActor@{ITyActor}}
@@ -627,6 +675,10 @@ Will be called Second in each step, if Active.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+
+
+Definition at line 309 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_aa539311a3f8cf47dd325f6cb6e7413a6}{
 \index{ITyActor@{ITyActor}!OnStepEnd@{OnStepEnd}}
 \index{OnStepEnd@{OnStepEnd}!ITyActor@{ITyActor}}
@@ -643,6 +695,10 @@ Will be called after Rendering in each step, if Active.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+
+
+Definition at line 315 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_aeed7b53859c91f8be589ff441f36852d}{
 \index{ITyActor@{ITyActor}!OnStepStart@{OnStepStart}}
 \index{OnStepStart@{OnStepStart}!ITyActor@{ITyActor}}
@@ -659,6 +715,10 @@ Will be called First in each step, if Active.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+
+
+Definition at line 303 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_ad07610fc8cd2e0ade09d777979102a22}{
 \index{ITyActor@{ITyActor}!OnTouchDrag@{OnTouchDrag}}
 \index{OnTouchDrag@{OnTouchDrag}!ITyActor@{ITyActor}}
@@ -678,6 +738,10 @@ Will be called if the screen is touch and then dragged.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+
+
+Definition at line 291 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_ae828745012aac359147920ccb42801b9}{
 \index{ITyActor@{ITyActor}!OnTouchPress@{OnTouchPress}}
 \index{OnTouchPress@{OnTouchPress}!ITyActor@{ITyActor}}
@@ -695,6 +759,10 @@ Will be called if the Screen is touched.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+
+
+Definition at line 273 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_a240c68f34a3b90af8bbef1729a74114a}{
 \index{ITyActor@{ITyActor}!OnTouchRelease@{OnTouchRelease}}
 \index{OnTouchRelease@{OnTouchRelease}!ITyActor@{ITyActor}}
@@ -712,6 +780,10 @@ Will be called if a Screentouch is released.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+
+
+Definition at line 285 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_adb1cde3971b3d75407a8fbb590f7088a}{
 \index{ITyActor@{ITyActor}!OnTouchSustain@{OnTouchSustain}}
 \index{OnTouchSustain@{OnTouchSustain}!ITyActor@{ITyActor}}
@@ -730,22 +802,23 @@ Will be called if the Screen is hold.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-\hypertarget{class_i_ty_actor_a7aaa8b17ac1742d2cc6457e79d9dbe4f}{
-\index{ITyActor@{ITyActor}!OnUnload@{OnUnload}}
-\index{OnUnload@{OnUnload}!ITyActor@{ITyActor}}
-\subsubsection[{OnUnload}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ITyActor::OnUnload (
+
+
+Definition at line 279 of file TyActor.h.
+
+\hypertarget{class_i_ty_actor_aa988ea01f7b61556918f02ba184b60b3}{
+\index{ITyActor@{ITyActor}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!ITyActor@{ITyActor}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool ITyActor::operator$<$ (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf ITyActor} const \&}]{pActor}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
-\label{class_i_ty_actor_a7aaa8b17ac1742d2cc6457e79d9dbe4f}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_i_ty_actor_aa988ea01f7b61556918f02ba184b60b3}
 
 
-Will be called on Scene unloading. 
+Definition at line 178 of file TyActor.h.
 
-\begin{DoxyReturn}{Returns}
-void 
-\end{DoxyReturn}
 \hypertarget{class_i_ty_actor_ad2a1db314df31d4c1114132154644e2d}{
 \index{ITyActor@{ITyActor}!SetActive@{SetActive}}
 \index{SetActive@{SetActive}!ITyActor@{ITyActor}}
@@ -764,12 +837,16 @@ Mutator for the Actors Active flag.
 {\em pActive} & boolean for Active; \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 399 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_ab7a324bf10f138f537fe2b869d3aeea5}{
 \index{ITyActor@{ITyActor}!SetCurrentState@{SetCurrentState}}
 \index{SetCurrentState@{SetCurrentState}!ITyActor@{ITyActor}}
 \subsubsection[{SetCurrentState}]{\setlength{\rightskip}{0pt plus 5cm}bool ITyActor::SetCurrentState (
 \begin{DoxyParamCaption}
-\item[{TOASTY\_\-ACTOR\_\-STATE}]{pState}
+\item[{{\bf TOASTY\_\-ACTOR\_\-STATE}}]{pState}
 \end{DoxyParamCaption}
 )}}
 \label{class_i_ty_actor_ab7a324bf10f138f537fe2b869d3aeea5}
@@ -803,6 +880,10 @@ Mutator for the Actors Depth.
 {\em pDepth} & int for the Depth. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 393 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_aa119f79b398074a9b9d6281e7b463fee}{
 \index{ITyActor@{ITyActor}!SetMask@{SetMask}}
 \index{SetMask@{SetMask}!ITyActor@{ITyActor}}
@@ -821,6 +902,10 @@ Mutator for the Actors Collision Mask.
 {\em pMask} & CIwRect rect for the Collision Mask. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 417 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_a3ecdf0c6c1502c4b5a4a7227811ad0e3}{
 \index{ITyActor@{ITyActor}!SetName@{SetName}}
 \index{SetName@{SetName}!ITyActor@{ITyActor}}
@@ -839,6 +924,10 @@ Mutator for the Actors Name.
 {\em pName} & std::string of the name. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 381 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_a9b37537093a7b6c412d6f1379b4eabb9}{
 \index{ITyActor@{ITyActor}!SetPosition@{SetPosition}}
 \index{SetPosition@{SetPosition}!ITyActor@{ITyActor}}
@@ -857,6 +946,10 @@ Mutator for the Actors Position.
 {\em pPosition} & CIwSVec2 vector for Position. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 423 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_abbf80ab3261ea1ffa4a83e8958f486bd}{
 \index{ITyActor@{ITyActor}!SetRole@{SetRole}}
 \index{SetRole@{SetRole}!ITyActor@{ITyActor}}
@@ -875,6 +968,10 @@ Mutator for the Actors Role.
 {\em pRole} & std::string of the Role. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 387 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_acc5fe8fe823f7a8f95a6bbe505ebe95a}{
 \index{ITyActor@{ITyActor}!SetSolid@{SetSolid}}
 \index{SetSolid@{SetSolid}!ITyActor@{ITyActor}}
@@ -893,6 +990,10 @@ Mutator for the Actors Solid flag.
 {\em pSolid} & boolean for Solid; \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 411 of file TyActor.h.
+
 \hypertarget{class_i_ty_actor_af1f3341d3cb568b2420cfce2a570e507}{
 \index{ITyActor@{ITyActor}!SetVisible@{SetVisible}}
 \index{SetVisible@{SetVisible}!ITyActor@{ITyActor}}
@@ -913,6 +1014,124 @@ Mutator for the Actors Visible flag.
 \end{DoxyParams}
 
 
+Definition at line 405 of file TyActor.h.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_i_ty_actor_ac9e603148a462b197c336bd2dedd9f87}{
+\index{ITyActor@{ITyActor}!CTyScene@{CTyScene}}
+\index{CTyScene@{CTyScene}!ITyActor@{ITyActor}}
+\subsubsection[{CTyScene}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf CTyScene}\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{class_i_ty_actor_ac9e603148a462b197c336bd2dedd9f87}
+
+
+Definition at line 144 of file TyActor.h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_i_ty_actor_ae460cd48bef240e11cfa5df7a505cbe9}{
+\index{ITyActor@{ITyActor}!m\_\-Active@{m\_\-Active}}
+\index{m\_\-Active@{m\_\-Active}!ITyActor@{ITyActor}}
+\subsubsection[{m\_\-Active}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ITyActor::m\_\-Active}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_i_ty_actor_ae460cd48bef240e11cfa5df7a505cbe9}
+
+
+Definition at line 78 of file TyActor.h.
+
+\hypertarget{class_i_ty_actor_afcdb5a06ae0e2b6d9872fa6f17222487}{
+\index{ITyActor@{ITyActor}!m\_\-CurrentState@{m\_\-CurrentState}}
+\index{m\_\-CurrentState@{m\_\-CurrentState}!ITyActor@{ITyActor}}
+\subsubsection[{m\_\-CurrentState}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CTyState}$\ast$ {\bf ITyActor::m\_\-CurrentState}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_i_ty_actor_afcdb5a06ae0e2b6d9872fa6f17222487}
+
+
+Definition at line 127 of file TyActor.h.
+
+\hypertarget{class_i_ty_actor_ac075325d62fdcda89c2a91f2c1298376}{
+\index{ITyActor@{ITyActor}!m\_\-Depth@{m\_\-Depth}}
+\index{m\_\-Depth@{m\_\-Depth}!ITyActor@{ITyActor}}
+\subsubsection[{m\_\-Depth}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ITyActor::m\_\-Depth}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_i_ty_actor_ac075325d62fdcda89c2a91f2c1298376}
+
+
+Definition at line 73 of file TyActor.h.
+
+\hypertarget{class_i_ty_actor_ab637fbe1df811cbde3ad2b780f1ea643}{
+\index{ITyActor@{ITyActor}!m\_\-LastState@{m\_\-LastState}}
+\index{m\_\-LastState@{m\_\-LastState}!ITyActor@{ITyActor}}
+\subsubsection[{m\_\-LastState}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CTyState}$\ast$ {\bf ITyActor::m\_\-LastState}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_i_ty_actor_ab637fbe1df811cbde3ad2b780f1ea643}
+
+
+Definition at line 132 of file TyActor.h.
+
+\hypertarget{class_i_ty_actor_abd0ddacb8e677d2d36ead794883dee4c}{
+\index{ITyActor@{ITyActor}!m\_\-Mask@{m\_\-Mask}}
+\index{m\_\-Mask@{m\_\-Mask}!ITyActor@{ITyActor}}
+\subsubsection[{m\_\-Mask}]{\setlength{\rightskip}{0pt plus 5cm}CIwRect {\bf ITyActor::m\_\-Mask}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_i_ty_actor_abd0ddacb8e677d2d36ead794883dee4c}
+
+
+Definition at line 137 of file TyActor.h.
+
+\hypertarget{class_i_ty_actor_afdfb0e1ed5a47085f52f95f276010bb6}{
+\index{ITyActor@{ITyActor}!m\_\-Name@{m\_\-Name}}
+\index{m\_\-Name@{m\_\-Name}!ITyActor@{ITyActor}}
+\subsubsection[{m\_\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf ITyActor::m\_\-Name}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_i_ty_actor_afdfb0e1ed5a47085f52f95f276010bb6}
+
+
+Definition at line 63 of file TyActor.h.
+
+\hypertarget{class_i_ty_actor_a296ffe4ccf5fad06daf002837b9ec128}{
+\index{ITyActor@{ITyActor}!m\_\-Position@{m\_\-Position}}
+\index{m\_\-Position@{m\_\-Position}!ITyActor@{ITyActor}}
+\subsubsection[{m\_\-Position}]{\setlength{\rightskip}{0pt plus 5cm}CIwSVec2 {\bf ITyActor::m\_\-Position}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_i_ty_actor_a296ffe4ccf5fad06daf002837b9ec128}
+
+
+Definition at line 142 of file TyActor.h.
+
+\hypertarget{class_i_ty_actor_a92de9e18b7a31fc93b8bb775922078d4}{
+\index{ITyActor@{ITyActor}!m\_\-Role@{m\_\-Role}}
+\index{m\_\-Role@{m\_\-Role}!ITyActor@{ITyActor}}
+\subsubsection[{m\_\-Role}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf ITyActor::m\_\-Role}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_i_ty_actor_a92de9e18b7a31fc93b8bb775922078d4}
+
+
+Definition at line 68 of file TyActor.h.
+
+\hypertarget{class_i_ty_actor_a0365728019201a011e657ab56e36d06a}{
+\index{ITyActor@{ITyActor}!m\_\-Solid@{m\_\-Solid}}
+\index{m\_\-Solid@{m\_\-Solid}!ITyActor@{ITyActor}}
+\subsubsection[{m\_\-Solid}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ITyActor::m\_\-Solid}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_i_ty_actor_a0365728019201a011e657ab56e36d06a}
+
+
+Definition at line 88 of file TyActor.h.
+
+\hypertarget{class_i_ty_actor_aa90c7ebf0af50802126ca951906fb225}{
+\index{ITyActor@{ITyActor}!m\_\-States@{m\_\-States}}
+\index{m\_\-States@{m\_\-States}!ITyActor@{ITyActor}}
+\subsubsection[{m\_\-States}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf CTyState}$>$ {\bf ITyActor::m\_\-States}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_i_ty_actor_aa90c7ebf0af50802126ca951906fb225}
+
+
+Definition at line 122 of file TyActor.h.
+
+\hypertarget{class_i_ty_actor_a1019d46cd7502694e5f69c7c4c7be23e}{
+\index{ITyActor@{ITyActor}!m\_\-Visible@{m\_\-Visible}}
+\index{m\_\-Visible@{m\_\-Visible}!ITyActor@{ITyActor}}
+\subsubsection[{m\_\-Visible}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ITyActor::m\_\-Visible}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_i_ty_actor_a1019d46cd7502694e5f69c7c4c7be23e}
+
+
+Definition at line 83 of file TyActor.h.
+
+
+
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
-include/TyActor.h\end{DoxyCompactItemize}
+D:/development/cpp/toasty/include/\hyperlink{_ty_actor_8h}{TyActor.h}\end{DoxyCompactItemize}

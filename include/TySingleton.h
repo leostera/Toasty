@@ -23,21 +23,21 @@ template<typename T> class ITySingleton
 		}
 
 		inline static void Erase()
+		{
+		if( ITySingleton::m_Instance != 0)
 			{
-			if( ITySingleton::m_Instance != 0)
-				{
-				delete m_Instance;
-				}
+			delete m_Instance;
 			}
+		}
 
 		inline static T* Get()
+		{
+		if ( ITySingleton::m_Instance == 0 )
 			{
-			if ( ITySingleton::m_Instance == 0 )
-				{
-				m_Instance = new T;
-				}
-			return m_Instance;
+			m_Instance = new T;
 			}
+		return m_Instance;
+		}
 	};
 
 template <typename T> T* ITySingleton <T>::m_Instance = 0;

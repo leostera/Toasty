@@ -2,49 +2,136 @@
 \section{IwClock Class Reference}
 \label{class_iw_clock}\index{IwClock@{IwClock}}
 }
+
+
+{\ttfamily \#include $<$TyClock.h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_iw_clock_a564661eb2cde827f66b9598626ac7327}{
-int64 {\bfseries getTicks} ()}
-\label{class_iw_clock_a564661eb2cde827f66b9598626ac7327}
-
+int64 \hyperlink{class_iw_clock_a63945282d87ce957660c4423a869ac48}{GetTicks} ()
 \item 
-\hypertarget{class_iw_clock_a7b426dd93cb168751ec5ff56e9adac77}{
-int64 {\bfseries Step} ()}
-\label{class_iw_clock_a7b426dd93cb168751ec5ff56e9adac77}
-
+int64 \hyperlink{class_iw_clock_a7b426dd93cb168751ec5ff56e9adac77}{Step} ()
 \item 
-\hypertarget{class_iw_clock_a4078000fbee8dd5a213f9f13fa612624}{
-void {\bfseries SetCap} (int32 pCap)}
-\label{class_iw_clock_a4078000fbee8dd5a213f9f13fa612624}
-
+void \hyperlink{class_iw_clock_a4078000fbee8dd5a213f9f13fa612624}{SetCap} (int32 pCap)
 \item 
-\hypertarget{class_iw_clock_a531ee1a242c06c793c0b8eb2067a284e}{
-int32 {\bfseries Cap} ()}
-\label{class_iw_clock_a531ee1a242c06c793c0b8eb2067a284e}
-
+int32 \hyperlink{class_iw_clock_a531ee1a242c06c793c0b8eb2067a284e}{Cap} ()
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_iw_clock_a001f2a4d48cb5b9ae4b3c11eebb7d8a2}{
-\hyperlink{class_iw_clock}{IwClock} $\ast$ {\bfseries IwGetClock} ()}
-\label{class_iw_clock_a001f2a4d48cb5b9ae4b3c11eebb7d8a2}
-
+\hyperlink{class_iw_clock}{IwClock} $\ast$ \hyperlink{class_iw_clock_a001f2a4d48cb5b9ae4b3c11eebb7d8a2}{IwGetClock} ()
 \item 
+void \hyperlink{class_iw_clock_a6472b855774c1c0dd938a544509aa288}{IwClockInit} ()
+\item 
+void \hyperlink{class_iw_clock_a5a79c75d7b979ef259ea87947d20305f}{IwClockTerminate} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file TyClock.h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_iw_clock_a531ee1a242c06c793c0b8eb2067a284e}{
+\index{IwClock@{IwClock}!Cap@{Cap}}
+\index{Cap@{Cap}!IwClock@{IwClock}}
+\subsubsection[{Cap}]{\setlength{\rightskip}{0pt plus 5cm}int32 IwClock::Cap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_iw_clock_a531ee1a242c06c793c0b8eb2067a284e}
+
+
+Definition at line 136 of file TyClock.h.
+
+\hypertarget{class_iw_clock_a63945282d87ce957660c4423a869ac48}{
+\index{IwClock@{IwClock}!GetTicks@{GetTicks}}
+\index{GetTicks@{GetTicks}!IwClock@{IwClock}}
+\subsubsection[{GetTicks}]{\setlength{\rightskip}{0pt plus 5cm}int64 IwClock::GetTicks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_iw_clock_a63945282d87ce957660c4423a869ac48}
+
+
+Definition at line 94 of file TyClock.h.
+
+\hypertarget{class_iw_clock_a4078000fbee8dd5a213f9f13fa612624}{
+\index{IwClock@{IwClock}!SetCap@{SetCap}}
+\index{SetCap@{SetCap}!IwClock@{IwClock}}
+\subsubsection[{SetCap}]{\setlength{\rightskip}{0pt plus 5cm}void IwClock::SetCap (
+\begin{DoxyParamCaption}
+\item[{int32}]{pCap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_iw_clock_a4078000fbee8dd5a213f9f13fa612624}
+
+
+Definition at line 122 of file TyClock.h.
+
+\hypertarget{class_iw_clock_a7b426dd93cb168751ec5ff56e9adac77}{
+\index{IwClock@{IwClock}!Step@{Step}}
+\index{Step@{Step}!IwClock@{IwClock}}
+\subsubsection[{Step}]{\setlength{\rightskip}{0pt plus 5cm}int64 IwClock::Step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_iw_clock_a7b426dd93cb168751ec5ff56e9adac77}
+
+
+Definition at line 106 of file TyClock.h.
+
+
+
+\subsection{Friends And Related Function Documentation}
 \hypertarget{class_iw_clock_a6472b855774c1c0dd938a544509aa288}{
-void {\bfseries IwClockInit} ()}
+\index{IwClock@{IwClock}!IwClockInit@{IwClockInit}}
+\index{IwClockInit@{IwClockInit}!IwClock@{IwClock}}
+\subsubsection[{IwClockInit}]{\setlength{\rightskip}{0pt plus 5cm}void IwClockInit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
 \label{class_iw_clock_a6472b855774c1c0dd938a544509aa288}
 
-\item 
+
+Definition at line 156 of file TyClock.h.
+
 \hypertarget{class_iw_clock_a5a79c75d7b979ef259ea87947d20305f}{
-void {\bfseries IwClockTerminate} ()}
+\index{IwClock@{IwClock}!IwClockTerminate@{IwClockTerminate}}
+\index{IwClockTerminate@{IwClockTerminate}!IwClock@{IwClock}}
+\subsubsection[{IwClockTerminate}]{\setlength{\rightskip}{0pt plus 5cm}void IwClockTerminate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
 \label{class_iw_clock_a5a79c75d7b979ef259ea87947d20305f}
 
-\end{DoxyCompactItemize}
+
+Definition at line 162 of file TyClock.h.
+
+\hypertarget{class_iw_clock_a001f2a4d48cb5b9ae4b3c11eebb7d8a2}{
+\index{IwClock@{IwClock}!IwGetClock@{IwGetClock}}
+\index{IwGetClock@{IwGetClock}!IwClock@{IwClock}}
+\subsubsection[{IwGetClock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf IwClock}$\ast$ IwGetClock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{class_iw_clock_a001f2a4d48cb5b9ae4b3c11eebb7d8a2}
+
+
+Definition at line 168 of file TyClock.h.
+
 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
-include/TyClock.h\end{DoxyCompactItemize}
+D:/development/cpp/toasty/include/\hyperlink{_ty_clock_8h}{TyClock.h}\end{DoxyCompactItemize}

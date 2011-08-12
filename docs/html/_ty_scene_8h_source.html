@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Toasty!: include/TyScene.h Source File</title>
+<title>Toasty!: D:/development/cpp/toasty/include/TyScene.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -25,6 +25,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="toastylogosmall.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Toasty!&#160;<span id="projectnumber">0.1</span></div>
    <div id="projectbrief">A game framework for the Marmalade SDK.</div>
@@ -59,6 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -77,59 +79,80 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">include/TyScene.h</div>  </div>
+<div class="title">D:/development/cpp/toasty/include/TyScene.h</div>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#pragma once</span>
+<a href="_ty_scene_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#pragma once</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span>
-<a name="l00003"></a><a class="code" href="class_c_ty_scene.html">00003</a> <span class="keyword">class </span><a class="code" href="class_c_ty_scene.html">CTyScene</a>{
-<a name="l00004"></a>00004 
-<a name="l00005"></a>00005         <span class="keyword">private</span>:
-<a name="l00006"></a>00006                 <span class="keyword">static</span> int64    m_ID;
-<a name="l00007"></a>00007 
-<a name="l00008"></a>00008         <span class="keyword">protected</span>:
-<a name="l00009"></a>00009                 CIwResGroup*                    m_ResourceGroup;
+<a name="l00003"></a>00003 <span class="preprocessor">#include &lt;IwResManager.h&gt;</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;<a class="code" href="_ty_actor_8h.html">TyActor.h</a>&gt;</span>
+<a name="l00005"></a>00005 
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;list&gt;</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a><a class="code" href="class_c_ty_scene.html">00009</a> <span class="keyword">class </span><a class="code" href="class_c_ty_scene.html">CTyScene</a>{
 <a name="l00010"></a>00010 
-<a name="l00011"></a>00011                 std::string                             m_Name;
-<a name="l00012"></a>00012                 std::string                             m_Caption;
+<a name="l00011"></a>00011         <span class="keyword">private</span>:
+<a name="l00012"></a>00012                 <span class="keyword">const</span>   int64   m_ID;
 <a name="l00013"></a>00013 
-<a name="l00014"></a>00014                 std::vector&lt;CTyActor*&gt;  m_Actors;
-<a name="l00015"></a>00015                 <span class="keywordtype">bool</span>                                    m_ZOrdered;
-<a name="l00016"></a>00016                 CIw2DImage*                             m_Background;
-<a name="l00017"></a>00017                 <span class="comment">//back-track music, </span>
-<a name="l00018"></a>00018                 <span class="comment">//possible methods: BeginScene, renders background, calls actors StepStart, if not ordered by Z, order them all, calls actors Step</span>
-<a name="l00019"></a>00019                 <span class="comment">//                                      EndScene, renders actors, calls actors StepEnd</span>
-<a name="l00020"></a>00020                 <span class="comment">//also Load and Unload          </span>
-<a name="l00021"></a>00021                 
-<a name="l00022"></a>00022         <span class="keyword">public</span>:
-<a name="l00023"></a>00023                 <a class="code" href="class_c_ty_scene.html">CTyScene</a>();
-<a name="l00024"></a>00024                 ~<a class="code" href="class_c_ty_scene.html">CTyScene</a>();
-<a name="l00025"></a>00025                 <a class="code" href="class_c_ty_scene.html">CTyScene</a>(<a class="code" href="class_c_ty_scene.html">CTyScene</a> <span class="keyword">const</span>&amp; pScene);
-<a name="l00026"></a>00026                 <a class="code" href="class_c_ty_scene.html">CTyScene</a>&amp; operator = (<a class="code" href="class_c_ty_scene.html">CTyScene</a> <span class="keyword">const</span>&amp; pScene);
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028                 <span class="comment">/*</span>
-<a name="l00029"></a>00029 <span class="comment">                 * RESOURCE RELATED FUNCTIONS</span>
-<a name="l00030"></a>00030 <span class="comment">                 *</span>
-<a name="l00031"></a>00031 <span class="comment">                 *      Each scene looks up for its own &#39;m_Name.group&#39; file for resources</span>
-<a name="l00032"></a>00032 <span class="comment">                 */</span>
-<a name="l00033"></a>00033                 <span class="keywordtype">void</span>    Load(); <span class="comment">//load resources into memory</span>
-<a name="l00034"></a>00034                 <span class="keywordtype">void</span>    Unload(); <span class="comment">//free resources</span>
+<a name="l00014"></a>00014         <span class="keyword">protected</span>:
+<a name="l00015"></a><a class="code" href="class_c_ty_scene.html#a6ea9f4376051cf9f0f7191e0bf5afad5">00015</a>                 std::string                             <a class="code" href="class_c_ty_scene.html#a6ea9f4376051cf9f0f7191e0bf5afad5">m_ResGroupName</a>;
+<a name="l00016"></a><a class="code" href="class_c_ty_scene.html#a6630f437b2907d89c8deb4a536483c00">00016</a>                 CIwResGroup*                    <a class="code" href="class_c_ty_scene.html#a6630f437b2907d89c8deb4a536483c00">m_ResGroup</a>;
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="class_c_ty_scene.html#ad81b920909340266c2aba88805f7812a">00018</a>                 std::string                             <a class="code" href="class_c_ty_scene.html#ad81b920909340266c2aba88805f7812a">m_Name</a>;
+<a name="l00019"></a><a class="code" href="class_c_ty_scene.html#a7ebea53f2e91d94f3f6ba6aef7a40f5b">00019</a>                 std::string                             <a class="code" href="class_c_ty_scene.html#a7ebea53f2e91d94f3f6ba6aef7a40f5b">m_Caption</a>;
+<a name="l00020"></a>00020 
+<a name="l00021"></a><a class="code" href="class_c_ty_scene.html#ac7780d185e2a7cbd5eeca02fe445fd96">00021</a>                 std::list&lt;ITyActor*&gt;    <a class="code" href="class_c_ty_scene.html#ac7780d185e2a7cbd5eeca02fe445fd96">m_Actors</a>;
+<a name="l00022"></a><a class="code" href="class_c_ty_scene.html#aef04104af22b290a7207b45852be15c1">00022</a>                 <span class="keywordtype">bool</span>                                    <a class="code" href="class_c_ty_scene.html#aef04104af22b290a7207b45852be15c1">m_ZOrdered</a>;
+<a name="l00023"></a><a class="code" href="class_c_ty_scene.html#a165009b2d0b79de7bcd4c0594931ec70">00023</a>                 <span class="keywordtype">bool</span>                                    <a class="code" href="class_c_ty_scene.html#a165009b2d0b79de7bcd4c0594931ec70">m_Created</a>;
+<a name="l00024"></a>00024                 <span class="comment">//CIw2DImage*                           m_Background;</span>
+<a name="l00025"></a><a class="code" href="class_c_ty_scene.html#a5cbe320d312e3909c6ad4c32c99ed275">00025</a>                 CIwRect                                 <a class="code" href="class_c_ty_scene.html#a5cbe320d312e3909c6ad4c32c99ed275">m_Boundaries</a>;
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027                 <span class="comment">//back-track music, </span>
+<a name="l00028"></a>00028                 <span class="comment">//possible methods: BeginScene, renders background, calls actors StepStart, if not ordered by Z, order them all, calls actors Step</span>
+<a name="l00029"></a>00029                 <span class="comment">//                                      EndScene, renders actors, calls actors StepEnd</span>
+<a name="l00030"></a>00030                 <span class="comment">//also Load and Unload          </span>
+<a name="l00031"></a>00031                 
+<a name="l00032"></a>00032         <span class="keyword">public</span>:
+<a name="l00033"></a>00033                 <a class="code" href="class_c_ty_scene.html#ac3ffa8af3df717e521b41f714e8bdfeb">CTyScene</a>(std::string pName = std::string(<span class="stringliteral">&quot;&quot;</span>), std::string pCaption = std::string(<span class="stringliteral">&quot;&quot;</span>), std::string pResGroup = std::string(<span class="stringliteral">&quot;&quot;</span>), int64 pID = 0, <span class="keywordtype">bool</span> pZOrdered = <span class="keyword">false</span>);
+<a name="l00034"></a>00034                 <a class="code" href="class_c_ty_scene.html#a18020d4f345af48e4c321edc38495149">~CTyScene</a>();
 <a name="l00035"></a>00035 
-<a name="l00036"></a>00036                 <span class="comment">/*</span>
-<a name="l00037"></a>00037 <span class="comment">                 * SCENE LOGIC RELATED FUNCTIONS</span>
-<a name="l00038"></a>00038 <span class="comment">                 */</span>
-<a name="l00039"></a>00039                 <span class="keywordtype">void</span>    Start(); <span class="comment">//setup scene logic</span>
-<a name="l00040"></a>00040                 <span class="keywordtype">void</span>    Finish(); <span class="comment">//cleanup scene logic</span>
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042                 <span class="keywordtype">void</span>    BeginScene();
-<a name="l00043"></a>00043                 <span class="keywordtype">void</span>    EndScene();
-<a name="l00044"></a>00044 };
+<a name="l00036"></a>00036                 <span class="keywordtype">bool</span>    <a class="code" href="class_c_ty_scene.html#a9687222ea13378c58e055f97b4037e00">AddActor</a>(<a class="code" href="class_i_ty_actor.html" title="Actor class to be used within a scene.">ITyActor</a>* pActor);
+<a name="l00037"></a>00037                 <span class="keywordtype">bool</span>    <a class="code" href="class_c_ty_scene.html#a85d44ded276f4209bade96297590c435">DeleteActor</a>(<a class="code" href="class_i_ty_actor.html" title="Actor class to be used within a scene.">ITyActor</a>* pActor);
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039                 <span class="comment">/*</span>
+<a name="l00040"></a>00040 <span class="comment">                 * RESOURCE RELATED FUNCTIONS</span>
+<a name="l00041"></a>00041 <span class="comment">                 *</span>
+<a name="l00042"></a>00042 <span class="comment">                 *      Each scene looks up for its own &#39;m_Name.group&#39; file for resources</span>
+<a name="l00043"></a>00043 <span class="comment">                 */</span>
+<a name="l00044"></a>00044                 <span class="keywordtype">bool</span>    <a class="code" href="class_c_ty_scene.html#af9f4043d72a92cbd4ecb51dc9c13d3fa">Create</a>(); <span class="comment">//load resources into memory</span>
+<a name="l00045"></a>00045                 <span class="keywordtype">bool</span>    <a class="code" href="class_c_ty_scene.html#ad93f23349d95555895d404d5c23430bb">Destroy</a>(); <span class="comment">//free resources</span>
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047                 <span class="comment">/*</span>
+<a name="l00048"></a>00048 <span class="comment">                 * SCENE LOGIC RELATED FUNCTIONS</span>
+<a name="l00049"></a>00049 <span class="comment">                 */</span>
+<a name="l00050"></a>00050                 <span class="keywordtype">bool</span>    <a class="code" href="class_c_ty_scene.html#aeb00a9b2f06dda4e1320bcc425f64f41">Play</a>();
+<a name="l00051"></a>00051 
+<a name="l00052"></a><a class="code" href="class_c_ty_scene.html#a7bcb97321dd9146f0943b9e6f6812557">00052</a>                 int64           <a class="code" href="class_c_ty_scene.html#a7bcb97321dd9146f0943b9e6f6812557">GetID</a>()<span class="keyword">                         const </span>{ <span class="keywordflow">return</span>  m_ID;                   }
+<a name="l00053"></a><a class="code" href="class_c_ty_scene.html#a693e6a9c375ad62952d7c0d522699a06">00053</a>                 std::string     <a class="code" href="class_c_ty_scene.html#a693e6a9c375ad62952d7c0d522699a06">GetResGroupName</a>()<span class="keyword">       const </span>{ <span class="keywordflow">return</span>  <a class="code" href="class_c_ty_scene.html#a6ea9f4376051cf9f0f7191e0bf5afad5">m_ResGroupName</a>; }
+<a name="l00054"></a><a class="code" href="class_c_ty_scene.html#a101d35e3d07a8491761dcb25dc07d5dd">00054</a>                 std::string     <a class="code" href="class_c_ty_scene.html#a101d35e3d07a8491761dcb25dc07d5dd">GetName</a>()<span class="keyword">                       const </span>{ <span class="keywordflow">return</span>  <a class="code" href="class_c_ty_scene.html#ad81b920909340266c2aba88805f7812a">m_Name</a>;                 }
+<a name="l00055"></a><a class="code" href="class_c_ty_scene.html#ac4efdea36741e607325740ffeb3b059d">00055</a>                 std::string     <a class="code" href="class_c_ty_scene.html#ac4efdea36741e607325740ffeb3b059d">GetCaption</a>()<span class="keyword">            const </span>{ <span class="keywordflow">return</span>  <a class="code" href="class_c_ty_scene.html#a7ebea53f2e91d94f3f6ba6aef7a40f5b">m_Caption</a>;              }
+<a name="l00056"></a><a class="code" href="class_c_ty_scene.html#aa8640d7a7e4b8a5719bd028c5de8b608">00056</a>                 CIwRect         <a class="code" href="class_c_ty_scene.html#aa8640d7a7e4b8a5719bd028c5de8b608">GetBoundaries</a>()<span class="keyword">         const </span>{ <span class="keywordflow">return</span>  <a class="code" href="class_c_ty_scene.html#a5cbe320d312e3909c6ad4c32c99ed275">m_Boundaries</a>;   }
+<a name="l00057"></a><a class="code" href="class_c_ty_scene.html#a7493b6326072830c8dad9c40f6e5573f">00057</a>                 <span class="keywordtype">bool</span>            <a class="code" href="class_c_ty_scene.html#a7493b6326072830c8dad9c40f6e5573f">IsZOrdered</a>()<span class="keyword">            const </span>{ <span class="keywordflow">return</span>  <a class="code" href="class_c_ty_scene.html#aef04104af22b290a7207b45852be15c1">m_ZOrdered</a>;             }
+<a name="l00058"></a>00058 
+<a name="l00059"></a><a class="code" href="class_c_ty_scene.html#a2475029f0e2944660057388ef9321d33">00059</a>                 <span class="keywordtype">void</span>            <a class="code" href="class_c_ty_scene.html#a2475029f0e2944660057388ef9321d33">SetName</a>(std::string pName)               { <a class="code" href="class_c_ty_scene.html#ad81b920909340266c2aba88805f7812a">m_Name</a> = pName;                      }
+<a name="l00060"></a><a class="code" href="class_c_ty_scene.html#aa8e00f437e9dbcb87cb90f3a5fcb6138">00060</a>                 <span class="keywordtype">void</span>            <a class="code" href="class_c_ty_scene.html#aa8e00f437e9dbcb87cb90f3a5fcb6138">SetCaption</a>(std::string pCaption) { <a class="code" href="class_c_ty_scene.html#a7ebea53f2e91d94f3f6ba6aef7a40f5b">m_Caption</a> = pCaption;        }
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062 
+<a name="l00063"></a><a class="code" href="class_c_ty_scene.html#a109099231d27f9f28aa4b73b328397cb">00063</a>                 <span class="keywordtype">void</span>            <a class="code" href="class_c_ty_scene.html#a109099231d27f9f28aa4b73b328397cb">SetBoundaries</a>(CIwRect pBoundaries = CIwRect(0,0,0,0))   {       <a class="code" href="class_c_ty_scene.html#a5cbe320d312e3909c6ad4c32c99ed275">m_Boundaries</a> = pBoundaries; }
+<a name="l00064"></a>00064                 
+<a name="l00065"></a>00065 };
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><b>TyScene.h</b>      </li>
-      <li class="footer">Generated on Fri Aug 5 2011 18:41:33 for Toasty! by&#160;
+      <li class="navelem"><a class="el" href="_ty_scene_8h.html">TyScene.h</a>      </li>
+      <li class="footer">Generated on Fri Aug 12 2011 00:58:42 for Toasty! by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -139,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

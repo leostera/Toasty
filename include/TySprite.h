@@ -1,6 +1,6 @@
 /*!**********************************************************************************
 
-	\class			CTySprite
+	\class			TySprite
 	\brief			Animated sprite class.
 	\date			11/07/2011
 	\version		0.1					
@@ -27,7 +27,7 @@
 #include <string>
 
 
-class CTySprite
+class TySprite
 {
 private:
 	/*!
@@ -165,7 +165,7 @@ public:
 	 *					\arg	\c m_Stop,  false
 	 *					\arg	\c m_Loop,  pLoop
 	 */
-	CTySprite(CIwResGroup* pGroup, std::string pName, bool pLoop = true);
+	TySprite(CIwResGroup* pGroup, std::string pName, bool pLoop = true);
 
 	/*!
 	 *	\brief	Cleans up the object.
@@ -173,7 +173,7 @@ public:
 	 *	Performs clean up of the asigned memory blocks. 
 	 *  If the class has been succesfully built before, delete the sprite pointer as it is no longer needed.
 	 */
-	~CTySprite();
+	~TySprite();
 
 	/*!
 	 *	\brief	Copy constructor
@@ -184,7 +184,7 @@ public:
 	 *	It uses the overloaded operator = to such ends. Current object flag m_Built will be set along
 	 *	with flag m_Copy.
 	 */
-	CTySprite(CTySprite const& pSprite);
+	TySprite(TySprite const& pSprite);
 
 	/*!
 	 *	\brief	Assignment operator
@@ -193,7 +193,7 @@ public:
 	 *
 	 *	Copies all data from the sprite parameter object, incluiding the pointer to the spritesheet.
 	 */
-	CTySprite&	operator= (CTySprite const& pSprite);
+	TySprite&	operator= (TySprite const& pSprite);
 
 	/*!
 	 *	\brief	Comparison operator
@@ -205,7 +205,7 @@ public:
 	 *
 	 *	Compares both sprites and returns true if are equal, or false if not.
 	 */
-	bool		operator== (CTySprite const& pSprite) const;
+	bool		operator== (TySprite const& pSprite) const;
 	
 	/*!
 	 *	\brief	Updated the sprite.
@@ -422,11 +422,11 @@ public:
 	/*!
 	 *	\brief	Pointer to const this.	 
 	 *
-	 *	\returns		const CTySprite*
+	 *	\returns		const TySprite*
 	 *
-	 *	Returns a pointer to a const CTySprite (which is this).
+	 *	Returns a pointer to a const TySprite (which is this).
 	 */
-	const CTySprite*	GetCopy()		const { return this; }
+	const TySprite*	GetCopy()		const { return this; }
 
 	/*!
 	 *	\brief	Animation rotation.

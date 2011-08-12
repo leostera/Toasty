@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Toasty!: include/TySingleton.h Source File</title>
+<title>Toasty!: D:/development/cpp/toasty/include/TySingleton.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -25,6 +25,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="toastylogosmall.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Toasty!&#160;<span id="projectnumber">0.1</span></div>
    <div id="projectbrief">A game framework for the Marmalade SDK.</div>
@@ -59,6 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -77,10 +79,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">include/TySingleton.h</div>  </div>
+<div class="title">D:/development/cpp/toasty/include/TySingleton.h</div>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*!**********************************************************************************</span>
+<a href="_ty_singleton_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*!**********************************************************************************</span>
 <a name="l00002"></a>00002 <span class="comment"></span>
 <a name="l00003"></a>00003 <span class="comment">        \class                  ITySingleton</span>
 <a name="l00004"></a>00004 <span class="comment">        \brief                  Singleton interface.</span>
@@ -96,38 +98,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a><a class="code" href="class_i_ty_singleton.html">00014</a> <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="class_i_ty_singleton.html" title="Singleton interface.">ITySingleton</a>
 <a name="l00015"></a>00015         {
 <a name="l00016"></a>00016         <span class="keyword">private</span>:
-<a name="l00017"></a>00017                 <span class="keyword">static</span> T*       m_Instance;
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019         <span class="keyword">public</span>:
-<a name="l00020"></a>00020                 <span class="keyword">virtual</span> ~<a class="code" href="class_i_ty_singleton.html" title="Singleton interface.">ITySingleton</a>() {
-<a name="l00021"></a>00021                         m_Instance = 0;
-<a name="l00022"></a>00022                 }
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024                 <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> Erase()
-<a name="l00025"></a>00025                         {
-<a name="l00026"></a>00026                         <span class="keywordflow">if</span>( ITySingleton::m_Instance != 0)
-<a name="l00027"></a>00027                                 {
-<a name="l00028"></a>00028                                 <span class="keyword">delete</span> m_Instance;
-<a name="l00029"></a>00029                                 }
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018                 <span class="keyword">static</span> T*       m_Instance;
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020         <span class="keyword">public</span>:
+<a name="l00021"></a><a class="code" href="class_i_ty_singleton.html#a0ca9e31f3b20e750a93c98203b73b659">00021</a>                 <span class="keyword">virtual</span> <a class="code" href="class_i_ty_singleton.html#a0ca9e31f3b20e750a93c98203b73b659">~ITySingleton</a>() {
+<a name="l00022"></a>00022                         m_Instance = 0;
+<a name="l00023"></a>00023                 }
+<a name="l00024"></a>00024 
+<a name="l00025"></a><a class="code" href="class_i_ty_singleton.html#a0ce782de119a27e5536b1e5864e82760">00025</a>                 <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_i_ty_singleton.html#a0ce782de119a27e5536b1e5864e82760">Erase</a>()
+<a name="l00026"></a>00026                 {
+<a name="l00027"></a>00027                 <span class="keywordflow">if</span>( ITySingleton::m_Instance != 0)
+<a name="l00028"></a>00028                         {
+<a name="l00029"></a>00029                         <span class="keyword">delete</span> m_Instance;
 <a name="l00030"></a>00030                         }
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032                 <span class="keyword">inline</span> <span class="keyword">static</span> T* Get()
-<a name="l00033"></a>00033                         {
-<a name="l00034"></a>00034                         <span class="keywordflow">if</span> ( ITySingleton::m_Instance == 0 )
-<a name="l00035"></a>00035                                 {
-<a name="l00036"></a>00036                                 m_Instance = <span class="keyword">new</span> T;
-<a name="l00037"></a>00037                                 }
-<a name="l00038"></a>00038                         <span class="keywordflow">return</span> m_Instance;
-<a name="l00039"></a>00039                         }
-<a name="l00040"></a>00040         };
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; T* <a class="code" href="class_i_ty_singleton.html" title="Singleton interface.">ITySingleton &lt;T&gt;::m_Instance</a> = 0;
+<a name="l00031"></a>00031                 }
+<a name="l00032"></a>00032 
+<a name="l00033"></a><a class="code" href="class_i_ty_singleton.html#a5d52feebb9fe09f67611470e417c006b">00033</a>                 <span class="keyword">inline</span> <span class="keyword">static</span> T* <a class="code" href="class_i_ty_singleton.html#a5d52feebb9fe09f67611470e417c006b">Get</a>()
+<a name="l00034"></a>00034                 {
+<a name="l00035"></a>00035                 <span class="keywordflow">if</span> ( ITySingleton::m_Instance == 0 )
+<a name="l00036"></a>00036                         {
+<a name="l00037"></a>00037                         m_Instance = <span class="keyword">new</span> T;
+<a name="l00038"></a>00038                         }
+<a name="l00039"></a>00039                 <span class="keywordflow">return</span> m_Instance;
+<a name="l00040"></a>00040                 }
+<a name="l00041"></a>00041         };
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; T* <a class="code" href="class_i_ty_singleton.html" title="Singleton interface.">ITySingleton &lt;T&gt;::m_Instance</a> = 0;
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><b>TySingleton.h</b>      </li>
-      <li class="footer">Generated on Fri Aug 5 2011 18:41:33 for Toasty! by&#160;
+      <li class="navelem"><a class="el" href="_ty_singleton_8h.html">TySingleton.h</a>      </li>
+      <li class="footer">Generated on Fri Aug 12 2011 00:58:42 for Toasty! by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -137,7 +140,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
