@@ -6,7 +6,7 @@
 
 	\date			07/13/2011
 	\version		1.5
-	\notes			now a singleton with cool Marmalade like functions!
+	\notes			now a singleton with cool Marmalade like Init,Terminate,Get functions!
 
 	\author			Leandro 'The Phantom Lord' / 'Grün' Ostera
 					leostera at gmail dot com
@@ -27,9 +27,9 @@ private:
 	{ ; }
 
 	/*
-	 *	m_Clock		static self-pointer used for the singleton pattern.
+	 *	m_Instance		static self-pointer used for the singleton pattern.
 	 */
-	static TyClock*	m_Clock;
+	static TyClock*	m_Instance;
 
 	/*
 	 *	m_TotalTicks	the total amount of ticks
@@ -62,7 +62,7 @@ private:
 	 *
 	 *	Serves as a public method for getting a pointer to the singleton.
 	 */
-	friend TyClock*	IwGetClock();
+	friend TyClock*	TyGetClock();
 
 	/*
 	 *	\brief		Starts the clock.
@@ -148,25 +148,26 @@ public:
 	}
 };
 
+TyClock* TyClock::m_Instance = 0;
 
 /*
- *	FRIEND CLASSES IMPLEMENTATIONS
+ *	FRIEND FUNCTIONS IMPLEMENTATIONS
  */
 
 void TyClockInit()
 {
-	if(!TyClock::m_Clock)
-		TyClock::m_Clock = new TyClock();
+	if(!TyClock::m_Instance)
+		TyClock::m_Instance = new TyClock();
 }
 
 void TyClockTerminate()
 {
-	if(TyClock::m_Clock)
-		delete TyClock::m_Clock;
+	if(TyClock::m_Instance)
+		delete TyClock::m_Instance;
 }
 
 TyClock* TyGetClock() 
 {
 	TyClockInit();
-	return TyClock::m_Clock;
+	return TyClock::m_Instance;
 }

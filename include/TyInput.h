@@ -1,60 +1,40 @@
 #pragma once
 
-#include <TySingleton.h>
 #include <vector>
+#include <s3ePointer.h>
+#include <IwGxTypes.h>
 
-class TyInput : public ITySingleton<TyInput>
+struct TyTouch
+{
+	CIwSVec2		m_Position, m_LastPosition;
+	int64			m_TouchID;
+	bool			m_Active;
+	s3ePointerState	m_State;	
+
+	TyTouch() : m_Position(CIwSVec2::g_Zero),m_LastPosition(CIwSVec2::g_Zero),m_TouchID(-1),m_Active(false),m_State(S3E_POINTER_STATE_UP)
+	{ ; }
+};
+
+class TyInput
 {
 private:
-	struct TyKeys {
-		s3eKey		key;
-		int64		time;
-		bool		down;
-	};
+	static TyInput*	m_Instance;
+	friend void	TyInputInit();
+	friend void TyInputTerminate();
+	friend TyInput* TyGetInput();
 
-	std::vector<TyKeys>		m_Keys;
-	TyKeys*					m_LastKeyPressed;
-	TyKeys*					m_LastKeyReleased;
-	TyKeys*					m_LastKeySustained;
+	std::vector<TyTouch>	m_Touches;
+	TyTouch*				m_LastTouchPressed;
+	TyTouch*				m_LastTouchReleased;
+	TyTouch*				m_LastTouchSustained;
+	TyTouch*				m_LastTouchDragged;
+	bool					m_MultiTouchSupport;
 
-	struct TyTouchs {
-		IwSVec2		pos;
-		int64		time;
-		bool		down;
-		bool		drag;
-		IwSVec2		relpos;
-	};
-
-	std::vector<TyTouchs>	m_Touchs;
-	TyTouchs*				m_LastTouchPressed;
-	TyTouchs*				m_LastTouchReleased;
-	TyTouchs*				m_LastTouchSustained;
-	TyTouchs*				m_LastTouchDragged;
-
-public:	
+	TyInput();
 	~TyInput();
 
-	TyKeys		GetKeys();
-	TyKeys		GetLastKeyPressed();
-	TyKeys		GetLastKeyReleased();
-	TyKeys		GetLastKeySustained();
-
-	TyTouchs	GetTouchs();
-	TyTouchs	GetLastTouchPressed();
-	TyTouchs	GetLastTouchReleased();
-	TyTouchs	GetLastTouchSustained();
-	TyTouchs	GetLastTouchDragged();
-
-	bool		IsKeyPressed(s3eKeys pKey = s3eKeyFirst );
-	bool		IsKeyReleased(s3eKeys pKey = s3eKeyFirst );
-	bool		IsKeySustained(s3eKeys pKey = s3eKeyFirst , int64 pTime = 0);
-
-	bool		IsTouchPressed(IwSVec2 pPosition = IwSVec2(-1,-1) );
-	bool		IsTouchReleased(IwSVec2 pPosition = IwSVec2(-1,-1) );
-	bool		IsTouchSustained(IwSVec2 pPosition = IwSVec2(-1,-1) , int64 pTime = 0);
-	bool		IsTouchDragged(IwSVec2 pPosition = IwSVec2(-1,-1) , IwSVec2 pRelative = IwSVec2(-1,-1) );
-
-	bool		RefreshTouch();
-	bool		RefreshKeys();
-	bool		Refresh();
-}
+public:	
+	bool		RefreshTouchpad();
+	TyTouch		GetTouchInRect(CIwRect pArea, s3ePointerState pState = S3E_POINTER_STATE_DOWN);
+	TyTouch		GetLastTouchPressed();
+};

@@ -6,14 +6,20 @@ files
 		
 	(../include)
 	TyInput.h
+	[Toasty]
+	TyImage.h
 
 	(../src)
+	[Toasty]
+	TyImage.cpp
+	[]
 	TyInput.cpp
 }
 
 subprojects
 {
 	iwutil
+	iw2d
 	TUT
 }	
 
