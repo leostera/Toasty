@@ -10,6 +10,7 @@ library
 subprojects
 {
 	./include/TUT.mkf
+	./include/Box2D.mkf
 	iw2d
 	iwutil
 }
