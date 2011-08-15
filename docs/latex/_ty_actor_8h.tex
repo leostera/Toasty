@@ -2,6 +2,7 @@
 \section{D:/development/cpp/toasty/include/TyActor.h File Reference}
 \label{_ty_actor_8h}\index{D:/development/cpp/toasty/include/TyActor.h@{D:/development/cpp/toasty/include/TyActor.h}}
 }
+{\ttfamily \#include $<$TyImage.h$>$}\par
 {\ttfamily \#include $<$TySprite.h$>$}\par
 {\ttfamily \#include $<$Iw2D.h$>$}\par
 {\ttfamily \#include $<$IwGxTypes.h$>$}\par
@@ -11,23 +12,31 @@
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \hyperlink{class_ty_state}{TyState}
+\begin{DoxyCompactList}\small\item\em Inner class used to relate a Actor State with a Sprite. \end{DoxyCompactList}\item 
 class \hyperlink{class_i_ty_actor}{ITyActor}
-\begin{DoxyCompactList}\small\item\em Actor class to be used within a scene. \end{DoxyCompactList}\item 
-class \hyperlink{class_i_ty_actor_1_1_c_ty_state}{ITyActor::CTyState}
-\begin{DoxyCompactList}\small\item\em Inner class used to relate a Actor State with a Sprite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Actor class to be used within a scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
 enum \hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51}{TOASTY\_\-ACTOR\_\-STATE} \{ \par
-\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a838543c05a64b8e7ed1941be18d97eac}{TOASTY\_\-ACTOR\_\-WALKING} = 0, 
-\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a612b17e3726cee3c90caa98789335c78}{TOASTY\_\-ACTOR\_\-ATTACKING}, 
-\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a66e2cb2759873cc8a740767d69807bd4}{TOASTY\_\-ACTOR\_\-DEFENDING}, 
-\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a4f54ca708f788cc8a63abcd54161f900}{TOASTY\_\-ACTOR\_\-STANDING}, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51adc945a7a4140b464307f0859c3032257}{TOASTY\_\-ACTOR\_\-STATE\_\-WALKING} = 0, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51aff43b32505d09e21e3eb725f32d6b7c8}{TOASTY\_\-ACTOR\_\-STATE\_\-ATTACKING}, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a96f4249718b02bc4d8efb0872e9b8977}{TOASTY\_\-ACTOR\_\-STATE\_\-DEFENDING}, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51aeca6958cc2eca654ef55ccd310dac0f1}{TOASTY\_\-ACTOR\_\-STATE\_\-STANDING}, 
 \par
-\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a2457087c657586beea1c907be07d5474}{TOASTY\_\-ACTOR\_\-APPEARING}, 
-\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51acd5a84b6eb0b4ed7e1bc6be151271f4d}{TOASTY\_\-ACTOR\_\-DYING}, 
-\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a6da225555227f8e35b7b94f274612f40}{TOASTY\_\-ACTOR\_\-DEAD}, 
-\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a87f1c4504f93280c40d25e96a8fc95c4}{TOASTY\_\-ACTOR\_\-IDLE}
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a666f4fc1107aa9df5976af06e292b157}{TOASTY\_\-ACTOR\_\-STATE\_\-APPEARING}, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51aa154d6651ad0108c6f285a6c0c8ca764}{TOASTY\_\-ACTOR\_\-STATE\_\-DYING}, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a2d79a80327e3d02dc6ab607912503179}{TOASTY\_\-ACTOR\_\-STATE\_\-DEAD}, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a2c94c173631288cd4a315dd0499368bc}{TOASTY\_\-ACTOR\_\-STATE\_\-IDLE}, 
+\par
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a1790e0827a717316160cb49c50d47fc8}{TOASTY\_\-ACTOR\_\-STATE\_\-USER0}, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51af4a8a731bad490ad97f853ce6839260f}{TOASTY\_\-ACTOR\_\-STATE\_\-USER1}, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51aa211c8b4707ff7bcc7eb73d3caeb9bff}{TOASTY\_\-ACTOR\_\-STATE\_\-USER2}, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a1d37caa806ad0841f39271784e4134ed}{TOASTY\_\-ACTOR\_\-STATE\_\-USER3}, 
+\par
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51adc6ee689dc8d90cd8dff000da2224194}{TOASTY\_\-ACTOR\_\-STATE\_\-USER4}, 
+\hyperlink{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a37fbadacab0a5b37d6594a555dcbfc4f}{TOASTY\_\-ACTOR\_\-STATE\_\-USER5}
  \}
 \begin{DoxyCompactList}\small\item\em Actor State enumeration You might provide your own set of states but these (so far) are useful enough. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
@@ -50,46 +59,68 @@ Actor State enumeration You might provide your own set of states but these (so f
 \begin{Desc}
 \item[Enumerator: ]\par
 \begin{description}
-\index{TOASTY\_\-ACTOR\_\-WALKING@{TOASTY\_\-ACTOR\_\-WALKING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-WALKING@{TOASTY\_\-ACTOR\_\-WALKING}}\item[{\em 
-\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a838543c05a64b8e7ed1941be18d97eac}{
-TOASTY\_\-ACTOR\_\-WALKING}
-\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a838543c05a64b8e7ed1941be18d97eac}
-}]\index{TOASTY\_\-ACTOR\_\-ATTACKING@{TOASTY\_\-ACTOR\_\-ATTACKING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-ATTACKING@{TOASTY\_\-ACTOR\_\-ATTACKING}}\item[{\em 
-\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a612b17e3726cee3c90caa98789335c78}{
-TOASTY\_\-ACTOR\_\-ATTACKING}
-\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a612b17e3726cee3c90caa98789335c78}
-}]Actor is moving \index{TOASTY\_\-ACTOR\_\-DEFENDING@{TOASTY\_\-ACTOR\_\-DEFENDING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-DEFENDING@{TOASTY\_\-ACTOR\_\-DEFENDING}}\item[{\em 
-\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a66e2cb2759873cc8a740767d69807bd4}{
-TOASTY\_\-ACTOR\_\-DEFENDING}
-\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a66e2cb2759873cc8a740767d69807bd4}
-}]Actor is attacking \index{TOASTY\_\-ACTOR\_\-STANDING@{TOASTY\_\-ACTOR\_\-STANDING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STANDING@{TOASTY\_\-ACTOR\_\-STANDING}}\item[{\em 
-\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a4f54ca708f788cc8a63abcd54161f900}{
-TOASTY\_\-ACTOR\_\-STANDING}
-\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a4f54ca708f788cc8a63abcd54161f900}
-}]Actor is defending \index{TOASTY\_\-ACTOR\_\-APPEARING@{TOASTY\_\-ACTOR\_\-APPEARING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-APPEARING@{TOASTY\_\-ACTOR\_\-APPEARING}}\item[{\em 
-\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a2457087c657586beea1c907be07d5474}{
-TOASTY\_\-ACTOR\_\-APPEARING}
-\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a2457087c657586beea1c907be07d5474}
-}]Actor is holding position \index{TOASTY\_\-ACTOR\_\-DYING@{TOASTY\_\-ACTOR\_\-DYING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-DYING@{TOASTY\_\-ACTOR\_\-DYING}}\item[{\em 
-\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51acd5a84b6eb0b4ed7e1bc6be151271f4d}{
-TOASTY\_\-ACTOR\_\-DYING}
-\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51acd5a84b6eb0b4ed7e1bc6be151271f4d}
-}]Actor is appearing \index{TOASTY\_\-ACTOR\_\-DEAD@{TOASTY\_\-ACTOR\_\-DEAD}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-DEAD@{TOASTY\_\-ACTOR\_\-DEAD}}\item[{\em 
-\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a6da225555227f8e35b7b94f274612f40}{
-TOASTY\_\-ACTOR\_\-DEAD}
-\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a6da225555227f8e35b7b94f274612f40}
-}]Actor is dying \index{TOASTY\_\-ACTOR\_\-IDLE@{TOASTY\_\-ACTOR\_\-IDLE}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-IDLE@{TOASTY\_\-ACTOR\_\-IDLE}}\item[{\em 
-\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a87f1c4504f93280c40d25e96a8fc95c4}{
-TOASTY\_\-ACTOR\_\-IDLE}
-\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a87f1c4504f93280c40d25e96a8fc95c4}
-}]Actor is dead
-
-Actor is idle \end{description}
+\index{TOASTY\_\-ACTOR\_\-STATE\_\-WALKING@{TOASTY\_\-ACTOR\_\-STATE\_\-WALKING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STATE\_\-WALKING@{TOASTY\_\-ACTOR\_\-STATE\_\-WALKING}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51adc945a7a4140b464307f0859c3032257}{
+TOASTY\_\-ACTOR\_\-STATE\_\-WALKING}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51adc945a7a4140b464307f0859c3032257}
+}]Actor is moving \index{TOASTY\_\-ACTOR\_\-STATE\_\-ATTACKING@{TOASTY\_\-ACTOR\_\-STATE\_\-ATTACKING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STATE\_\-ATTACKING@{TOASTY\_\-ACTOR\_\-STATE\_\-ATTACKING}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51aff43b32505d09e21e3eb725f32d6b7c8}{
+TOASTY\_\-ACTOR\_\-STATE\_\-ATTACKING}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51aff43b32505d09e21e3eb725f32d6b7c8}
+}]Actor is attacking \index{TOASTY\_\-ACTOR\_\-STATE\_\-DEFENDING@{TOASTY\_\-ACTOR\_\-STATE\_\-DEFENDING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STATE\_\-DEFENDING@{TOASTY\_\-ACTOR\_\-STATE\_\-DEFENDING}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a96f4249718b02bc4d8efb0872e9b8977}{
+TOASTY\_\-ACTOR\_\-STATE\_\-DEFENDING}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a96f4249718b02bc4d8efb0872e9b8977}
+}]Actor is defending \index{TOASTY\_\-ACTOR\_\-STATE\_\-STANDING@{TOASTY\_\-ACTOR\_\-STATE\_\-STANDING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STATE\_\-STANDING@{TOASTY\_\-ACTOR\_\-STATE\_\-STANDING}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51aeca6958cc2eca654ef55ccd310dac0f1}{
+TOASTY\_\-ACTOR\_\-STATE\_\-STANDING}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51aeca6958cc2eca654ef55ccd310dac0f1}
+}]Actor is holding position \index{TOASTY\_\-ACTOR\_\-STATE\_\-APPEARING@{TOASTY\_\-ACTOR\_\-STATE\_\-APPEARING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STATE\_\-APPEARING@{TOASTY\_\-ACTOR\_\-STATE\_\-APPEARING}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a666f4fc1107aa9df5976af06e292b157}{
+TOASTY\_\-ACTOR\_\-STATE\_\-APPEARING}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a666f4fc1107aa9df5976af06e292b157}
+}]Actor is appearing \index{TOASTY\_\-ACTOR\_\-STATE\_\-DYING@{TOASTY\_\-ACTOR\_\-STATE\_\-DYING}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STATE\_\-DYING@{TOASTY\_\-ACTOR\_\-STATE\_\-DYING}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51aa154d6651ad0108c6f285a6c0c8ca764}{
+TOASTY\_\-ACTOR\_\-STATE\_\-DYING}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51aa154d6651ad0108c6f285a6c0c8ca764}
+}]Actor is dying \index{TOASTY\_\-ACTOR\_\-STATE\_\-DEAD@{TOASTY\_\-ACTOR\_\-STATE\_\-DEAD}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STATE\_\-DEAD@{TOASTY\_\-ACTOR\_\-STATE\_\-DEAD}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a2d79a80327e3d02dc6ab607912503179}{
+TOASTY\_\-ACTOR\_\-STATE\_\-DEAD}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a2d79a80327e3d02dc6ab607912503179}
+}]Actor is dead \index{TOASTY\_\-ACTOR\_\-STATE\_\-IDLE@{TOASTY\_\-ACTOR\_\-STATE\_\-IDLE}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STATE\_\-IDLE@{TOASTY\_\-ACTOR\_\-STATE\_\-IDLE}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a2c94c173631288cd4a315dd0499368bc}{
+TOASTY\_\-ACTOR\_\-STATE\_\-IDLE}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a2c94c173631288cd4a315dd0499368bc}
+}]Actor is idle \index{TOASTY\_\-ACTOR\_\-STATE\_\-USER0@{TOASTY\_\-ACTOR\_\-STATE\_\-USER0}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STATE\_\-USER0@{TOASTY\_\-ACTOR\_\-STATE\_\-USER0}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a1790e0827a717316160cb49c50d47fc8}{
+TOASTY\_\-ACTOR\_\-STATE\_\-USER0}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a1790e0827a717316160cb49c50d47fc8}
+}]User defined state 0 \index{TOASTY\_\-ACTOR\_\-STATE\_\-USER1@{TOASTY\_\-ACTOR\_\-STATE\_\-USER1}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STATE\_\-USER1@{TOASTY\_\-ACTOR\_\-STATE\_\-USER1}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51af4a8a731bad490ad97f853ce6839260f}{
+TOASTY\_\-ACTOR\_\-STATE\_\-USER1}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51af4a8a731bad490ad97f853ce6839260f}
+}]User defined state 1 \index{TOASTY\_\-ACTOR\_\-STATE\_\-USER2@{TOASTY\_\-ACTOR\_\-STATE\_\-USER2}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STATE\_\-USER2@{TOASTY\_\-ACTOR\_\-STATE\_\-USER2}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51aa211c8b4707ff7bcc7eb73d3caeb9bff}{
+TOASTY\_\-ACTOR\_\-STATE\_\-USER2}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51aa211c8b4707ff7bcc7eb73d3caeb9bff}
+}]User defined state 2 \index{TOASTY\_\-ACTOR\_\-STATE\_\-USER3@{TOASTY\_\-ACTOR\_\-STATE\_\-USER3}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STATE\_\-USER3@{TOASTY\_\-ACTOR\_\-STATE\_\-USER3}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a1d37caa806ad0841f39271784e4134ed}{
+TOASTY\_\-ACTOR\_\-STATE\_\-USER3}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a1d37caa806ad0841f39271784e4134ed}
+}]User defined state 3 \index{TOASTY\_\-ACTOR\_\-STATE\_\-USER4@{TOASTY\_\-ACTOR\_\-STATE\_\-USER4}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STATE\_\-USER4@{TOASTY\_\-ACTOR\_\-STATE\_\-USER4}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51adc6ee689dc8d90cd8dff000da2224194}{
+TOASTY\_\-ACTOR\_\-STATE\_\-USER4}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51adc6ee689dc8d90cd8dff000da2224194}
+}]User defined state 4 \index{TOASTY\_\-ACTOR\_\-STATE\_\-USER5@{TOASTY\_\-ACTOR\_\-STATE\_\-USER5}!TyActor.h@{TyActor.h}}\index{TyActor.h@{TyActor.h}!TOASTY\_\-ACTOR\_\-STATE\_\-USER5@{TOASTY\_\-ACTOR\_\-STATE\_\-USER5}}\item[{\em 
+\hypertarget{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a37fbadacab0a5b37d6594a555dcbfc4f}{
+TOASTY\_\-ACTOR\_\-STATE\_\-USER5}
+\label{_ty_actor_8h_aceba83227db82b051b04ff8e90d63a51a37fbadacab0a5b37d6594a555dcbfc4f}
+}]User defined state 5 \end{description}
 \end{Desc}
 
 
 
-Definition at line 35 of file TyActor.h.
+Definition at line 36 of file TyActor.h.
 
 
 
@@ -120,5 +151,5 @@ bool True if first actor has lesser depth than the second one. False otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 433 of file TyActor.h.
+Definition at line 463 of file TyActor.h.
 

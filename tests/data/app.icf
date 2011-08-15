@@ -15,17 +15,3 @@
 #
 # Some conditional operations are also permitted, see the
 # S3E documentation for details.
-
-[s3e]
-DisableGL = 1
-
-[Sprites]
-1_w = 55
-1_h = 43
-1_frames = 22
-2_w = 64
-2_h = 64
-2_frames = 4
-pollo_w = 45
-pollo_h = 45
-pollo_frames = 1

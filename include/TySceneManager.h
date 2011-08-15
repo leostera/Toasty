@@ -1,22 +1,30 @@
 #pragma once
 
 #include <TyScene.h>
-#include <TySingleton.h>
 
 #include <vector>
 
-class TySceneManager : public ITySingleton<TySceneManager>
+void TySceneMgrInit();
+void TySceneMgrTerminate();
+
+class TySceneManager;
+TySceneManager*	TyGetSceneMgr();
+
+class TySceneManager
 {
 private:
+	static	TySceneManager*	m_Instance;
+	friend void TySceneMgrInit();
+	friend void TySceneMgrTerminate();
+	friend TySceneManager* TyGetSceneMgr();
+	TySceneManager();	
+	~TySceneManager();
+
 	TyScene*				m_CurrentScene;
 	TyScene*				m_PreviousScene;
 	std::vector<TyScene*>	m_Scenes;
 
 public:
-	TySceneManager();	
-	~TySceneManager();
-	
-
 	TyScene*	AddScene();
 	bool		DeleteScene(TyScene* pScene);	
 

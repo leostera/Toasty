@@ -1,0 +1,28 @@
+# This file was automanually generated.
+
+includepath ./include
+
+library
+{
+	".,toasty"
+}
+
+subprojects
+{
+	./include/TUT.mkf
+	iw2d
+	iwutil
+}
+
+files
+{
+	(./include)
+	[Headers]
+	TyActor.h
+	TyClock.h
+	TyInput.h
+	TyScene.h
+	TySceneManager.h
+	TySprite.h
+	TyImage.h
+}

@@ -2,34 +2,44 @@ var NAVTREE =
 [
   [ "Toasty!", "index.html", [
     [ "Class List", "annotated.html", [
-      [ "CTyInput", "class_c_ty_input.html", null ],
-      [ "CTyScene", "class_c_ty_scene.html", null ],
-      [ "CTySceneManager", "class_c_ty_scene_manager.html", null ],
-      [ "CTySprite", "class_c_ty_sprite.html", null ],
-      [ "ITyActor::CTyState", "class_i_ty_actor_1_1_c_ty_state.html", null ],
       [ "ITyActor", "class_i_ty_actor.html", null ],
       [ "ITySingleton< T >", "class_i_ty_singleton.html", null ],
-      [ "IwClock", "class_iw_clock.html", null ]
+      [ "TyClock", "class_ty_clock.html", null ],
+      [ "TyDebug", "class_ty_debug.html", null ],
+      [ "TyFile", "class_ty_file.html", null ],
+      [ "TyImage", "class_ty_image.html", null ],
+      [ "TyInput", "class_ty_input.html", null ],
+      [ "TyScene", "class_ty_scene.html", null ],
+      [ "TySceneManager", "class_ty_scene_manager.html", null ],
+      [ "TySprite", "class_ty_sprite.html", null ],
+      [ "TyState", "class_ty_state.html", null ],
+      [ "TyTouch", "struct_ty_touch.html", null ]
     ] ],
     [ "Class Index", "classes.html", null ],
     [ "Class Hierarchy", "hierarchy.html", [
-      [ "CTyScene", "class_c_ty_scene.html", null ],
-      [ "CTySprite", "class_c_ty_sprite.html", null ],
-      [ "ITyActor::CTyState", "class_i_ty_actor_1_1_c_ty_state.html", null ],
       [ "ITyActor", "class_i_ty_actor.html", null ],
       [ "ITySingleton< T >", "class_i_ty_singleton.html", null ],
-      [ "ITySingleton< CTyInput >", "class_i_ty_singleton.html", [
-        [ "CTyInput", "class_c_ty_input.html", null ]
+      [ "ITySingleton< TySceneManager >", "class_i_ty_singleton.html", [
+        [ "TySceneManager", "class_ty_scene_manager.html", null ]
       ] ],
-      [ "ITySingleton< CTySceneManager >", "class_i_ty_singleton.html", [
-        [ "CTySceneManager", "class_c_ty_scene_manager.html", null ]
+      [ "TyClock", "class_ty_clock.html", null ],
+      [ "TyDebug", "class_ty_debug.html", null ],
+      [ "TyFile", "class_ty_file.html", null ],
+      [ "TyImage", "class_ty_image.html", [
+        [ "TySprite", "class_ty_sprite.html", null ]
       ] ],
-      [ "IwClock", "class_iw_clock.html", null ]
+      [ "TyInput", "class_ty_input.html", null ],
+      [ "TyScene", "class_ty_scene.html", null ],
+      [ "TyState", "class_ty_state.html", null ],
+      [ "TyTouch", "struct_ty_touch.html", null ]
     ] ],
     [ "Class Members", "functions.html", null ],
     [ "File List", "files.html", [
       [ "D:/development/cpp/toasty/include/TyActor.h", "_ty_actor_8h.html", null ],
       [ "D:/development/cpp/toasty/include/TyClock.h", "_ty_clock_8h.html", null ],
+      [ "D:/development/cpp/toasty/include/TyDebug.h", "_ty_debug_8h.html", null ],
+      [ "D:/development/cpp/toasty/include/TyFile.h", "_ty_file_8h.html", null ],
+      [ "D:/development/cpp/toasty/include/TyImage.h", "_ty_image_8h.html", null ],
       [ "D:/development/cpp/toasty/include/TyInput.h", "_ty_input_8h.html", null ],
       [ "D:/development/cpp/toasty/include/TyScene.h", "_ty_scene_8h.html", null ],
       [ "D:/development/cpp/toasty/include/TySceneManager.h", "_ty_scene_manager_8h.html", null ],

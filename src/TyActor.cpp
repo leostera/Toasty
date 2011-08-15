@@ -15,7 +15,10 @@ bool ITyActor::AddState(TySprite* pSprite, TOASTY_ACTOR_STATE pState)
 	}
 
 	if( toadd ) 
+	{
 		m_States.push_back( TyState(pSprite, pState) );
+		m_States.back().sprite->Play();
+	}
 
 	return toadd;
 }

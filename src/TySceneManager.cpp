@@ -1,5 +1,27 @@
 #include <TySceneManager.h>
 
+TySceneManager* TySceneManager::m_Instance = 0;
+
+void TySceneMgrInit()
+{
+	if(TySceneManager::m_Instance == 0)
+		TySceneManager::m_Instance = new TySceneManager();
+}
+
+void TySceneMgrTerminate()
+{
+	if(TySceneManager::m_Instance)
+	{
+		delete TySceneManager::m_Instance;
+		TySceneManager::m_Instance = 0;
+	}
+}
+
+TySceneManager*	TyGetSceneMgr()
+{
+	return TySceneManager::m_Instance;
+}
+
 TySceneManager::TySceneManager() : m_CurrentScene(0), m_PreviousScene(0)
 {
 

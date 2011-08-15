@@ -1,3 +1,9 @@
+8.15.2011
++ Added proper mkb/mkf files to ensure both subproject for examples and use and library project to compile.
+
+8.14.2011
++ Input Singleton now working for imput with some simple methods. For now that's all I need, and I'm quite happy (dispite it's quite late and I haven't got Gestures working YET...but I'm willing to, soon)
+
 8.11.2011
 + Finally, I've started the Input class singleton (although it's not implemented as so) I'll start doing better CHANGES LOG UPDATES as soon as I can.
 

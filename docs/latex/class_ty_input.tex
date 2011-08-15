@@ -2,41 +2,120 @@
 \section{TyInput Class Reference}
 \label{class_ty_input}\index{TyInput@{TyInput}}
 }
-\subsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct {\bfseries TyKeys}
-\item 
-struct {\bfseries TyTouchs}
-\end{DoxyCompactItemize}
+
+
+{\ttfamily \#include $<$TyInput.h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_ty_input_a30aa88b15887f8765e3cb7e0bf7f4084}{
-TyKeys {\bfseries operator()} (s3eKey pKey, int64 pTime=0, bool pDown=true)}
-\label{class_ty_input_a30aa88b15887f8765e3cb7e0bf7f4084}
-
+bool \hyperlink{class_ty_input_a8c905dc936b2276d7917e60463b7401c}{RefreshTouchpad} ()
 \item 
-\hypertarget{class_ty_input_ac6f7a1a66eb8925233d83f3dbf9ba0ea}{
-TyKeys {\bfseries operator()} (CIwSVec2 pPos, int64 pTime=0, bool pDown=true)}
-\label{class_ty_input_ac6f7a1a66eb8925233d83f3dbf9ba0ea}
-
+\hyperlink{struct_ty_touch}{TyTouch} \hyperlink{class_ty_input_a5c868575326770f317c15d28e9d9884f}{GetTouchInRect} (CIwRect pArea, s3ePointerState pState=S3E\_\-POINTER\_\-STATE\_\-DOWN)
 \item 
-\hypertarget{class_ty_input_a0c1f8ad9e16d2f4fbcec499ecb710c3e}{
-void {\bfseries Refresh} ()}
-\label{class_ty_input_a0c1f8ad9e16d2f4fbcec499ecb710c3e}
-
+\hyperlink{struct_ty_touch}{TyTouch} \hyperlink{class_ty_input_a04402a8d838fb2765b0c73d44006e656}{GetLastTouchPressed} ()
+\item 
+\hyperlink{struct_ty_touch}{TyTouch} \hyperlink{class_ty_input_a6d0e846e6107b992b9e96e7d99816d83}{GetLastTouchReleased} ()
+\item 
+\hyperlink{struct_ty_touch}{TyTouch} \hyperlink{class_ty_input_a0c7dfabead3ae7c00052d6bdba9bb22b}{GetLastTouchDragged} ()
 \end{DoxyCompactItemize}
-\subsection*{Public Attributes}
+\subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_ty_input_a524d21c20fedb3f6af54d1166b21b07c}{
-{\bfseries $\sim$TyInput}}
-\label{class_ty_input_a524d21c20fedb3f6af54d1166b21b07c}
-
+void \hyperlink{class_ty_input_a8823adfe46e5b1352a3045fddad7126e}{TyInputInit} ()
+\item 
+void \hyperlink{class_ty_input_a0f6ef95051c6eff4f8f80ba7f1e95c54}{TyInputTerminate} ()
+\item 
+\hyperlink{class_ty_input}{TyInput} $\ast$ \hyperlink{class_ty_input_ade15876f25b013771fe9c9776acc9de7}{TyGetInput} ()
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file TyInput.h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ty_input_a0c7dfabead3ae7c00052d6bdba9bb22b}{
+\index{TyInput@{TyInput}!GetLastTouchDragged@{GetLastTouchDragged}}
+\index{GetLastTouchDragged@{GetLastTouchDragged}!TyInput@{TyInput}}
+\subsubsection[{GetLastTouchDragged}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TyTouch} TyInput::GetLastTouchDragged (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_input_a0c7dfabead3ae7c00052d6bdba9bb22b}
+\hypertarget{class_ty_input_a04402a8d838fb2765b0c73d44006e656}{
+\index{TyInput@{TyInput}!GetLastTouchPressed@{GetLastTouchPressed}}
+\index{GetLastTouchPressed@{GetLastTouchPressed}!TyInput@{TyInput}}
+\subsubsection[{GetLastTouchPressed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TyTouch} TyInput::GetLastTouchPressed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_input_a04402a8d838fb2765b0c73d44006e656}
+\hypertarget{class_ty_input_a6d0e846e6107b992b9e96e7d99816d83}{
+\index{TyInput@{TyInput}!GetLastTouchReleased@{GetLastTouchReleased}}
+\index{GetLastTouchReleased@{GetLastTouchReleased}!TyInput@{TyInput}}
+\subsubsection[{GetLastTouchReleased}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TyTouch} TyInput::GetLastTouchReleased (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_input_a6d0e846e6107b992b9e96e7d99816d83}
+\hypertarget{class_ty_input_a5c868575326770f317c15d28e9d9884f}{
+\index{TyInput@{TyInput}!GetTouchInRect@{GetTouchInRect}}
+\index{GetTouchInRect@{GetTouchInRect}!TyInput@{TyInput}}
+\subsubsection[{GetTouchInRect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TyTouch} TyInput::GetTouchInRect (
+\begin{DoxyParamCaption}
+\item[{CIwRect}]{pArea, }
+\item[{s3ePointerState}]{pState = {\ttfamily S3E\_\-POINTER\_\-STATE\_\-DOWN}}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_input_a5c868575326770f317c15d28e9d9884f}
+\hypertarget{class_ty_input_a8c905dc936b2276d7917e60463b7401c}{
+\index{TyInput@{TyInput}!RefreshTouchpad@{RefreshTouchpad}}
+\index{RefreshTouchpad@{RefreshTouchpad}!TyInput@{TyInput}}
+\subsubsection[{RefreshTouchpad}]{\setlength{\rightskip}{0pt plus 5cm}bool TyInput::RefreshTouchpad (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_input_a8c905dc936b2276d7917e60463b7401c}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_ty_input_ade15876f25b013771fe9c9776acc9de7}{
+\index{TyInput@{TyInput}!TyGetInput@{TyGetInput}}
+\index{TyGetInput@{TyGetInput}!TyInput@{TyInput}}
+\subsubsection[{TyGetInput}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TyInput}$\ast$ TyGetInput (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{class_ty_input_ade15876f25b013771fe9c9776acc9de7}
+\hypertarget{class_ty_input_a8823adfe46e5b1352a3045fddad7126e}{
+\index{TyInput@{TyInput}!TyInputInit@{TyInputInit}}
+\index{TyInputInit@{TyInputInit}!TyInput@{TyInput}}
+\subsubsection[{TyInputInit}]{\setlength{\rightskip}{0pt plus 5cm}void TyInputInit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{class_ty_input_a8823adfe46e5b1352a3045fddad7126e}
+\hypertarget{class_ty_input_a0f6ef95051c6eff4f8f80ba7f1e95c54}{
+\index{TyInput@{TyInput}!TyInputTerminate@{TyInputTerminate}}
+\index{TyInputTerminate@{TyInputTerminate}!TyInput@{TyInput}}
+\subsubsection[{TyInputTerminate}]{\setlength{\rightskip}{0pt plus 5cm}void TyInputTerminate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{class_ty_input_a0f6ef95051c6eff4f8f80ba7f1e95c54}
 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
-include/TyInput.h\end{DoxyCompactItemize}
+D:/development/cpp/toasty/include/\hyperlink{_ty_input_8h}{TyInput.h}\end{DoxyCompactItemize}

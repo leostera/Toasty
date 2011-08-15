@@ -21,13 +21,9 @@ class TyScene{
 		std::list<ITyActor*>	m_Actors;
 		bool					m_ZOrdered;
 		bool					m_Created;
-		//CIw2DImage*				m_Background;
+		TyImage*				m_Background;
 		CIwRect					m_Boundaries;
-
 		//back-track music, 
-		//possible methods: BeginScene, renders background, calls actors StepStart, if not ordered by Z, order them all, calls actors Step
-		//					EndScene, renders actors, calls actors StepEnd
-		//also Load and Unload 		
 		
 	public:
 		TyScene(std::string pName = std::string(""), std::string pCaption = std::string(""), std::string pResGroup = std::string(""), int64 pID = 0, bool pZOrdered = false);

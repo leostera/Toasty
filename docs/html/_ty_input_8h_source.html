@@ -27,7 +27,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="toastylogosmall.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Toasty!&#160;<span id="projectnumber">0.1</span></div>
+   <div id="projectname">Toasty!&#160;<span id="projectnumber">0.2</span></div>
    <div id="projectbrief">A game framework for the Marmalade SDK.</div>
   </td>
  </tr>
@@ -84,70 +84,60 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="_ty_input_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#pragma once</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span>
-<a name="l00003"></a>00003 <span class="preprocessor">#include &lt;<a class="code" href="_ty_singleton_8h.html">TySingleton.h</a>&gt;</span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;vector&gt;</span>
-<a name="l00005"></a>00005 
-<a name="l00006"></a><a class="code" href="class_c_ty_input.html">00006</a> <span class="keyword">class </span><a class="code" href="class_c_ty_input.html">CTyInput</a> : <span class="keyword">public</span> <a class="code" href="class_i_ty_singleton.html" title="Singleton interface.">ITySingleton</a>&lt;CTyInput&gt;
-<a name="l00007"></a>00007 {
-<a name="l00008"></a>00008 <span class="keyword">private</span>:
-<a name="l00009"></a>00009         <span class="keyword">struct </span>TyKeys {
-<a name="l00010"></a>00010                 s3eKey          key;
-<a name="l00011"></a>00011                 int64           time;
-<a name="l00012"></a>00012                 <span class="keywordtype">bool</span>            down;
-<a name="l00013"></a>00013         };
-<a name="l00014"></a>00014 
-<a name="l00015"></a>00015         std::vector&lt;TyKeys&gt;             m_Keys;
-<a name="l00016"></a>00016         TyKeys*                                 m_LastKeyPressed;
-<a name="l00017"></a>00017         TyKeys*                                 m_LastKeyReleased;
-<a name="l00018"></a>00018         TyKeys*                                 m_LastKeySustained;
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020         <span class="keyword">struct </span>TyTouchs {
-<a name="l00021"></a>00021                 IwSVec2         pos;
-<a name="l00022"></a>00022                 int64           time;
-<a name="l00023"></a>00023                 <span class="keywordtype">bool</span>            down;
-<a name="l00024"></a>00024                 <span class="keywordtype">bool</span>            drag;
-<a name="l00025"></a>00025                 IwSVec2         relpos;
-<a name="l00026"></a>00026         };
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028         std::vector&lt;TyTouchs&gt;   m_Touchs;
-<a name="l00029"></a>00029         TyTouchs*                               m_LastTouchPressed;
-<a name="l00030"></a>00030         TyTouchs*                               m_LastTouchReleased;
-<a name="l00031"></a>00031         TyTouchs*                               m_LastTouchSustained;
-<a name="l00032"></a>00032         TyTouchs*                               m_LastTouchDragged;
+<a name="l00003"></a>00003 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;s3ePointer.h&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;IwGxTypes.h&gt;</span>
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 <span class="keywordtype">void</span> <a class="code" href="_ty_input_8h.html#a8823adfe46e5b1352a3045fddad7126e">TyInputInit</a>();
+<a name="l00008"></a>00008 <span class="keywordtype">void</span> <a class="code" href="_ty_input_8h.html#a0f6ef95051c6eff4f8f80ba7f1e95c54">TyInputTerminate</a>();
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 <span class="keyword">class </span><a class="code" href="class_ty_input.html">TyInput</a>;
+<a name="l00011"></a>00011 <a class="code" href="class_ty_input.html">TyInput</a>* <a class="code" href="_ty_input_8h.html#ade15876f25b013771fe9c9776acc9de7">TyGetInput</a>();
+<a name="l00012"></a>00012 
+<a name="l00013"></a><a class="code" href="struct_ty_touch.html">00013</a> <span class="keyword">struct </span><a class="code" href="struct_ty_touch.html">TyTouch</a>
+<a name="l00014"></a>00014 {
+<a name="l00015"></a><a class="code" href="struct_ty_touch.html#a2ba48f841ba2429689b8c01a99f6e19f">00015</a>         CIwSVec2                <a class="code" href="struct_ty_touch.html#a2ba48f841ba2429689b8c01a99f6e19f">m_Position</a>;
+<a name="l00016"></a><a class="code" href="struct_ty_touch.html#a8254bbfdb0344afc53407c212f455b1b">00016</a>         CIwSVec2                <a class="code" href="struct_ty_touch.html#a8254bbfdb0344afc53407c212f455b1b">m_LastPosition</a>;
+<a name="l00017"></a><a class="code" href="struct_ty_touch.html#aaf8a750f8fd9558d41923eb110cae517">00017</a>         int64                   <a class="code" href="struct_ty_touch.html#aaf8a750f8fd9558d41923eb110cae517">m_TouchID</a>;
+<a name="l00018"></a><a class="code" href="struct_ty_touch.html#a6a5681333e2c46e7b66a22450f24f554">00018</a>         <span class="keywordtype">bool</span>                    <a class="code" href="struct_ty_touch.html#a6a5681333e2c46e7b66a22450f24f554">m_Active</a>;
+<a name="l00019"></a><a class="code" href="struct_ty_touch.html#a611b3e001de8ebd7303ad886f68bdbde">00019</a>         <span class="keywordtype">bool</span>                    <a class="code" href="struct_ty_touch.html#a611b3e001de8ebd7303ad886f68bdbde">m_Drag</a>;
+<a name="l00020"></a><a class="code" href="struct_ty_touch.html#ad37d2be38f0da16e2543f9853f68d551">00020</a>         s3ePointerState <a class="code" href="struct_ty_touch.html#ad37d2be38f0da16e2543f9853f68d551">m_State</a>;        
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="struct_ty_touch.html#aa55163b5171be83b4d58cbb712a6e487">00022</a>         <a class="code" href="struct_ty_touch.html#aa55163b5171be83b4d58cbb712a6e487">TyTouch</a>() : <a class="code" href="struct_ty_touch.html#a2ba48f841ba2429689b8c01a99f6e19f">m_Position</a>(CIwSVec2::g_Zero),<a class="code" href="struct_ty_touch.html#a8254bbfdb0344afc53407c212f455b1b">m_LastPosition</a>(CIwSVec2::g_Zero),<a class="code" href="struct_ty_touch.html#aaf8a750f8fd9558d41923eb110cae517">m_TouchID</a>(-1),<a class="code" href="struct_ty_touch.html#a6a5681333e2c46e7b66a22450f24f554">m_Active</a>(false),<a class="code" href="struct_ty_touch.html#a611b3e001de8ebd7303ad886f68bdbde">m_Drag</a>(false),<a class="code" href="struct_ty_touch.html#ad37d2be38f0da16e2543f9853f68d551">m_State</a>(S3E_POINTER_STATE_UP)
+<a name="l00023"></a>00023         { ; }
+<a name="l00024"></a>00024 };
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="class_ty_input.html">00026</a> <span class="keyword">class </span><a class="code" href="class_ty_input.html">TyInput</a>
+<a name="l00027"></a>00027 {
+<a name="l00028"></a>00028 <span class="keyword">private</span>:
+<a name="l00029"></a>00029         <span class="keyword">static</span> <a class="code" href="class_ty_input.html">TyInput</a>* m_Instance;
+<a name="l00030"></a>00030         <span class="keyword">friend</span> <span class="keywordtype">void</span>     <a class="code" href="class_ty_input.html#a8823adfe46e5b1352a3045fddad7126e">TyInputInit</a>();
+<a name="l00031"></a>00031         <span class="keyword">friend</span> <span class="keywordtype">void</span> <a class="code" href="class_ty_input.html#a0f6ef95051c6eff4f8f80ba7f1e95c54">TyInputTerminate</a>();
+<a name="l00032"></a>00032         <span class="keyword">friend</span> <a class="code" href="class_ty_input.html">TyInput</a>* <a class="code" href="class_ty_input.html#ade15876f25b013771fe9c9776acc9de7">TyGetInput</a>();
 <a name="l00033"></a>00033 
-<a name="l00034"></a>00034 <span class="keyword">public</span>: 
-<a name="l00035"></a>00035         <a class="code" href="class_c_ty_input.html#a15735035f972a1c75aaac87854c88689">~CTyInput</a>();
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037         TyKeys          <a class="code" href="class_c_ty_input.html#af950c117d9af1c390a292d7f09c01c39">GetKeys</a>();
-<a name="l00038"></a>00038         TyKeys          <a class="code" href="class_c_ty_input.html#aca57b482037aac8796f43877eb32e123">GetLastKeyPressed</a>();
-<a name="l00039"></a>00039         TyKeys          <a class="code" href="class_c_ty_input.html#a586e588f6ff24b784d794f4af8ad82c8">GetLastKeyReleased</a>();
-<a name="l00040"></a>00040         TyKeys          <a class="code" href="class_c_ty_input.html#a97c344e1a814a6b0589de0454e66b523">GetLastKeySustained</a>();
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042         TyTouchs        <a class="code" href="class_c_ty_input.html#aa380ea7d7533d60afc9f61a905385f82">GetTouchs</a>();
-<a name="l00043"></a>00043         TyTouchs        <a class="code" href="class_c_ty_input.html#a6ca3b5e9d6630fa6c2f3220486345698">GetLastTouchPressed</a>();
-<a name="l00044"></a>00044         TyTouchs        <a class="code" href="class_c_ty_input.html#ac8d7e98a38975ec86e44af0a521ad2e5">GetLastTouchReleased</a>();
-<a name="l00045"></a>00045         TyTouchs        <a class="code" href="class_c_ty_input.html#a0f30e16b11cc0987ea6728dcc8d64eb2">GetLastTouchSustained</a>();
-<a name="l00046"></a>00046         TyTouchs        <a class="code" href="class_c_ty_input.html#adac34bd09df0ad0a9d3706c1f2800b2f">GetLastTouchDragged</a>();
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048         <span class="keywordtype">bool</span>            <a class="code" href="class_c_ty_input.html#a448eeaef68ed0e01c84181a0fd94a551">IsKeyPressed</a>(s3eKeys pKey = s3eKeyFirst );
-<a name="l00049"></a>00049         <span class="keywordtype">bool</span>            <a class="code" href="class_c_ty_input.html#adfc3a59e297e24638404c800f37a45f4">IsKeyReleased</a>(s3eKeys pKey = s3eKeyFirst );
-<a name="l00050"></a>00050         <span class="keywordtype">bool</span>            <a class="code" href="class_c_ty_input.html#a314e25f86baa086808b154b8cc32acd3">IsKeySustained</a>(s3eKeys pKey = s3eKeyFirst , int64 pTime = 0);
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052         <span class="keywordtype">bool</span>            <a class="code" href="class_c_ty_input.html#a62a31340f001663c6361776337caf93d">IsTouchPressed</a>(IwSVec2 pPosition = IwSVec2(-1,-1) );
-<a name="l00053"></a>00053         <span class="keywordtype">bool</span>            <a class="code" href="class_c_ty_input.html#a5e4a84bccc649b7e79114e225a20ff45">IsTouchReleased</a>(IwSVec2 pPosition = IwSVec2(-1,-1) );
-<a name="l00054"></a>00054         <span class="keywordtype">bool</span>            <a class="code" href="class_c_ty_input.html#ae7b135f64f4f07e063b80e4e37b77c05">IsTouchSustained</a>(IwSVec2 pPosition = IwSVec2(-1,-1) , int64 pTime = 0);
-<a name="l00055"></a>00055         <span class="keywordtype">bool</span>            <a class="code" href="class_c_ty_input.html#af895caadf8517ae4056949d2a81298a2">IsTouchDragged</a>(IwSVec2 pPosition = IwSVec2(-1,-1) , IwSVec2 pRelative = IwSVec2(-1,-1) );
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057         <span class="keywordtype">bool</span>            <a class="code" href="class_c_ty_input.html#a3d3dc1b1b3e2e84d068ce065e9cfa801">RefreshTouch</a>();
-<a name="l00058"></a>00058         <span class="keywordtype">bool</span>            <a class="code" href="class_c_ty_input.html#acbce0ad39bcc9ff2abfa90954780ca34">RefreshKeys</a>();
-<a name="l00059"></a>00059         <span class="keywordtype">bool</span>            <a class="code" href="class_c_ty_input.html#a2c427ccc4d23b6569a61401ac0c26cfb">Refresh</a>();
-<a name="l00060"></a>00060 }
+<a name="l00034"></a>00034         std::vector&lt;TyTouch&gt;    m_Touches;
+<a name="l00035"></a>00035         <a class="code" href="struct_ty_touch.html">TyTouch</a>*                                m_LastTouchPressed;
+<a name="l00036"></a>00036         <a class="code" href="struct_ty_touch.html">TyTouch</a>*                                m_LastTouchReleased;
+<a name="l00037"></a>00037         <a class="code" href="struct_ty_touch.html">TyTouch</a>*                                m_LastTouchDragged;
+<a name="l00038"></a>00038         <span class="keywordtype">bool</span>                                    m_MultiTouchSupport;
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040         <a class="code" href="class_ty_input.html">TyInput</a>();
+<a name="l00041"></a>00041         ~<a class="code" href="class_ty_input.html">TyInput</a>();
+<a name="l00042"></a>00042         <span class="keywordtype">void</span> CheckForMultitouchSupport();
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 <span class="keyword">public</span>: 
+<a name="l00045"></a>00045         <span class="keywordtype">bool</span>            <a class="code" href="class_ty_input.html#a8c905dc936b2276d7917e60463b7401c">RefreshTouchpad</a>();
+<a name="l00046"></a>00046         <a class="code" href="struct_ty_touch.html">TyTouch</a>         <a class="code" href="class_ty_input.html#a5c868575326770f317c15d28e9d9884f">GetTouchInRect</a>(CIwRect pArea, s3ePointerState pState = S3E_POINTER_STATE_DOWN);
+<a name="l00047"></a>00047         <a class="code" href="struct_ty_touch.html">TyTouch</a>         <a class="code" href="class_ty_input.html#a04402a8d838fb2765b0c73d44006e656">GetLastTouchPressed</a>();
+<a name="l00048"></a>00048         <a class="code" href="struct_ty_touch.html">TyTouch</a>         <a class="code" href="class_ty_input.html#a6d0e846e6107b992b9e96e7d99816d83">GetLastTouchReleased</a>();
+<a name="l00049"></a>00049         <a class="code" href="struct_ty_touch.html">TyTouch</a>         <a class="code" href="class_ty_input.html#a0c7dfabead3ae7c00052d6bdba9bb22b">GetLastTouchDragged</a>();
+<a name="l00050"></a>00050 };
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_ty_input_8h.html">TyInput.h</a>      </li>
-      <li class="footer">Generated on Fri Aug 12 2011 00:58:42 for Toasty! by&#160;
+      <li class="footer">Generated on Sun Aug 14 2011 22:05:13 for Toasty! by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

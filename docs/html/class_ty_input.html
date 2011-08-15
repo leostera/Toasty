@@ -25,8 +25,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="toastylogosmall.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Toasty!&#160;<span id="projectnumber">0.1</span></div>
+   <div id="projectname">Toasty!&#160;<span id="projectnumber">0.2</span></div>
    <div id="projectbrief">A game framework for the Marmalade SDK.</div>
   </td>
  </tr>
@@ -60,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -79,42 +81,183 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a>  </div>
+<a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <div class="title">TyInput Class Reference</div>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="TyInput" -->
+<p><code>#include &lt;<a class="el" href="_ty_input_8h_source.html">TyInput.h</a>&gt;</code></p>
+
 <p><a href="class_ty_input-members.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><b>TyKeys</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><b>TyTouchs</b></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a30aa88b15887f8765e3cb7e0bf7f4084"></a><!-- doxytag: member="TyInput::operator()" ref="a30aa88b15887f8765e3cb7e0bf7f4084" args="(s3eKey pKey, int64 pTime=0, bool pDown=true)" -->
-TyKeys&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (s3eKey pKey, int64 pTime=0, bool pDown=true)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6f7a1a66eb8925233d83f3dbf9ba0ea"></a><!-- doxytag: member="TyInput::operator()" ref="ac6f7a1a66eb8925233d83f3dbf9ba0ea" args="(CIwSVec2 pPos, int64 pTime=0, bool pDown=true)" -->
-TyKeys&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (CIwSVec2 pPos, int64 pTime=0, bool pDown=true)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0c1f8ad9e16d2f4fbcec499ecb710c3e"></a><!-- doxytag: member="TyInput::Refresh" ref="a0c1f8ad9e16d2f4fbcec499ecb710c3e" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Refresh</b> ()</td></tr>
-<tr><td colspan="2"><h2><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a524d21c20fedb3f6af54d1166b21b07c"></a><!-- doxytag: member="TyInput::~TyInput" ref="a524d21c20fedb3f6af54d1166b21b07c" args="" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>~TyInput</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ty_input.html#a8c905dc936b2276d7917e60463b7401c">RefreshTouchpad</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_ty_touch.html">TyTouch</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ty_input.html#a5c868575326770f317c15d28e9d9884f">GetTouchInRect</a> (CIwRect pArea, s3ePointerState pState=S3E_POINTER_STATE_DOWN)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_ty_touch.html">TyTouch</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ty_input.html#a04402a8d838fb2765b0c73d44006e656">GetLastTouchPressed</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_ty_touch.html">TyTouch</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ty_input.html#a6d0e846e6107b992b9e96e7d99816d83">GetLastTouchReleased</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_ty_touch.html">TyTouch</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ty_input.html#a0c7dfabead3ae7c00052d6bdba9bb22b">GetLastTouchDragged</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="friends"></a>
+Friends</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ty_input.html#a8823adfe46e5b1352a3045fddad7126e">TyInputInit</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ty_input.html#a0f6ef95051c6eff4f8f80ba7f1e95c54">TyInputTerminate</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ty_input.html">TyInput</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ty_input.html#ade15876f25b013771fe9c9776acc9de7">TyGetInput</a> ()</td></tr>
 </table>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="_ty_input_8h_source.html#l00026">26</a> of file <a class="el" href="_ty_input_8h_source.html">TyInput.h</a>.</p>
+</div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a0c7dfabead3ae7c00052d6bdba9bb22b"></a><!-- doxytag: member="TyInput::GetLastTouchDragged" ref="a0c7dfabead3ae7c00052d6bdba9bb22b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_ty_touch.html">TyTouch</a> TyInput::GetLastTouchDragged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a04402a8d838fb2765b0c73d44006e656"></a><!-- doxytag: member="TyInput::GetLastTouchPressed" ref="a04402a8d838fb2765b0c73d44006e656" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_ty_touch.html">TyTouch</a> TyInput::GetLastTouchPressed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6d0e846e6107b992b9e96e7d99816d83"></a><!-- doxytag: member="TyInput::GetLastTouchReleased" ref="a6d0e846e6107b992b9e96e7d99816d83" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_ty_touch.html">TyTouch</a> TyInput::GetLastTouchReleased </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5c868575326770f317c15d28e9d9884f"></a><!-- doxytag: member="TyInput::GetTouchInRect" ref="a5c868575326770f317c15d28e9d9884f" args="(CIwRect pArea, s3ePointerState pState=S3E_POINTER_STATE_DOWN)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_ty_touch.html">TyTouch</a> TyInput::GetTouchInRect </td>
+          <td>(</td>
+          <td class="paramtype">CIwRect&#160;</td>
+          <td class="paramname"><em>pArea</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s3ePointerState&#160;</td>
+          <td class="paramname"><em>pState</em> = <code>S3E_POINTER_STATE_DOWN</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8c905dc936b2276d7917e60463b7401c"></a><!-- doxytag: member="TyInput::RefreshTouchpad" ref="a8c905dc936b2276d7917e60463b7401c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TyInput::RefreshTouchpad </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="ade15876f25b013771fe9c9776acc9de7"></a><!-- doxytag: member="TyInput::TyGetInput" ref="ade15876f25b013771fe9c9776acc9de7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ty_input.html">TyInput</a>* TyGetInput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8823adfe46e5b1352a3045fddad7126e"></a><!-- doxytag: member="TyInput::TyInputInit" ref="a8823adfe46e5b1352a3045fddad7126e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TyInputInit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0f6ef95051c6eff4f8f80ba7f1e95c54"></a><!-- doxytag: member="TyInput::TyInputTerminate" ref="a0f6ef95051c6eff4f8f80ba7f1e95c54" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TyInputTerminate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/<a class="el" href="_ty_input_8h_source.html">TyInput.h</a></li>
+<li>D:/development/cpp/toasty/include/<a class="el" href="_ty_input_8h_source.html">TyInput.h</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_ty_input.html">TyInput</a>      </li>
-      <li class="footer">Generated on Fri Aug 5 2011 18:41:33 for Toasty! by&#160;
+      <li class="footer">Generated on Sun Aug 14 2011 22:05:13 for Toasty! by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -124,7 +267,7 @@ Public Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

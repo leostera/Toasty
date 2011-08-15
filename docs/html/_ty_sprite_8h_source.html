@@ -27,7 +27,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="toastylogosmall.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Toasty!&#160;<span id="projectnumber">0.1</span></div>
+   <div id="projectname">Toasty!&#160;<span id="projectnumber">0.2</span></div>
    <div id="projectbrief">A game framework for the Marmalade SDK.</div>
   </td>
  </tr>
@@ -84,10 +84,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="_ty_sprite_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*!**********************************************************************************</span>
 <a name="l00002"></a>00002 <span class="comment"></span>
-<a name="l00003"></a>00003 <span class="comment">        \class                  CTySprite</span>
+<a name="l00003"></a>00003 <span class="comment">        \class                  TySprite</span>
 <a name="l00004"></a>00004 <span class="comment">        \brief                  Animated sprite class.</span>
-<a name="l00005"></a>00005 <span class="comment">        \date                   11/07/2011</span>
-<a name="l00006"></a>00006 <span class="comment">        \version                0.1                                     </span>
+<a name="l00005"></a>00005 <span class="comment">        \date                   14/08/2011</span>
+<a name="l00006"></a>00006 <span class="comment">        \version                0.2                             </span>
 <a name="l00007"></a>00007 <span class="comment">        \author                 Leandro Ostera</span>
 <a name="l00008"></a>00008 <span class="comment"></span>
 <a name="l00009"></a>00009 <span class="comment">        Animation class that features non-complete squared sprite sheets support.</span>
@@ -106,134 +106,101 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00022"></a>00022 <span class="preprocessor">#include &lt;Iw2D.h&gt;</span>
 <a name="l00023"></a>00023 
 <a name="l00024"></a>00024 <span class="comment">/*</span>
-<a name="l00025"></a>00025 <span class="comment"> * Standard C++ Header file includes</span>
+<a name="l00025"></a>00025 <span class="comment"> * Toasty! Header file includes</span>
 <a name="l00026"></a>00026 <span class="comment"> */</span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;<a class="code" href="_ty_image_8h.html">TyImage.h</a>&gt;</span>
 <a name="l00028"></a>00028 
-<a name="l00029"></a>00029 
-<a name="l00030"></a><a class="code" href="class_c_ty_sprite.html">00030</a> <span class="keyword">class </span><a class="code" href="class_c_ty_sprite.html" title="Animated sprite class.">CTySprite</a>
-<a name="l00031"></a>00031 {
-<a name="l00032"></a>00032 <span class="keyword">private</span>:
-<a name="l00036"></a>00036         <span class="keywordtype">bool</span>            m_Built; 
-<a name="l00037"></a>00037 
-<a name="l00041"></a>00041         CIwSVec2        m_Flip;
+<a name="l00029"></a>00029 <span class="comment">/*</span>
+<a name="l00030"></a>00030 <span class="comment"> * Standard C++ Header file includes</span>
+<a name="l00031"></a>00031 <span class="comment"> */</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 
+<a name="l00035"></a><a class="code" href="class_ty_sprite.html">00035</a> <span class="keyword">class </span><a class="code" href="class_ty_sprite.html" title="Animated sprite class.">TySprite</a> : <span class="keyword">public</span> <a class="code" href="class_ty_image.html" title="Static image class.">TyImage</a>
+<a name="l00036"></a>00036 {
+<a name="l00037"></a>00037 <span class="keyword">private</span>:
+<a name="l00041"></a>00041         CIwSVec2        m_DrawRect;
 <a name="l00042"></a>00042 
-<a name="l00046"></a>00046         iwangle         m_Angle;
+<a name="l00046"></a>00046         CIwSVec2        m_FrameSize;
 <a name="l00047"></a>00047 
-<a name="l00051"></a>00051         CIwSVec2        m_Center;
+<a name="l00051"></a>00051         CIwSVec2        m_Frames;
 <a name="l00052"></a>00052 
-<a name="l00057"></a>00057         CIw2DImage*             m_SpriteSheet;
-<a name="l00058"></a>00058 
-<a name="l00062"></a>00062         std::string             m_ResourceName;
-<a name="l00063"></a>00063 
-<a name="l00067"></a>00067         CIwResGroup*    m_ResourceGroup;
-<a name="l00068"></a>00068         
-<a name="l00072"></a>00072         CIwSVec2        m_DrawRect;
+<a name="l00056"></a>00056         CIwSVec2        m_Offset;
+<a name="l00057"></a>00057 
+<a name="l00061"></a>00061         CIwSVec2        m_CurrentFrame;
+<a name="l00062"></a>00062 
+<a name="l00067"></a>00067         int16           m_MaxFrames;
+<a name="l00068"></a>00068 
+<a name="l00072"></a>00072         int16           m_FrameCounter;
 <a name="l00073"></a>00073 
-<a name="l00077"></a>00077         CIwSVec2        m_FrameSize;
-<a name="l00078"></a>00078 
-<a name="l00082"></a>00082         CIwSVec2        m_Frames;
+<a name="l00077"></a>00077         int16           m_EndFrame;
+<a name="l00078"></a>00078         
+<a name="l00082"></a>00082         <span class="keywordtype">bool</span>            m_Loop;
 <a name="l00083"></a>00083 
-<a name="l00087"></a>00087         CIwSVec2        m_Offset;
+<a name="l00087"></a>00087         <span class="keywordtype">bool</span>            m_Stop;
 <a name="l00088"></a>00088 
-<a name="l00092"></a>00092         CIwSVec2        m_CurrentFrame;
+<a name="l00092"></a>00092         <span class="keywordtype">bool</span>            m_Pause; 
 <a name="l00093"></a>00093 
-<a name="l00098"></a>00098         int16           m_MaxFrames;
-<a name="l00099"></a>00099 
-<a name="l00103"></a>00103         int16           m_FrameCounter;
-<a name="l00104"></a>00104 
-<a name="l00108"></a>00108         int16           m_EndFrame;
-<a name="l00109"></a>00109         
-<a name="l00113"></a>00113         <span class="keywordtype">bool</span>            m_Loop;
-<a name="l00114"></a>00114 
-<a name="l00118"></a>00118         <span class="keywordtype">bool</span>            m_Stop;
-<a name="l00119"></a>00119 
-<a name="l00123"></a>00123         <span class="keywordtype">bool</span>            m_Pause; 
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125 
-<a name="l00126"></a>00126         <span class="comment">//Private class methods: do not attempt to use in your own code!</span>
-<a name="l00127"></a>00127 
-<a name="l00148"></a>00148         <span class="keywordtype">bool</span> LoadFromResource(CIwResGroup* pGroup, std::string pName, <span class="keywordtype">bool</span> pDataFromFile = <span class="keyword">true</span>);
-<a name="l00149"></a>00149         
-<a name="l00150"></a>00150 <span class="keyword">public</span>:
-<a name="l00168"></a>00168         <a class="code" href="class_c_ty_sprite.html#ab99453044949be7ea6b910335a801726" title="Parameterized constructor.">CTySprite</a>(CIwResGroup* pGroup, std::string pName, <span class="keywordtype">bool</span> pLoop = <span class="keyword">true</span>);
-<a name="l00169"></a>00169 
-<a name="l00176"></a>00176         <a class="code" href="class_c_ty_sprite.html#a700ba01fd9611001e814c4fcfeeaf255" title="Cleans up the object.">~CTySprite</a>();
-<a name="l00177"></a>00177 
-<a name="l00187"></a>00187         <a class="code" href="class_c_ty_sprite.html#ab99453044949be7ea6b910335a801726" title="Parameterized constructor.">CTySprite</a>(<a class="code" href="class_c_ty_sprite.html" title="Animated sprite class.">CTySprite</a> <span class="keyword">const</span>&amp; pSprite);
-<a name="l00188"></a>00188 
-<a name="l00196"></a>00196         <a class="code" href="class_c_ty_sprite.html" title="Animated sprite class.">CTySprite</a>&amp;      <a class="code" href="class_c_ty_sprite.html#a59079b5e51e01fbf7b24288d3a630ffb" title="Assignment operator.">operator= </a>(<a class="code" href="class_c_ty_sprite.html" title="Animated sprite class.">CTySprite</a> <span class="keyword">const</span>&amp; pSprite);
-<a name="l00197"></a>00197 
-<a name="l00208"></a>00208         <span class="keywordtype">bool</span>            <a class="code" href="class_c_ty_sprite.html#a53b65f437642ac9a209148792d03d4e1" title="Comparison operator.">operator== </a>(<a class="code" href="class_c_ty_sprite.html" title="Animated sprite class.">CTySprite</a> <span class="keyword">const</span>&amp; pSprite) <span class="keyword">const</span>;
-<a name="l00209"></a>00209         
-<a name="l00224"></a>00224         <span class="keywordtype">bool</span>            <a class="code" href="class_c_ty_sprite.html#ac32af738070627e8df2f0de208dbab6a" title="Updated the sprite.">Step</a>();
-<a name="l00225"></a>00225 
-<a name="l00233"></a><a class="code" href="class_c_ty_sprite.html#ad57edffe6f3e932b24d48457facd73a0">00233</a>         <span class="keyword">inline</span> <span class="keywordtype">void</span>     <a class="code" href="class_c_ty_sprite.html#ad57edffe6f3e932b24d48457facd73a0" title="Loop&#39;s or not?">Loop</a>(<span class="keywordtype">bool</span> pLoop) { m_Loop = pLoop; }
-<a name="l00234"></a>00234 
-<a name="l00240"></a><a class="code" href="class_c_ty_sprite.html#aec150e6cab1c604745b33425034e9333">00240</a>         <span class="keyword">inline</span> <span class="keywordtype">void</span>     <a class="code" href="class_c_ty_sprite.html#aec150e6cab1c604745b33425034e9333" title="Toggles looping.">toggleLoop</a>() { m_Loop = (m_Loop)?<span class="keyword">false</span>:<span class="keyword">true</span>; }
-<a name="l00241"></a>00241 
-<a name="l00247"></a>00247         <span class="keywordtype">void</span>            <a class="code" href="class_c_ty_sprite.html#aa4f43fb5f8b112598af616e9675f5936" title="Stops the animation.">Stop</a>(); 
-<a name="l00248"></a>00248 
-<a name="l00254"></a>00254         <span class="keywordtype">void</span>            <a class="code" href="class_c_ty_sprite.html#a9fc014571f6e81ccbfbd7d9d6c30aa24" title="Starts the animation.">Play</a>();
-<a name="l00255"></a>00255 
-<a name="l00261"></a>00261         <span class="keywordtype">void</span>            <a class="code" href="class_c_ty_sprite.html#a16e171457c700e7a3f6080759f5be354" title="Resumes the animation from were it was.">Resume</a>();
-<a name="l00262"></a>00262 
-<a name="l00268"></a>00268         <span class="keywordtype">void</span>            <a class="code" href="class_c_ty_sprite.html#a387bd6b832dfff1a75ab6c6b04e5a5e1" title="Pauses the animation.">Pause</a>();
-<a name="l00269"></a>00269         
-<a name="l00277"></a>00277         <span class="keywordtype">void</span>            <a class="code" href="class_c_ty_sprite.html#a627f6a648a2061d43608a84f423c805f" title="Goes to the specified frame.">GoToFrame</a>(CIwSVec2 pFrame = CIwSVec2::g_Zero);
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095         <span class="comment">//Private class methods: do not attempt to use in your own code!</span>
+<a name="l00096"></a>00096 
+<a name="l00117"></a>00117         <span class="keywordtype">bool</span> LoadFromResource(CIwResGroup* pGroup, std::string pName, <span class="keywordtype">bool</span> pDataFromFile = <span class="keyword">true</span>);
+<a name="l00118"></a>00118         
+<a name="l00119"></a>00119 <span class="keyword">public</span>:
+<a name="l00137"></a>00137         <a class="code" href="class_ty_sprite.html#aa7fc2789b9e037951094040b8ca18106" title="Parameterized constructor.">TySprite</a>(CIwResGroup* pGroup, std::string pName, <span class="keywordtype">bool</span> pLoop = <span class="keyword">true</span>);
+<a name="l00138"></a>00138 
+<a name="l00145"></a>00145         <a class="code" href="class_ty_sprite.html#afaaf5f1545c2e06fb4c123eaada32f58" title="Cleans up the object.">~TySprite</a>();
+<a name="l00146"></a>00146 
+<a name="l00156"></a>00156         <a class="code" href="class_ty_sprite.html#aa7fc2789b9e037951094040b8ca18106" title="Parameterized constructor.">TySprite</a>(<a class="code" href="class_ty_sprite.html" title="Animated sprite class.">TySprite</a> <span class="keyword">const</span>&amp; pSprite);
+<a name="l00157"></a>00157 
+<a name="l00165"></a>00165         <a class="code" href="class_ty_sprite.html" title="Animated sprite class.">TySprite</a>&amp;       <a class="code" href="class_ty_sprite.html#ae1148290ea5e0fb2b9536bbf03f7c22d" title="Assignment operator.">operator= </a>(<a class="code" href="class_ty_sprite.html" title="Animated sprite class.">TySprite</a> <span class="keyword">const</span>&amp; pSprite);
+<a name="l00166"></a>00166         
+<a name="l00181"></a>00181         <span class="keywordtype">bool</span>            <a class="code" href="class_ty_sprite.html#a3a24eaa58fc18b1c55fefa0a49b5ef6d" title="Updated the sprite.">Step</a>();
+<a name="l00182"></a>00182 
+<a name="l00190"></a><a class="code" href="class_ty_sprite.html#a60a69a064d3f6e4077832450d0a3641b">00190</a>         <span class="keyword">inline</span> <span class="keywordtype">void</span>     <a class="code" href="class_ty_sprite.html#a60a69a064d3f6e4077832450d0a3641b" title="Loop&#39;s or not?">Loop</a>(<span class="keywordtype">bool</span> pLoop) { m_Loop = pLoop; }
+<a name="l00191"></a>00191 
+<a name="l00197"></a><a class="code" href="class_ty_sprite.html#aaf37177bb3e44f8519bd2defe809c503">00197</a>         <span class="keyword">inline</span> <span class="keywordtype">void</span>     <a class="code" href="class_ty_sprite.html#aaf37177bb3e44f8519bd2defe809c503" title="Toggles looping.">toggleLoop</a>() { m_Loop = (m_Loop)?<span class="keyword">false</span>:<span class="keyword">true</span>; }
+<a name="l00198"></a>00198 
+<a name="l00204"></a>00204         <span class="keywordtype">void</span>            <a class="code" href="class_ty_sprite.html#a685d7feb600841f57b9f0f3934ec1f41" title="Stops the animation.">Stop</a>(); 
+<a name="l00205"></a>00205 
+<a name="l00211"></a>00211         <span class="keywordtype">void</span>            <a class="code" href="class_ty_sprite.html#a90356a1ca0bd9e24329761d854727f87" title="Starts the animation.">Play</a>();
+<a name="l00212"></a>00212 
+<a name="l00218"></a>00218         <span class="keywordtype">void</span>            <a class="code" href="class_ty_sprite.html#aab5e82483c1613a880a5db858874e4da" title="Resumes the animation from were it was.">Resume</a>();
+<a name="l00219"></a>00219 
+<a name="l00225"></a>00225         <span class="keywordtype">void</span>            <a class="code" href="class_ty_sprite.html#a91a6b7c5172d1fcc2b8d122f1d1c963a" title="Pauses the animation.">Pause</a>();
+<a name="l00226"></a>00226         
+<a name="l00234"></a>00234         <span class="keywordtype">void</span>            <a class="code" href="class_ty_sprite.html#abc3b33d6e1da2e784397a2096da755bd" title="Goes to the specified frame.">GoToFrame</a>(CIwSVec2 pFrame = CIwSVec2::g_Zero);
+<a name="l00235"></a>00235 
+<a name="l00241"></a><a class="code" href="class_ty_sprite.html#a69d95d3c47b80e114c0bfc990ccf8640">00241</a>         <span class="keywordtype">void</span>            <a class="code" href="class_ty_sprite.html#a69d95d3c47b80e114c0bfc990ccf8640" title="Restarts the animation.">Restart</a>() { <a class="code" href="class_ty_sprite.html#abc3b33d6e1da2e784397a2096da755bd" title="Goes to the specified frame.">GoToFrame</a>(); }
+<a name="l00242"></a>00242 
+<a name="l00250"></a><a class="code" href="class_ty_sprite.html#a9f9aa6c34aeef7ef1499fa6130a50e3d">00250</a>         <span class="keyword">inline</span> <span class="keywordtype">bool</span>             <a class="code" href="class_ty_sprite.html#a9f9aa6c34aeef7ef1499fa6130a50e3d" title="Has the animation paused?">IsPaused</a>()<span class="keyword">                      const </span>{ <span class="keywordflow">return</span> m_Pause; }
+<a name="l00251"></a>00251 
+<a name="l00259"></a><a class="code" href="class_ty_sprite.html#ab61aeed8022f01644bf192cd7f10daa5">00259</a>         <span class="keyword">inline</span> <span class="keywordtype">bool</span>             <a class="code" href="class_ty_sprite.html#ab61aeed8022f01644bf192cd7f10daa5" title="Has the animation stopped?">IsStopped</a>()<span class="keyword">                     const </span>{ <span class="keywordflow">return</span> m_Stop; }        
+<a name="l00260"></a>00260 
+<a name="l00268"></a><a class="code" href="class_ty_sprite.html#aa06bdb518fe6a6c74f140ac586676c90">00268</a>         <span class="keyword">inline</span> <span class="keywordtype">bool</span>             <a class="code" href="class_ty_sprite.html#aa06bdb518fe6a6c74f140ac586676c90" title="Is the animation looping?">IsLooping</a>()<span class="keyword">                     const </span>{ <span class="keywordflow">return</span> m_Loop; }        
+<a name="l00269"></a>00269 
+<a name="l00277"></a><a class="code" href="class_ty_sprite.html#aabfd261004391004e192caf3ca86ea1f">00277</a>         <span class="keyword">inline</span> <span class="keywordtype">bool</span>             <a class="code" href="class_ty_sprite.html#aabfd261004391004e192caf3ca86ea1f" title="Is the animation being played?">IsPlaying</a>()<span class="keyword">                     const </span>{ <span class="keywordflow">return</span> (!m_Stop&amp;&amp;!m_Pause)?<span class="keyword">true</span>:<span class="keyword">false</span>; }
 <a name="l00278"></a>00278 
-<a name="l00284"></a><a class="code" href="class_c_ty_sprite.html#aee105391eb1fe58a9811202ecdc6f842">00284</a>         <span class="keywordtype">void</span>            <a class="code" href="class_c_ty_sprite.html#aee105391eb1fe58a9811202ecdc6f842" title="Restarts the animation.">Restart</a>() { <a class="code" href="class_c_ty_sprite.html#a627f6a648a2061d43608a84f423c805f" title="Goes to the specified frame.">GoToFrame</a>(); }
-<a name="l00285"></a>00285 
-<a name="l00293"></a><a class="code" href="class_c_ty_sprite.html#a7fa1acf3af5445c249d3adb6f8dc4842">00293</a>         <span class="keyword">inline</span> <span class="keywordtype">bool</span>             <a class="code" href="class_c_ty_sprite.html#a7fa1acf3af5445c249d3adb6f8dc4842" title="Has the animation paused?">IsPaused</a>()<span class="keyword">                      const </span>{ <span class="keywordflow">return</span> m_Pause; }
-<a name="l00294"></a>00294 
-<a name="l00302"></a><a class="code" href="class_c_ty_sprite.html#ad92a279af844a5ffaaa361dfe7ed3e23">00302</a>         <span class="keyword">inline</span> <span class="keywordtype">bool</span>             <a class="code" href="class_c_ty_sprite.html#ad92a279af844a5ffaaa361dfe7ed3e23" title="Has the animation stopped?">IsStopped</a>()<span class="keyword">                     const </span>{ <span class="keywordflow">return</span> m_Stop; }        
-<a name="l00303"></a>00303 
-<a name="l00311"></a><a class="code" href="class_c_ty_sprite.html#af02c13028b55b6d74c3462b0a281f478">00311</a>         <span class="keyword">inline</span> <span class="keywordtype">bool</span>             <a class="code" href="class_c_ty_sprite.html#af02c13028b55b6d74c3462b0a281f478" title="Is the animation looping?">IsLooping</a>()<span class="keyword">                     const </span>{ <span class="keywordflow">return</span> m_Loop; }        
-<a name="l00312"></a>00312 
-<a name="l00320"></a><a class="code" href="class_c_ty_sprite.html#a9ff2cf53bb8905fc5f8e24e913e24ce0">00320</a>         <span class="keyword">inline</span> <span class="keywordtype">bool</span>             <a class="code" href="class_c_ty_sprite.html#a9ff2cf53bb8905fc5f8e24e913e24ce0" title="Is the animation being played?">IsPlaying</a>()<span class="keyword">                     const </span>{ <span class="keywordflow">return</span> (!m_Stop&amp;&amp;!m_Pause)?<span class="keyword">true</span>:<span class="keyword">false</span>; }
-<a name="l00321"></a>00321 
-<a name="l00329"></a><a class="code" href="class_c_ty_sprite.html#a15c3c0cb64a13a18e24c0ae5f1fdaa12">00329</a>         <span class="keyword">inline</span> <span class="keywordtype">bool</span>             <a class="code" href="class_c_ty_sprite.html#a15c3c0cb64a13a18e24c0ae5f1fdaa12" title="Is the object built?">IsBuilt</a>()<span class="keyword">                       const </span>{ <span class="keywordflow">return</span> m_Built; }
-<a name="l00330"></a>00330 
-<a name="l00338"></a><a class="code" href="class_c_ty_sprite.html#a19185855d525be5efcd832fdf7e8933b">00338</a>         <span class="keyword">inline</span> CIwSVec2 <a class="code" href="class_c_ty_sprite.html#a19185855d525be5efcd832fdf7e8933b" title="Is the object flipped?">IsFlipped</a>()<span class="keyword">                     const </span>{ <span class="keywordflow">return</span> m_Flip; }
-<a name="l00339"></a>00339 
-<a name="l00347"></a><a class="code" href="class_c_ty_sprite.html#a41d4c27208778c8fe866f1d62fc7e2f1">00347</a>         int16           <a class="code" href="class_c_ty_sprite.html#a41d4c27208778c8fe866f1d62fc7e2f1" title="Spritesheet width.">GetWidth</a>()<span class="keyword">                      const </span>{ <span class="keywordflow">return</span> m_SpriteSheet-&gt;GetWidth(); }
-<a name="l00348"></a>00348         
-<a name="l00356"></a><a class="code" href="class_c_ty_sprite.html#aadd1909ace834f91455b0736c9f7a77f">00356</a>         int16           <a class="code" href="class_c_ty_sprite.html#aadd1909ace834f91455b0736c9f7a77f" title="Spritesheet height.">GetHeigth</a>()<span class="keyword">                     const </span>{ <span class="keywordflow">return</span> m_SpriteSheet-&gt;GetHeight(); }
-<a name="l00357"></a>00357 
-<a name="l00366"></a><a class="code" href="class_c_ty_sprite.html#aab9a2d33ca126dfcecb9c227ba341b35">00366</a>         int16           <a class="code" href="class_c_ty_sprite.html#aab9a2d33ca126dfcecb9c227ba341b35" title="Get the maximum useful frame.">GetMaxFrames</a>()<span class="keyword">          const </span>{ <span class="keywordflow">return</span> m_MaxFrames; }
-<a name="l00367"></a>00367 
-<a name="l00375"></a><a class="code" href="class_c_ty_sprite.html#a2dbf197c643f0b10d00cfb603412c541">00375</a>         int16           <a class="code" href="class_c_ty_sprite.html#a2dbf197c643f0b10d00cfb603412c541" title="Get the final frame.">GetEndFrame</a>()<span class="keyword">           const </span>{ <span class="keywordflow">return</span> m_EndFrame; }
-<a name="l00376"></a>00376         
-<a name="l00384"></a><a class="code" href="class_c_ty_sprite.html#a88db8e1f73aac6d4dd9b808854c4ded9">00384</a>         CIwSVec2                <a class="code" href="class_c_ty_sprite.html#a88db8e1f73aac6d4dd9b808854c4ded9" title="Get the current frame vector.">GetCurrentFrame</a>()<span class="keyword">       const </span>{ <span class="keywordflow">return</span> m_CurrentFrame; }
-<a name="l00385"></a>00385 
-<a name="l00393"></a><a class="code" href="class_c_ty_sprite.html#a08e983e98709a53553f67845ca186f87">00393</a>         CIwSVec2                <a class="code" href="class_c_ty_sprite.html#a08e983e98709a53553f67845ca186f87" title="Get the frame size vector.">GetFrameSize</a>()<span class="keyword">          const </span>{ <span class="keywordflow">return</span> m_FrameSize; }
-<a name="l00394"></a>00394 
-<a name="l00402"></a><a class="code" href="class_c_ty_sprite.html#aa5aee4e95d225591fada060e6822e943">00402</a>         CIwSVec2                <a class="code" href="class_c_ty_sprite.html#aa5aee4e95d225591fada060e6822e943" title="Get the frame offset vector.">GetFrameOffset</a>()<span class="keyword">        const </span>{ <span class="keywordflow">return</span> m_Offset; }
-<a name="l00403"></a>00403 
-<a name="l00411"></a><a class="code" href="class_c_ty_sprite.html#a7a7f52cdeded57d25aa6517cde03e804">00411</a>         std::string                     <a class="code" href="class_c_ty_sprite.html#a7a7f52cdeded57d25aa6517cde03e804" title="Get the resource name string.">GetResourceName</a>()<span class="keyword">       const </span>{ <span class="keywordflow">return</span> m_ResourceName; }
-<a name="l00412"></a>00412 
-<a name="l00420"></a><a class="code" href="class_c_ty_sprite.html#a4577bd62cc7580972c01f2c67e9934a0">00420</a>         CIwResGroup*            <a class="code" href="class_c_ty_sprite.html#a4577bd62cc7580972c01f2c67e9934a0" title="Get the resources group pointer.">GetResourceGroup</a>()<span class="keyword">      const </span>{ <span class="keywordflow">return</span> m_ResourceGroup; }
-<a name="l00421"></a>00421 
-<a name="l00429"></a><a class="code" href="class_c_ty_sprite.html#ad43a63fdfd4d60c2b5c78bcfe5f7fced">00429</a>         <span class="keyword">const</span> <a class="code" href="class_c_ty_sprite.html" title="Animated sprite class.">CTySprite</a>*        <a class="code" href="class_c_ty_sprite.html#ad43a63fdfd4d60c2b5c78bcfe5f7fced" title="Pointer to const this.">GetCopy</a>()<span class="keyword">               const </span>{ <span class="keywordflow">return</span> <span class="keyword">this</span>; }
-<a name="l00430"></a>00430 
-<a name="l00437"></a><a class="code" href="class_c_ty_sprite.html#af4e75e0923094162c46023184e2bc5d5">00437</a>         iwangle         <a class="code" href="class_c_ty_sprite.html#af4e75e0923094162c46023184e2bc5d5" title="Animation rotation.">GetAngle</a>()<span class="keyword">      const </span>{ <span class="keywordflow">return</span> m_Angle; }
-<a name="l00438"></a>00438 
-<a name="l00445"></a><a class="code" href="class_c_ty_sprite.html#a49e66d883dd0529d4943bf1fddcfd823">00445</a>         CIwSVec2        <a class="code" href="class_c_ty_sprite.html#a49e66d883dd0529d4943bf1fddcfd823" title="Animation rotation Center.">GetCenter</a>()<span class="keyword">     const </span>{ <span class="keywordflow">return</span> m_Center; }
-<a name="l00446"></a>00446 
-<a name="l00454"></a>00454         <span class="keywordtype">void</span>            <a class="code" href="class_c_ty_sprite.html#ab015a500d951d37225a5bbb64c7a567c" title="Rotates the animation.">Rotate</a>(iwangle  pRads);
-<a name="l00455"></a>00455 
-<a name="l00463"></a>00463         <span class="keywordtype">void</span>            <a class="code" href="class_c_ty_sprite.html#aadeb6c6624411648967e2fcc7494b4be" title="Center the animation for rotation.">Center</a>(CIwSVec2 pCenter = CIwSVec2::g_Zero);
-<a name="l00464"></a>00464 
-<a name="l00472"></a>00472         <span class="keywordtype">void</span>            <a class="code" href="class_c_ty_sprite.html#a288e9a75afb2177c7fad580802c2a3af" title="Flips the animation.">Flip</a>(CIwSVec2 pFlip = CIwSVec2::g_Zero);
-<a name="l00473"></a>00473 
-<a name="l00484"></a>00484         <span class="keywordtype">void</span>            <a class="code" href="class_c_ty_sprite.html#aa86cd094757ca9c8b52a32f090618eb3" title="Render the animation.">Render</a>(CIwSVec2 pPosition = CIwSVec2::g_Zero);
-<a name="l00485"></a>00485 };
+<a name="l00287"></a><a class="code" href="class_ty_sprite.html#a03e21ca46dc3b68c52f42b346a892972">00287</a>         int16           <a class="code" href="class_ty_sprite.html#a03e21ca46dc3b68c52f42b346a892972" title="Get the maximum useful frame.">GetMaxFrames</a>()<span class="keyword">          const </span>{ <span class="keywordflow">return</span> m_MaxFrames; }
+<a name="l00288"></a>00288 
+<a name="l00296"></a><a class="code" href="class_ty_sprite.html#a15f4d268bb5425d316def146100f55dd">00296</a>         int16           <a class="code" href="class_ty_sprite.html#a15f4d268bb5425d316def146100f55dd" title="Get the final frame.">GetEndFrame</a>()<span class="keyword">           const </span>{ <span class="keywordflow">return</span> m_EndFrame; }
+<a name="l00297"></a>00297         
+<a name="l00305"></a><a class="code" href="class_ty_sprite.html#a1aa77611cfa54a81f4da4a030004a96b">00305</a>         CIwSVec2                <a class="code" href="class_ty_sprite.html#a1aa77611cfa54a81f4da4a030004a96b" title="Get the current frame vector.">GetCurrentFrame</a>()<span class="keyword">       const </span>{ <span class="keywordflow">return</span> m_CurrentFrame; }
+<a name="l00306"></a>00306 
+<a name="l00314"></a><a class="code" href="class_ty_sprite.html#aaa956decc12cde4489a665306dafd56d">00314</a>         CIwSVec2                <a class="code" href="class_ty_sprite.html#aaa956decc12cde4489a665306dafd56d" title="Get the frame size vector.">GetFrameSize</a>()<span class="keyword">          const </span>{ <span class="keywordflow">return</span> m_FrameSize; }
+<a name="l00315"></a>00315 
+<a name="l00323"></a><a class="code" href="class_ty_sprite.html#abb95b562872c1b2fe89c5d75e582b5f0">00323</a>         CIwSVec2                <a class="code" href="class_ty_sprite.html#abb95b562872c1b2fe89c5d75e582b5f0" title="Get the frame offset vector.">GetFrameOffset</a>()<span class="keyword">        const </span>{ <span class="keywordflow">return</span> m_Offset; }
+<a name="l00324"></a>00324 
+<a name="l00332"></a><a class="code" href="class_ty_sprite.html#a24045a705e395924b61e0cae50efe893">00332</a>         <span class="keyword">const</span> <a class="code" href="class_ty_sprite.html" title="Animated sprite class.">TySprite</a>* <a class="code" href="class_ty_sprite.html#a24045a705e395924b61e0cae50efe893" title="Pointer to const this.">GetCopy</a>()<span class="keyword">               const </span>{ <span class="keywordflow">return</span> <span class="keyword">this</span>; }
+<a name="l00333"></a>00333 
+<a name="l00344"></a>00344         <span class="keywordtype">void</span>            <a class="code" href="class_ty_sprite.html#aa1e6e85ccf29eeb74a93768efb5695cd" title="Render the animation.">Render</a>(CIwSVec2 pPosition = CIwSVec2::g_Zero);
+<a name="l00345"></a>00345 };
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_ty_sprite_8h.html">TySprite.h</a>      </li>
-      <li class="footer">Generated on Fri Aug 12 2011 00:58:42 for Toasty! by&#160;
+      <li class="footer">Generated on Sun Aug 14 2011 22:05:13 for Toasty! by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

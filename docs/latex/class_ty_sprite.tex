@@ -1,0 +1,547 @@
+\hypertarget{class_ty_sprite}{
+\section{TySprite Class Reference}
+\label{class_ty_sprite}\index{TySprite@{TySprite}}
+}
+
+
+Animated sprite class.  
+
+
+
+
+{\ttfamily \#include $<$TySprite.h$>$}
+
+Inheritance diagram for TySprite:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ty_sprite}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ty_sprite_aa7fc2789b9e037951094040b8ca18106}{TySprite} (CIwResGroup $\ast$pGroup, std::string pName, bool pLoop=true)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_ty_sprite_afaaf5f1545c2e06fb4c123eaada32f58}{$\sim$TySprite} ()
+\begin{DoxyCompactList}\small\item\em Cleans up the object. \end{DoxyCompactList}\item 
+\hyperlink{class_ty_sprite_a16bfc1711299edb062ec736587ffa050}{TySprite} (\hyperlink{class_ty_sprite}{TySprite} const \&pSprite)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_ty_sprite}{TySprite} \& \hyperlink{class_ty_sprite_ae1148290ea5e0fb2b9536bbf03f7c22d}{operator=} (\hyperlink{class_ty_sprite}{TySprite} const \&pSprite)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+bool \hyperlink{class_ty_sprite_a3a24eaa58fc18b1c55fefa0a49b5ef6d}{Step} ()
+\begin{DoxyCompactList}\small\item\em Updated the sprite. \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_sprite_a60a69a064d3f6e4077832450d0a3641b}{Loop} (bool pLoop)
+\begin{DoxyCompactList}\small\item\em Loop's or not? \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_sprite_aaf37177bb3e44f8519bd2defe809c503}{toggleLoop} ()
+\begin{DoxyCompactList}\small\item\em Toggles looping. \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_sprite_a685d7feb600841f57b9f0f3934ec1f41}{Stop} ()
+\begin{DoxyCompactList}\small\item\em Stops the animation. \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_sprite_a90356a1ca0bd9e24329761d854727f87}{Play} ()
+\begin{DoxyCompactList}\small\item\em Starts the animation. \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_sprite_aab5e82483c1613a880a5db858874e4da}{Resume} ()
+\begin{DoxyCompactList}\small\item\em Resumes the animation from were it was. \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_sprite_a91a6b7c5172d1fcc2b8d122f1d1c963a}{Pause} ()
+\begin{DoxyCompactList}\small\item\em Pauses the animation. \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_sprite_abc3b33d6e1da2e784397a2096da755bd}{GoToFrame} (CIwSVec2 pFrame=CIwSVec2::g\_\-Zero)
+\begin{DoxyCompactList}\small\item\em Goes to the specified frame. \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_sprite_a69d95d3c47b80e114c0bfc990ccf8640}{Restart} ()
+\begin{DoxyCompactList}\small\item\em Restarts the animation. \end{DoxyCompactList}\item 
+bool \hyperlink{class_ty_sprite_a9f9aa6c34aeef7ef1499fa6130a50e3d}{IsPaused} () const 
+\begin{DoxyCompactList}\small\item\em Has the animation paused? \end{DoxyCompactList}\item 
+bool \hyperlink{class_ty_sprite_ab61aeed8022f01644bf192cd7f10daa5}{IsStopped} () const 
+\begin{DoxyCompactList}\small\item\em Has the animation stopped? \end{DoxyCompactList}\item 
+bool \hyperlink{class_ty_sprite_aa06bdb518fe6a6c74f140ac586676c90}{IsLooping} () const 
+\begin{DoxyCompactList}\small\item\em Is the animation looping? \end{DoxyCompactList}\item 
+bool \hyperlink{class_ty_sprite_aabfd261004391004e192caf3ca86ea1f}{IsPlaying} () const 
+\begin{DoxyCompactList}\small\item\em Is the animation being played? \end{DoxyCompactList}\item 
+int16 \hyperlink{class_ty_sprite_a03e21ca46dc3b68c52f42b346a892972}{GetMaxFrames} () const 
+\begin{DoxyCompactList}\small\item\em Get the maximum useful frame. \end{DoxyCompactList}\item 
+int16 \hyperlink{class_ty_sprite_a15f4d268bb5425d316def146100f55dd}{GetEndFrame} () const 
+\begin{DoxyCompactList}\small\item\em Get the final frame. \end{DoxyCompactList}\item 
+CIwSVec2 \hyperlink{class_ty_sprite_a1aa77611cfa54a81f4da4a030004a96b}{GetCurrentFrame} () const 
+\begin{DoxyCompactList}\small\item\em Get the current frame vector. \end{DoxyCompactList}\item 
+CIwSVec2 \hyperlink{class_ty_sprite_aaa956decc12cde4489a665306dafd56d}{GetFrameSize} () const 
+\begin{DoxyCompactList}\small\item\em Get the frame size vector. \end{DoxyCompactList}\item 
+CIwSVec2 \hyperlink{class_ty_sprite_abb95b562872c1b2fe89c5d75e582b5f0}{GetFrameOffset} () const 
+\begin{DoxyCompactList}\small\item\em Get the frame offset vector. \end{DoxyCompactList}\item 
+const \hyperlink{class_ty_sprite}{TySprite} $\ast$ \hyperlink{class_ty_sprite_a24045a705e395924b61e0cae50efe893}{GetCopy} () const 
+\begin{DoxyCompactList}\small\item\em Pointer to const this. \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_sprite_aa1e6e85ccf29eeb74a93768efb5695cd}{Render} (CIwSVec2 pPosition=CIwSVec2::g\_\-Zero)
+\begin{DoxyCompactList}\small\item\em Render the animation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Animated sprite class. 
+
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$
+
+\begin{DoxyDate}{Date}
+14/08/2011 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.2 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Leandro Ostera
+\end{DoxyAuthor}
+Animation class that features non-\/complete squared sprite sheets support. Includes basics functionality as stopping, pausing, go to frame, etc. 
+
+Definition at line 35 of file TySprite.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_ty_sprite_aa7fc2789b9e037951094040b8ca18106}{
+\index{TySprite@{TySprite}!TySprite@{TySprite}}
+\index{TySprite@{TySprite}!TySprite@{TySprite}}
+\subsubsection[{TySprite}]{\setlength{\rightskip}{0pt plus 5cm}TySprite::TySprite (
+\begin{DoxyParamCaption}
+\item[{CIwResGroup $\ast$}]{pGroup, }
+\item[{std::string}]{pName, }
+\item[{bool}]{pLoop = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_sprite_aa7fc2789b9e037951094040b8ca18106}
+
+
+Parameterized constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pGroup} & the resource group inwhere to look for the resource \\
+\hline
+{\em pName} & the name of the resource to look up in the group \\
+\hline
+{\em pLoop} & whether the animation sohuld loop (true) or not (false\\
+\hline
+\end{DoxyParams}
+This is the main constructor. It initializes the following properties: \begin{DoxyItemize}
+\item {\ttfamily m\_\-Built}, false \item {\ttfamily m\_\-Offset}, CIwSVec2::g\_\-Zero (zero vector) \item {\ttfamily m\_\-CurrentFrame}, CIwSVec2::g\_\-Zero (zero vector) \item {\ttfamily m\_\-FrameCounter}, 0 (ZERO, integer value) \item {\ttfamily m\_\-DrawRect}, CIwSVec2::g\_\-Zero (zero vector) \item {\ttfamily m\_\-Pause}, false \item {\ttfamily m\_\-Stop}, false \item {\ttfamily m\_\-Loop}, pLoop \end{DoxyItemize}
+\hypertarget{class_ty_sprite_afaaf5f1545c2e06fb4c123eaada32f58}{
+\index{TySprite@{TySprite}!$\sim$TySprite@{$\sim$TySprite}}
+\index{$\sim$TySprite@{$\sim$TySprite}!TySprite@{TySprite}}
+\subsubsection[{$\sim$TySprite}]{\setlength{\rightskip}{0pt plus 5cm}TySprite::$\sim$TySprite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_sprite_afaaf5f1545c2e06fb4c123eaada32f58}
+
+
+Cleans up the object. 
+
+Performs clean up of the asigned memory blocks. If the class has been succesfully built before, delete the sprite pointer as it is no longer needed. \hypertarget{class_ty_sprite_a16bfc1711299edb062ec736587ffa050}{
+\index{TySprite@{TySprite}!TySprite@{TySprite}}
+\index{TySprite@{TySprite}!TySprite@{TySprite}}
+\subsubsection[{TySprite}]{\setlength{\rightskip}{0pt plus 5cm}TySprite::TySprite (
+\begin{DoxyParamCaption}
+\item[{{\bf TySprite} const \&}]{pSprite}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_sprite_a16bfc1711299edb062ec736587ffa050}
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pSprite} & The sprite object to be copied\\
+\hline
+\end{DoxyParams}
+Copies the propierties of the parameter object into the object that is being constructed. It uses the overloaded operator = to such ends. Current object flag m\_\-Built will be set along with flag m\_\-Copy. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ty_sprite_a24045a705e395924b61e0cae50efe893}{
+\index{TySprite@{TySprite}!GetCopy@{GetCopy}}
+\index{GetCopy@{GetCopy}!TySprite@{TySprite}}
+\subsubsection[{GetCopy}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf TySprite}$\ast$ TySprite::GetCopy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_sprite_a24045a705e395924b61e0cae50efe893}
+
+
+Pointer to const this. 
+
+\begin{DoxyReturn}{Returns}
+const TySprite$\ast$
+\end{DoxyReturn}
+Returns a pointer to a const \hyperlink{class_ty_sprite}{TySprite} (which is this). 
+
+Reimplemented from \hyperlink{class_ty_image_a48acb344f18ab58e7603876366f5fc58}{TyImage}.
+
+
+
+Definition at line 332 of file TySprite.h.
+
+\hypertarget{class_ty_sprite_a1aa77611cfa54a81f4da4a030004a96b}{
+\index{TySprite@{TySprite}!GetCurrentFrame@{GetCurrentFrame}}
+\index{GetCurrentFrame@{GetCurrentFrame}!TySprite@{TySprite}}
+\subsubsection[{GetCurrentFrame}]{\setlength{\rightskip}{0pt plus 5cm}CIwSVec2 TySprite::GetCurrentFrame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_sprite_a1aa77611cfa54a81f4da4a030004a96b}
+
+
+Get the current frame vector. 
+
+\begin{DoxyReturn}{Returns}
+CIwSVec2
+\end{DoxyReturn}
+Returns current frame row and column as a 2D integer vector. 
+
+Definition at line 305 of file TySprite.h.
+
+\hypertarget{class_ty_sprite_a15f4d268bb5425d316def146100f55dd}{
+\index{TySprite@{TySprite}!GetEndFrame@{GetEndFrame}}
+\index{GetEndFrame@{GetEndFrame}!TySprite@{TySprite}}
+\subsubsection[{GetEndFrame}]{\setlength{\rightskip}{0pt plus 5cm}int16 TySprite::GetEndFrame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_sprite_a15f4d268bb5425d316def146100f55dd}
+
+
+Get the final frame. 
+
+\begin{DoxyReturn}{Returns}
+int16
+\end{DoxyReturn}
+Returns the last frame number as integer. 
+
+Definition at line 296 of file TySprite.h.
+
+\hypertarget{class_ty_sprite_abb95b562872c1b2fe89c5d75e582b5f0}{
+\index{TySprite@{TySprite}!GetFrameOffset@{GetFrameOffset}}
+\index{GetFrameOffset@{GetFrameOffset}!TySprite@{TySprite}}
+\subsubsection[{GetFrameOffset}]{\setlength{\rightskip}{0pt plus 5cm}CIwSVec2 TySprite::GetFrameOffset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_sprite_abb95b562872c1b2fe89c5d75e582b5f0}
+
+
+Get the frame offset vector. 
+
+\begin{DoxyReturn}{Returns}
+CIwSVec2
+\end{DoxyReturn}
+Returns x and y offset of each frame as 2D integer vector. 
+
+Definition at line 323 of file TySprite.h.
+
+\hypertarget{class_ty_sprite_aaa956decc12cde4489a665306dafd56d}{
+\index{TySprite@{TySprite}!GetFrameSize@{GetFrameSize}}
+\index{GetFrameSize@{GetFrameSize}!TySprite@{TySprite}}
+\subsubsection[{GetFrameSize}]{\setlength{\rightskip}{0pt plus 5cm}CIwSVec2 TySprite::GetFrameSize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_sprite_aaa956decc12cde4489a665306dafd56d}
+
+
+Get the frame size vector. 
+
+\begin{DoxyReturn}{Returns}
+CIwSVec2
+\end{DoxyReturn}
+Returns frame size as 2D integer vector. 
+
+Definition at line 314 of file TySprite.h.
+
+\hypertarget{class_ty_sprite_a03e21ca46dc3b68c52f42b346a892972}{
+\index{TySprite@{TySprite}!GetMaxFrames@{GetMaxFrames}}
+\index{GetMaxFrames@{GetMaxFrames}!TySprite@{TySprite}}
+\subsubsection[{GetMaxFrames}]{\setlength{\rightskip}{0pt plus 5cm}int16 TySprite::GetMaxFrames (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_sprite_a03e21ca46dc3b68c52f42b346a892972}
+
+
+Get the maximum useful frame. 
+
+\begin{DoxyReturn}{Returns}
+int16
+\end{DoxyReturn}
+Returns the maximum amount of useful frames in the spritesheet that is, ignoring blank frames at the end of the sheet, as integer. 
+
+Definition at line 287 of file TySprite.h.
+
+\hypertarget{class_ty_sprite_abc3b33d6e1da2e784397a2096da755bd}{
+\index{TySprite@{TySprite}!GoToFrame@{GoToFrame}}
+\index{GoToFrame@{GoToFrame}!TySprite@{TySprite}}
+\subsubsection[{GoToFrame}]{\setlength{\rightskip}{0pt plus 5cm}void TySprite::GoToFrame (
+\begin{DoxyParamCaption}
+\item[{CIwSVec2}]{pFrame = {\ttfamily CIwSVec2::g\_\-Zero}}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_sprite_abc3b33d6e1da2e784397a2096da755bd}
+
+
+Goes to the specified frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pFrame} & CIwSVec2 2D integer vector indicating row and column of the frame to set as current\\
+\hline
+\end{DoxyParams}
+Ff not specified a vector, returns to first frame, otherwise sets f as current frame. \hypertarget{class_ty_sprite_aa06bdb518fe6a6c74f140ac586676c90}{
+\index{TySprite@{TySprite}!IsLooping@{IsLooping}}
+\index{IsLooping@{IsLooping}!TySprite@{TySprite}}
+\subsubsection[{IsLooping}]{\setlength{\rightskip}{0pt plus 5cm}bool TySprite::IsLooping (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_sprite_aa06bdb518fe6a6c74f140ac586676c90}
+
+
+Is the animation looping? 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+True if it is looping, false otherwise. 
+
+Definition at line 268 of file TySprite.h.
+
+\hypertarget{class_ty_sprite_a9f9aa6c34aeef7ef1499fa6130a50e3d}{
+\index{TySprite@{TySprite}!IsPaused@{IsPaused}}
+\index{IsPaused@{IsPaused}!TySprite@{TySprite}}
+\subsubsection[{IsPaused}]{\setlength{\rightskip}{0pt plus 5cm}bool TySprite::IsPaused (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_sprite_a9f9aa6c34aeef7ef1499fa6130a50e3d}
+
+
+Has the animation paused? 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+True if it is paused, false otherwise. 
+
+Definition at line 250 of file TySprite.h.
+
+\hypertarget{class_ty_sprite_aabfd261004391004e192caf3ca86ea1f}{
+\index{TySprite@{TySprite}!IsPlaying@{IsPlaying}}
+\index{IsPlaying@{IsPlaying}!TySprite@{TySprite}}
+\subsubsection[{IsPlaying}]{\setlength{\rightskip}{0pt plus 5cm}bool TySprite::IsPlaying (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_sprite_aabfd261004391004e192caf3ca86ea1f}
+
+
+Is the animation being played? 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+True if it is not paused and not stopped, false otherwise. 
+
+Definition at line 277 of file TySprite.h.
+
+\hypertarget{class_ty_sprite_ab61aeed8022f01644bf192cd7f10daa5}{
+\index{TySprite@{TySprite}!IsStopped@{IsStopped}}
+\index{IsStopped@{IsStopped}!TySprite@{TySprite}}
+\subsubsection[{IsStopped}]{\setlength{\rightskip}{0pt plus 5cm}bool TySprite::IsStopped (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_sprite_ab61aeed8022f01644bf192cd7f10daa5}
+
+
+Has the animation stopped? 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+True if it is stopped, false otherwise. 
+
+Definition at line 259 of file TySprite.h.
+
+\hypertarget{class_ty_sprite_a60a69a064d3f6e4077832450d0a3641b}{
+\index{TySprite@{TySprite}!Loop@{Loop}}
+\index{Loop@{Loop}!TySprite@{TySprite}}
+\subsubsection[{Loop}]{\setlength{\rightskip}{0pt plus 5cm}void TySprite::Loop (
+\begin{DoxyParamCaption}
+\item[{bool}]{pLoop}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_sprite_a60a69a064d3f6e4077832450d0a3641b}
+
+
+Loop's or not? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pLoop} & true for looping, false otherwise\\
+\hline
+\end{DoxyParams}
+Set loop on or off 
+
+Definition at line 190 of file TySprite.h.
+
+\hypertarget{class_ty_sprite_ae1148290ea5e0fb2b9536bbf03f7c22d}{
+\index{TySprite@{TySprite}!operator=@{operator=}}
+\index{operator=@{operator=}!TySprite@{TySprite}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TySprite}\& TySprite::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf TySprite} const \&}]{pSprite}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_sprite_ae1148290ea5e0fb2b9536bbf03f7c22d}
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pSprite} & The sprite object to be assigned (copied)\\
+\hline
+\end{DoxyParams}
+Copies all data from the sprite parameter object, incluiding the pointer to the imagesheet. \hypertarget{class_ty_sprite_a91a6b7c5172d1fcc2b8d122f1d1c963a}{
+\index{TySprite@{TySprite}!Pause@{Pause}}
+\index{Pause@{Pause}!TySprite@{TySprite}}
+\subsubsection[{Pause}]{\setlength{\rightskip}{0pt plus 5cm}void TySprite::Pause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_sprite_a91a6b7c5172d1fcc2b8d122f1d1c963a}
+
+
+Pauses the animation. 
+
+Pauses the animation at the current frame. \hypertarget{class_ty_sprite_a90356a1ca0bd9e24329761d854727f87}{
+\index{TySprite@{TySprite}!Play@{Play}}
+\index{Play@{Play}!TySprite@{TySprite}}
+\subsubsection[{Play}]{\setlength{\rightskip}{0pt plus 5cm}void TySprite::Play (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_sprite_a90356a1ca0bd9e24329761d854727f87}
+
+
+Starts the animation. 
+
+Starts the animation from the current frame. \hypertarget{class_ty_sprite_aa1e6e85ccf29eeb74a93768efb5695cd}{
+\index{TySprite@{TySprite}!Render@{Render}}
+\index{Render@{Render}!TySprite@{TySprite}}
+\subsubsection[{Render}]{\setlength{\rightskip}{0pt plus 5cm}void TySprite::Render (
+\begin{DoxyParamCaption}
+\item[{CIwSVec2}]{pPosition = {\ttfamily CIwSVec2::g\_\-Zero}}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_sprite_aa1e6e85ccf29eeb74a93768efb5695cd}
+
+
+Render the animation. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pPosition} & (x,y) 2D integer vector\\
+\hline
+\end{DoxyParams}
+Draws a region of the image starting at m\_\-DrawRect and finishing at m\_\-DrawRect+m\_\-FrameSize, at the coordinates passed by pPosition. 
+
+Reimplemented from \hyperlink{class_ty_image_ae15f22535190bfe2e848e4b1a6dee494}{TyImage}.
+
+\hypertarget{class_ty_sprite_a69d95d3c47b80e114c0bfc990ccf8640}{
+\index{TySprite@{TySprite}!Restart@{Restart}}
+\index{Restart@{Restart}!TySprite@{TySprite}}
+\subsubsection[{Restart}]{\setlength{\rightskip}{0pt plus 5cm}void TySprite::Restart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_sprite_a69d95d3c47b80e114c0bfc990ccf8640}
+
+
+Restarts the animation. 
+
+Restarts the animation by returning to the first frame. 
+
+Definition at line 241 of file TySprite.h.
+
+\hypertarget{class_ty_sprite_aab5e82483c1613a880a5db858874e4da}{
+\index{TySprite@{TySprite}!Resume@{Resume}}
+\index{Resume@{Resume}!TySprite@{TySprite}}
+\subsubsection[{Resume}]{\setlength{\rightskip}{0pt plus 5cm}void TySprite::Resume (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_sprite_aab5e82483c1613a880a5db858874e4da}
+
+
+Resumes the animation from were it was. 
+
+If animation was paused, it resumes playing from the current frame. \hypertarget{class_ty_sprite_a3a24eaa58fc18b1c55fefa0a49b5ef6d}{
+\index{TySprite@{TySprite}!Step@{Step}}
+\index{Step@{Step}!TySprite@{TySprite}}
+\subsubsection[{Step}]{\setlength{\rightskip}{0pt plus 5cm}bool TySprite::Step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_sprite_a3a24eaa58fc18b1c55fefa0a49b5ef6d}
+
+
+Updated the sprite. 
+
+\begin{DoxyReturn}{Returns}
+bool True if animation is within range, false if animation is about to restart/finish depending on looping
+\end{DoxyReturn}
+Iterates through the sprite sheet as if it was a matrix by incrementing m\_\-CurrentFrame.x (if not paused nor stopped) untill it is equal or greater than (note that it will never be greater -\/or at least shouldn't!) then it goes back to zero and m\_\-CurrentFrame.y is incremented. m\_\-CurrentFrame(x,y) works as indexes for the sprites in the sheet: x is for the column, y for the rows. Additionally, in case that the sprites has / uses less than x$\ast$y frames in the sheet, there is max frames number and a frame counter used to check for it. Later, the drawing rect is updated. \hypertarget{class_ty_sprite_a685d7feb600841f57b9f0f3934ec1f41}{
+\index{TySprite@{TySprite}!Stop@{Stop}}
+\index{Stop@{Stop}!TySprite@{TySprite}}
+\subsubsection[{Stop}]{\setlength{\rightskip}{0pt plus 5cm}void TySprite::Stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_sprite_a685d7feb600841f57b9f0f3934ec1f41}
+
+
+Stops the animation. 
+
+Stops the animation and returns to first frame. \hypertarget{class_ty_sprite_aaf37177bb3e44f8519bd2defe809c503}{
+\index{TySprite@{TySprite}!toggleLoop@{toggleLoop}}
+\index{toggleLoop@{toggleLoop}!TySprite@{TySprite}}
+\subsubsection[{toggleLoop}]{\setlength{\rightskip}{0pt plus 5cm}void TySprite::toggleLoop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_sprite_aaf37177bb3e44f8519bd2defe809c503}
+
+
+Toggles looping. 
+
+Switches looping state on if off and off if on. 
+
+Definition at line 197 of file TySprite.h.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+D:/development/cpp/toasty/include/\hyperlink{_ty_sprite_8h}{TySprite.h}\end{DoxyCompactItemize}

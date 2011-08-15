@@ -1,0 +1,5 @@
+# This file was automanually generated following the Marmalade Reference Manual rules.
+
+subproject ../ExampleBase
+
+file SceneBasic.cpp

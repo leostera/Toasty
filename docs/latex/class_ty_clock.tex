@@ -1,0 +1,187 @@
+\hypertarget{class_ty_clock}{
+\section{TyClock Class Reference}
+\label{class_ty_clock}\index{TyClock@{TyClock}}
+}
+
+
+The almighty clock. returns time in ms from loop to loop and is capable of frame rate capping.  
+
+
+
+
+{\ttfamily \#include $<$TyClock.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int64 \hyperlink{class_ty_clock_a776670a7d9794b493db7079fa0276436}{GetTicks} ()
+\begin{DoxyCompactList}\small\item\em Gets you ticks. \end{DoxyCompactList}\item 
+int64 \hyperlink{class_ty_clock_acf5401cf937f0eb45e6f803e6519c3d8}{Step} ()
+\begin{DoxyCompactList}\small\item\em Updates the clock. \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_clock_a0aa94938e1725ea8bc5660d0ff9816e6}{SetCap} (int32 pCap)
+\begin{DoxyCompactList}\small\item\em Sets the cap rate. \end{DoxyCompactList}\item 
+int64 \hyperlink{class_ty_clock_ab892e23d9d6f1aa9ba3f64eda6ea4a2d}{Cap} ()
+\begin{DoxyCompactList}\small\item\em Caps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ty_clock}{TyClock} $\ast$ \hyperlink{class_ty_clock_a9deae82c29cb3ce85dbd36fbb39c8733}{TyGetClock} ()
+\begin{DoxyCompactList}\small\item\em Gets you a clock. \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_clock_ad695ce815739b369d178734da8e50bf7}{TyClockInit} ()
+\begin{DoxyCompactList}\small\item\em Starts the clock. \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_clock_ab5556d27e10cc634934c3ce3d05512f6}{TyClockTerminate} ()
+\begin{DoxyCompactList}\small\item\em Terminates the clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The almighty clock. returns time in ms from loop to loop and is capable of frame rate capping. 
+
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$
+
+\begin{DoxyDate}{Date}
+07/13/2011 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.5  now a singleton with cool Marmalade like Init,Terminate,Get functions!
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Leandro 'The Phantom Lord' / 'Grün' Ostera leostera at gmail dot com 
+\end{DoxyAuthor}
+
+
+Definition at line 25 of file TyClock.h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ty_clock_ab892e23d9d6f1aa9ba3f64eda6ea4a2d}{
+\index{TyClock@{TyClock}!Cap@{Cap}}
+\index{Cap@{Cap}!TyClock@{TyClock}}
+\subsubsection[{Cap}]{\setlength{\rightskip}{0pt plus 5cm}int64 TyClock::Cap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_clock_ab892e23d9d6f1aa9ba3f64eda6ea4a2d}
+
+
+Caps. 
+
+\begin{DoxyReturn}{Returns}
+int64 current amount of frames per second or ZERO if frame capping is disabled.
+\end{DoxyReturn}
+If frame capping is enabled (m\_\-Cap $>$ 0) we will wait long enough to let only m\_\-Cap frames be displayed every second. \hypertarget{class_ty_clock_a776670a7d9794b493db7079fa0276436}{
+\index{TyClock@{TyClock}!GetTicks@{GetTicks}}
+\index{GetTicks@{GetTicks}!TyClock@{TyClock}}
+\subsubsection[{GetTicks}]{\setlength{\rightskip}{0pt plus 5cm}int64 TyClock::GetTicks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_clock_a776670a7d9794b493db7079fa0276436}
+
+
+Gets you ticks. 
+
+\begin{DoxyReturn}{Returns}
+int64 The amount of ticks since last call to \hyperlink{class_ty_clock_acf5401cf937f0eb45e6f803e6519c3d8}{Step()}
+\end{DoxyReturn}
+Returns the amount of ticks since the last call to \hyperlink{class_ty_clock_acf5401cf937f0eb45e6f803e6519c3d8}{Step()}. 
+
+Definition at line 100 of file TyClock.h.
+
+\hypertarget{class_ty_clock_a0aa94938e1725ea8bc5660d0ff9816e6}{
+\index{TyClock@{TyClock}!SetCap@{SetCap}}
+\index{SetCap@{SetCap}!TyClock@{TyClock}}
+\subsubsection[{SetCap}]{\setlength{\rightskip}{0pt plus 5cm}void TyClock::SetCap (
+\begin{DoxyParamCaption}
+\item[{int32}]{pCap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_clock_a0aa94938e1725ea8bc5660d0ff9816e6}
+
+
+Sets the cap rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pCap} & The amount of frames per second, or a non positive value if frame capping is to be disabled.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Sets current frames per second cap to pCap if it is positive, otherwise to ZERO. \hypertarget{class_ty_clock_acf5401cf937f0eb45e6f803e6519c3d8}{
+\index{TyClock@{TyClock}!Step@{Step}}
+\index{Step@{Step}!TyClock@{TyClock}}
+\subsubsection[{Step}]{\setlength{\rightskip}{0pt plus 5cm}int64 TyClock::Step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_clock_acf5401cf937f0eb45e6f803e6519c3d8}
+
+
+Updates the clock. 
+
+\begin{DoxyReturn}{Returns}
+int64 Also the amount of ticks since last call to \hyperlink{class_ty_clock_acf5401cf937f0eb45e6f803e6519c3d8}{Step()}
+\end{DoxyReturn}
+Accumulates ticks in m\_\-TotalTicks and a lil' algebra to get each tick into it's place. Should be called just once at the end of the program loop. 
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_ty_clock_ad695ce815739b369d178734da8e50bf7}{
+\index{TyClock@{TyClock}!TyClockInit@{TyClockInit}}
+\index{TyClockInit@{TyClockInit}!TyClock@{TyClock}}
+\subsubsection[{TyClockInit}]{\setlength{\rightskip}{0pt plus 5cm}void TyClockInit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{class_ty_clock_ad695ce815739b369d178734da8e50bf7}
+
+
+Starts the clock. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Initializes the class by creating the singleton. Note: not strictly necessary since IwGetClock also calls it just in case! \hypertarget{class_ty_clock_ab5556d27e10cc634934c3ce3d05512f6}{
+\index{TyClock@{TyClock}!TyClockTerminate@{TyClockTerminate}}
+\index{TyClockTerminate@{TyClockTerminate}!TyClock@{TyClock}}
+\subsubsection[{TyClockTerminate}]{\setlength{\rightskip}{0pt plus 5cm}void TyClockTerminate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{class_ty_clock_ab5556d27e10cc634934c3ce3d05512f6}
+
+
+Terminates the clock. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Kills the singleton. This one IS necessary, otherwise leaks will be reported. \hypertarget{class_ty_clock_a9deae82c29cb3ce85dbd36fbb39c8733}{
+\index{TyClock@{TyClock}!TyGetClock@{TyGetClock}}
+\index{TyGetClock@{TyGetClock}!TyClock@{TyClock}}
+\subsubsection[{TyGetClock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TyClock}$\ast$ TyGetClock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{class_ty_clock_a9deae82c29cb3ce85dbd36fbb39c8733}
+
+
+Gets you a clock. 
+
+FRIEND FUNCTIONS DECLARATIONS
+
+\begin{DoxyReturn}{Returns}
+TyClock$\ast$ pointer to the singleton class.
+\end{DoxyReturn}
+Serves as a public method for getting a pointer to the singleton. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+D:/development/cpp/toasty/include/\hyperlink{_ty_clock_8h}{TyClock.h}\end{DoxyCompactItemize}

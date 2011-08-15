@@ -1,0 +1,53 @@
+Toasty!
+a Marmalade SDK game framework
+
+Autor: Leandro 'The Phantom Lord' / 'Grün' Ostera
+
+Notes (07.20.2011): Project started on 07.12.2011 as I've seen that the current Marmalade game framework lacked the ease of use needed for RAD and prototyping. It actually started as just a sprite class and then, as I was developing a game, decided that some base classes and utilities would be helpful to speed up development. As it is said, the lone developer must work not hard, but smart.
+
+
+
+
+WISHLIST (08.12.2011)
+
+system:
+	config file handler
+	debug error/warning/message printer
+	string input
+	scripting language (python?)
+	file compressor / decompressor
+
+game/actors:
+	physics! - lots. box2D might be a good way to go
+	paths, and path following
+
+gfx/sprites:
+	resizing
+	effects (colorize, antialias, etc) - not to be used frequently
+
+gfx/gui:
+	really really simple and fast 1-2-3 gui model
+	button
+	slider
+	checkbox
+
+gfx/particlesystem: //might use pharticle as base
+	emitters, changers, destroyers
+	particlesystems using sprites
+	as particles are 'actors', paths and physics
+
+sfx:
+	loader (mp3, etcetera, might use tune4airplay!)
+	simple effects (chorus, reverb, phase*-1, distort)
+	renderer
+	positional sound
+	audio streaming from disk with ringbufferes (for large music files)
+	midi support
+
+net:
+	web / html support
+	bluetooth connecting
+	wifi connecting
+	internet connecting
+	auto-update tools 
+		

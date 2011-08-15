@@ -1,0 +1,339 @@
+\hypertarget{class_ty_scene}{
+\section{TyScene Class Reference}
+\label{class_ty_scene}\index{TyScene@{TyScene}}
+}
+
+
+{\ttfamily \#include $<$TyScene.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ty_scene_a4a67e21195aefc4cffa558bf3dc8eff9}{TyScene} (std::string pName=std::string(\char`\"{}\char`\"{}), std::string pCaption=std::string(\char`\"{}\char`\"{}), std::string pResGroup=std::string(\char`\"{}\char`\"{}), int64 pID=0, bool pZOrdered=false)
+\item 
+\hyperlink{class_ty_scene_a8ca66fa1d8619844217c2179b500473b}{$\sim$TyScene} ()
+\item 
+bool \hyperlink{class_ty_scene_a32370e2c1e0e18df025bfcb75a1d1dd6}{AddActor} (\hyperlink{class_i_ty_actor}{ITyActor} $\ast$pActor)
+\item 
+bool \hyperlink{class_ty_scene_aff2c7ea3337159d94ddf022ed7c631ee}{DeleteActor} (\hyperlink{class_i_ty_actor}{ITyActor} $\ast$pActor)
+\item 
+bool \hyperlink{class_ty_scene_ac1c97c365baed1b67acf9e0cffa9bfbb}{Create} ()
+\item 
+bool \hyperlink{class_ty_scene_a79a211baad6c0140f5af097460b17274}{Destroy} ()
+\item 
+bool \hyperlink{class_ty_scene_abd05190c7a08337256da8a2c48da0e5e}{Play} ()
+\item 
+int64 \hyperlink{class_ty_scene_a9e0456ca8013894f9af528a2c923dd44}{GetID} () const 
+\item 
+std::string \hyperlink{class_ty_scene_a105fd6a55f2e91229745c400ba2ce1a4}{GetResGroupName} () const 
+\item 
+std::string \hyperlink{class_ty_scene_aeb5c110acf3cec8670bf578220111ae6}{GetName} () const 
+\item 
+std::string \hyperlink{class_ty_scene_a68547f8db4f2b5f83638108e182a99b2}{GetCaption} () const 
+\item 
+CIwRect \hyperlink{class_ty_scene_aff2fbf485113b4c8e469868389050139}{GetBoundaries} () const 
+\item 
+bool \hyperlink{class_ty_scene_afedc682078fd7d25e71e2fa32f8b27c9}{IsZOrdered} () const 
+\item 
+void \hyperlink{class_ty_scene_ace5cc863c9c541f2329abe7fca343208}{SetName} (std::string pName)
+\item 
+void \hyperlink{class_ty_scene_a213aec59ed87ec5fb464ba7cd3c149f8}{SetCaption} (std::string pCaption)
+\item 
+void \hyperlink{class_ty_scene_a9b1924e36b7f10cc4a0838790e262079}{SetBoundaries} (CIwRect pBoundaries=CIwRect(0, 0, 0, 0))
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string \hyperlink{class_ty_scene_aea0b3d468bd83b94ee663c5a10e2e7cf}{m\_\-ResGroupName}
+\item 
+CIwResGroup $\ast$ \hyperlink{class_ty_scene_abb64484343fc018c448facb6df37c45e}{m\_\-ResGroup}
+\item 
+std::string \hyperlink{class_ty_scene_a310557de7a16133cd2d189e03cb395ac}{m\_\-Name}
+\item 
+std::string \hyperlink{class_ty_scene_a357f5bb0add663dfe7133073163b880c}{m\_\-Caption}
+\item 
+std::list$<$ \hyperlink{class_i_ty_actor}{ITyActor} $\ast$ $>$ \hyperlink{class_ty_scene_a2cd732152ac51a90ecd3f4ba2d83f318}{m\_\-Actors}
+\item 
+bool \hyperlink{class_ty_scene_aa23591667f1d19ae881d2ed9de96414f}{m\_\-ZOrdered}
+\item 
+bool \hyperlink{class_ty_scene_a5dddd2fb7a5dd01525c2a007c29285a1}{m\_\-Created}
+\item 
+CIwRect \hyperlink{class_ty_scene_ae51934772965f8104eafcaab3b730e3a}{m\_\-Boundaries}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file TyScene.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_ty_scene_a4a67e21195aefc4cffa558bf3dc8eff9}{
+\index{TyScene@{TyScene}!TyScene@{TyScene}}
+\index{TyScene@{TyScene}!TyScene@{TyScene}}
+\subsubsection[{TyScene}]{\setlength{\rightskip}{0pt plus 5cm}TyScene::TyScene (
+\begin{DoxyParamCaption}
+\item[{std::string}]{pName = {\ttfamily std::string(\char`\"{}\char`\"{})}, }
+\item[{std::string}]{pCaption = {\ttfamily std::string(\char`\"{}\char`\"{})}, }
+\item[{std::string}]{pResGroup = {\ttfamily std::string(\char`\"{}\char`\"{})}, }
+\item[{int64}]{pID = {\ttfamily 0}, }
+\item[{bool}]{pZOrdered = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_scene_a4a67e21195aefc4cffa558bf3dc8eff9}
+\hypertarget{class_ty_scene_a8ca66fa1d8619844217c2179b500473b}{
+\index{TyScene@{TyScene}!$\sim$TyScene@{$\sim$TyScene}}
+\index{$\sim$TyScene@{$\sim$TyScene}!TyScene@{TyScene}}
+\subsubsection[{$\sim$TyScene}]{\setlength{\rightskip}{0pt plus 5cm}TyScene::$\sim$TyScene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_scene_a8ca66fa1d8619844217c2179b500473b}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ty_scene_a32370e2c1e0e18df025bfcb75a1d1dd6}{
+\index{TyScene@{TyScene}!AddActor@{AddActor}}
+\index{AddActor@{AddActor}!TyScene@{TyScene}}
+\subsubsection[{AddActor}]{\setlength{\rightskip}{0pt plus 5cm}bool TyScene::AddActor (
+\begin{DoxyParamCaption}
+\item[{{\bf ITyActor} $\ast$}]{pActor}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_scene_a32370e2c1e0e18df025bfcb75a1d1dd6}
+\hypertarget{class_ty_scene_ac1c97c365baed1b67acf9e0cffa9bfbb}{
+\index{TyScene@{TyScene}!Create@{Create}}
+\index{Create@{Create}!TyScene@{TyScene}}
+\subsubsection[{Create}]{\setlength{\rightskip}{0pt plus 5cm}bool TyScene::Create (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_scene_ac1c97c365baed1b67acf9e0cffa9bfbb}
+\hypertarget{class_ty_scene_aff2c7ea3337159d94ddf022ed7c631ee}{
+\index{TyScene@{TyScene}!DeleteActor@{DeleteActor}}
+\index{DeleteActor@{DeleteActor}!TyScene@{TyScene}}
+\subsubsection[{DeleteActor}]{\setlength{\rightskip}{0pt plus 5cm}bool TyScene::DeleteActor (
+\begin{DoxyParamCaption}
+\item[{{\bf ITyActor} $\ast$}]{pActor}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_scene_aff2c7ea3337159d94ddf022ed7c631ee}
+\hypertarget{class_ty_scene_a79a211baad6c0140f5af097460b17274}{
+\index{TyScene@{TyScene}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!TyScene@{TyScene}}
+\subsubsection[{Destroy}]{\setlength{\rightskip}{0pt plus 5cm}bool TyScene::Destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_scene_a79a211baad6c0140f5af097460b17274}
+\hypertarget{class_ty_scene_aff2fbf485113b4c8e469868389050139}{
+\index{TyScene@{TyScene}!GetBoundaries@{GetBoundaries}}
+\index{GetBoundaries@{GetBoundaries}!TyScene@{TyScene}}
+\subsubsection[{GetBoundaries}]{\setlength{\rightskip}{0pt plus 5cm}CIwRect TyScene::GetBoundaries (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_scene_aff2fbf485113b4c8e469868389050139}
+
+
+Definition at line 56 of file TyScene.h.
+
+\hypertarget{class_ty_scene_a68547f8db4f2b5f83638108e182a99b2}{
+\index{TyScene@{TyScene}!GetCaption@{GetCaption}}
+\index{GetCaption@{GetCaption}!TyScene@{TyScene}}
+\subsubsection[{GetCaption}]{\setlength{\rightskip}{0pt plus 5cm}std::string TyScene::GetCaption (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_scene_a68547f8db4f2b5f83638108e182a99b2}
+
+
+Definition at line 55 of file TyScene.h.
+
+\hypertarget{class_ty_scene_a9e0456ca8013894f9af528a2c923dd44}{
+\index{TyScene@{TyScene}!GetID@{GetID}}
+\index{GetID@{GetID}!TyScene@{TyScene}}
+\subsubsection[{GetID}]{\setlength{\rightskip}{0pt plus 5cm}int64 TyScene::GetID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_scene_a9e0456ca8013894f9af528a2c923dd44}
+
+
+Definition at line 52 of file TyScene.h.
+
+\hypertarget{class_ty_scene_aeb5c110acf3cec8670bf578220111ae6}{
+\index{TyScene@{TyScene}!GetName@{GetName}}
+\index{GetName@{GetName}!TyScene@{TyScene}}
+\subsubsection[{GetName}]{\setlength{\rightskip}{0pt plus 5cm}std::string TyScene::GetName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_scene_aeb5c110acf3cec8670bf578220111ae6}
+
+
+Definition at line 54 of file TyScene.h.
+
+\hypertarget{class_ty_scene_a105fd6a55f2e91229745c400ba2ce1a4}{
+\index{TyScene@{TyScene}!GetResGroupName@{GetResGroupName}}
+\index{GetResGroupName@{GetResGroupName}!TyScene@{TyScene}}
+\subsubsection[{GetResGroupName}]{\setlength{\rightskip}{0pt plus 5cm}std::string TyScene::GetResGroupName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_scene_a105fd6a55f2e91229745c400ba2ce1a4}
+
+
+Definition at line 53 of file TyScene.h.
+
+\hypertarget{class_ty_scene_afedc682078fd7d25e71e2fa32f8b27c9}{
+\index{TyScene@{TyScene}!IsZOrdered@{IsZOrdered}}
+\index{IsZOrdered@{IsZOrdered}!TyScene@{TyScene}}
+\subsubsection[{IsZOrdered}]{\setlength{\rightskip}{0pt plus 5cm}bool TyScene::IsZOrdered (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_scene_afedc682078fd7d25e71e2fa32f8b27c9}
+
+
+Definition at line 57 of file TyScene.h.
+
+\hypertarget{class_ty_scene_abd05190c7a08337256da8a2c48da0e5e}{
+\index{TyScene@{TyScene}!Play@{Play}}
+\index{Play@{Play}!TyScene@{TyScene}}
+\subsubsection[{Play}]{\setlength{\rightskip}{0pt plus 5cm}bool TyScene::Play (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_scene_abd05190c7a08337256da8a2c48da0e5e}
+\hypertarget{class_ty_scene_a9b1924e36b7f10cc4a0838790e262079}{
+\index{TyScene@{TyScene}!SetBoundaries@{SetBoundaries}}
+\index{SetBoundaries@{SetBoundaries}!TyScene@{TyScene}}
+\subsubsection[{SetBoundaries}]{\setlength{\rightskip}{0pt plus 5cm}void TyScene::SetBoundaries (
+\begin{DoxyParamCaption}
+\item[{CIwRect}]{pBoundaries = {\ttfamily CIwRect(0,0,0,0)}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_scene_a9b1924e36b7f10cc4a0838790e262079}
+
+
+Definition at line 63 of file TyScene.h.
+
+\hypertarget{class_ty_scene_a213aec59ed87ec5fb464ba7cd3c149f8}{
+\index{TyScene@{TyScene}!SetCaption@{SetCaption}}
+\index{SetCaption@{SetCaption}!TyScene@{TyScene}}
+\subsubsection[{SetCaption}]{\setlength{\rightskip}{0pt plus 5cm}void TyScene::SetCaption (
+\begin{DoxyParamCaption}
+\item[{std::string}]{pCaption}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_scene_a213aec59ed87ec5fb464ba7cd3c149f8}
+
+
+Definition at line 60 of file TyScene.h.
+
+\hypertarget{class_ty_scene_ace5cc863c9c541f2329abe7fca343208}{
+\index{TyScene@{TyScene}!SetName@{SetName}}
+\index{SetName@{SetName}!TyScene@{TyScene}}
+\subsubsection[{SetName}]{\setlength{\rightskip}{0pt plus 5cm}void TyScene::SetName (
+\begin{DoxyParamCaption}
+\item[{std::string}]{pName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_scene_ace5cc863c9c541f2329abe7fca343208}
+
+
+Definition at line 59 of file TyScene.h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ty_scene_a2cd732152ac51a90ecd3f4ba2d83f318}{
+\index{TyScene@{TyScene}!m\_\-Actors@{m\_\-Actors}}
+\index{m\_\-Actors@{m\_\-Actors}!TyScene@{TyScene}}
+\subsubsection[{m\_\-Actors}]{\setlength{\rightskip}{0pt plus 5cm}std::list$<${\bf ITyActor}$\ast$$>$ {\bf TyScene::m\_\-Actors}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_scene_a2cd732152ac51a90ecd3f4ba2d83f318}
+
+
+Definition at line 21 of file TyScene.h.
+
+\hypertarget{class_ty_scene_ae51934772965f8104eafcaab3b730e3a}{
+\index{TyScene@{TyScene}!m\_\-Boundaries@{m\_\-Boundaries}}
+\index{m\_\-Boundaries@{m\_\-Boundaries}!TyScene@{TyScene}}
+\subsubsection[{m\_\-Boundaries}]{\setlength{\rightskip}{0pt plus 5cm}CIwRect {\bf TyScene::m\_\-Boundaries}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_scene_ae51934772965f8104eafcaab3b730e3a}
+
+
+Definition at line 25 of file TyScene.h.
+
+\hypertarget{class_ty_scene_a357f5bb0add663dfe7133073163b880c}{
+\index{TyScene@{TyScene}!m\_\-Caption@{m\_\-Caption}}
+\index{m\_\-Caption@{m\_\-Caption}!TyScene@{TyScene}}
+\subsubsection[{m\_\-Caption}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf TyScene::m\_\-Caption}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_scene_a357f5bb0add663dfe7133073163b880c}
+
+
+Definition at line 19 of file TyScene.h.
+
+\hypertarget{class_ty_scene_a5dddd2fb7a5dd01525c2a007c29285a1}{
+\index{TyScene@{TyScene}!m\_\-Created@{m\_\-Created}}
+\index{m\_\-Created@{m\_\-Created}!TyScene@{TyScene}}
+\subsubsection[{m\_\-Created}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf TyScene::m\_\-Created}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_scene_a5dddd2fb7a5dd01525c2a007c29285a1}
+
+
+Definition at line 23 of file TyScene.h.
+
+\hypertarget{class_ty_scene_a310557de7a16133cd2d189e03cb395ac}{
+\index{TyScene@{TyScene}!m\_\-Name@{m\_\-Name}}
+\index{m\_\-Name@{m\_\-Name}!TyScene@{TyScene}}
+\subsubsection[{m\_\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf TyScene::m\_\-Name}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_scene_a310557de7a16133cd2d189e03cb395ac}
+
+
+Definition at line 18 of file TyScene.h.
+
+\hypertarget{class_ty_scene_abb64484343fc018c448facb6df37c45e}{
+\index{TyScene@{TyScene}!m\_\-ResGroup@{m\_\-ResGroup}}
+\index{m\_\-ResGroup@{m\_\-ResGroup}!TyScene@{TyScene}}
+\subsubsection[{m\_\-ResGroup}]{\setlength{\rightskip}{0pt plus 5cm}CIwResGroup$\ast$ {\bf TyScene::m\_\-ResGroup}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_scene_abb64484343fc018c448facb6df37c45e}
+
+
+Definition at line 16 of file TyScene.h.
+
+\hypertarget{class_ty_scene_aea0b3d468bd83b94ee663c5a10e2e7cf}{
+\index{TyScene@{TyScene}!m\_\-ResGroupName@{m\_\-ResGroupName}}
+\index{m\_\-ResGroupName@{m\_\-ResGroupName}!TyScene@{TyScene}}
+\subsubsection[{m\_\-ResGroupName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf TyScene::m\_\-ResGroupName}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_scene_aea0b3d468bd83b94ee663c5a10e2e7cf}
+
+
+Definition at line 15 of file TyScene.h.
+
+\hypertarget{class_ty_scene_aa23591667f1d19ae881d2ed9de96414f}{
+\index{TyScene@{TyScene}!m\_\-ZOrdered@{m\_\-ZOrdered}}
+\index{m\_\-ZOrdered@{m\_\-ZOrdered}!TyScene@{TyScene}}
+\subsubsection[{m\_\-ZOrdered}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf TyScene::m\_\-ZOrdered}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_scene_aa23591667f1d19ae881d2ed9de96414f}
+
+
+Definition at line 22 of file TyScene.h.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+D:/development/cpp/toasty/include/\hyperlink{_ty_scene_8h}{TyScene.h}\end{DoxyCompactItemize}

@@ -1,16 +1,21 @@
 files
 {
 	(.)
-	SingletonTest.cpp
+	ImageTest.cpp
 	MainTest.cpp
 		
 	(../include)
-	TySingleton.h
+	TyImage.h
+
+	(../src)
+	TyImage.cpp
 }
 
 subprojects
 {
 	iwutil
+	iw2d
+	iwresmanager
 	TUT
 }	
 

@@ -16,6 +16,7 @@
 /*
  * Marmalade SDK Header file includes
  */
+#include <TyImage.h>
 #include <TySprite.h>
 #include <Iw2D.h>
 #include <IwGxTypes.h>
@@ -33,15 +34,64 @@
  *	You might provide your own set of states but these (so far) are useful enough.
  */
 enum TOASTY_ACTOR_STATE {
-		TOASTY_ACTOR_WALKING=0,	/*! Actor is moving */
-		TOASTY_ACTOR_ATTACKING, /*! Actor is attacking */
-		TOASTY_ACTOR_DEFENDING, /*! Actor is defending */
-		TOASTY_ACTOR_STANDING,  /*! Actor is holding position */
-		TOASTY_ACTOR_APPEARING, /*! Actor is appearing */
-		TOASTY_ACTOR_DYING,		/*! Actor is dying */
-		TOASTY_ACTOR_DEAD,		/*! Actor is dead */
-		TOASTY_ACTOR_IDLE		/*! Actor is idle */
+		/*! Actor is moving */
+		TOASTY_ACTOR_STATE_WALKING=0,	
+		/*! Actor is attacking */
+		TOASTY_ACTOR_STATE_ATTACKING, 
+		/*! Actor is defending */
+		TOASTY_ACTOR_STATE_DEFENDING, 
+		/*! Actor is holding position */
+		TOASTY_ACTOR_STATE_STANDING,  
+		/*! Actor is appearing */
+		TOASTY_ACTOR_STATE_APPEARING, 
+		/*! Actor is dying */
+		TOASTY_ACTOR_STATE_DYING,	
+		/*! Actor is dead */
+		TOASTY_ACTOR_STATE_DEAD,		
+		/*! Actor is idle */
+		TOASTY_ACTOR_STATE_IDLE,
+		/*! User defined state 0 */
+		TOASTY_ACTOR_STATE_USER0,
+		/*! User defined state 1 */
+		TOASTY_ACTOR_STATE_USER1,
+		/*! User defined state 2 */
+		TOASTY_ACTOR_STATE_USER2,
+		/*! User defined state 3 */
+		TOASTY_ACTOR_STATE_USER3,
+		/*! User defined state 4 */
+		TOASTY_ACTOR_STATE_USER4,
+		/*! User defined state 5 */
+		TOASTY_ACTOR_STATE_USER5
 	};
+
+/*!
+ *	\class	TyState
+ *	\brief	Inner class used to relate a Actor State with a Sprite.
+ */
+class TyState {
+public:
+	/*!
+	 * \property	sprite	TySprite representing the actors state.
+	 */
+	TySprite*			sprite;
+
+	/*!
+	* \property		state	TOASTY_ACTOR_STATE value.
+	*/
+	TOASTY_ACTOR_STATE	state;
+
+	/*!
+	 *	\brief	Constructor
+	 *	\param	pSprite	TySprite to associate with pState
+	 *	\param	pState	TOASTY_ACTOR_STATE to associate with pSprite
+	 *
+	 *	Simply inits internal values.
+	 */
+	TyState( TySprite* pSprite = 0, TOASTY_ACTOR_STATE pState = TOASTY_ACTOR_STATE_IDLE): sprite(pSprite), state(pState)
+	{
+		;
+	}
+};
 
 class ITyActor {
 	
@@ -86,35 +136,6 @@ class ITyActor {
 		 * \property	m_Solid		Bool flag used for collision checking.
 		 */
 		bool					m_Solid;
-
-		/*!
-		 *	\class	TyState
-		 *	\brief	Inner class used to relate a Actor State with a Sprite.
-		 */
-		class TyState {
-		public:
-			/*!
-			 * \property	sprite	TySprite representing the actors state.
-			 */
-			TySprite*			sprite;
-
-			/*!
-			* \property		state	TOASTY_ACTOR_STATE value.
-			*/
-			TOASTY_ACTOR_STATE	state;
-
-			/*!
-			 *	\brief	Constructor
-			 *	\param	pSprite	TySprite to associate with pState
-			 *	\param	pState	TOASTY_ACTOR_STATE to associate with pSprite
-			 *
-			 *	Simply inits internal values.
-			 */
-			TyState( TySprite* pSprite = 0, TOASTY_ACTOR_STATE pState = TOASTY_ACTOR_IDLE): sprite(pSprite), state(pState)
-			{
-				;
-			}
-		};
 
 		/*!
 		 * \property	m_States	std::vector of TyStates used to contain all the states of the actor
@@ -307,13 +328,21 @@ class ITyActor {
 		 *	\brief	Will be called after Rendering in each step, if Active.
 		 *	\returns void
 		 */
-		virtual void	OnStepEnd()											{ ; }	//this one is called after OnRender so if you need to update anything between rendering and OnStepStart, do it here
+		virtual void	OnStepEnd()											
+		{
+			if(m_CurrentState)
+				m_CurrentState->sprite->Step();
+		}	//this one is called after OnRender so if you need to update anything between rendering and OnStepStart, do it here
 
 		/*!
 		 *	\brief	Will be called before StepEnd, but at the end of each step, if Visible.
 		 *	\returns void
 		 */
-		virtual void	OnRender()											{ ; }	//this is called before OnStepEnd and after OnStep
+		virtual void	OnRender()
+		{
+			if(m_CurrentState)
+				m_CurrentState->sprite->Render(m_Position);
+		}	//this is called before OnStepEnd and after OnStep
 
 		/*!
 		 *	\brief	Will be called when two actors collide, if Solid.
@@ -347,15 +376,15 @@ class ITyActor {
 
 		/*!
 		 *	\brief	Accessor for the Actors Current State.
-		 *	\returns TOASTY_ACTOR_STATE	The actors Current State as TOASTY_ACTOR_STATE.
+		 *	\returns TyState	Actors current state struct incluiding enum and sprite pointer.
 		 */
-		TOASTY_ACTOR_STATE	GetCurrentState()	const		{	return m_CurrentState->state;	}
+		TyState				GetCurrentState()	const		{	return (*m_CurrentState);	}
 
 		/*!
 		 *	\brief	Accessor for the Actor Last State.
-		 *	\returns TOASTY_ACTOR_STATE	The actors Last State as TOASTY_ACTOR_STATE.
+		 *	\returns TyState	Actors last state struct incluiding enum and sprite pointer.
 		 */
-		TOASTY_ACTOR_STATE	GetLastState()		const		{	return m_LastState->state;		}
+		TyState				GetLastState()	const		{	return (*m_LastState);	}
 
 		/*!
 		 *	\brief	Accessor for the Actors Mask.
@@ -416,6 +445,12 @@ class ITyActor {
 		 *	\param	pPosition	CIwSVec2 vector for Position.
 		 */
 		void	SetPosition(CIwSVec2 pPosition)				{	m_Position = pPosition;		}
+
+		/*!
+		 *	\brief Adds pMove to the current position.
+		 *	\param	pMove	CIwSVec2 vector for position delta.
+		 */
+		void	Move(CIwSVec2 pMove)						{	m_Position = m_Position + pMove;	}
 };
 
 /*!

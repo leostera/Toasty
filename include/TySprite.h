@@ -2,8 +2,8 @@
 
 	\class			TySprite
 	\brief			Animated sprite class.
-	\date			11/07/2011
-	\version		0.1					
+	\date			14/08/2011
+	\version		0.2				
 	\author			Leandro Ostera
 
 	Animation class that features non-complete squared sprite sheets support.
@@ -22,50 +22,19 @@
 #include <Iw2D.h>
 
 /*
+ * Toasty! Header file includes
+ */
+#include <TyImage.h>
+
+/*
  * Standard C++ Header file includes
  */
 #include <string>
 
 
-class TySprite
+class TySprite : public TyImage
 {
 private:
-	/*!
-	 * \property m_Built bool flag to determine whether the object is already built or not
-	 */
-	bool		m_Built; 
-
-	/*!
-	 * \property m_Flip CIwSVec2 vector determines if sprite is or not flipped in each axis.
-	 */
-	CIwSVec2	m_Flip;
-
-	/*!
-	 * \property m_Angle rotation angle in radians (32-bits integer)
-	 */
-	iwangle		m_Angle;
-
-	/*!
-	 * \property m_Center rotation Center.
-	 */
-	CIwSVec2	m_Center;
-
-	/*!
-	 *	is the pointer to CIwImage that actually holds the sprite sheet image.
-	 *	It uses the Marmalade SDK resource manager to load it
-	 */
-	CIw2DImage*		m_SpriteSheet;
-
-	/*!
-	 *	name of the resource loaded into m_SpriteSheet;
-	 */
-	std::string		m_ResourceName;
-
-	/*!
-	 *	name of the group where the resource named m_ResourceName is located
-	 */
-	CIwResGroup*	m_ResourceGroup;
-	
 	/*!
 	 *	(x,y) position of the currently to be drawn frame
 	 */
@@ -191,21 +160,9 @@ public:
 	 *
 	 *	\param	pSprite	The sprite object to be assigned (copied)
 	 *
-	 *	Copies all data from the sprite parameter object, incluiding the pointer to the spritesheet.
+	 *	Copies all data from the sprite parameter object, incluiding the pointer to the imagesheet.
 	 */
 	TySprite&	operator= (TySprite const& pSprite);
-
-	/*!
-	 *	\brief	Comparison operator
-	 *
-	 *	\param	pSprite1	A sprite object to compare against pSprite2
-	 *	\param	pSprite21	A sprite object to compare against pSprite1
-	 *
-	 *	\returns	bool
-	 *
-	 *	Compares both sprites and returns true if are equal, or false if not.
-	 */
-	bool		operator== (TySprite const& pSprite) const;
 	
 	/*!
 	 *	\brief	Updated the sprite.
@@ -320,42 +277,6 @@ public:
 	inline bool		IsPlaying()			const { return (!m_Stop&&!m_Pause)?true:false; }
 
 	/*!
-	 *	\brief Is the object built?
-	 *
-	 *	\returns		bool	
-	 *
-	 *	True if the sprite has been built, false otherwise.
-	 */
-	inline bool		IsBuilt()			const { return m_Built; }
-
-	/*!
-	 *	\brief Is the object flipped?
-	 *
-	 *	\returns		CIwSVec2
-	 *
-	 *	CIwSVec2 boolean vector with (1,0) for flipped on X, (0,1) for flipped on Y, (1,1) for flipped on both, and (0,0) for not flipped at all.
-	 */
-	inline CIwSVec2	IsFlipped()			const { return m_Flip; }
-
-	/*!
-	 *	\brief	Spritesheet width.
-	 *
-	 *	\returns		int16	
-	 *
-	 *	Returns current spritesheet width as integer.
-	 */
-	int16		GetWidth()			const { return m_SpriteSheet->GetWidth(); }
-	
-	/*!
-	 *	\brief	Spritesheet height.
-	 *
-	 *	\returns		int16
-	 *
-	 *	Returns current spritesheet height as integer.
-	 */
-	int16		GetHeigth()			const { return m_SpriteSheet->GetHeight(); }
-
-	/*!
 	 *	\brief	Get the maximum useful frame.	 
 	 *
 	 *	\returns		int16
@@ -402,24 +323,6 @@ public:
 	CIwSVec2		GetFrameOffset()	const { return m_Offset; }
 
 	/*!
-	 *	\brief	Get the resource name string.
-	 *
-	 *	\returns		std::string
-	 *
-	 *	Returns a copy of the resource name as a std::string.
-	 */
-	std::string			GetResourceName()	const { return m_ResourceName; }
-
-	/*!
-	 *	\brief	Get the resources group pointer.	 
-	 *
-	 *	\returns		CIwResGroup*
-	 *
-	 *	Returns a pointer to the current resource group.
-	 */
-	CIwResGroup*		GetResourceGroup()	const { return m_ResourceGroup; }
-
-	/*!
 	 *	\brief	Pointer to const this.	 
 	 *
 	 *	\returns		const TySprite*
@@ -427,49 +330,6 @@ public:
 	 *	Returns a pointer to a const TySprite (which is this).
 	 */
 	const TySprite*	GetCopy()		const { return this; }
-
-	/*!
-	 *	\brief	Animation rotation.
-	 *
-	 *	\returns	Returns the current angle in radians.
-	 *
-	 */
-	iwangle		GetAngle()	const { return m_Angle; }
-
-	/*!
-	 *	\brief	Animation rotation Center.
-	 *
-	 *	\returns	Returns the current Center as a vector.
-	 *
-	 */
-	CIwSVec2	GetCenter()	const { return m_Center; }
-
-	/*!
-	 *	\brief	Rotates the animation.
-	 *	\returns	void
-	 *	\param	pRads	Angle in radians (32-bits integer)
-	 *
-	 *	Rotates the animation by pRads radians counterclockwise.
-	 */
-	void		Rotate(iwangle	pRads);
-
-	/*!
-	 *	\brief	Center the animation for rotation
-	 *	\returns	void
-	 *	\param	pCenter	integer vector for animation center.
-	 *
-	 *	Centers the animation at the given coordinates for rotation.
-	 */
-	void		Center(CIwSVec2 pCenter = CIwSVec2::g_Zero);
-
-	/*!
-	 *	\brief	Flips the animation
-	 *	\returns	void
-	 *	\param	pFlip	CIwSVec2 vector for flipping on X and/or Y axis.
-	 *
-	 *	Flips the animation according the the pFlip vector. If the current Flip vector equals the passed Flip vector, animation is unflipped.
-	 */
-	void		Flip(CIwSVec2 pFlip = CIwSVec2::g_Zero);
 
 	/*!
 	 *	\brief	Render the animation.

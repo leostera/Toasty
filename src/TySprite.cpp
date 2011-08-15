@@ -1,14 +1,5 @@
-#include "TySprite.h"
+#include <TySprite.h>
 #include <s3eConfig.h>
-
-bool	TySprite::operator== (TySprite const& pSprite) const
-{
-	bool value = false;
-	if(this->GetResourceName().compare(pSprite.GetResourceName())
-		&& this->GetResourceGroup() == pSprite.GetResourceGroup() )
-		value = true;
-	return value;		
-}
 
 TySprite&	TySprite::operator = (TySprite const& pSprite)
 {
@@ -17,7 +8,7 @@ TySprite&	TySprite::operator = (TySprite const& pSprite)
 		if(pSprite.IsBuilt())
 		{
 			if(m_Built)
-				delete m_SpriteSheet;
+				delete m_Image;
 			m_Built = m_Pause = m_Stop = false;
 			m_Offset = m_CurrentFrame = m_DrawRect = CIwSVec2::g_Zero;			
 			m_FrameCounter = 0;
@@ -34,7 +25,7 @@ TySprite&	TySprite::operator = (TySprite const& pSprite)
 }
 
 TySprite::TySprite(CIwResGroup* pGroup, std::string pName, bool pLoop)
-	: m_Built(false), m_Offset(CIwSVec2::g_Zero), m_CurrentFrame(CIwSVec2::g_Zero), m_FrameCounter(0), m_DrawRect(CIwSVec2::g_Zero),m_Pause(false),m_Stop(false),m_Loop(pLoop)
+	: TyImage(), m_Offset(CIwSVec2::g_Zero), m_CurrentFrame(CIwSVec2::g_Zero), m_FrameCounter(0), m_DrawRect(CIwSVec2::g_Zero),m_Pause(false),m_Stop(false),m_Loop(pLoop)
 {
 	LoadFromResource(pGroup,pName);
 }
@@ -42,17 +33,17 @@ TySprite::TySprite(CIwResGroup* pGroup, std::string pName, bool pLoop)
 TySprite::~TySprite()
 {
 	if(m_Built)
-		delete m_SpriteSheet;
+		delete m_Image;
 	m_Built = false;
 }
 
 TySprite::TySprite(TySprite const& pSprite)
-: m_Built(false), m_Offset(CIwSVec2::g_Zero), m_CurrentFrame(CIwSVec2::g_Zero), m_FrameCounter(0), m_DrawRect(CIwSVec2::g_Zero),m_Pause(false),m_Stop(false),m_MaxFrames(pSprite.GetMaxFrames()), m_FrameSize(pSprite.GetFrameSize()),m_Loop(pSprite.IsLooping())
+: TyImage(), m_Offset(CIwSVec2::g_Zero), m_CurrentFrame(CIwSVec2::g_Zero), m_FrameCounter(0), m_DrawRect(CIwSVec2::g_Zero),m_Pause(false),m_Stop(false),m_MaxFrames(pSprite.GetMaxFrames()), m_FrameSize(pSprite.GetFrameSize()),m_Loop(pSprite.IsLooping())
 {
 	if(pSprite.IsBuilt())
 	{
 		if(m_Built)
-			delete m_SpriteSheet;
+			delete m_Image;
 		LoadFromResource(pSprite.GetResourceGroup(),pSprite.GetResourceName(),false);		
 	}			
 }
@@ -89,10 +80,10 @@ bool TySprite::LoadFromResource(CIwResGroup* pGroup, std::string pName, bool pDa
 				m_MaxFrames = temp;
 			}
 
-			m_SpriteSheet = Iw2DCreateImageResource(m_ResourceName.c_str()); 
+			m_Image = Iw2DCreateImageResource(m_ResourceName.c_str()); 
 
-			m_Frames.x = m_SpriteSheet->GetWidth() / m_FrameSize.x;
-			m_Frames.y = m_SpriteSheet->GetHeight() / m_FrameSize.y;	
+			m_Frames.x = m_Image->GetWidth() / m_FrameSize.x;
+			m_Frames.y = m_Image->GetHeight() / m_FrameSize.y;	
 			m_Center.x = m_FrameSize.x / 2;
 			m_Center.y = m_FrameSize.y / 2;
 			m_Angle = 0;
@@ -118,7 +109,7 @@ void TySprite::Render(CIwSVec2 pPosition)
 	else if( m_Flip.y > 0 && m_Flip.x <= 0)
 		Iw2DSetImageTransform(IW_2D_IMAGE_TRANSFORM_FLIP_Y);
 
-	Iw2DDrawImageRegion(m_SpriteSheet,
+	Iw2DDrawImageRegion(m_Image,
 						pPosition,
 						m_FrameSize,
 						m_DrawRect,
@@ -128,22 +119,6 @@ void TySprite::Render(CIwSVec2 pPosition)
 		Iw2DSetTransformMatrix(CIwMat2D::g_Identity);
 	if( m_Flip.x > 0 || m_Flip.y > 0)
 		Iw2DSetImageTransform(IW_2D_IMAGE_TRANSFORM_NONE);
-}
-
-void TySprite::Rotate(iwangle pRads)
-{
-	m_Angle = pRads;
-}
-
-void TySprite::Center(CIwSVec2 pCenter)
-{
-	m_Center = pCenter;
-}
-
-void TySprite::Flip(CIwSVec2 pFlip)
-{
-	m_Flip.x = pFlip.x;
-	m_Flip.y = pFlip.y;
 }
 
 bool TySprite::Step()

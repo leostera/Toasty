@@ -40,7 +40,7 @@ namespace tut
 	void testobject::test<11>()
 	{
 		set_test_name("Add States");
-		IwGetResManager()->LoadGroup("sprites.group");
+		IwGetResManager()->LoadGroup("../examples/data/sprites.group");
 		grp = IwGetResManager()->GetGroupNamed("sprites");
 		
 		spr = new TySprite(grp,"1");
@@ -59,7 +59,7 @@ namespace tut
 	{
 		set_test_name("Delete States");
 
-		IwGetResManager()->LoadGroup("sprites.group");
+		IwGetResManager()->LoadGroup("../examples/data/sprites.group");
 		grp = IwGetResManager()->GetGroupNamed("sprites");
 		
 		spr = new TySprite(grp,"1");
@@ -79,7 +79,7 @@ namespace tut
 	void testobject::test<13>()
 	{
 		set_test_name("Set Current State");
-		IwGetResManager()->LoadGroup("sprites.group");
+		IwGetResManager()->LoadGroup("../examples/data/sprites.group");
 		grp = IwGetResManager()->GetGroupNamed("sprites");
 		
 		spr = new TySprite(grp,"1");

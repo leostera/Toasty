@@ -3,24 +3,7 @@ files
 	(.)
 	InputTest.cpp
 	MainTest.cpp
-		
-	(../include)
-	TyInput.h
-	[Toasty]
-	TyImage.h
-
-	(../src)
-	[Toasty]
-	TyImage.cpp
-	[]
-	TyInput.cpp
+	InheritedActor.h
 }
 
-subprojects
-{
-	iwutil
-	iw2d
-	TUT
-}	
-
-includepath ../include
+subproject "../Toasty"

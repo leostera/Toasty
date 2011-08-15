@@ -5,6 +5,7 @@
 #include <Iw2D.h>
 #include <IwResManager.h>
 #include <TyInput.h>
+#include <TyClock.h>
 
 using std::exception;
 using std::cerr;
@@ -20,8 +21,9 @@ int main()
 	int result;
 
 	Iw2DInit();
-	IwResManagerInit();		
+	IwResManagerInit();	
 	TyInputInit();
+	TyClockInit();
 
     tut::reporter reporter;
     tut::runner.get().set_callback(&reporter);
@@ -29,6 +31,7 @@ int main()
 
 	result = !reporter.all_ok();
 	
+	TyClockTerminate();
 	TyInputTerminate();
 	IwResManagerTerminate();
 	Iw2DTerminate();

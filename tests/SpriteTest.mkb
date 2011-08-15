@@ -6,9 +6,14 @@ files
 		
 	(../include)
 	TySprite.h
+	[Toasty]
+	TyImage.h
 
 	(../src)
+	[]
 	TySprite.cpp
+	[Toasty]
+	TyImage.cpp
 }
 
 subprojects

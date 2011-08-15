@@ -6,56 +6,56 @@
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{class_iw_clock}{IwClock}
-\end{DoxyCompactItemize}
+class \hyperlink{class_ty_clock}{TyClock}
+\begin{DoxyCompactList}\small\item\em The almighty clock. returns time in ms from loop to loop and is capable of frame rate capping. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{_ty_clock_8h_a6472b855774c1c0dd938a544509aa288}{IwClockInit} ()
+void \hyperlink{_ty_clock_8h_ad695ce815739b369d178734da8e50bf7}{TyClockInit} ()
 \item 
-void \hyperlink{_ty_clock_8h_a5a79c75d7b979ef259ea87947d20305f}{IwClockTerminate} ()
+void \hyperlink{_ty_clock_8h_ab5556d27e10cc634934c3ce3d05512f6}{TyClockTerminate} ()
 \item 
-\hyperlink{class_iw_clock}{IwClock} $\ast$ \hyperlink{_ty_clock_8h_a001f2a4d48cb5b9ae4b3c11eebb7d8a2}{IwGetClock} ()
+\hyperlink{class_ty_clock}{TyClock} $\ast$ \hyperlink{_ty_clock_8h_a9deae82c29cb3ce85dbd36fbb39c8733}{TyGetClock} ()
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\hypertarget{_ty_clock_8h_a6472b855774c1c0dd938a544509aa288}{
-\index{TyClock.h@{TyClock.h}!IwClockInit@{IwClockInit}}
-\index{IwClockInit@{IwClockInit}!TyClock.h@{TyClock.h}}
-\subsubsection[{IwClockInit}]{\setlength{\rightskip}{0pt plus 5cm}void IwClockInit (
+\hypertarget{_ty_clock_8h_ad695ce815739b369d178734da8e50bf7}{
+\index{TyClock.h@{TyClock.h}!TyClockInit@{TyClockInit}}
+\index{TyClockInit@{TyClockInit}!TyClock.h@{TyClock.h}}
+\subsubsection[{TyClockInit}]{\setlength{\rightskip}{0pt plus 5cm}void TyClockInit (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{_ty_clock_8h_a6472b855774c1c0dd938a544509aa288}
-
-
-Definition at line 156 of file TyClock.h.
-
-\hypertarget{_ty_clock_8h_a5a79c75d7b979ef259ea87947d20305f}{
-\index{TyClock.h@{TyClock.h}!IwClockTerminate@{IwClockTerminate}}
-\index{IwClockTerminate@{IwClockTerminate}!TyClock.h@{TyClock.h}}
-\subsubsection[{IwClockTerminate}]{\setlength{\rightskip}{0pt plus 5cm}void IwClockTerminate (
+\label{_ty_clock_8h_ad695ce815739b369d178734da8e50bf7}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Initializes the class by creating the singleton. Note: not strictly necessary since IwGetClock also calls it just in case! \hypertarget{_ty_clock_8h_ab5556d27e10cc634934c3ce3d05512f6}{
+\index{TyClock.h@{TyClock.h}!TyClockTerminate@{TyClockTerminate}}
+\index{TyClockTerminate@{TyClockTerminate}!TyClock.h@{TyClock.h}}
+\subsubsection[{TyClockTerminate}]{\setlength{\rightskip}{0pt plus 5cm}void TyClockTerminate (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{_ty_clock_8h_a5a79c75d7b979ef259ea87947d20305f}
-
-
-Definition at line 162 of file TyClock.h.
-
-\hypertarget{_ty_clock_8h_a001f2a4d48cb5b9ae4b3c11eebb7d8a2}{
-\index{TyClock.h@{TyClock.h}!IwGetClock@{IwGetClock}}
-\index{IwGetClock@{IwGetClock}!TyClock.h@{TyClock.h}}
-\subsubsection[{IwGetClock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf IwClock}$\ast$ IwGetClock (
+\label{_ty_clock_8h_ab5556d27e10cc634934c3ce3d05512f6}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Kills the singleton. This one IS necessary, otherwise leaks will be reported. \hypertarget{_ty_clock_8h_a9deae82c29cb3ce85dbd36fbb39c8733}{
+\index{TyClock.h@{TyClock.h}!TyGetClock@{TyGetClock}}
+\index{TyGetClock@{TyGetClock}!TyClock.h@{TyClock.h}}
+\subsubsection[{TyGetClock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TyClock}$\ast$ TyGetClock (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{_ty_clock_8h_a001f2a4d48cb5b9ae4b3c11eebb7d8a2}
+\label{_ty_clock_8h_a9deae82c29cb3ce85dbd36fbb39c8733}
+FRIEND FUNCTIONS DECLARATIONS
 
-
-Definition at line 168 of file TyClock.h.
-
+\begin{DoxyReturn}{Returns}
+TyClock$\ast$ pointer to the singleton class.
+\end{DoxyReturn}
+Serves as a public method for getting a pointer to the singleton. 

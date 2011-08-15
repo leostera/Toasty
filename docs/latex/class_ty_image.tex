@@ -1,0 +1,622 @@
+\hypertarget{class_ty_image}{
+\section{TyImage Class Reference}
+\label{class_ty_image}\index{TyImage@{TyImage}}
+}
+
+
+Static image class.  
+
+
+
+
+{\ttfamily \#include $<$TyImage.h$>$}
+
+Inheritance diagram for TyImage:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ty_image}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ty_image_a8eba2fbf74bcad66d4ac918bbcaff3d3}{TyImage} ()
+\begin{DoxyCompactList}\small\item\em Null constructor. Does nothing: useful when inheriting. \end{DoxyCompactList}\item 
+\hyperlink{class_ty_image_ac6bb645510cb5990fb546a13e67b3b78}{TyImage} (CIwResGroup $\ast$pGroup, std::string pName)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_ty_image_a8d0afe12b66c11ddb057d031cdcc0e06}{$\sim$TyImage} ()
+\begin{DoxyCompactList}\small\item\em Cleans up the object. \end{DoxyCompactList}\item 
+\hyperlink{class_ty_image_aa925b26d19f52e846001a6133e8a15bb}{TyImage} (\hyperlink{class_ty_image}{TyImage} const \&pImage)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_ty_image}{TyImage} \& \hyperlink{class_ty_image_af2210a3cc8ef239e4b4f2668771d1360}{operator=} (\hyperlink{class_ty_image}{TyImage} const \&pImage)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+bool \hyperlink{class_ty_image_a2837205d02eca3789ca60ef2fabb13e0}{operator==} (\hyperlink{class_ty_image}{TyImage} const \&pImage) const 
+\begin{DoxyCompactList}\small\item\em Comparison operator. \end{DoxyCompactList}\item 
+bool \hyperlink{class_ty_image_a4f1a45987b5cc4be8960a6a6b4091515}{IsBuilt} () const 
+\begin{DoxyCompactList}\small\item\em Is the object built? \end{DoxyCompactList}\item 
+CIwSVec2 \hyperlink{class_ty_image_ab09c2f7b0f02f515fae45d5a058e3284}{IsFlipped} () const 
+\begin{DoxyCompactList}\small\item\em Is the object flipped? \end{DoxyCompactList}\item 
+CIwSVec2 \hyperlink{class_ty_image_adc2770783bb985d944247270468d7c21}{GetSize} () const 
+\begin{DoxyCompactList}\small\item\em Image width as CIwSVec2 integer vector. \end{DoxyCompactList}\item 
+int16 \hyperlink{class_ty_image_afb46a63dca96bcdb26aa0610aacaaa66}{GetWidth} () const 
+\begin{DoxyCompactList}\small\item\em Spritesheet width. \end{DoxyCompactList}\item 
+int16 \hyperlink{class_ty_image_a8b88cce6ca9d65532ad4c60fc8e651a4}{GetHeigth} () const 
+\begin{DoxyCompactList}\small\item\em Spritesheet height. \end{DoxyCompactList}\item 
+std::string \hyperlink{class_ty_image_af630b3defe704e239378120e68dbbb70}{GetResourceName} () const 
+\begin{DoxyCompactList}\small\item\em Get the resource name string. \end{DoxyCompactList}\item 
+CIwResGroup $\ast$ \hyperlink{class_ty_image_a706a3787b40ec13b5c61035a3bfdd016}{GetResourceGroup} () const 
+\begin{DoxyCompactList}\small\item\em Get the resources group pointer. \end{DoxyCompactList}\item 
+const \hyperlink{class_ty_image}{TyImage} $\ast$ \hyperlink{class_ty_image_a48acb344f18ab58e7603876366f5fc58}{GetCopy} () const 
+\begin{DoxyCompactList}\small\item\em Pointer to const this. \end{DoxyCompactList}\item 
+iwangle \hyperlink{class_ty_image_a5a668f8889876f414a9ada1a2c48a363}{GetAngle} () const 
+\begin{DoxyCompactList}\small\item\em Image rotation. \end{DoxyCompactList}\item 
+CIwSVec2 \hyperlink{class_ty_image_ae2ff69a9cf1df8072f8c7ce72c54d0cf}{GetCenter} () const 
+\begin{DoxyCompactList}\small\item\em Image rotation Center. \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_image_a04fa3888567c658155b8e1bafacdcc2f}{Rotate} (iwangle pRads)
+\begin{DoxyCompactList}\small\item\em Rotates the image. \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_image_ada0106ce57cc13b9b646c60919043f4b}{Center} (CIwSVec2 pCenter=CIwSVec2::g\_\-Zero)
+\begin{DoxyCompactList}\small\item\em Center the image for rotation. \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_image_a5a5d78591702db018684d90a3caab367}{Flip} (CIwSVec2 pFlip=CIwSVec2::g\_\-Zero)
+\begin{DoxyCompactList}\small\item\em Flips the image. \end{DoxyCompactList}\item 
+void \hyperlink{class_ty_image_ae15f22535190bfe2e848e4b1a6dee494}{Render} (CIwSVec2 pPosition=CIwSVec2::g\_\-Zero)
+\begin{DoxyCompactList}\small\item\em Render the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_ty_image_a75ac7a92ab126c2818e92728ff812b3d}{LoadFromResource} (CIwResGroup $\ast$pGroup, std::string pName)
+\begin{DoxyCompactList}\small\item\em Loads a resource from a resource group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_ty_image_a314c8e3b0c05ad97c8c8bb7cc39b5ea6}{m\_\-Built}
+\item 
+CIwSVec2 \hyperlink{class_ty_image_acf79c8bc250ac9f0c630d8cc77376284}{m\_\-Flip}
+\item 
+iwangle \hyperlink{class_ty_image_a61002e26997486e47f8fd35aae194ddb}{m\_\-Angle}
+\item 
+CIwSVec2 \hyperlink{class_ty_image_a99aad782345362b97874eb63331aade0}{m\_\-Center}
+\item 
+CIw2DImage $\ast$ \hyperlink{class_ty_image_ae087e8e0af860b1b8e0df36fe28b591f}{m\_\-Image}
+\item 
+std::string \hyperlink{class_ty_image_aabd5f1076f03127120cfbe3360331b0c}{m\_\-ResourceName}
+\item 
+CIwResGroup $\ast$ \hyperlink{class_ty_image_a4b278a1be30ad7f5abc47f008bbbdfc4}{m\_\-ResourceGroup}
+\item 
+CIwSVec2 \hyperlink{class_ty_image_a1a2f362a92fb810372f9d4caedaf9f3f}{m\_\-Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Static image class. 
+
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$
+
+\begin{DoxyDate}{Date}
+14/08/2011 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Leandro Ostera 
+\end{DoxyAuthor}
+
+
+Definition at line 27 of file TyImage.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_ty_image_a8eba2fbf74bcad66d4ac918bbcaff3d3}{
+\index{TyImage@{TyImage}!TyImage@{TyImage}}
+\index{TyImage@{TyImage}!TyImage@{TyImage}}
+\subsubsection[{TyImage}]{\setlength{\rightskip}{0pt plus 5cm}TyImage::TyImage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_image_a8eba2fbf74bcad66d4ac918bbcaff3d3}
+
+
+Null constructor. Does nothing: useful when inheriting. 
+
+
+
+Definition at line 97 of file TyImage.h.
+
+\hypertarget{class_ty_image_ac6bb645510cb5990fb546a13e67b3b78}{
+\index{TyImage@{TyImage}!TyImage@{TyImage}}
+\index{TyImage@{TyImage}!TyImage@{TyImage}}
+\subsubsection[{TyImage}]{\setlength{\rightskip}{0pt plus 5cm}TyImage::TyImage (
+\begin{DoxyParamCaption}
+\item[{CIwResGroup $\ast$}]{pGroup, }
+\item[{std::string}]{pName}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_image_ac6bb645510cb5990fb546a13e67b3b78}
+
+
+Parameterized constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pGroup} & the resource group inwhere to look for the resource \\
+\hline
+{\em pName} & the name of the resource to look up in the group \\
+\hline
+{\em pLoop} & whether the image sohuld loop (true) or not (false\\
+\hline
+\end{DoxyParams}
+This is the main constructor. It initializes the following properties: \begin{DoxyItemize}
+\item {\ttfamily m\_\-Built}, false \end{DoxyItemize}
+\hypertarget{class_ty_image_a8d0afe12b66c11ddb057d031cdcc0e06}{
+\index{TyImage@{TyImage}!$\sim$TyImage@{$\sim$TyImage}}
+\index{$\sim$TyImage@{$\sim$TyImage}!TyImage@{TyImage}}
+\subsubsection[{$\sim$TyImage}]{\setlength{\rightskip}{0pt plus 5cm}TyImage::$\sim$TyImage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_image_a8d0afe12b66c11ddb057d031cdcc0e06}
+
+
+Cleans up the object. 
+
+Performs clean up of the asigned memory blocks. If the class has been succesfully built before, delete the image pointer as it is no longer needed. \hypertarget{class_ty_image_aa925b26d19f52e846001a6133e8a15bb}{
+\index{TyImage@{TyImage}!TyImage@{TyImage}}
+\index{TyImage@{TyImage}!TyImage@{TyImage}}
+\subsubsection[{TyImage}]{\setlength{\rightskip}{0pt plus 5cm}TyImage::TyImage (
+\begin{DoxyParamCaption}
+\item[{{\bf TyImage} const \&}]{pImage}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_image_aa925b26d19f52e846001a6133e8a15bb}
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pImage} & The image object to be copied\\
+\hline
+\end{DoxyParams}
+Copies the propierties of the parameter object into the object that is being constructed. It uses the overloaded operator = to such ends. Current object flag m\_\-Built will be set along with flag m\_\-Copy. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ty_image_ada0106ce57cc13b9b646c60919043f4b}{
+\index{TyImage@{TyImage}!Center@{Center}}
+\index{Center@{Center}!TyImage@{TyImage}}
+\subsubsection[{Center}]{\setlength{\rightskip}{0pt plus 5cm}{\bf m\_\-Center} rotation TyImage::Center (
+\begin{DoxyParamCaption}
+\item[{CIwSVec2}]{pCenter = {\ttfamily CIwSVec2::g\_\-Zero}}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_image_ada0106ce57cc13b9b646c60919043f4b}
+
+
+Center the image for rotation. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pCenter} & integer vector for image center.\\
+\hline
+\end{DoxyParams}
+Centers the image at the given coordinates for rotation. \hypertarget{class_ty_image_a5a5d78591702db018684d90a3caab367}{
+\index{TyImage@{TyImage}!Flip@{Flip}}
+\index{Flip@{Flip}!TyImage@{TyImage}}
+\subsubsection[{Flip}]{\setlength{\rightskip}{0pt plus 5cm}void TyImage::Flip (
+\begin{DoxyParamCaption}
+\item[{CIwSVec2}]{pFlip = {\ttfamily CIwSVec2::g\_\-Zero}}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_image_a5a5d78591702db018684d90a3caab367}
+
+
+Flips the image. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pFlip} & CIwSVec2 vector for flipping on X and/or Y axis.\\
+\hline
+\end{DoxyParams}
+Flips the image according the the pFlip vector. If the current Flip vector equals the passed Flip vector, image is unflipped. \hypertarget{class_ty_image_a5a668f8889876f414a9ada1a2c48a363}{
+\index{TyImage@{TyImage}!GetAngle@{GetAngle}}
+\index{GetAngle@{GetAngle}!TyImage@{TyImage}}
+\subsubsection[{GetAngle}]{\setlength{\rightskip}{0pt plus 5cm}iwangle TyImage::GetAngle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_image_a5a668f8889876f414a9ada1a2c48a363}
+
+
+Image rotation. 
+
+\begin{DoxyReturn}{Returns}
+Returns the current angle in radians. 
+\end{DoxyReturn}
+
+
+Definition at line 227 of file TyImage.h.
+
+\hypertarget{class_ty_image_ae2ff69a9cf1df8072f8c7ce72c54d0cf}{
+\index{TyImage@{TyImage}!GetCenter@{GetCenter}}
+\index{GetCenter@{GetCenter}!TyImage@{TyImage}}
+\subsubsection[{GetCenter}]{\setlength{\rightskip}{0pt plus 5cm}CIwSVec2 TyImage::GetCenter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_image_ae2ff69a9cf1df8072f8c7ce72c54d0cf}
+
+
+Image rotation Center. 
+
+\begin{DoxyReturn}{Returns}
+Returns the current Center as a vector. 
+\end{DoxyReturn}
+
+
+Definition at line 235 of file TyImage.h.
+
+\hypertarget{class_ty_image_a48acb344f18ab58e7603876366f5fc58}{
+\index{TyImage@{TyImage}!GetCopy@{GetCopy}}
+\index{GetCopy@{GetCopy}!TyImage@{TyImage}}
+\subsubsection[{GetCopy}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf TyImage}$\ast$ TyImage::GetCopy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_image_a48acb344f18ab58e7603876366f5fc58}
+
+
+Pointer to const this. 
+
+\begin{DoxyReturn}{Returns}
+const TyImage$\ast$
+\end{DoxyReturn}
+Returns a pointer to a const \hyperlink{class_ty_image}{TyImage} (which is this). 
+
+Reimplemented in \hyperlink{class_ty_sprite_a24045a705e395924b61e0cae50efe893}{TySprite}.
+
+
+
+Definition at line 219 of file TyImage.h.
+
+\hypertarget{class_ty_image_a8b88cce6ca9d65532ad4c60fc8e651a4}{
+\index{TyImage@{TyImage}!GetHeigth@{GetHeigth}}
+\index{GetHeigth@{GetHeigth}!TyImage@{TyImage}}
+\subsubsection[{GetHeigth}]{\setlength{\rightskip}{0pt plus 5cm}int16 TyImage::GetHeigth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_image_a8b88cce6ca9d65532ad4c60fc8e651a4}
+
+
+Spritesheet height. 
+
+\begin{DoxyReturn}{Returns}
+int16
+\end{DoxyReturn}
+Returns current imagesheet height as integer. 
+
+Definition at line 192 of file TyImage.h.
+
+\hypertarget{class_ty_image_a706a3787b40ec13b5c61035a3bfdd016}{
+\index{TyImage@{TyImage}!GetResourceGroup@{GetResourceGroup}}
+\index{GetResourceGroup@{GetResourceGroup}!TyImage@{TyImage}}
+\subsubsection[{GetResourceGroup}]{\setlength{\rightskip}{0pt plus 5cm}CIwResGroup$\ast$ TyImage::GetResourceGroup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_image_a706a3787b40ec13b5c61035a3bfdd016}
+
+
+Get the resources group pointer. 
+
+\begin{DoxyReturn}{Returns}
+CIwResGroup$\ast$
+\end{DoxyReturn}
+Returns a pointer to the current resource group. 
+
+Definition at line 210 of file TyImage.h.
+
+\hypertarget{class_ty_image_af630b3defe704e239378120e68dbbb70}{
+\index{TyImage@{TyImage}!GetResourceName@{GetResourceName}}
+\index{GetResourceName@{GetResourceName}!TyImage@{TyImage}}
+\subsubsection[{GetResourceName}]{\setlength{\rightskip}{0pt plus 5cm}std::string TyImage::GetResourceName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_image_af630b3defe704e239378120e68dbbb70}
+
+
+Get the resource name string. 
+
+\begin{DoxyReturn}{Returns}
+std::string
+\end{DoxyReturn}
+Returns a copy of the resource name as a std::string. 
+
+Definition at line 201 of file TyImage.h.
+
+\hypertarget{class_ty_image_adc2770783bb985d944247270468d7c21}{
+\index{TyImage@{TyImage}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!TyImage@{TyImage}}
+\subsubsection[{GetSize}]{\setlength{\rightskip}{0pt plus 5cm}CIwSVec2 TyImage::GetSize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_image_adc2770783bb985d944247270468d7c21}
+
+
+Image width as CIwSVec2 integer vector. 
+
+\begin{DoxyReturn}{Returns}
+CIwSVec2 
+\end{DoxyReturn}
+
+
+Definition at line 173 of file TyImage.h.
+
+\hypertarget{class_ty_image_afb46a63dca96bcdb26aa0610aacaaa66}{
+\index{TyImage@{TyImage}!GetWidth@{GetWidth}}
+\index{GetWidth@{GetWidth}!TyImage@{TyImage}}
+\subsubsection[{GetWidth}]{\setlength{\rightskip}{0pt plus 5cm}int16 TyImage::GetWidth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_image_afb46a63dca96bcdb26aa0610aacaaa66}
+
+
+Spritesheet width. 
+
+\begin{DoxyReturn}{Returns}
+int16
+\end{DoxyReturn}
+Returns current imagesheet width as integer. 
+
+Definition at line 183 of file TyImage.h.
+
+\hypertarget{class_ty_image_a4f1a45987b5cc4be8960a6a6b4091515}{
+\index{TyImage@{TyImage}!IsBuilt@{IsBuilt}}
+\index{IsBuilt@{IsBuilt}!TyImage@{TyImage}}
+\subsubsection[{IsBuilt}]{\setlength{\rightskip}{0pt plus 5cm}bool TyImage::IsBuilt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_image_a4f1a45987b5cc4be8960a6a6b4091515}
+
+
+Is the object built? 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+True if the image has been built, false otherwise. 
+
+Definition at line 158 of file TyImage.h.
+
+\hypertarget{class_ty_image_ab09c2f7b0f02f515fae45d5a058e3284}{
+\index{TyImage@{TyImage}!IsFlipped@{IsFlipped}}
+\index{IsFlipped@{IsFlipped}!TyImage@{TyImage}}
+\subsubsection[{IsFlipped}]{\setlength{\rightskip}{0pt plus 5cm}CIwSVec2 TyImage::IsFlipped (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_ty_image_ab09c2f7b0f02f515fae45d5a058e3284}
+
+
+Is the object flipped? 
+
+\begin{DoxyReturn}{Returns}
+CIwSVec2
+\end{DoxyReturn}
+CIwSVec2 boolean vector with (1,0) for flipped on X, (0,1) for flipped on Y, (1,1) for flipped on both, and (0,0) for not flipped at all. 
+
+Definition at line 167 of file TyImage.h.
+
+\hypertarget{class_ty_image_a75ac7a92ab126c2818e92728ff812b3d}{
+\index{TyImage@{TyImage}!LoadFromResource@{LoadFromResource}}
+\index{LoadFromResource@{LoadFromResource}!TyImage@{TyImage}}
+\subsubsection[{LoadFromResource}]{\setlength{\rightskip}{0pt plus 5cm}bool TyImage::LoadFromResource (
+\begin{DoxyParamCaption}
+\item[{CIwResGroup $\ast$}]{pGroup, }
+\item[{std::string}]{pName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_image_a75ac7a92ab126c2818e92728ff812b3d}
+
+
+Loads a resource from a resource group. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pGroup} & the resource group inwhere to look for the resource \\
+\hline
+{\em pName} & the name of the resource to look up in the group\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool true if image was succesfully rebuilt, false otherwise.
+\end{DoxyReturn}
+Loads a resource named name from the resource group that group points to if the current group is different from the one specified, the new group is set to be the current. If the resource name and group equals the current resource name and group then nothing is done. If current resource name differs from pName, current resource group is not pGroup, the object has not yet been built or both the resource name and resource group has not been set previously, set pGroup as current resource group, pName as current resource name and try to load the resource. If anything but error, the image should have been succesfully loaded into memory, and all image-\/dependant properties of the class properly initialized. \hypertarget{class_ty_image_af2210a3cc8ef239e4b4f2668771d1360}{
+\index{TyImage@{TyImage}!operator=@{operator=}}
+\index{operator=@{operator=}!TyImage@{TyImage}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TyImage}\& TyImage::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf TyImage} const \&}]{pImage}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_image_af2210a3cc8ef239e4b4f2668771d1360}
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pImage} & The image object to be assigned (copied)\\
+\hline
+\end{DoxyParams}
+Copies all data from the image parameter object, incluiding the pointer to the imagesheet. \hypertarget{class_ty_image_a2837205d02eca3789ca60ef2fabb13e0}{
+\index{TyImage@{TyImage}!operator==@{operator==}}
+\index{operator==@{operator==}!TyImage@{TyImage}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool TyImage::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf TyImage} const \&}]{pImage}
+\end{DoxyParamCaption}
+) const}}
+\label{class_ty_image_a2837205d02eca3789ca60ef2fabb13e0}
+
+
+Comparison operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pImage1} & A image object to compare against pImage2 \\
+\hline
+{\em pImage2} & A image object to compare against pImage1\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+Compares both images and returns true if are equal, or false if not. \hypertarget{class_ty_image_ae15f22535190bfe2e848e4b1a6dee494}{
+\index{TyImage@{TyImage}!Render@{Render}}
+\index{Render@{Render}!TyImage@{TyImage}}
+\subsubsection[{Render}]{\setlength{\rightskip}{0pt plus 5cm}void TyImage::Render (
+\begin{DoxyParamCaption}
+\item[{CIwSVec2}]{pPosition = {\ttfamily CIwSVec2::g\_\-Zero}}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_image_ae15f22535190bfe2e848e4b1a6dee494}
+
+
+Render the image. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pPosition} & (x,y) 2D integer vector\\
+\hline
+\end{DoxyParams}
+Draws the image at the given position. 
+
+Reimplemented in \hyperlink{class_ty_sprite_aa1e6e85ccf29eeb74a93768efb5695cd}{TySprite}.
+
+\hypertarget{class_ty_image_a04fa3888567c658155b8e1bafacdcc2f}{
+\index{TyImage@{TyImage}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!TyImage@{TyImage}}
+\subsubsection[{Rotate}]{\setlength{\rightskip}{0pt plus 5cm}void TyImage::Rotate (
+\begin{DoxyParamCaption}
+\item[{iwangle}]{pRads}
+\end{DoxyParamCaption}
+)}}
+\label{class_ty_image_a04fa3888567c658155b8e1bafacdcc2f}
+
+
+Rotates the image. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pRads} & Angle in radians (32-\/bits integer)\\
+\hline
+\end{DoxyParams}
+Rotates the image by pRads radians counterclockwise. 
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ty_image_a61002e26997486e47f8fd35aae194ddb}{
+\index{TyImage@{TyImage}!m\_\-Angle@{m\_\-Angle}}
+\index{m\_\-Angle@{m\_\-Angle}!TyImage@{TyImage}}
+\subsubsection[{m\_\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}iwangle {\bf TyImage::m\_\-Angle}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_image_a61002e26997486e47f8fd35aae194ddb}
+
+
+Definition at line 43 of file TyImage.h.
+
+\hypertarget{class_ty_image_a314c8e3b0c05ad97c8c8bb7cc39b5ea6}{
+\index{TyImage@{TyImage}!m\_\-Built@{m\_\-Built}}
+\index{m\_\-Built@{m\_\-Built}!TyImage@{TyImage}}
+\subsubsection[{m\_\-Built}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf TyImage::m\_\-Built}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_image_a314c8e3b0c05ad97c8c8bb7cc39b5ea6}
+
+
+Definition at line 33 of file TyImage.h.
+
+\hypertarget{class_ty_image_a99aad782345362b97874eb63331aade0}{
+\index{TyImage@{TyImage}!m\_\-Center@{m\_\-Center}}
+\index{m\_\-Center@{m\_\-Center}!TyImage@{TyImage}}
+\subsubsection[{m\_\-Center}]{\setlength{\rightskip}{0pt plus 5cm}CIwSVec2 {\bf TyImage::m\_\-Center}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_image_a99aad782345362b97874eb63331aade0}
+
+
+Definition at line 48 of file TyImage.h.
+
+\hypertarget{class_ty_image_acf79c8bc250ac9f0c630d8cc77376284}{
+\index{TyImage@{TyImage}!m\_\-Flip@{m\_\-Flip}}
+\index{m\_\-Flip@{m\_\-Flip}!TyImage@{TyImage}}
+\subsubsection[{m\_\-Flip}]{\setlength{\rightskip}{0pt plus 5cm}CIwSVec2 {\bf TyImage::m\_\-Flip}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_image_acf79c8bc250ac9f0c630d8cc77376284}
+
+
+Definition at line 38 of file TyImage.h.
+
+\hypertarget{class_ty_image_ae087e8e0af860b1b8e0df36fe28b591f}{
+\index{TyImage@{TyImage}!m\_\-Image@{m\_\-Image}}
+\index{m\_\-Image@{m\_\-Image}!TyImage@{TyImage}}
+\subsubsection[{m\_\-Image}]{\setlength{\rightskip}{0pt plus 5cm}CIw2DImage$\ast$ {\bf TyImage::m\_\-Image}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_image_ae087e8e0af860b1b8e0df36fe28b591f}
+is the pointer to CIwImage that actually holds the image sheet image. It uses the Marmalade SDK resource manager to load it 
+
+Definition at line 54 of file TyImage.h.
+
+\hypertarget{class_ty_image_a4b278a1be30ad7f5abc47f008bbbdfc4}{
+\index{TyImage@{TyImage}!m\_\-ResourceGroup@{m\_\-ResourceGroup}}
+\index{m\_\-ResourceGroup@{m\_\-ResourceGroup}!TyImage@{TyImage}}
+\subsubsection[{m\_\-ResourceGroup}]{\setlength{\rightskip}{0pt plus 5cm}CIwResGroup$\ast$ {\bf TyImage::m\_\-ResourceGroup}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_image_a4b278a1be30ad7f5abc47f008bbbdfc4}
+name of the group where the resource named m\_\-ResourceName is located 
+
+Definition at line 64 of file TyImage.h.
+
+\hypertarget{class_ty_image_aabd5f1076f03127120cfbe3360331b0c}{
+\index{TyImage@{TyImage}!m\_\-ResourceName@{m\_\-ResourceName}}
+\index{m\_\-ResourceName@{m\_\-ResourceName}!TyImage@{TyImage}}
+\subsubsection[{m\_\-ResourceName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf TyImage::m\_\-ResourceName}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_image_aabd5f1076f03127120cfbe3360331b0c}
+name of the resource loaded into m\_\-SpriteSheet; 
+
+Definition at line 59 of file TyImage.h.
+
+\hypertarget{class_ty_image_a1a2f362a92fb810372f9d4caedaf9f3f}{
+\index{TyImage@{TyImage}!m\_\-Size@{m\_\-Size}}
+\index{m\_\-Size@{m\_\-Size}!TyImage@{TyImage}}
+\subsubsection[{m\_\-Size}]{\setlength{\rightskip}{0pt plus 5cm}CIwSVec2 {\bf TyImage::m\_\-Size}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_ty_image_a1a2f362a92fb810372f9d4caedaf9f3f}
+the actual size of the image x for width, y for height 
+
+Definition at line 69 of file TyImage.h.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+D:/development/cpp/toasty/include/\hyperlink{_ty_image_8h}{TyImage.h}\end{DoxyCompactItemize}

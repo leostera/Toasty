@@ -1,7 +1,10 @@
-#include <tut.hpp> 
-
+#include <TyClock.h>
 #include <TyInput.h>
 #include <TyImage.h>
+#include <TySprite.h>
+#include "InheritedActor.h"
+
+#include <tut.hpp> 
 #include <Iw2D.h>
 
 namespace tut 
@@ -9,21 +12,22 @@ namespace tut
 	struct data //
 	{ 
 		TyImage* cubo;
+
 		data()
 		{
-			IwGetResManager()->LoadGroup("sprites.group");
-			cubo = new TyImage(IwGetResManager()->GetGroupNamed("sprites"),"2");
+			IwGetResManager()->LoadGroup("./../examples/data/images.group");
+			cubo = new TyImage(IwGetResManager()->GetGroupNamed("images"),"2");
 		}
 
 		~data()
 		{		
 			delete cubo;
-			IwGetResManager()->DestroyGroup("sprites");
+			IwGetResManager()->DestroyGroup("images");
 		}
 	};
 	
 	typedef	test_group<data> tg;
-	tg test_group("Input Tests");
+	tg testgroup("Input Tests");
 	
 	typedef tg::object testobject;
 	
@@ -57,46 +61,42 @@ namespace tut
 	void testobject::test<41>()
 	{
 		set_test_name("Touch Dragging");
-		//TyImage * pollo= new TyImage(IwGetResManager()->GetGroupNamed("sprites"),std::string("pollo"));
-		CIwSVec2 posCubo = CIwSVec2::g_Zero, delta = CIwSVec2::g_Zero;
-		bool	pressedCubo = false, moveCubo = false;
+		TyImage * pollo= new TyImage(IwGetResManager()->GetGroupNamed("images"),std::string("pajaro01"));
+		CIwSVec2 posCubo = CIwSVec2(100,100), posPollo = CIwSVec2::g_Zero;
+		bool	pressedCubo = false;
 		while ( TyGetInput()->RefreshTouchpad() )
 		{
-			Iw2DSurfaceClear(0xff000000);
-			cubo->Render(posCubo);
+			Iw2DSurfaceClear(0xff000000);			
 
-			TyTouch t = TyGetInput()->GetTouchInRect( CIwRect(posCubo.x,posCubo.y,posCubo.x+cubo->GetSize().x,posCubo.y+cubo->GetSize().y) );
+			TyTouch t = TyGetInput()->GetTouchInRect( CIwRect(posPollo.x,posPollo.y,posPollo.x+pollo->GetSize().x,posPollo.y+pollo->GetSize().y) );
 			if ( t.m_Active )
-			{				
-				pressedCubo = true;								
-				if( !(t.m_Position - t.m_LastPosition == CIwSVec2::g_Zero) )
-					moveCubo = true;
-			}
+				break;
 
-			if(pressedCubo && moveCubo)
-			{
-				posCubo = posCubo + (t.m_Position - t.m_LastPosition);
-				std::cout << "CUBO - ID: " << t.m_TouchID << std::endl;
-				std::cout << "CUBO - m_Position: " << t.m_Position.x << "," << t.m_Position.y << std::endl;				
-				std::cout << "CUBO - Position: " << posCubo.x << "," << posCubo.y << std::endl;
-				moveCubo = false;
+			 t = TyGetInput()->GetTouchInRect( CIwRect(posCubo.x,posCubo.y,posCubo.x+cubo->GetSize().x,posCubo.y+cubo->GetSize().y) );
+			if ( t.m_Drag )
+			{				
+				posCubo = posCubo + t.m_Position - t.m_LastPosition;
+				std::cout << "Touch - ID: " << t.m_TouchID << std::endl;
+				std::cout << "Touch - Pos: " << t.m_Position.x << "," << t.m_Position.y << std::endl;				
+				std::cout << "Cube - Pos: " << posCubo.x << "," << posCubo.y << std::endl;
 			}
 			
-			if ( TyGetInput()->GetTouchInRect( CIwRect(0,0,800,600), S3E_POINTER_STATE_RELEASED ).m_Active )
-			{
-				if(pressedCubo)
-				{
-					pressedCubo = moveCubo = false;
-				}
-			}
-
+			cubo->Render(posCubo);
+			pollo->Render(posPollo);
 			Iw2DSurfaceShow();
 		}
+		delete pollo;
+	}
+
+	template<>
+	template<>
+	void testobject::test<42>()
+	{
+		set_test_name("Gesture");
 		
 	}
 
-/*
-	template<>
+/*	template<>
 	template<>
 	void testobject::test<49>() 
 	{ 
@@ -135,8 +135,7 @@ namespace tut
 				Iw2DDrawLine(t.m_Position,t.m_LastPosition);
 			}
 			Iw2DSurfaceShow();
-		}
-		
+		}		
 	}
-	*/
+*/
 }; 
