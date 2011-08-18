@@ -14,6 +14,9 @@
 ************************************************************************************/
 #pragma once
 
+#ifndef TOASTY_CLOCK_H
+#define TOASTY_CLOCK_H
+
 #include <s3eTimer.h>
 
 void TyClockInit();
@@ -40,17 +43,17 @@ private:
 	/*!
 	 *	m_TotalTicks	the total amount of ticks
 	 */
-	int64			m_TotalTicks;
+	uint64			m_TotalTicks;
 
 	/*!
 	 *	m_LastTicks		the amount of ticks from the last iteration
 	 */	
-	int64			m_LastTicks;
+	uint64			m_LastTicks;
 
 	/*!
 	 *	m_ThisTicks		current amount of ticks
 	 */
-	int64			m_ThisTicks;
+	uint64			m_ThisTicks;
 
 	/*!
 	 *  m_Cap			amount of frames per second
@@ -93,21 +96,21 @@ public:
 	/*!
 	 *	\brief	Gets you ticks.
 	 *
-	 *	\returns	int64	The amount of ticks since last call to Step()
+	 *	\returns	uint64	The amount of ticks since last call to Step()
 	 *
 	 *	Returns the amount of ticks since the last call to Step().
 	 */
-	int64 GetTicks();
+	uint64 GetTicks();
 	
 	/*!
 	 *	\brief	Updates the clock. 
 	 *
-	 *	\returns	int64	Also the amount of ticks since last call to Step()
+	 *	\returns	uint64	Also the amount of ticks since last call to Step()
 	 *
 	 *	Accumulates ticks in m_TotalTicks and a lil' algebra to get each tick into it's place.
 	 *	Should be called just once at the end of the program loop.
 	 */
-	int64 Update();
+	uint64 Update();
 
 	/*!
 	 *	\brief	Sets the cap rate.
@@ -123,9 +126,11 @@ public:
 	/*!
 	 *	\brief	Caps.
 	 *
-	 *	\returns	int64	current amount of frames per second or ZERO if frame capping is disabled.
+	 *	\returns	uint64	current amount of frames per second or ZERO if frame capping is disabled.
 	 *
 	 *	If frame capping is enabled (m_Cap > 0) we will wait long enough to let only m_Cap frames be displayed every second.
 	 */
 	int32	Cap();
 };
+
+#endif

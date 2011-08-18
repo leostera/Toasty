@@ -13,7 +13,7 @@ namespace tut
 
 		data()
 		{
-			IwGetResManager()->LoadGroup("../examples/data/images.group");
+			IwGetResManager()->LoadGroup("images.group");
 			g = IwGetResManager()->GetGroupNamed("images");
 			s = new TyImage(g,"pajaro01");
 		}

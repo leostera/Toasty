@@ -12,68 +12,32 @@ TyScene::TyScene(std::string pName, std::string pCaption, std::string pResGroup,
 
 TyScene::~TyScene()
 {
-	std::list<ITyActor*>::iterator it = m_Actors.begin();
-	while(it != m_Actors.end())
-	{
-		delete (*it);
-		it = m_Actors.erase(it);
-	}
-	m_Actors.clear();
+	m_Actors.Delete();
 }
 
 bool	TyScene::AddActor(ITyActor* pActor) //adds an actor
 {
-	bool toadd = false;
-	if( pActor )
-	{
-		toadd = true;
-		std::list<ITyActor*>::iterator it;
-		for(it = m_Actors.begin(); it != m_Actors.end(); ++it)
-		{
-			if( (*it) == pActor )
-			{
-				toadd = false;
-				break;
-			}
-		}
-	}
-
-	if( toadd )
-	{
-		m_Actors.push_back(pActor);
-		m_Actors.sort(TyActorCompare);
-	}
-
-	return toadd;
+	m_Actors.Add(pActor);
+	return (m_Actors.Find(pActor))?true:false;
 }
 
 bool	TyScene::DeleteActor(ITyActor* pActor) //adds an actor
 {
-	bool todelete = false;
-	if( pActor )
+	uint32 tofind = m_Actors.Find( pActor );
+	if( tofind )
 	{		
-		std::list<ITyActor*>::iterator it;
-		for(it = m_Actors.begin(); it != m_Actors.end(); ++it)
-		{
-			if( (*it) == pActor )
-			{
-				delete (*it);
-				m_Actors.erase(it);
-				todelete = true;
-				break;
-			}
-		}
+		m_Actors.EraseFast( tofind );
 	}
-	return todelete;
+	return tofind?true:false;
 }
 
 bool		TyScene::Create()
 {
 	m_Created = false;
-	std::list<ITyActor*>::iterator it;
-	for(it = m_Actors.begin(); it != m_Actors.end(); ++it)
+	CIwManaged** it;
+	for(it = m_Actors.GetBegin(); it != m_Actors.GetEnd(); ++it)
 	{
-		m_Created = (*it)->OnCreate();
+		m_Created = ( (ITyActor*)(*it) )->OnCreate();
 		//if( !m_Created ) break; //add exception to show which actor failed to create!
 	}
 	return m_Created;
@@ -82,10 +46,10 @@ bool		TyScene::Create()
 bool		TyScene::Destroy()
 {
 	bool Destroyed = false;
-	std::list<ITyActor*>::iterator it;
-	for(it = m_Actors.begin(); it != m_Actors.end(); ++it)
+	CIwManaged** it;
+	for(it = m_Actors.GetBegin(); it != m_Actors.GetEnd(); ++it)
 	{
-		Destroyed = (*it)->OnDestroy();		
+		Destroyed = ( (ITyActor*)(*it) )->OnDestroy();		
 	}	
 	if( Destroyed ) m_Created = false;
 	return Destroyed;
@@ -94,54 +58,54 @@ bool		TyScene::Destroy()
 bool		TyScene::Play()
 {
 	bool playing = false;
-	if( m_Created && m_Actors.size()>0 )
+	if( m_Created && m_Actors.GetSize()>0 )
 	{
 		playing = true;
 
-		std::list<ITyActor*>::iterator it;
+		CIwManaged** it;
 
-		for( it = m_Actors.begin(); it != m_Actors.end(); ++it )
+		for( it = m_Actors.GetBegin(); it != m_Actors.GetEnd(); ++it )
 		{
-			if( (*it)->IsActive() )
-				(*it)->OnStepStart();
+			if( ((ITyActor*)(*it))->IsActive() )
+				( (ITyActor*)(*it) )->OnStepStart();
 		}
 
-/*		for( it = m_Actors.begin(); it != m_Actors.end(); ++it )
+/*		for( it = m_Actors.GetBegin(); it != m_Actors.GetEnd(); ++it )
 		{
-			if( (*it)->IsActive() )
+			if( ((ITyActor*)(*it))->IsActive() )
 			{
-				(*it)->OnKeyPress();
-				(*it)->OnKeySustain();
-				(*it)->OnKeyRelease();
-				(*it)->OnTouchPress();
-				(*it)->OnTouchSustain();
-				(*it)->OnTouchDrag();
-				(*it)->OnTouchRelease();
+				( (ITyActor*)(*it) )->OnKeyPress();
+				( (ITyActor*)(*it) )->OnKeySustain();
+				( (ITyActor*)(*it) )->OnKeyRelease();
+				( (ITyActor*)(*it) )->OnTouchPress();
+				( (ITyActor*)(*it) )->OnTouchSustain();
+				( (ITyActor*)(*it) )->OnTouchDrag();
+				( (ITyActor*)(*it) )->OnTouchRelease();
 			}
 		} */
 		
-		for( it = m_Actors.begin(); it != m_Actors.end(); ++it )
+		for( it = m_Actors.GetBegin(); it != m_Actors.GetEnd(); ++it )
 		{
-			if( (*it)->IsActive() )
-				(*it)->OnStep();
+			if( ((ITyActor*)(*it))->IsActive() )
+				( (ITyActor*)(*it) )->OnStep();
 		}
 
-		for( it = m_Actors.begin(); it != m_Actors.end(); ++it )
+		for( it = m_Actors.GetBegin(); it != m_Actors.GetEnd(); ++it )
 		{
-			if( (*it)->IsActive() )
-				(*it)->OnIntersectBoundaries(m_Boundaries);
+			if( ((ITyActor*)(*it))->IsActive() )
+				( (ITyActor*)(*it) )->OnIntersectBoundaries(m_Boundaries);
 
-			if( (*it)->IsSolid() )
-				for( std::list<ITyActor*>::iterator it2 = m_Actors.begin(); it2 != m_Actors.end(); ++it2 )
-					(*it)->OnCollision( *(*it2) );
+			if( ((ITyActor*)(*it))->IsSolid() )
+				for( CIwManaged** it2 = m_Actors.GetBegin(); it2 != m_Actors.GetEnd(); ++it2 )
+					( (ITyActor*)(*it) )->OnCollision( *((ITyActor*)(*it2)) );
 		}
 
-		for( it = m_Actors.begin(); it != m_Actors.end(); ++it )
+		for( it = m_Actors.GetBegin(); it != m_Actors.GetEnd(); ++it )
 		{
-			if( (*it)->IsVisible() )
-				(*it)->OnRender();
-			if( (*it)->IsActive() )
-				(*it)->OnStepEnd();
+			if( ((ITyActor*)(*it))->IsVisible() )
+				( (ITyActor*)(*it) )->OnRender();
+			if( ((ITyActor*)(*it))->IsActive() )
+				( (ITyActor*)(*it) )->OnStepEnd();
 		}
 	}
 	return playing;

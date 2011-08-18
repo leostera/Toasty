@@ -1,4 +1,5 @@
 #include <TyInput.h>
+#include <TyClock.h>
 #include <string>
 
 TyInput* TyInput::m_Instance = 0;
@@ -9,14 +10,15 @@ TyInput* TyInput::m_Instance = 0;
 
 void TyInputInit()
 {
-	if(!TyInput::m_Instance)
+	if(TyInput::m_Instance == 0)
 		TyInput::m_Instance = new TyInput();
 }
 
 void TyInputTerminate()
 {
-	if(TyInput::m_Instance)
+	if(TyInput::m_Instance != 0)
 		delete TyInput::m_Instance;
+	TyInput::m_Instance = 0;
 }
 
 TyInput* TyGetInput() 
@@ -35,21 +37,77 @@ TyInput::TyInput() : m_MultiTouchSupport(false)
 
 TyInput::~TyInput()
 {
-	m_Touches.clear();
+	m_Touches.Delete();
 }
 
 bool	TyInput::RefreshTouchpad()
 {
 	s3eResult a = s3ePointerUpdate();
 
-	std::vector<TyTouch>::iterator it;
-	for(it = m_Touches.begin(); it != m_Touches.end(); ++it)
+	CIwManaged** it;
+	for(it = m_Touches.GetBegin(); it != m_Touches.GetEnd(); ++it)
 	{
-		(*it).m_State = s3ePointerGetTouchState( (*it).m_TouchID );
-		(*it).m_LastPosition = (*it).m_Position;
-		(*it).m_Position = CIwSVec2( (int16)s3ePointerGetTouchX( (*it).m_TouchID ), (int16)s3ePointerGetTouchY( (*it).m_TouchID ) );
-		(*it).m_Drag = ( (*it).m_LastPosition == (*it).m_Position ) ? false : true;
-		(*it).m_Active = ((*it).m_State != S3E_POINTER_STATE_UNKNOWN)? true : false;
+		( (TyTouch*) (*it) )->State = s3ePointerGetTouchState( ( (TyTouch*) (*it) )->TouchID );
+
+		( (TyTouch*) (*it) )->LastPosition = ( (TyTouch*) (*it) )->Position;
+		( (TyTouch*) (*it) )->Position = CIwSVec2( (int16)s3ePointerGetTouchX( ( (TyTouch*) (*it) )->TouchID ), (int16)s3ePointerGetTouchY( ( (TyTouch*) (*it) )->TouchID ) );	
+		( (TyTouch*) (*it) )->TimeSinceLastPress += TyGetClock()->GetTicks();	
+		( (TyTouch*) (*it) )->Active = true;
+
+		switch( ( (TyTouch*) (*it) )->State )
+		{
+		case S3E_POINTER_STATE_PRESSED:			
+			( (TyTouch*) (*it) )->FirstPosition = ( (TyTouch*) (*it) )->Position;			
+			( (TyTouch*) (*it) )->DeltaPosition = CIwSVec2::g_Zero;		
+
+			if( ( (TyTouch*) (*it) )->DoubleTapCounter == 1)
+				( (TyTouch*) (*it) )->TimeSinceLastPress += TyGetClock()->GetTicks();
+			else
+				( (TyTouch*) (*it) )->TimeSinceLastPress = 0;
+
+			( (TyTouch*) (*it) )->DoubleTapCounter++;
+			
+			if( ( (TyTouch*) (*it) )->DoubleTapCounter > 2 )
+			{
+				( (TyTouch*) (*it) )->DoubleTap = true;
+				( (TyTouch*) (*it) )->DoubleTapCounter = 0;
+			}			
+			( (TyTouch*) (*it) )->Drag = false;
+		break;
+		
+		case S3E_POINTER_STATE_DOWN:			
+			( (TyTouch*) (*it) )->DeltaPosition = ( (TyTouch*) (*it) )->Position - ( (TyTouch*) (*it) )->LastPosition;		
+			if( ( (TyTouch*) (*it) )->DeltaPosition == CIwSVec2::g_Zero )
+				( (TyTouch*) (*it) )->Drag = false;
+			else
+			{
+				( (TyTouch*) (*it) )->Drag = true;
+			/*	( (TyTouch*) (*it) )->Velocity = CIwSVec2(
+					( (TyTouch*) (*it) )->DeltaPosition.x / (int16) TyGetClock()->GetTicks(),
+					( (TyTouch*) (*it) )->DeltaPosition.y / (int16) TyGetClock()->GetTicks()); /* watch out! */
+			}
+
+			( (TyTouch*) (*it) )->TimeHold += TyGetClock()->GetTicks();
+		
+			if( ( (TyTouch*) (*it) )->DoubleTapCounter > 0 )
+			{
+				( (TyTouch*) (*it) )->DoubleTap = false;
+				( (TyTouch*) (*it) )->DoubleTapCounter = 0;
+			}
+		break;
+
+		case S3E_POINTER_STATE_RELEASED:
+		case S3E_POINTER_STATE_UP:
+			( (TyTouch*) (*it) )->Drag = false;
+			( (TyTouch*) (*it) )->DeltaPosition = ( (TyTouch*) (*it) )->Position - ( (TyTouch*) (*it) )->LastPosition;		
+			( (TyTouch*) (*it) )->TimeHold = 0;
+			( (TyTouch*) (*it) )->Velocity = CIwSVec2::g_Zero;
+		break;
+
+		default:
+			( (TyTouch*) (*it) )->Active = false;
+		break;
+		}
 	}
 
 	return (a == S3E_RESULT_SUCCESS) ? true : false;
@@ -57,29 +115,29 @@ bool	TyInput::RefreshTouchpad()
 
 TyTouch TyInput::GetTouchInRect(CIwRect pArea, s3ePointerState pState)
 {
-	TyTouch t = TyTouch();
-	std::vector<TyTouch>::iterator it;
-	for(it = m_Touches.begin(); it != m_Touches.end(); ++it)
+	TyTouch t = TyTouch(-1);
+	CIwManaged** it;
+	for(it = m_Touches.GetBegin(); it != m_Touches.GetEnd(); ++it)
 	{
-		if( (*it).m_State == pState )
+		if( ( (TyTouch*) (*it) )->State == pState )
 		{
-			if( (*it).m_Position.x >= pArea.x && (*it).m_Position.y >= pArea.y 
-				&& (*it).m_Position.x <= pArea.h && (*it).m_Position.y <= pArea.w )
+			if( ( (TyTouch*) (*it) )->Position.x >= pArea.x && ( (TyTouch*) (*it) )->Position.y >= pArea.y 
+				&& ( (TyTouch*) (*it) )->Position.x <= pArea.h && ( (TyTouch*) (*it) )->Position.y <= pArea.w )
 			{
-				t = (*it);
-				switch( (*it).m_State)
+				t = *(TyTouch*)(*it);
+				switch( t.State )
 				{
 				case S3E_POINTER_STATE_PRESSED :
 				case S3E_POINTER_STATE_DOWN :
-					if( (*it).m_Drag )
-						m_LastTouchDragged = it;
+					if( ( (TyTouch*) (*it) )->Drag )
+						m_LastTouchDragged = (TyTouch*) (*it);
 					else
-						m_LastTouchPressed = it;						
+						m_LastTouchPressed = (TyTouch*) (*it);						
 				break;
 
 				case S3E_POINTER_STATE_UP :
 				case S3E_POINTER_STATE_RELEASED :
-					m_LastTouchReleased = it;
+					m_LastTouchReleased = (TyTouch*) (*it);
 				break;
 				}				
 			}
@@ -109,14 +167,9 @@ TyTouch TyInput::GetLastTouchDragged()
 void TyInput::CheckForMultitouchSupport()
 {
 	m_MultiTouchSupport = s3ePointerGetInt(S3E_POINTER_MULTI_TOUCH_AVAILABLE) ? true : false;
+	m_Touches.Add(new TyTouch(0));
 	if (m_MultiTouchSupport )
 	{
-		m_Touches.reserve( S3E_POINTER_TOUCH_MAX );
-		for(int i=0; i<S3E_POINTER_TOUCH_MAX; m_Touches.push_back(TyTouch()), m_Touches.back().m_TouchID=i, ++i);
-	}
-	else
-	{
-		m_Touches.push_back(TyTouch());
-		m_Touches.back().m_TouchID=0;
+		for(int i=1; i<S3E_POINTER_TOUCH_MAX; m_Touches.Add(new TyTouch(i)), ++i);
 	}
 }

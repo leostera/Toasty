@@ -4,7 +4,7 @@ includepath ./include
 
 library
 {
-	".,toasty"
+	".,Toasty"
 }
 
 subprojects
@@ -19,11 +19,26 @@ files
 {
 	(./include)
 	[Headers]
+	Toasty.h
+
+	[SceneManagement]
 	TyActor.h
-	TyClock.h
-	TyInput.h
 	TyScene.h
 	TySceneManager.h
+
+	[System]
+	TySystem.h
+	TyClock.h
+	TyInput.h
+	TyGestures.h
+	TyFile.h
+	TyDebug.h
+
+	[Graphics]
 	TySprite.h
 	TyImage.h
+
+	[Sounds]
+
+	[Others]
 }

@@ -1,9 +1,3 @@
-files
-{
-	(.)
-	InputTest.cpp
-	MainTest.cpp
-	InheritedActor.h
-}
+file InputTest.cpp
 
-subproject "../Toasty"
+subproject TestsBase

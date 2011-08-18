@@ -13,7 +13,7 @@ namespace tut
 
 		data()
 		{
-			IwGetResManager()->LoadGroup("../examples/data/sprites.group");
+			IwGetResManager()->LoadGroup("sprites.group");
 			g = IwGetResManager()->GetGroupNamed("sprites");
 			s = new TySprite(g,"1");
 		}

@@ -12,12 +12,13 @@ namespace tut
 
 		data()
 		{
-			scnmgr = TySceneManager::Get();
+			TySceneMgrInit();
+			scnmgr = TyGetSceneMgr();
 		}
 
 		~data()
 		{
-			scnmgr->Erase();
+			TySceneMgrTerminate();
 		}
 	};
 	

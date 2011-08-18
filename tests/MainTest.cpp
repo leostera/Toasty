@@ -2,10 +2,7 @@
 #include <tut_reporter.hpp>
 #include <iostream>
 
-#include <Iw2D.h>
-#include <IwResManager.h>
-#include <TyInput.h>
-#include <TyClock.h>
+#include <Toasty.h>
 
 using std::exception;
 using std::cerr;
@@ -20,10 +17,7 @@ int main()
 {
 	int result;
 
-	Iw2DInit();
-	IwResManagerInit();	
-	TyInputInit();
-	TyClockInit();
+	TySystemInit(TOASTY_SYSTEM_2D | TOASTY_SYSTEM_CLOCK | TOASTY_SYSTEM_INPUT | TOASTY_SYSTEM_SCENEMGR | TOASTY_SYSTEM_DEBUG);
 
     tut::reporter reporter;
     tut::runner.get().set_callback(&reporter);
@@ -31,10 +25,7 @@ int main()
 
 	result = !reporter.all_ok();
 	
-	TyClockTerminate();
-	TyInputTerminate();
-	IwResManagerTerminate();
-	Iw2DTerminate();
+	TySystemtTerminate(TOASTY_SYSTEM_2D | TOASTY_SYSTEM_CLOCK | TOASTY_SYSTEM_INPUT | TOASTY_SYSTEM_SCENEMGR | TOASTY_SYSTEM_DEBUG);
 
     return result;
 }

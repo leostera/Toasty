@@ -8,7 +8,10 @@
 
 ************************************************************************************/
 
-#pragma once // might be more suitable to use define checks, but pragma once seems to work fine on almost every compiler
+#pragma once
+
+#ifndef TOASTY_IMAGE_H
+#define TOASTY_IMAGE_H
 
 /*
  * Marmalade SDK Header file includes
@@ -271,3 +274,5 @@ public:
 	 */
 	void		Render(CIwSVec2 pPosition = CIwSVec2::g_Zero);
 };
+
+#endif

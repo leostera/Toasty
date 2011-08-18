@@ -1,0 +1,40 @@
+# This file was automanually generated following the Marmalade Reference Manual rules.
+
+subprojects
+{
+	./include/TUT.mkf
+	./include/Box2D.mkf
+	iw2d
+	iwutil
+}
+
+files
+{
+	(./include)
+	[Headers]
+	TySystem.h
+	TyFile.h
+	TyDebug.h
+	TyActor.h
+	TyClock.h
+	TyInput.h
+	TyGestures.h
+	TyScene.h
+	TySceneManager.h
+	TySprite.h
+	TyImage.h
+
+	(./src)
+	[Sources]
+	TySystem.cpp
+	TyFile.cpp
+	TyDebug.cpp
+	TyActor.cpp
+	TyClock.cpp
+	TyInput.cpp
+	TyGestures.cpp
+	TyScene.cpp
+	TySceneManager.cpp
+	TyImage.cpp
+	TySprite.cpp
+}

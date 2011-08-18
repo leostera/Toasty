@@ -1,27 +1,2 @@
-files
-{
-	(.)
-	SpriteTest.cpp
-	MainTest.cpp
-		
-	(../include)
-	TySprite.h
-	[Toasty]
-	TyImage.h
-
-	(../src)
-	[]
-	TySprite.cpp
-	[Toasty]
-	TyImage.cpp
-}
-
-subprojects
-{
-	iwutil
-	iw2d
-	iwresmanager
-	TUT
-}	
-
-includepath ../include
+file SpriteTest.cpp
+subproject TestsBase

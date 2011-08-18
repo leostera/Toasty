@@ -1,4 +1,17 @@
+/*!**********************************************************************************
+
+	\class			TyScene
+	\brief			Scene class. Handles actors.
+	\date			15/08/2011
+	\version		0.1					
+	\author			Leandro Ostera
+
+************************************************************************************/
+
 #pragma once
+
+#ifndef TOASTY_SCENE_H
+#define TOASTY_SCENE_H
 
 #include <IwResManager.h>
 #include <TyActor.h>
@@ -6,7 +19,7 @@
 #include <string>
 #include <list>
 
-class TyScene{
+class TyScene : public CIwManaged {
 
 	private:
 		const	int64	m_ID;
@@ -18,7 +31,7 @@ class TyScene{
 		std::string				m_Name;
 		std::string				m_Caption;
 
-		std::list<ITyActor*>	m_Actors;
+		CIwManagedList			m_Actors;
 		bool					m_ZOrdered;
 		bool					m_Created;
 		TyImage*				m_Background;
@@ -59,3 +72,5 @@ class TyScene{
 		void		SetBoundaries(CIwRect pBoundaries = CIwRect(0,0,0,0))	{	m_Boundaries = pBoundaries; }
 		
 };
+
+#endif

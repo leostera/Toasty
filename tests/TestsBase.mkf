@@ -1,0 +1,10 @@
+files
+{
+	(.)
+	MainTest.cpp
+	InheritedActor.h
+}
+
+includepath .
+
+subproject "../Toasty_Testing"

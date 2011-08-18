@@ -217,14 +217,14 @@ class test_group : public group_base, public test_group_posix
                     throw warning(msg);
                 }
             }
-            catch( ... )
+        /*    catch( ... )
             {
                 if (permit_throw_in_dtor)
                 {
                     throw warning("destructor of test object raised an"
                         " exception");
                 }
-            }
+            } */
         }
 
         /**
@@ -402,11 +402,11 @@ public:
             tr.exception_typeid = typeid(ex).name();
             tr.message = ex.what();
         }
-        catch (...)
+ /*       catch (...)
         {
             // test failed with unknown exception
             tr.result = test_result::ex;
-        }
+        } */
 
         if (obj.get())
         {

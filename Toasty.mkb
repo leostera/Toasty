@@ -1,26 +1,39 @@
-# This file was automanually generated following the Marmalade Reference Manual rules.
+# This file was automanually generated following the Marmalade Reference Manual
+# rules and is part of the Toasty! Game Framework for Marmalade SDK.
+# Created by Leandro Ostera
+# Date: 8.15.2011
 
 options
 {
 	lib
-	enable-exceptions
 }
 
 subprojects
 {
-	Toasty
+	Toasty	
 }
 
 
 files
 {
 	(./src)
-	[Sources]
+	[Sources/SceneManagement]
 	TyActor.cpp
-	TyClock.cpp
-	TyInput.cpp
 	TyScene.cpp
 	TySceneManager.cpp
+
+	[Sources/System]
+	TySystem.cpp
+	TyClock.cpp
+	TyInput.cpp
+	TyFile.cpp
+	TyDebug.cpp
+
+	[Sources/Graphics]
 	TyImage.cpp
 	TySprite.cpp
+
+	[Sources/Sounds]
+	
+	[Sources/Others]
 }

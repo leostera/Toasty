@@ -40,13 +40,13 @@ namespace tut
 	void testobject::test<11>()
 	{
 		set_test_name("Add States");
-		IwGetResManager()->LoadGroup("../examples/data/sprites.group");
+		IwGetResManager()->LoadGroup("sprites.group");
 		grp = IwGetResManager()->GetGroupNamed("sprites");
 		
 		spr = new TySprite(grp,"1");
 
-		ensure_equals("Added!",a->AddState(spr,TOASTY_ACTOR_ATTACKING),true);
-		ensure_equals("Added!",a->AddState(spr,TOASTY_ACTOR_ATTACKING),false);
+		ensure_equals("Added!",a->AddState(spr,TOASTY_ACTOR_STATE_ATTACKING),true);
+		ensure_equals("Added!",a->AddState(spr,TOASTY_ACTOR_STATE_ATTACKING),false);
 
 		delete spr;
 
@@ -59,14 +59,14 @@ namespace tut
 	{
 		set_test_name("Delete States");
 
-		IwGetResManager()->LoadGroup("../examples/data/sprites.group");
+		IwGetResManager()->LoadGroup("sprites.group");
 		grp = IwGetResManager()->GetGroupNamed("sprites");
 		
 		spr = new TySprite(grp,"1");
 
-		ensure_equals("Added!",a->AddState(spr,TOASTY_ACTOR_ATTACKING),true);
-		ensure_equals("Deleteed!",a->DeleteState(TOASTY_ACTOR_ATTACKING),true);
-		ensure_equals("Deleteed!",a->DeleteState(TOASTY_ACTOR_ATTACKING),false);
+		ensure_equals("Added!",a->AddState(spr,TOASTY_ACTOR_STATE_ATTACKING),true);
+		ensure_equals("Deleteed!",a->DeleteState(TOASTY_ACTOR_STATE_ATTACKING),true);
+		ensure_equals("Deleteed!",a->DeleteState(TOASTY_ACTOR_STATE_ATTACKING),false);
 
 		delete spr;
 
@@ -79,21 +79,21 @@ namespace tut
 	void testobject::test<13>()
 	{
 		set_test_name("Set Current State");
-		IwGetResManager()->LoadGroup("../examples/data/sprites.group");
+		IwGetResManager()->LoadGroup("sprites.group");
 		grp = IwGetResManager()->GetGroupNamed("sprites");
 		
 		spr = new TySprite(grp,"1");
 		spr2 = new TySprite(grp,"2");
 
-		ensure_equals("Added!",a->AddState(spr,TOASTY_ACTOR_ATTACKING),true);
-		ensure_equals("Set!",a->SetCurrentState(TOASTY_ACTOR_ATTACKING),true);
-		ensure_equals("State is",a->GetCurrentState(),TOASTY_ACTOR_ATTACKING);
+		ensure_equals("Added!",a->AddState(spr,TOASTY_ACTOR_STATE_ATTACKING),true);
+		ensure_equals("Set!",a->SetCurrentState(TOASTY_ACTOR_STATE_ATTACKING),true);
+		ensure_equals("State is",a->GetCurrentState().state,TOASTY_ACTOR_STATE_ATTACKING);
 
-		ensure_equals("Added!",a->AddState(spr2,TOASTY_ACTOR_IDLE),true);
-		ensure_equals("Deleteped!",a->DeleteState(TOASTY_ACTOR_ATTACKING),true);
-		ensure_equals("Set!",a->SetCurrentState(TOASTY_ACTOR_ATTACKING),false);
-		ensure_equals("Set!",a->SetCurrentState(TOASTY_ACTOR_IDLE),true);
-		ensure_equals("State is",a->GetCurrentState(),TOASTY_ACTOR_IDLE);
+		ensure_equals("Added!",a->AddState(spr2,TOASTY_ACTOR_STATE_IDLE),true);
+		ensure_equals("Deleteped!",a->DeleteState(TOASTY_ACTOR_STATE_ATTACKING),true);
+		ensure_equals("Set!",a->SetCurrentState(TOASTY_ACTOR_STATE_ATTACKING),false);
+		ensure_equals("Set!",a->SetCurrentState(TOASTY_ACTOR_STATE_IDLE),true);
+		ensure_equals("State is",a->GetCurrentState().state,TOASTY_ACTOR_STATE_IDLE);
 		
 		delete spr,spr2;
 

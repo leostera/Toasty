@@ -11,7 +11,10 @@
 
 ************************************************************************************/
 
-#pragma once // might be more suitable to use define checks, but pragma once seems to work fine on almost every compiler
+#pragma once
+
+#ifndef TOASTY_ACTOR_H
+#define TOASTY_ACTOR_H
 
 /*
  * Marmalade SDK Header file includes
@@ -68,17 +71,22 @@ enum TOASTY_ACTOR_STATE {
  *	\class	TyState
  *	\brief	Inner class used to relate a Actor State with a Sprite.
  */
-class TyState {
+class TyState : public CIwManaged {
 public:
 	/*!
-	 * \property	sprite	TySprite representing the actors state.
+	 * \property	Sprite	TySprite representing the actors state.
 	 */
-	TySprite*			sprite;
+	TySprite*			Sprite;
 
 	/*!
-	* \property		state	TOASTY_ACTOR_STATE value.
+	* \property		State	TOASTY_ACTOR_STATE value.
 	*/
-	TOASTY_ACTOR_STATE	state;
+	TOASTY_ACTOR_STATE	State;
+
+	/*!
+		 * \property	Mask	TyImage representing actors collision mask
+	 */
+	TyImage*			Mask;
 
 	/*!
 	 *	\brief	Constructor
@@ -87,13 +95,21 @@ public:
 	 *
 	 *	Simply inits internal values.
 	 */
-	TyState( TySprite* pSprite = 0, TOASTY_ACTOR_STATE pState = TOASTY_ACTOR_STATE_IDLE): sprite(pSprite), state(pState)
+	TyState( TySprite* pSprite = 0, TOASTY_ACTOR_STATE pState = TOASTY_ACTOR_STATE_IDLE, TyImage* pMask = 0): Sprite(pSprite), State(pState), Mask(pMask)
 	{
 		;
 	}
+
+	~TyState()
+	{
+		if (Sprite->IsBuilt())
+			delete Sprite;
+		if (Mask->IsBuilt())
+			delete Mask;
+	}
 };
 
-class ITyActor {
+class ITyActor : public CIwManaged {
 	
 	private:
 		/*!
@@ -138,9 +154,9 @@ class ITyActor {
 		bool					m_Solid;
 
 		/*!
-		 * \property	m_States	std::vector of TyStates used to contain all the states of the actor
+		 * \property	m_States	Managed List of TyStates used to contain all the states of the actor
 		 */
-		std::vector<TyState>	m_States;
+		CIwManagedList			m_States;
 
 		/*!
 		 * \property	m_CurrentState	Pointer to the current state.
@@ -150,12 +166,7 @@ class ITyActor {
 		/*!
 		 * \property	m_LastState	Pointer to the last state.
 		 */
-		TyState*				m_LastState;
-
-		/*!
-		 * \property	m_Mask	IwRect representing actors collision mask
-		 */
-		CIwRect					m_Mask;
+		TyState*				m_LastState;		
 
 		/*!
 		 * \property	m_Position	IwSVec2 vector representing the (x,y) position of the actor from the scene (0,0). This is, it is a relative value and depends on the scene position on screen.
@@ -185,7 +196,7 @@ class ITyActor {
 		 *					\arg	\c m_Position	, CIwSVec2(0,0)
 		 */
 		ITyActor(int64 pID, bool pActive = true, bool pVisible = true, bool pSolid = true, CIwRect pMask = CIwRect(0,0,0,0), CIwSVec2 pPosition = CIwSVec2::g_Zero)
-			: m_ID(pID), m_Built(true), m_Depth(0), m_Active(pActive), m_Visible(pVisible), m_Solid(pSolid), m_Mask(pMask), m_Position(pPosition)
+			: m_ID(pID), m_Built(true), m_Depth(0), m_Active(pActive), m_Visible(pVisible), m_Solid(pSolid), m_Position(pPosition), m_CurrentState(0)
 		{ 
 			;
 		}
@@ -194,7 +205,10 @@ class ITyActor {
 		 *	\brief	Destructor
 		 *	It actually does nothing but deleting the states.
 		 */
-		virtual ~ITyActor(){ ; }
+		virtual ~ITyActor()
+		{ 
+			m_States.Delete();
+		}
 
 		/*!
 		 *	\brief	Is the actor built?
@@ -230,7 +244,7 @@ class ITyActor {
 		 *
 		 *	It instantiates a new TyState object and pushes it back in the m_State vector if pState is not yet associated to a pSprite in the vector.
 		 */
-		bool	AddState(TySprite* pSprite, TOASTY_ACTOR_STATE pState);
+		bool	AddState(TySprite* pSprite, TOASTY_ACTOR_STATE pState, TyImage* pMask);
 
 		/*!
 		 *	\brief	Deletes a state from the State Vector.
@@ -331,7 +345,7 @@ class ITyActor {
 		virtual void	OnStepEnd()											
 		{
 			if(m_CurrentState)
-				m_CurrentState->sprite->Step();
+				m_CurrentState->Sprite->Step();
 		}	//this one is called after OnRender so if you need to update anything between rendering and OnStepStart, do it here
 
 		/*!
@@ -340,8 +354,8 @@ class ITyActor {
 		 */
 		virtual void	OnRender()
 		{
-			if(m_CurrentState)
-				m_CurrentState->sprite->Render(m_Position);
+			if(m_CurrentState != 0 && m_Visible)
+				m_CurrentState->Sprite->Render(m_Position);
 		}	//this is called before OnStepEnd and after OnStep
 
 		/*!
@@ -387,12 +401,6 @@ class ITyActor {
 		TyState				GetLastState()	const		{	return (*m_LastState);	}
 
 		/*!
-		 *	\brief	Accessor for the Actors Mask.
-		 *	\returns CIwRect	The actors mask as CIwRect.
-		 */
-		CIwRect				GetMask()			const		{	return m_Mask;					}
-
-		/*!
 		 *	\brief	Accessor for the Actors Position.
 		 *	\returns CIwSVec2	The actors position as CIwSVec2.
 		 */
@@ -435,12 +443,6 @@ class ITyActor {
 		void	SetSolid(bool pSolid)						{	m_Solid    = pSolid;		}		
 		
 		/*!
-		 *	\brief Mutator for the Actors Collision Mask.
-		 *	\param	pMask	CIwRect rect for the Collision Mask.
-		 */
-		void	SetMask(CIwRect pMask)						{	m_Mask	   = pMask;			}
-		
-		/*!
 		 *	\brief Mutator for the Actors Position.
 		 *	\param	pPosition	CIwSVec2 vector for Position.
 		 */
@@ -464,3 +466,5 @@ inline bool TyActorCompare(ITyActor* pActor1 ,ITyActor* pActor2)
 {
 	return (pActor1->GetDepth() < pActor2->GetDepth() ) ? true : false;
 }
+
+#endif

@@ -28,7 +28,7 @@ TyClock* TyGetClock()
 /*
  *	CLASS METHODS IMPLEMENTATIONS
  */
-int64	TyClock::Update()
+uint64	TyClock::Update()
 {
 	m_LastTicks = m_ThisTicks;
 	m_ThisTicks = s3eTimerGetMs();
@@ -59,7 +59,7 @@ int32	TyClock::Cap()
 	return m_Cap;
 }
 
-int64	TyClock::GetTicks()
+uint64	TyClock::GetTicks()
 {
 	return (m_ThisTicks - m_LastTicks);
 }

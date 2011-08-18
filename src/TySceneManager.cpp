@@ -29,51 +29,27 @@ TySceneManager::TySceneManager() : m_CurrentScene(0), m_PreviousScene(0)
 
 TySceneManager::~TySceneManager()
 {
-	std::vector<TyScene*>::iterator it = m_Scenes.begin();
-	while(it != m_Scenes.end())
-	{
-			delete (*it);
-			it = m_Scenes.erase(it);
-	}
-	m_Scenes.clear();
+	m_Scenes.Delete();
+	m_Scenes.Clear();
 }
 
 TyScene*	TySceneManager::AddScene() 
 {
-	m_Scenes.push_back(new TyScene());
-	return m_Scenes.back();
+	m_Scenes.Add(new TyScene());
+	return (TyScene*)(*m_Scenes.GetEnd());
 }
 
 bool		TySceneManager::DeleteScene(TyScene* pScene)
 {
 	bool deleted = false;
-	std::vector<TyScene*>::iterator it;
-	for(it = m_Scenes.begin(); it != m_Scenes.end(); ++it)
-	{
-		if( (*it) == pScene )
-		{
-			delete (*it);
-			m_Scenes.erase(it);
-			deleted = true;
-			break;
-		}
-	}
+	if( m_Scenes.EraseFast(m_Scenes.Find(pScene)) )
+		deleted = true;
 	return deleted;
 }
 
 bool		TySceneManager::HasScene(TyScene* pScene)
 {
-	bool has = false;
-	std::vector<TyScene*>::iterator it;
-	for(it = m_Scenes.begin(); it != m_Scenes.end(); ++it)
-	{
-		if( (*it) == pScene )
-		{
-			has = true;
-			break;
-		}
-	}
-	return has;
+	return m_Scenes.Contains(pScene);
 }
 
 bool		TySceneManager::IsCurrentScene(TyScene * pScene)
@@ -90,16 +66,12 @@ bool		TySceneManager::IsCurrentScene(TyScene * pScene)
 bool		TySceneManager::SetCurrentScene(TyScene *	pScene)
 {	
 	bool current = false;
-	std::vector<TyScene*>::iterator it;
-	for(it = m_Scenes.begin(); it != m_Scenes.end(); ++it)
+	uint32 it = m_Scenes.Find(pScene);
+	if( it > 0 && m_Scenes[it] == pScene )
 	{
-		if( (*it) == pScene )
-		{
-			current = true;
-			m_PreviousScene = m_CurrentScene;
-			m_CurrentScene = (*it);
-			break;
-		}
+		current = true;
+		m_PreviousScene = m_CurrentScene;
+		m_CurrentScene = (TyScene*) m_Scenes[it];
 	}
 	return current;
 }

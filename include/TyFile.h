@@ -1,4 +1,17 @@
+/*!**********************************************************************************
+
+	\class			TyFile
+	\brief			Scene management singleton.
+	\date			15/08/2011
+	\version		0.1					
+	\author			Leandro Ostera
+
+************************************************************************************/
+
 #pragma once
+
+#ifndef TOASTY_FILE_H
+#define TOASTY_FILE_H
 
 /* Standard Libraries */
 #include <typeinfo>
@@ -183,3 +196,5 @@ public:
 		return cConversion::StringToPrimitive<ValueType>(m_Data.find(pKey)->second);
 	}
 };
+
+#endif

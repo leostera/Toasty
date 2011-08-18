@@ -1,24 +1,2 @@
-files
-{
-	(.)
-	SceneTest.cpp
-	MainTest.cpp
-	InheritedActor.h
-		
-	(../include)
-	TyScene.h
-
-	(../src)
-	[]
-	TyScene.cpp
-}
-
-subprojects
-{
-	iwutil
-	iw2d
-	iwresmanager
-	TUT
-}	
-
-includepath ../include
+file SceneTest.cpp
+subproject TestsBase

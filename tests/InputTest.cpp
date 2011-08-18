@@ -15,7 +15,7 @@ namespace tut
 
 		data()
 		{
-			IwGetResManager()->LoadGroup("./../examples/data/images.group");
+			IwGetResManager()->LoadGroup("images.group");
 			cubo = new TyImage(IwGetResManager()->GetGroupNamed("images"),"2");
 		}
 
@@ -40,14 +40,14 @@ namespace tut
 		while ( TyGetInput()->RefreshTouchpad() )
 		{
 			Iw2DSurfaceClear(0xff000000);
-			TyTouch t = TyGetInput()->GetTouchInRect( CIwRect(0,0,100,100) );
-			if ( t.m_Active )
+			TyTouch t = TyGetInput()->GetTouchInRect( CIwRect(0,0,100,100), S3E_POINTER_STATE_DOWN );
+			if ( t.Active )
 			{
-				std::cout << "ID: " << t.m_TouchID << std::endl;
-				std::cout << "m_Position: " << t.m_Position.x << "," << t.m_Position.y << std::endl;
-				ensure_equals("Last press 'a' X", (TyGetInput()->GetLastTouchPressed().m_Position.x >= 0 && TyGetInput()->GetLastTouchPressed().m_Position.x <= 100), true);
-				ensure_equals("Last press 'a' Y", (TyGetInput()->GetLastTouchPressed().m_Position.y >= 0 && TyGetInput()->GetLastTouchPressed().m_Position.y <= 100), true);
-				cubo->Render(t.m_Position);
+				std::cout << "ID: " << t.TouchID << std::endl;
+				std::cout << "m_Position: " << t.Position.x << "," << t.Position.y << std::endl;
+				ensure_equals("Last press 'a' X", (TyGetInput()->GetLastTouchPressed().Position.x >= 0 && TyGetInput()->GetLastTouchPressed().Position.x <= 100), true);
+				ensure_equals("Last press 'a' Y", (TyGetInput()->GetLastTouchPressed().Position.y >= 0 && TyGetInput()->GetLastTouchPressed().Position.y <= 100), true);
+				cubo->Render(t.Position);
 				Iw2DSurfaceShow();
 				break;
 			}
@@ -68,16 +68,16 @@ namespace tut
 		{
 			Iw2DSurfaceClear(0xff000000);			
 
-			TyTouch t = TyGetInput()->GetTouchInRect( CIwRect(posPollo.x,posPollo.y,posPollo.x+pollo->GetSize().x,posPollo.y+pollo->GetSize().y) );
-			if ( t.m_Active )
+			TyTouch t = TyGetInput()->GetTouchInRect( CIwRect(posPollo.x,posPollo.y,posPollo.x+pollo->GetSize().x,posPollo.y+pollo->GetSize().y), S3E_POINTER_STATE_DOWN );
+			if ( t.Active )
 				break;
 
-			 t = TyGetInput()->GetTouchInRect( CIwRect(posCubo.x,posCubo.y,posCubo.x+cubo->GetSize().x,posCubo.y+cubo->GetSize().y) );
-			if ( t.m_Drag )
+			t = TyGetInput()->GetTouchInRect( CIwRect(posCubo.x,posCubo.y,posCubo.x+cubo->GetSize().x,posCubo.y+cubo->GetSize().y) , S3E_POINTER_STATE_DOWN);
+			if ( t.Drag )
 			{				
-				posCubo = posCubo + t.m_Position - t.m_LastPosition;
-				std::cout << "Touch - ID: " << t.m_TouchID << std::endl;
-				std::cout << "Touch - Pos: " << t.m_Position.x << "," << t.m_Position.y << std::endl;				
+				posCubo = posCubo + t.Position - t.LastPosition;
+				std::cout << "Touch - ID: " << t.TouchID << std::endl;
+				std::cout << "Touch - Pos: " << t.Position.x << "," << t.Position.y << std::endl;				
 				std::cout << "Cube - Pos: " << posCubo.x << "," << posCubo.y << std::endl;
 			}
 			
@@ -96,20 +96,21 @@ namespace tut
 		
 	}
 
-/*	template<>
+	template<>
 	template<>
 	void testobject::test<49>() 
 	{ 
 		set_test_name("PaintGame");
 		uint32 colour = 0xffff0000;
+		TyTouch t = TyTouch(-1);
 		while ( TyGetInput()->RefreshTouchpad() )
 		{			
-			TyTouch t = TyGetInput()->GetTouchInRect( CIwRect(0,0,480,320) );
-			if ( t.m_Active ) //&& TyGetInput()->GetLastTouchPressed().m_TouchID == t.m_TouchID)
+			t = TyGetInput()->GetTouchInRect( CIwRect(0,0,480,320), S3E_POINTER_STATE_DOWN );
+			if ( t.Active )
 			{
-				std::cout << "ID: " << t.m_TouchID << std::endl;
-				std::cout << "m_Position: " << t.m_Position.x << "," << t.m_Position.y << std::endl;
-				switch(t.m_TouchID)
+				std::cout << "ID: " << t.TouchID << std::endl;
+				std::cout << "Position: " << t.Position.x << "," << t.Position.y << std::endl;
+				switch(t.TouchID)
 				{
 				case 0:
 					colour = 0xffff0000;
@@ -131,11 +132,11 @@ namespace tut
 					colour = 0xffffffff;
 				break;
 				}
+
 				Iw2DSetColour(colour);
-				Iw2DDrawLine(t.m_Position,t.m_LastPosition);
-			}
-			Iw2DSurfaceShow();
+				Iw2DDrawLine(t.Position,t.LastPosition);
+				Iw2DSurfaceShow();
+			}			
 		}		
 	}
-*/
 }; 

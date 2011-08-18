@@ -1,22 +1,2 @@
-files
-{
-	(.)
-	ImageTest.cpp
-	MainTest.cpp
-		
-	(../include)
-	TyImage.h
-
-	(../src)
-	TyImage.cpp
-}
-
-subprojects
-{
-	iwutil
-	iw2d
-	iwresmanager
-	TUT
-}	
-
-includepath ../include
+file ImageTest.cpp
+subproject TestsBase

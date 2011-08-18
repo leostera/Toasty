@@ -1,4 +1,18 @@
+/*!**********************************************************************************
+
+	\class			TyDebug
+	\brief			Debug output singleton.
+	\date			15/08/2011
+	\version		0.1					
+	\author			Leandro Ostera
+
+************************************************************************************/
+
+
 #pragma once
+
+#ifndef TOASTY_DEBUG_H
+#define TOASTY_DEBUG_H
 
 /*
 	exit on error
@@ -23,3 +37,5 @@ public:
 
 	static void ScreenDump();
 };
+
+#endif

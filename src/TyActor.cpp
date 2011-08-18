@@ -1,13 +1,13 @@
 #include <TyActor.h>
 
-bool ITyActor::AddState(TySprite* pSprite, TOASTY_ACTOR_STATE pState)
+bool ITyActor::AddState(TySprite* pSprite, TOASTY_ACTOR_STATE pState, TyImage* pMask)
 {
 	bool toadd = true;
-	std::vector<TyState>::iterator it;
-
-	for(it = m_States.begin(); it != m_States.end(); ++it)
+	
+	CIwManaged** it = m_States.GetBegin();
+	for(; it != m_States.GetEnd(); ++it)
 	{
-		if( (*it).state == pState )
+		if( ( (TyState*)(*it) )->State == pState )
 		{	
 			toadd = false;
 			break;
@@ -16,8 +16,7 @@ bool ITyActor::AddState(TySprite* pSprite, TOASTY_ACTOR_STATE pState)
 
 	if( toadd ) 
 	{
-		m_States.push_back( TyState(pSprite, pState) );
-		m_States.back().sprite->Play();
+		m_States.Add( new TyState(pSprite, pState, pMask) );
 	}
 
 	return toadd;
@@ -27,15 +26,17 @@ bool ITyActor::AddState(TySprite* pSprite, TOASTY_ACTOR_STATE pState)
 bool ITyActor::DeleteState(TOASTY_ACTOR_STATE pState)
 {
 	bool todel = false;
-	std::vector<TyState>::iterator it;
-	for(it = m_States.begin(); it != m_States.end(); ++it)
+	CIwManaged** it = m_States.GetBegin();
+
+	while( it != m_States.GetEnd() )
 	{
-		if( (*it).state == pState  &&  m_CurrentState != it )
+		if ( ((TyState*)(*it))->State == pState )
 		{
-			m_States.erase(it);
+			m_States.Erase(it);
 			todel = true;
 			break;
 		}
+		++it;
 	}
 	return todel;	
 }
@@ -43,13 +44,13 @@ bool ITyActor::DeleteState(TOASTY_ACTOR_STATE pState)
 bool ITyActor::SetCurrentState(TOASTY_ACTOR_STATE pState)
 {
 	bool toset = false;
-	std::vector<TyState>::iterator it;
-	for(it = m_States.begin(); it != m_States.end(); ++it)
+	CIwManaged** it;
+	for(it = m_States.GetBegin(); it != m_States.GetEnd(); ++it)
 	{
-		if( (*it).state == pState )
+		if( ((TyState*)(*it))->State == pState )
 		{	
 			m_LastState = m_CurrentState;
-			m_CurrentState = it;
+			m_CurrentState = (TyState*)(*it);
 			toset = true;
 			break;
 		}
