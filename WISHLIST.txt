@@ -11,14 +11,11 @@ Notes (07.20.2011): Project started on 07.12.2011 as I've seen that the current 
 WISHLIST (08.12.2011)
 
 system:
-	config file handler
-	debug error/warning/message printer
 	string input
 	scripting language (python?)
 	file compressor / decompressor
 
 game/actors:
-	physics! - lots. box2D might be a good way to go
 	paths, and path following
 
 gfx/sprites:
